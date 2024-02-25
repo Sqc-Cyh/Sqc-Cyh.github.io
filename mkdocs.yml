@@ -3,3 +3,5 @@ site_url: https://sqc-cyh.github.io/mymkdocs/
 site_author: 时清川
 theme:
  name: material #主题
+ palette:
+   primary: grey
