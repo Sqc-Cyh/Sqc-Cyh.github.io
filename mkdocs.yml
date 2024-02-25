@@ -1,4 +1,4 @@
-site_name: 课程笔记12345
+site_name: 时清川的课程笔记
 site_url: https://sqc-cyh.github.io/mymkdocs/
 site_author: 时清川
 theme:
@@ -61,6 +61,8 @@ extra:
       link: mailto:<1076219827@qq.com> #联系方式
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - javascripts/extra.js
 plugins:
   - search
   - tags
