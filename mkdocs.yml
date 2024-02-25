@@ -1,6 +1,5 @@
-site_name: 课程笔记123
+site_name: 课程笔记12
 site_url: https://sqc-cyh.github.io/mymkdocs/
 site_author: 时清川
 theme:
-  palette:
-    primary: yellow #顶部颜色
+ name: material #主题
