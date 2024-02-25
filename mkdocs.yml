@@ -4,10 +4,10 @@ site_author: 时清川
 theme:
   name: material #主题
   palette:
-  #  primary: blue grey
    # Palette toggle for light mode
     - scheme: index_light
       # primary: index
+      accent: teal
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
