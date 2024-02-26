@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://sqc-cyh.github.io/lessons/</loc>
+         <lastmod>2024-02-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://sqc-cyh.github.io/lessons/D2CX_AdvancedDataStructure/</loc>
          <lastmod>2024-02-26</lastmod>
          <changefreq>daily</changefreq>
