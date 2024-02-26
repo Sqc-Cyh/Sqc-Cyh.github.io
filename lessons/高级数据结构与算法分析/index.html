@@ -22,7 +22,7 @@
     
     
       
-        <title>高级数据结构与算法分析 - 时清川的课程笔记</title>
+        <title>留言板 - 时清川的课程笔记</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              高级数据结构与算法分析
+              留言板
             
           </span>
         </div>
@@ -683,7 +683,9 @@
   
 
 
-  <h1>高级数据结构与算法分析</h1>
+<!-- <link rel="stylesheet" href="stylesheets/index.css"> -->
+
+<h1 id="欢迎">欢迎！</h1>
 
 
 
@@ -691,12 +693,66 @@
 
 
 
+  
+  
 
 
 
 
 
 
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+  data-repo="sqc-cyh/MyWeb-discussion"
+  data-repo-id="R_kgDOLX74Ng"
+  data-category="General"
+  data-category-id="DIC_kwDOLX74Ns4Cdg_o"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
