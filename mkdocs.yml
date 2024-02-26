@@ -83,6 +83,8 @@ extra_javascript:
 plugins:
   - search
   - tags
+  - statistics:
+      words_per_minute: 200
 markdown_extensions:
   - admonition
   - pymdownx.details
