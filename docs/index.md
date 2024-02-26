@@ -39,6 +39,23 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         我们登上高塔，看到的却只有黑夜。  ——安德烈·纪德《地粮》
     </div>
     <br><br> -->
+# Welcome to MkDocs
+
+For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+
+## Commands
+
+* `mkdocs new [dir-name]` - Create a new project.
+* `mkdocs serve` - Start the live-reloading docs server.
+* `mkdocs build` - Build the documentation site.
+* `mkdocs -h` - Print help message and exit.
+
+## Project layout
+
+    mkdocs.yml    # The configuration file.
+    docs/
+        index.md  # The documentation homepage.
+        ...       # Other markdown pages, images and other files.
 
 
 
