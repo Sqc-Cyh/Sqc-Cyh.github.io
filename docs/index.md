@@ -31,14 +31,14 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 # 欢迎！
 
 !!! note "" 
-    <!-- <br><br>
+    <br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
         ~『その時を待つよ』~
     </div>
     <div align="center" style="font-size:12px">
         我们登上高塔，看到的却只有黑夜。  ——安德烈·纪德《地粮》
     </div>
-    <br><br> -->
+    <br><br>
 # Welcome to MkDocs
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
