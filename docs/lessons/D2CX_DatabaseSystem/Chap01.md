@@ -1,6 +1,6 @@
 ---
 
-title: ADS
+title: 数据库系统
 hide:
   #  - navigation # 显示右
   #  - toc #显示左
@@ -9,7 +9,5 @@ hide:
 comments: true  #默认不开启评论
 
 ---
-
-<!-- <link rel="stylesheet" href="stylesheets/index.css"> -->
 
 <h1 id="欢迎">欢迎！</h1>

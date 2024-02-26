@@ -42,10 +42,16 @@ repo_name: sqc-cyh.github.io # 右上角的名字
 #目录
 nav:
   - 首页: 
-    - 好玩: index.md
+    - 家: index.md
   - 课程笔记:
-    - 数据库系统: lessons/数据库系统.md
-    - 高级数据结构与算法分析: lessons/高级数据结构与算法分析.md
+    - "数据库系统": 
+      - lessons/D2CX_DatabaseSystem/index.md
+      - lessons/D2CX_DatabaseSystem/Chap01.md
+    - "高级数据结构与算法分析":
+      - lessons/D2CX_AdvancedDataStructure/index.md
+      - lessons/D2CX_AdvancedDataStructure/Chap01.md
+      # - 第一章: lessons/高级数据结构与算法分析.md
+      # - 第二章: lessons/高级数据结构与算法分析.md
   - 科研相关:
     - 好玩2: home/home.md
   - 技能树:
