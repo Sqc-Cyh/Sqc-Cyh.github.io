@@ -45,19 +45,23 @@ nav:
   - "家": 
     - "家": index.md
   - "课程笔记":
-    - lessons/index.md
+    - LessonsNotes/index.md
     - "⭐数据库系统": 
-      - lessons/D2CX_DatabaseSystem/index.md
-      - lessons/D2CX_DatabaseSystem/Chap01.md
+      - LessonsNotes/D2CX_DatabaseSystem/index.md
+      - LessonsNotes/D2CX_DatabaseSystem/Chap01.md
     - "⭐高级数据结构与算法分析":
-      - lessons/D2CX_AdvancedDataStructure/index.md
-      - lessons/D2CX_AdvancedDataStructure/Chap01.md
+      - LessonsNotes/D2CX_AdvancedDataStructure/index.md
+      - LessonsNotes/D2CX_AdvancedDataStructure/Chap01.md
       # - 第一章: lessons/高级数据结构与算法分析.md
       # - 第二章: lessons/高级数据结构与算法分析.md
   - 科研相关:
     - 好玩2: home/home.md
-  - 技能树:
-    - 好玩3: home/home.md
+  - "技能树":
+    - SkillTree/index.md
+    - "⭐如何搭建一个个人网页":
+      - SkillTree/MakeYourOwnWeb/index.md
+    - "⭐MarkDown语法教程":
+      - SkillTree/MarkDown/index.md
 extra:
   generator: false
   social:
