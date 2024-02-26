@@ -71,13 +71,12 @@ body {
   display: flex;
   width: 100%;
   font-size: 40px;
-  margin-left: 3%;
   align-items: center;
 }
 
 .extra3 .heading-1{
-  position: relative;
-  display: inline-block;
+  /* position: relative; */
+  display: flex;
   justify-content: center;
   align-items: center;
   line-height: 100%;
