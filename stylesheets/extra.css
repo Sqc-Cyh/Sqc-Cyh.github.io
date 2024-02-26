@@ -139,6 +139,23 @@ body {
   --md-shadow-z1:0 0.2rem 0.5rem #0003,0 0 0.05rem #0000001a;
   --md-shadow-z2:0 0.2rem 0.5rem #0000004d,0 0 0.05rem #00000040;
   --md-shadow-z3:0 0.2rem 0.5rem #0006,0 0 0.05rem #00000059;
+
+  /*--color-btn-primary-text: 右下角  使用 Github 登录 的按钮处，设置字的颜色
+  --color-btn-primary-bg : 同上，设置按钮(整体填充)的颜色
+  --color-btn-primary-border : 同上，设置按钮边框的颜色
+  --color-btn-primary-hover-bg : 设置将鼠标放置在按钮上时，按钮(整体填充)的颜色
+  --color-btn-primary-hover-border : 同上，设置按钮边框的颜色
+  --color-fg-default : 设置 n 个表情 、 n 条评论 、输入/预览 (选中那个) 的字体颜色
+  --color-fg-muted : 设置 n 个表情 下的笑脸 、输入/预览 (没选中那个) 、右上处 Aa 、按钮上方的markdown标志 的颜色
+  --color-canvas-default : 设置 输入 和 按钮 所在的中空的(挖去中间输入评论文本的区域)的框的颜色
+  --color-canvas-inset : 设置 中间输入评论文本的区域 的颜色
+  --color-canvas-subtle : 设置 预览 所在的上方的框的颜色
+  --color-border-default : 设置所有勾勒边框的线的颜色
+  --color-accent-fg : 设置 将鼠标移动到 markdown标志 或 Aa 处时，以及在评论文本的区域中输入时区域的框，改变的颜色
+  --color-btn-primary-selected-bg : 设置登录按钮点击时的颜色
+  --color-btn-primary-disabled-text : 设置登录之后，评论按钮的评论两个字的颜色
+  --color-btn-primary-disabled-bg : 同上，评论按钮的颜色
+  --color-btn-primary-disabled-border : 同上，评论按钮边框的颜色*/
   
 }
 [data-md-color-scheme="index_night"] {

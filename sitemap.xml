@@ -6,27 +6,42 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sqc-cyh.github.io/lessons/</loc>
+         <loc>https://sqc-cyh.github.io/LessonsNotes/</loc>
          <lastmod>2024-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sqc-cyh.github.io/lessons/D2CX_AdvancedDataStructure/</loc>
+         <loc>https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/</loc>
          <lastmod>2024-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sqc-cyh.github.io/lessons/D2CX_AdvancedDataStructure/Chap01/</loc>
+         <loc>https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap01/</loc>
          <lastmod>2024-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sqc-cyh.github.io/lessons/D2CX_DatabaseSystem/</loc>
+         <loc>https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/</loc>
          <lastmod>2024-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://sqc-cyh.github.io/lessons/D2CX_DatabaseSystem/Chap01/</loc>
+         <loc>https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap01/</loc>
+         <lastmod>2024-02-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sqc-cyh.github.io/SkillTree/</loc>
+         <lastmod>2024-02-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sqc-cyh.github.io/SkillTree/MakeYourOwnWeb/</loc>
+         <lastmod>2024-02-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://sqc-cyh.github.io/SkillTree/MarkDown/</loc>
          <lastmod>2024-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
