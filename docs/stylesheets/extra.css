@@ -1,4 +1,4 @@
-@media screen and (min-width: 960px) {
+/* @media screen and (min-width: 960px) {
   html {
     font-size: 137.5%;
   }
@@ -50,7 +50,7 @@
   .md-nav--primary .md-nav__title {
     background-color: var(--md-primary-fg-color);
   }
-}
+} */
 .md-typeset .admonition.note, .md-typeset details.note{
   border: 0.025rem solid #e4ece8;
 }
@@ -94,7 +94,7 @@
   --md-code-hl-variable-color:var(--md-default-fg-color--light);
   --md-typeset-color:var(--md-default-fg-color);
   --md-typeset-a-color:var(--md-primary-fg-color);
- --md-typeset-mark-color:#ffb7424d;
+  --md-typeset-mark-color:#ffb7424d;
   --md-typeset-kbd-color:hsla(var(--md-hue),15%,94%,0.12);
   --md-typeset-kbd-accent-color:hsla(var(--md-hue),15%,94%,0.2);
   --md-typeset-kbd-border-color:hsla(var(--md-hue),15%,14%,1);
