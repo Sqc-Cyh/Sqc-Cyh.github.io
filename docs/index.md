@@ -26,9 +26,19 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files. -->
-<link rel="stylesheet" href="stylesheets/index.css">
+<link rel="stylesheet" href="stylesheets/extra.css">
 
-<h1 id="欢迎">欢迎！</h1>
+# 欢迎！
+
+!!! note "" 
+    <!-- <br><br>
+    <div align="center" style="font-size:32px;font-weight:bold">
+        ~『その時を待つよ』~
+    </div>
+    <div align="center" style="font-size:12px">
+        我们登上高塔，看到的却只有黑夜。  ——安德烈·纪德《地粮》
+    </div>
+    <br><br> -->
 
 
 

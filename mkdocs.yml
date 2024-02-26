@@ -44,10 +44,10 @@ nav:
   - 首页: 
     - 家: index.md
   - 课程笔记:
-    - "数据库系统": 
+    - "⭐数据库系统": 
       - lessons/D2CX_DatabaseSystem/index.md
       - lessons/D2CX_DatabaseSystem/Chap01.md
-    - "高级数据结构与算法分析":
+    - "⭐高级数据结构与算法分析":
       - lessons/D2CX_AdvancedDataStructure/index.md
       - lessons/D2CX_AdvancedDataStructure/Chap01.md
       # - 第一章: lessons/高级数据结构与算法分析.md
@@ -59,10 +59,8 @@ nav:
 extra:
   generator: false
   social:
-    - icon: fontawesome/brands/twitter 
-      link: https://twitter.com/wcowin_
     - icon: fontawesome/brands/github
-      link: https://github.com/Wcowin
+      link: https://github.com/sqc-cyh
     - icon: fontawesome/brands/bilibili
       link: https://space.bilibili.com/1407028951?spm_id_from=333.1007.0.0
     - icon: fontawesome/solid/paper-plane
@@ -75,6 +73,9 @@ plugins:
   - search
   - tags
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
   - abbr
   - pymdownx.caret
   - pymdownx.mark

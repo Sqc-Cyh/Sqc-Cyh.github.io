@@ -1,6 +1,6 @@
 ---
 
-title: ADS
+title: Chap 1
 hide:
   #  - navigation # 显示右
   #  - toc #显示左
