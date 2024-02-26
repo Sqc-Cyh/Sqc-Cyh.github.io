@@ -29,14 +29,19 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 <link rel="stylesheet" href="stylesheets/extra.css">
 
 # 欢迎！
+<div class="extra3">
+    <h1 class="heading-1">Author</h1>
+    <span class="budget">Sqc</span>
+</div>
 
 !!! note "" 
     <br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
-        ~『その時を待つよ』~
+        『What can I hold you with?』
     </div>
-    <div align="center" style="font-size:12px">
-        我们登上高塔，看到的却只有黑夜。  ——安德烈·纪德《地粮》
+    <div align="center" style="font-size:15px">
+       我给你瘦落的街道，绝望的落日，荒郊的月亮。
+       我给你一个久久地望着孤月的人的悲哀。
     </div>
     <br><br>
 # Welcome to MkDocs
@@ -56,6 +61,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
 
 
 
