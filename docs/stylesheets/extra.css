@@ -72,15 +72,15 @@ body {
   width: 100%;
   font-size: 40px;
   align-items: center;
+  justify-self: center
 }
 
 .extra3 .heading-1{
-  /* position: relative; */
-  display: flex;
+  position: relative;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   line-height: 100%;
-  margin-left: 200px;
 }
 .extra3 .budget{
   position: relative;
@@ -93,6 +93,7 @@ body {
   border-radius: 10px;
   font-weight: bold;
 }
+
 [data-md-color-scheme="index_light"] {
     --md-primary-fg-color:        #58a7aa;
     --md-primary-fg-color--light: #17d630;

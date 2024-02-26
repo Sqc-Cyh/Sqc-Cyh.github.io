@@ -28,12 +28,13 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
         ...       # Other markdown pages, images and other files. -->
 <link rel="stylesheet" href="stylesheets/extra.css">
 
-# 欢迎！
+
 <div class="extra3">
-    <h1 class="heading-1">Author</h1>
-    <span class="budget">Sqc</span>
+    <h1 class="heading-1">Home</h1>
+    <span class="budget">Sqc's</span>
 </div>
 
+# 欢迎！
 !!! note "" 
     <br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
@@ -44,9 +45,9 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
        我给你一个久久地望着孤月的人的悲哀。
     </div>
     <br><br>
-# Welcome to MkDocs
+# 快速跳转
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+For full documentation visit [课程笔记](https://sqc-cyh.github,io/lessons/index.md).
 
 ## Commands
 
