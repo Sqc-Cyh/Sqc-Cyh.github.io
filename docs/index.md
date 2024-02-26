@@ -46,13 +46,13 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     <br><br>
 ## 快速跳转
 
- [课程笔记](https://sqc-cyh.github,io/LessonsNotes)
+ [课程笔记](https://sqc-cyh.github.io/LessonsNotes)
  <br></br>
 
- [如何搭建一个个人网页](https://sqc-cyh.github,io/SkillTree/MakeYourOwnWeb)
+ [如何搭建一个个人网页](https://sqc-cyh.github.io/SkillTree/MakeYourOwnWeb)
  <br></br>
- 
- [MarkDown语法教程](https://sqc-cyh.github,io/SkillTree/MarkDown)
+
+ [MarkDown语法教程](https://sqc-cyh.github.io/SkillTree/MarkDown)
 
 ## 关于我
 

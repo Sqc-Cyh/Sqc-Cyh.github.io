@@ -55,7 +55,7 @@
   border: 0.025rem solid #e4ece8;
 }
 .md-typeset .note>.admonition-title, .md-typeset .note>summary{
-  background-color: #D7FFF1;/*note的标题栏*/
+  background-color: #95e0c6;/*note的标题栏*/
 }
 body {
   font-family: "LXGW WenKai", sans-serif;

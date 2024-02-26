@@ -63,7 +63,7 @@ nav:
     - "⭐MarkDown语法教程":
       - SkillTree/MarkDown/index.md
 extra:
-  generator: false
+  # generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/sqc-cyh
