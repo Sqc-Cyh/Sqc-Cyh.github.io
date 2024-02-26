@@ -60,7 +60,7 @@
 [data-md-color-scheme="index_light"] {
     --md-primary-fg-color:        #58a7aa;
     --md-primary-fg-color--light: #f4f7f7;
-    --md-primary-fg-color--dark:  #462409b7;
+    --md-primary-fg-color--dark:  #f3730ab7;
     /* --md-default-bg-color:#f4f7f7;
     --md-default-bg-color--light:hsla(var(--md-hue),15%,21%,0.54);
     --md-default-bg-color--lighter:hsla(var(--md-hue),15%,21%,0.26);
