@@ -3,7 +3,7 @@ site_url: https://sqc-cyh.github.io/
 site_author: 时清川
 theme:
   name: material #主题
-  custom_dir: overrides
+  # custom_dir: overrides
   favicon: images/favicon.png
   palette:
    # Palette toggle for light mode
