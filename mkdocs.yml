@@ -1,4 +1,4 @@
-site_name: 时清川的课程笔记
+site_name: 时清川的个人主页
 site_url: https://sqc-cyh.github.io/
 site_author: 时清川
 theme:
@@ -78,9 +78,16 @@ extra_css:
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 extra_javascript:
   - javascripts/extra.js
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 plugins:
   - search
   - tags
@@ -94,6 +101,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
   - md_in_html
   - pymdownx.arithmatex:  # latex支持
       generic: true
