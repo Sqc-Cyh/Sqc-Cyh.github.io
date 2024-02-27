@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap 1 - 时清川的课程笔记</title>
+        <title>Chap 1 | “AVL Trees, Splay Trees,and Amortized Analysis” - 时清川的个人主页</title>
       
     
     
@@ -60,6 +60,8 @@
     
       <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -85,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1avl" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +102,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="时清川的课程笔记" class="md-header__button md-logo" aria-label="时清川的课程笔记" data-md-component="logo">
+    <a href="../../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -109,13 +116,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            时清川的课程笔记
+            时清川的个人主页
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 1
+              Chap 1 | “AVL Trees, Splay Trees,and Amortized Analysis”
             
           </span>
         </div>
@@ -328,13 +335,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="时清川的课程笔记" class="md-nav__button md-logo" aria-label="时清川的课程笔记" data-md-component="logo">
+    <a href="../../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    时清川的课程笔记
+    时清川的个人主页
   </label>
   
     <div class="md-nav__source">
@@ -645,15 +652,133 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 1 | “AVL Trees, Splay Trees,and Amortized Analysis”
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Chap 1
+    Chap 1 | “AVL Trees, Splay Trees,and Amortized Analysis”
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1avl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.AVL树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.AVL树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1性质介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2性质证明
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13avl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3构建AVL树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3构建AVL树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131rrll" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1RR/LL旋转
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132rllr" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2RL/LR旋转
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -958,6 +1083,104 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1avl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.AVL树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.AVL树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1性质介绍
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2性质证明
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13avl" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3构建AVL树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3构建AVL树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131rrll" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1RR/LL旋转
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132rllr" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2RL/LR旋转
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -975,9 +1198,96 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2 个字 </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1385 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
-<h1 id="欢迎">欢迎！</h1>
+<h1 id="欢迎">Chap 1 | “AVL Trees, Splay Trees,and Amortized</h1>
+
+<div class="admonition note">
+<p class="admonition-title">章节启示录</p>
+<p><!-- === "Tab 1" -->
+    <!-- Markdown **content**. -->
+<!-- === "Tab 2"
+    More Markdown **content**. -->
+本章节是ADS的第一章，第一节课就已经感受到这门课的不一般之处，许多内容需要课后花时间好好消化，仅仅依靠上课听讲是不够的（也可能是我听的不认真以及没什么算法基础的缘故🥺）。接下来进入正题！</p>
+</div>
+<h2 id="1avl">1.AVL树<a class="headerlink" href="#1avl" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1定义<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p>AVL树的定义其实可以这么理解：它是一个较为平衡的二叉搜索树。AVL树希望解决的问题是让搜索变得更加迅速 <strong><em>（Speed up searching (with insertion and deletion)）</em></strong>。因为在二叉搜索树中，可能会出现1~N这样Tree Height为N的极端坏情况。</p>
+</div>
+<h3 id="12">1.2性质<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<h4 id="121">1.2.1性质介绍<a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
+<div class="admonition note">
+<ul>
+<li>空二叉树是一个AVL树</li>
+<li>如果 T 是一棵 AVL 树，那么其左右子树也是 AVL 树，并且 <span class="arithmatex">\(\lvert h(ls) - h(rs)\rvert≤1\)</span>，h 是其左右子树的高度  </li>
+<li>树的高度为$O(logn) $</li>
+</ul>
+<div class="admonition note">
+<p>因此我们有了一个新的定义 <strong>平衡因子</strong>（The balance factor）<span class="arithmatex">\(BF=h(ls) - h(rs)\)</span>。<br />
+在一个AVL树中，<span class="arithmatex">\(BF=-1,0,1\)</span></p>
+</div>
+</div>
+<h4 id="122">1.2.2性质证明<a class="headerlink" href="#122" title="Permanent link">&para;</a></h4>
+<p>在实现构造AVL树前，我们先来分析并证明为什么AVL树的高度一定是<span class="arithmatex">\(O(logn)\)</span>。</p>
+<div class="admonition abstract">
+<p class="admonition-title"><span class="arithmatex">\(TreeHeight=O(logn)\)</span></p>
+<p>我们记<span class="arithmatex">\(n_h\)</span>是高度为<span class="arithmatex">\(h\)</span>的AVL树所包含的最少节点数，那么这个树一定长成这个样子:<br />
+<img alt="" src="../img/8.png" width="400" /></p>
+<div class="admonition danger">
+<p class="admonition-title">注意</p>
+<p>在讨论最少节点数时，A的左右子树的高度不可能相等，若相等的话，则应该为该高度的最多节点。</p>
+</div>
+<p>因此我们容易得到如下的递推关系式：<br />
+$$
+    n_h =
+    \begin{cases}
+        1  &amp;(h=0)\\
+        2  &amp;(h=1)\\
+        n_{h-1}+n_{h-2}+1 &amp;(h&gt;1)\\
+    \end{cases}
+$$
+这个形式与我们学过的斐波那契数列极其相似。</p>
+</div>
+<h3 id="13avl">1.3构建AVL树<a class="headerlink" href="#13avl" title="Permanent link">&para;</a></h3>
+<p>在一般的情况下，我们希望在建树的过程中直接构造出AVL树，而不是先构造出二叉搜索树再将其转换为AVL树，因此，我们需要在每一次添加节点（Insert node）后，使得新形成的树成为AVL时。当然，在此次插入前，我们构建的树必然也已经是一个AVL树，可以看到，这是一个迭代的问题。  </p>
+<p>在介绍如何构建AVL树前，我们需要首先知道两个概念。</p>
+<div class="admonition note">
+<ul>
+<li>Trouble Maker:当一个新插入的节点使得这棵新树不再是AVL树时，我们称它为Trouble Maker.</li>
+<li>Trouble Finder:当出现Trouble Maker时，不断地向上寻找，看看是第一个找到的BF值跳出-1，0，-1的是哪一位祖辈，那么称这个祖辈对应的节点为Trouble Finder.</li>
+</ul>
+</div>
+<p>当我们了解清楚一些前情提要后，接下来就可以进入本章节的正题了！</p>
+<div class="admonition abstract">
+<p class="admonition-title">实现方法：旋转(Rotation)</p>
+<p>旋转这个名字取得很有意思，接下来我会用比较多的篇幅介绍四种旋转的方式，一开始我觉得每一种旋转理解起来都不太容易，或者说都仿佛要记忆一样，但实际上“旋转”只是我们做的一个操作的形象的代名词（正如计算机中其他很多专业的术语一样，他们喜欢找一个生活中形象的例子来帮助人们理解）。但你可以简单地理解为，为了实现我们构造AVL树的目标，我们按照一些前任发现的特定的步骤，而这些步骤只要满足构造出来的新树仍然是二叉搜索树即可。听起来会有点抽象，下面我会具体来谈谈。</p>
+</div>
+<h4 id="131rrll">1.3.1<strong>RR/LL旋转</strong><a class="headerlink" href="#131rrll" title="Permanent link">&para;</a></h4>
+<div class="admonition tips">
+<p class="admonition-title">命名</p>
+<ul>
+<li>RR旋转的命名是因为：对于Trouble Finder来说，Trouble Maker在它的右孩子的右孩子上（或者右孩子的右孩子的子树上）。我们注意到：RR旋转实际上应该是向左旋转，即逆时针。</li>
+<li>LL旋转的命名是因为：对于Trouble Finder来说，Trouble Maker在它的左孩子的左孩子上（或者左孩子的左孩子的子树上）。我们注意到：LL旋转实际上应该是向右旋转，即顺时针。   <br />
+<strong>因此，我们可以简单的记忆：右逆左顺。</strong></li>
+</ul>
+</div>
+<p>以RR旋转为例进行说明，LL旋转为其镜像。 <br />
+<img alt="" src="../img/4.png" width="200" />
+<img alt="" src="../img/5.png" width="200" /><br />
+我们可以在脑海中想象一下，将左图整个逆时针旋转，然后为了仍然满足二叉搜索树成立的条件，我们需要将B的左子树BL移动到A的右侧。</p>
+<h4 id="132rllr">1.3.2<strong>RL/LR旋转</strong><a class="headerlink" href="#132rllr" title="Permanent link">&para;</a></h4>
+<div class="admonition tips">
+<p class="admonition-title">命名</p>
+<ul>
+<li>RL旋转的命名是因为：对于Trouble Finder来说，Trouble Maker在它的右孩子的左孩子上（或者右孩子的左孩子的子树上）。RL旋转实际上应该是<strong>从下到上</strong><strong>先</strong>向左旋转，<strong>再</strong>向右旋转。</li>
+<li>LL旋转的命名是因为：对于Trouble Finder来说，Trouble Maker在它的左孩子的右孩子上（或者左孩子的右孩子的子树上）。LR旋转实际上应该是<strong>从下到上</strong><strong>先</strong>向右旋转，<strong>再</strong>向左旋转。   </li>
+</ul>
+</div>
+<p>以RL旋转为例进行说明，LR旋转为其镜像。<br />
+<img alt="" src="../img/6.png" width="200" />
+<img alt="" src="../img/7.png" width="200" /><br />
+两次旋转的变化在脑海中有点难以想象，但稍微动一下笔，先向左进行旋转（将以B为根节点的子树做一遍RR旋转），再向右进行旋转（将以A为根节点的子树做一遍LL旋转）我们需要将B的左子树BL移动到A的右侧。</p>
 
 
 
@@ -1126,6 +1436,18 @@
       <script src="../../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   </body>
