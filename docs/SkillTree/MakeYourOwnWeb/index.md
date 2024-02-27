@@ -32,3 +32,14 @@ statistics: true
 ![](./img/1.png)
 ![](./img//2.png)
 然后打开github Desktop 克隆到本地
+![](./img/3.png)
+这时候如果你在仓库里新建一个文件index.html并输入以下代码：
+```html title="index.html"
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
+</body>
+</html>
+```
