@@ -40,6 +40,10 @@
 .md-typeset code:not(pre code) {
   font-size: inherit;
 }
+.md-typeset blockquote{
+  /* border: 0.025rem solid #17d630; */
+  
+}
 @media screen and (max-width: 59.9375em) {
   .md-nav__source {
     background-color: var(--md-primary-fg-color);
