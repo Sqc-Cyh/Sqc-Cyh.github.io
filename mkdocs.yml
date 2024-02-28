@@ -111,7 +111,7 @@ markdown_extensions:
   - pymdownx.highlight: # 代码块高亮
       anchor_linenums: true
       # linenums: true # 显示行号
-      auto_title: true # 显示编程语言名称
+      # auto_title: true # 显示编程语言名称
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
