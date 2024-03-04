@@ -112,11 +112,11 @@ body {
     --md-primary-fg-color--dark:  #21b5c0b7;
 
    --md-hue:#f4f7f7;
-  /* --md-default-fg-color:hsla(var(--md-hue),75%,95%,1); */
-  /* --md-default-fg-color--light:hsla(var(--md-hue),75%,90%,0.62); */
-  /* --md-default-fg-color--lighter:hsla(var(--md-hue),75%,90%,0.32); */
-  /* --md-default-fg-color--lightest:hsla(var(--md-hue),75%,90%,0.12); */
-  --md-default-bg-color:hsla(var(--md-hue),15%,21%,1);
+  /* --md-default-fg-color:hsla(var(--md-hue),75%,95%,1);
+  --md-default-fg-color--light:hsla(var(--md-hue),75%,90%,0.62);
+  --md-default-fg-color--lighter:hsla(var(--md-hue),75%,90%,0.32);
+  --md-default-fg-color--lightest:hsla(var(--md-hue),75%,90%,0.12); */
+  /* --md-default-bg-color:hsla(var(--md-hue),15%,21%,1); */
   --md-default-bg-color--light:hsla(var(--md-hue),15%,21%,0.54);
   --md-default-bg-color--lighter:hsla(var(--md-hue),15%,21%,0.26);
   --md-default-bg-color--lightest:hsla(var(--md-hue),15%,21%,0.07); 
