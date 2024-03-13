@@ -313,6 +313,26 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Poems/" class="md-tabs__link">
+          
+  
+    
+  
+  诗
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -836,7 +856,7 @@
         
   
   <span class="md-ellipsis">
-    Chap03
+    Chap 3 | “Inverted File Index”
   </span>
   
 
@@ -1173,6 +1193,90 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Poems/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    诗
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            诗
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风吹的夜
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1349,6 +1453,8 @@
 <div class="admonition note">
 <p>红黑树是一颗二叉搜索树，唯一的不同是，每个节点额外存储了一个 <span class="arithmatex">\(color\)</span> 字段（红/黑），用来确保树在插入和删除时保持平衡。（也就是说，红黑树通过增加每个节点的颜色字段为我们搜索数据提供的速度和时间上的便利。在学习后你会发现，这简单的红黑属性，竟能降低许多操作的时间复杂度）</p>
 </div>
+<hr>
+</hr>
 <h3 id="12">1.2性质<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <p>当然，我们不能只是简单地设定这样的一个颜色字段，它们需要满足如下的性质，才可称之为红黑树。  </p>
 <div class="admonition tips">
@@ -1404,6 +1510,8 @@
 有了这两个结论，我们就可以根据不等式的传递性得到结论3了。</p>
 </div>
 </div>
+<hr>
+</hr>
 <h3 id="13">1.3插入<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <p>下面将进入红黑树的重头戏之一：<strong>插入</strong>。<br />
 在具体介绍之前，我们先来想一想插入的基本逻辑是怎么样的。我们知道，插入后的黑高极有可能改变，导致原有的红黑性质遭到破坏，那么我们就需要想一种合理的办法，将这种破坏消除掉，就是使得插入并不影响黑高！而在红黑树中，红节点不会影响黑高，所以自然而然我们会想到，把插入的节点染成红色。那么接下来问题就来了，根据性质4，如果插入的节点的父亲也是一个红节点，就又破坏了红黑性质（若它的父亲是黑节点，那么皆大欢喜），所以我们接下来要做的，就是通过一些基本的变换，修复这棵被破坏的红黑树！  </p>
@@ -1492,6 +1600,8 @@
 </li>
 </ul>
 <p>其中，任何一个情况都可以作为一个初始情况。所以可以数出，到达 finish 的路径中，最多出现 2 次 Rotation（case 2 -&gt; case 3 -&gt; finish）。</p>
+<hr>
+</hr>
 <h3 id="14">1.4删除<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <p>下面将进入红黑树的重头戏之二：<strong>删除</strong>。 <br />
 同样地，我们先来想一下基本的逻辑。因为红黑树它首先是一棵二叉搜索树，因此它的删除和二叉搜索树的删除一样，首先需要分为度为0/度为1/度为2这三类。那么对于最简单的度为0这种情况（但其实在一会的讨论中你会发现度为1时是最简单的），我们要删除掉一个点，如果这个点是红色的，就不会影响黑高，但如果很不幸它是黑色的，我们就要做进一步的调整来恢复红黑性质。  </p>
@@ -1505,6 +1615,8 @@
 </div>
 <p>仅仅这么说一定是有些抽象的！但我们需要大概有一个概念，你可以先往下阅读，看看具体的实践是怎么做的，才回过头来看看我们的目标，或许就会恍然大悟了！<br />
 下面将先介绍度为0时我们应该如何做（相信看懂插入后，应该对红黑树的分类有了一定感觉，下面的分类会更加的详细！）。</p>
+<hr>
+</hr>
 <h4 id="1410">1.4.1度为0<a class="headerlink" href="#1410" title="Permanent link">&para;</a></h4>
 <div class="admonition tips">
 <p class="admonition-title">分类讨论</p>
@@ -1603,12 +1715,16 @@
 <ul>
 <li>总结一下，我们发现只有Case2.1和Case4可以解决问题。而Case1和Case2.2是将问题向上级推卸，也就是会改变 <span class="arithmatex">\(x\)</span> 的位置，而Case3是将问题推给Case4但 <span class="arithmatex">\(x\)</span> 的位置不发生改变。</li>
 </ul>
+<hr>
+</hr>
 <h4 id="1421">1.4.2度为1<a class="headerlink" href="#1421" title="Permanent link">&para;</a></h4>
 <p>度为1的情况是最简单的，为什么呢？还记得我们说过的<strong>结论2</strong>吗？（如果忘了请翻上去看看）  </p>
 <blockquote>
 <p>一个度为1的节点，它本身一定是黑色的，且它唯一的孩子一定是红色的。</p>
 </blockquote>
 <p>对于这种情况，我们只需要直接删除这个节点，然后把它的孩子放到它的位置，并把它的孩子从红色染成黑色即可！</p>
+<hr>
+</hr>
 <h4 id="1432">1.4.3度为2<a class="headerlink" href="#1432" title="Permanent link">&para;</a></h4>
 <p>对于度为2的情况，我们的核心思想是将其转换为度为1和度为0的情况进行处理。如何做呢？根据二叉搜索树删除度为2节点的方式，我们用右子树的最小值（或左子树的最大值）对其进行替换。<strong>注意：这里只替换值，并不替换红黑性</strong>。<br />
 我们知道右子树的最小值（或左子树的最大值）最多只有一个孩子，否则它就不会是右子树的最小值（或左子树的最大值），因此接下来我们只要对这个替换后的节点进行删除操作即可。问题转换成了度为0/度为1的情况。</p>
@@ -1663,6 +1779,8 @@ M 阶的 B+ 树是具有以下结构属性的树: </p>
 <p>尽管通过定义我们可以容易地得出一个节点最多存储 <span class="arithmatex">\(M\)</span> 个值,但实际上，<strong>非叶节点</strong>最多存储 <span class="arithmatex">\(M-1\)</span> 个值，因为若是一个非叶节点存储 <span class="arithmatex">\(M\)</span> 个值，它就能分出 <span class="arithmatex">\(M+1\)</span> 个区间，那么在插入的过程中就有可能出现 <span class="arithmatex">\(M+1\)</span> 个子树，这是与定义相悖的！</p>
 </div>
 </div>
+<hr>
+</hr>
 <h3 id="22findinsertdelete">2.2操作（Find、Insert、Delete）<a class="headerlink" href="#22findinsertdelete" title="Permanent link">&para;</a></h3>
 <div class="admonition tips">
 <p class="admonition-title">Find</p>
@@ -1737,6 +1855,8 @@ M 阶的 B+ 树是具有以下结构属性的树: </p>
 <li>具体的例子可以将<strong>插入</strong>中的Step2和Step3倒过来看</li>
 </ul>
 </div>
+<hr>
+</hr>
 
 
 

@@ -313,6 +313,26 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Poems/" class="md-tabs__link">
+          
+  
+    
+  
+  诗
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -826,9 +846,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="3.摊还分析(Amoritzed Analysis)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#31" class="md-nav__link">
     <span class="md-ellipsis">
       3.1 介绍
@@ -862,6 +883,11 @@
       3.1.3势能法(Potential method)
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -911,7 +937,7 @@
         
   
   <span class="md-ellipsis">
-    Chap03
+    Chap 3 | “Inverted File Index”
   </span>
   
 
@@ -1248,6 +1274,90 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Poems/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    诗
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            诗
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风吹的夜
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1420,9 +1530,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="3.摊还分析(Amoritzed Analysis)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#31" class="md-nav__link">
     <span class="md-ellipsis">
       3.1 介绍
@@ -1456,6 +1567,11 @@
       3.1.3势能法(Potential method)
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1500,6 +1616,8 @@
 <div class="admonition note">
 <p>AVL树的定义其实可以这么理解：它是一个较为平衡的二叉搜索树。AVL树希望解决的问题是让搜索变得更加迅速 <strong><em>（Speed up searching (with insertion and deletion)）</em></strong>。因为在二叉搜索树中，可能会出现1~N这样Tree Height为N的极端坏情况。</p>
 </div>
+<hr>
+</hr>
 <h3 id="12">1.2性质<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <h4 id="121">1.2.1性质介绍<a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
 <div class="admonition note">
@@ -1548,6 +1666,8 @@ $$
 n_h+1≈F_{h+3} \implies h=O(\ln n)
 $$</p>
 </div>
+<hr>
+</hr>
 <h3 id="13avl">1.3构建AVL树<a class="headerlink" href="#13avl" title="Permanent link">&para;</a></h3>
 <p>在一般的情况下，我们希望在建树的过程中直接构造出AVL树，而不是先构造出二叉搜索树再将其转换为AVL树，因此，我们需要在每一次添加节点（Insert node）后，使得新形成的树成为AVL时。当然，在此次插入前，我们构建的树必然也已经是一个AVL树，可以看到，这是一个迭代的问题。  </p>
 <p>在介绍如何构建AVL树前，我们需要首先知道两个概念。</p>
@@ -1606,8 +1726,12 @@ $$</p>
 <li>伸展树的目标是解决AVL树中过度严格的问题，它并不希望每次都对BF或者Height做检查，但它也不能太放松，它需要保证从空树开始任意连续M次对树的操作最多花费<span class="arithmatex">\(O(M\log N)\)</span>时间。</li>
 <li>虽然这样并不排除任意 <strong><em>一次</em></strong> 操作花费<span class="arithmatex">\(O(N)\)</span>时间的可能，而且这样的界也不如每次操作最坏情形的界<span class="arithmatex">\(O(\log N)\)</span>那么短，但实际效果是一样的。于是，我们可以把伸展树花费的总时间<span class="arithmatex">\(O(M\log N)\)</span> <strong><em>摊还</em></strong> 到每次操作中，即每次操作的摊还代价是<span class="arithmatex">\(O(\log N)\)</span>。</li>
 </ul>
+<hr>
+</hr>
 <h3 id="12_1">1.2分析<a class="headerlink" href="#12_1" title="Permanent link">&para;</a></h3>
 <p>我们知道，最坏情形的运行时间是<span class="arithmatex">\(O(N)\)</span>，如果不对这个节点进行一些处理，那么在接下来再次遇到它时（即这个运行时间为<span class="arithmatex">\(O(N)\)</span>的节点再次成为了Trouble Finder），我们仍然需要花费<span class="arithmatex">\(O(N)\)</span>的时间，这是我们不希望看到的。因此，我们需要对这个节点做<strong>移动</strong>的处理。而对其移动还有一些可能存在的实际效用，因为在许多应用中当一个节点被访问时，它就很可能不久再被访问到。</p>
+<hr>
+</hr>
 <h3 id="13">1.3实现<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
 <p>由以上的分析可以得出，Splay 树的核心思想就是，每当我们访问一个节点（比如查询某个点、插入某个点，甚至是删除某个点），我们就通过一系列操作将目标点转移到根部，形象上理解就是不断旋转整个树的构造，直到把点转到根部。</p>
 <div class="admonition note">
@@ -1655,6 +1779,8 @@ $$</p>
 </blockquote>
 <p>至此，我们给出了完整的解决方法！</p>
 </div>
+<hr>
+</hr>
 <h3 id="14">1.4一些基本操作<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title">Find X</p>
@@ -1670,7 +1796,7 @@ $$</p>
 </div>
 <p>AVL一定是Splay</p>
 <h2 id="3amoritzed-analysis">3.摊还分析(Amoritzed Analysis)<a class="headerlink" href="#3amoritzed-analysis" title="Permanent link">&para;</a></h2>
-<h2 id="31">3.1 介绍<a class="headerlink" href="#31" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 介绍<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
 <div class="admonition question">
 <p class="admonition-title">一家之言</p>
 <p>说实话，由于作者本人也是第一次接触到这个概念，下面给出的将是一些浅薄甚至不敢保证正确的理解，希望之后水平提高后还记得回来看看现在写的是否正确，如果这段话还在说明还是最初的版本🥺。</p>
@@ -1682,7 +1808,9 @@ worst-case\;\;  bound ≥ amortized\;\; bound ≥ average-case\;\;  bound
 $$
 <strong>这里引用了修佬的一段话：</strong>我们知道，由于 amortized bound 限制了所有的 M 次操作，所以其上界就等于最差的情况发生 M 次（当然，很多情况下不一定能取到全都是最差情况）；同样的，由于需要对任意组合都成立，所以一定不会小于统计学意义上的平均情况。</p>
 <p>常见的摊还分析的方法有三种：聚合分析(Aggregate analysis)、核算法(Accounting method)、势能法(Potential method)。接下来我们将一一介绍。</p>
-<h3 id="311aggregate-analysis">3.1.1聚合分析(Aggregate analysis)<a class="headerlink" href="#311aggregate-analysis" title="Permanent link">&para;</a></h3>
+<hr>
+</hr>
+<h4 id="311aggregate-analysis">3.1.1聚合分析(Aggregate analysis)<a class="headerlink" href="#311aggregate-analysis" title="Permanent link">&para;</a></h4>
 <p>我们证明对所有<span class="arithmatex">\(n\)</span>，一个<span class="arithmatex">\(n\)</span>个操作的序列<strong>最坏情况</strong>下花费的总时间为<span class="arithmatex">\(T(n)\)</span>，因此，在最坏情况下，每个操作的平均代价，或<strong>摊还代价</strong>为<span class="arithmatex">\(T(n)/n\)</span>。</p>
 <div class="admonition example">
 <p class="admonition-title">举个栗子🌰：栈操作</p>
@@ -1704,7 +1832,9 @@ $$
 在一个包含<span class="arithmatex">\(k\)</span>个对象的栈上执行MultiPop(k,S)操作。我们知道<span class="arithmatex">\(\;sizeof(S)≤n\;\)</span>似乎随便想想的话，是很有可能到达n的，那么序列中一个MultiPop操作的最坏情况代价就是<span class="arithmatex">\(O(n)\)</span>了，因为栈的大小最大为<span class="arithmatex">\(n\)</span>。因此，一个<span class="arithmatex">\(n\)</span>个操作的序列的最坏情况代价就是<span class="arithmatex">\(O(n^2)\)</span>了。<strong>但要注意的是，我们通过单独分析每个操作的最坏情况代价得到的操作序列的最坏情况时间并不是一个确界！</strong></p>
 <p>实际上，虽然一个单独的MultiPop操作可能代价很高，但在一个空栈上执行<span class="arithmatex">\(n\)</span>个Push,Pop和MultiPop的操作序列，代价至多是<span class="arithmatex">\(O(n)\)</span>。因为很直观的来说，当一个对象压入栈后，我们至多将其弹出一次！因此，一个操作的平均时间就是<span class="arithmatex">\(O(n)/n=O(1)\)</span>。</p>
 </div>
-<h3 id="312accounting-method">3.1.2核算法(Accounting method)<a class="headerlink" href="#312accounting-method" title="Permanent link">&para;</a></h3>
+<hr>
+</hr>
+<h4 id="312accounting-method">3.1.2核算法(Accounting method)<a class="headerlink" href="#312accounting-method" title="Permanent link">&para;</a></h4>
 <p>我们对不同操作赋予不同费用，赋予某些操作的费用可能多于或少于其实际代价。我们将这个赋予的费用称为<strong>摊还代价</strong>。当一个操作的摊还代价超出其实际代价时，我们将差额存入数据结构中的特定对象，存入的差额称为<strong>信用(Credit)</strong>。信用（Credit）有什么用呢？当我们在后续操作中遇到摊还代价小于实际代价的情况时，信用可以用来支付差额。</p>
 <div class="admonition example">
 <p class="admonition-title">举个栗子🌰：</p>
@@ -1721,7 +1851,9 @@ $$
 \sum_{i=1}^n \hat{c_i} ≥ \sum_{i=1}^n c_i
 $$</li>
 </ul>
-<h3 id="313potential-method">3.1.3势能法(Potential method)<a class="headerlink" href="#313potential-method" title="Permanent link">&para;</a></h3>
+<hr>
+</hr>
+<h4 id="313potential-method">3.1.3势能法(Potential method)<a class="headerlink" href="#313potential-method" title="Permanent link">&para;</a></h4>
 <p>在核算法中，我们将预付代价表示为数据结构中特定对象的信用，但我们同样可以换一种表示方法，将预付代价表示为“势能”。注意，此时我们将势能<strong>与整个数据结构相关联</strong>，而不是特定的对象。</p>
 <div class="admonition note">
 <p class="admonition-title">工作方式</p>
