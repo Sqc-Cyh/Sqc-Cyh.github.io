@@ -70,6 +70,9 @@ nav:
       - SkillTree/MakeYourOwnWeb/index.md
     - "⭐MarkDown语法教程":
       - SkillTree/MarkDown/index.md
+  - "诗":
+    - "Poems/index.md"
+    - "Poems/风吹的夜.md"
 extra:
   # generator: false
   social:
