@@ -27,6 +27,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files. -->
+<meta name="google-site-verification" content="aRQ99cP_tEGqXSc1a0A-wFHPUuOwJVag2pZ5BN5BIeI" />
 <link rel="stylesheet" href="stylesheets/extra.css">
 <div class="extra3">
     <h1 class="heading-1">Home</h1>
