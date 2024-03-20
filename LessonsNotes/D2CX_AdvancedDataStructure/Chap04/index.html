@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap04 - 时清川的个人主页</title>
+        <title>Chap 4 | “Leftist Heaps and Skew Heaps” - 时清川的个人主页</title>
       
     
     
@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -117,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap04
+              Chap 4 | “Leftist Heaps and Skew Heaps”
             
           </span>
         </div>
@@ -768,15 +773,109 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 4 | “Leftist Heaps and Skew Heaps”
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Chap04
+    Chap 4 | “Leftist Heaps and Skew Heaps”
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.左式堆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.左式堆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2插入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.斜堆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.斜堆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1定义与插入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2斜堆的摊还分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1191,6 +1290,80 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.左式堆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.左式堆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2插入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.斜堆
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.斜堆">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1定义与插入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2斜堆的摊还分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1207,11 +1380,240 @@
   
 
 
-  <h1>Chap04</h1>
-
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 0 个字 </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2357 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 24 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 12 分钟</p>
 </div>
+<h1 id="欢迎">Chap 4 | “Leftist Heaps and Skew Heaps”</h1>
+<div class="admonition note">
+<p class="admonition-title">章节启示录</p>
+<p>本章介绍了左式堆和斜堆，难度上不算太大，要注意区分左式堆和斜堆的实现以及变换过程，还有就是要小心NPL的大小的计算，这个会在后续具体讨论中出现，请见下文。</p>
+</div>
+<h2 id="1">1.左式堆<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>与前面红黑树以及AVL树不同的是，我们此处不先介绍定义，因为定义中有一些概念需要提前说清楚，我们从为什么要发明左式堆说起，或者说左式堆的目标是什么。</p>
+<div class="admonition abstract">
+<p class="admonition-title">Target</p>
+<p><strong>Speed up merging in O(N).即加速merge操作，使其时间复杂度降为 <span class="arithmatex">\(O(N)\)</span> 。</strong><br />
+那么，这个目标是怎么来的呢？我们来思考这样一个问题：如果我们只使用原始堆结构，可以以多快的速度合并两个堆？</p>
+<ul>
+<li>1.我们可以将较小堆（M个）的元素一一插入到较大堆（N个）中，这样产生的复杂度为 <span class="arithmatex">\(O(MlogN)\)</span> 。注意，实际上要大于 <span class="arithmatex">\(O(MlogN)\)</span> ，因为随着插入，<span class="arithmatex">\(N\)</span>会随之增大。</li>
+<li>2.我们可以将两个堆的元素全都取出然后重新建堆，这样的时间复杂度与建堆的时间复杂度一样，为 <span class="arithmatex">\(O(M+N)\)</span>。但这样会带来一些额外的空间开销，面对大数据时或许不是一个较好的选择。</li>
+</ul>
+</div>
+<h3 id="11">1.1定义<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>1.null path length（Npl）：任何节点 <span class="arithmatex">\(X\)</span> 的空路径长度 Npl（<span class="arithmatex">\(X\)</span>） 是从 <span class="arithmatex">\(X\)</span> 到没有两个孩子的节点的最短路径的长度。<br />
+<strong>note</strong>：<span class="arithmatex">\(Npl(X) = min \{Npl(C)+1 \  for \ all \  C \ as \ children \ of \  X\}\)</span>。</li>
+<li>2.左式堆：对于堆中的每个节点 X，左子节点的 null 路径长度至少与右子节点的 null 路径长度一样大。即对任何一个节点，它的左孩子的Npl值都要大于等于右孩子的Npl的值。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">两个例子🌰</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Example1</label><label for="__tabbed_1_2">Example2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">题面</label><label for="__tabbed_2_2">答案</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../img/85.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../img/84.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">题面</label><label for="__tabbed_3_2">答案</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../img/87.png" /></p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../img/86.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">一个结论📜</p>
+<p><strong>在右路径上有 r 个节点的左式堆必须至少有 2r – 1 个节点。</strong>  </p>
+</div>
+<hr>
+</hr>
+<h3 id="12">1.2插入<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<p>我们可以借此思考一个问题，左式堆的右树较少，为 <span class="arithmatex">\(O(logN)\)</span> 级别，这对我们实现“插入/融合”操作有什么好处呢？我们可以这样去想，如果我们将较小堆Merge到较大堆的右树上，时间复杂度一下就降下去了，因为节点数是 <span class="arithmatex">\(O(logN)\)</span> 级别的，之后若是不经意间破坏了左堆的性质，我们只需要做一次左右子树的交换即可。这是我们大致的想法。</p>
+<div class="admonition tips">
+<p class="admonition-title">插入过程</p>
+<p>我们直接通过一个具体的例子来看一看。（我的建议是可以先看迭代版本，可以先有一个直观的理解，同样地做题也更加方便）  </p>
+<p><img alt="" src="../img/88.png" width="300" />
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img alt="" src="../img/92.png" width="300" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">递归版本</label><label for="__tabbed_4_2">迭代版本</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>递归版本在程序上较好实现，但理解起来可能有些困难，不算太直观，但逻辑是清晰的。这个版本因为老师上课也没有给出动画形式，而作者最近事情有点多，没时间做动画了，大家可以看一下修佬做的步骤，非常的清晰和详细。<br />
+<a href="https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/Lec04/#%E9%80%92%E5%BD%92%E5%BC%8F">（附一个链接）</a></p>
+<ul>
+<li><strong>Step1</strong>:将 <span class="arithmatex">\(H1\)</span> 的右子树与 <span class="arithmatex">\(H2\)</span> 融合，这个融合的函数实际上是一个递归的函数，并不是一步实现的，是一步一步推下去的。</li>
+</ul>
+<p><img alt="" src="../img/89.png" />  </p>
+<ul>
+<li><strong>Step2</strong>:这只是一步简单的连接操作了，将Merge过的右子树重新连回原来的树中。    </li>
+</ul>
+<p><img alt="" src="../img/90.png" /> </p>
+<ul>
+<li><strong>Step3</strong>:如果不满足左式堆的性质（比如Step2的结果），我们就对左右两棵子树做一个交换。因为左边的树我们没有动过，而右边的树我们在递归的过程中保证了它是一个左式堆，即所有节点的左孩子的Npl值都大于等于右孩子的Npl值，因此交换后将满足左式堆的性质。  </li>
+</ul>
+<p><img alt="" src="../img/91.png" />  </p>
+<ul>
+<li>代码实现：
+这里的递归与传统意义上单个函数的递归并不一样，它采用了两个函数进行交叉递归的方式。<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w">   </span><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">     </span><span class="n">Element</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">PriorityQueue</span><span class="w">   </span><span class="n">Left</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">PriorityQueue</span><span class="w">   </span><span class="n">Right</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">Npl</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span><span class="w"> </span><span class="p">;</span><span class="cm">/*结构体定义*/</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">PriorityQueue</span><span class="w">  </span><span class="nf">Merge</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">){</span><span class="w"> </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">H2</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">H2</span><span class="p">,</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">static</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="nf">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">){</span><span class="w"> </span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w">     </span><span class="cm">/* single node */</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H2</span><span class="p">;</span><span class="w">  </span><span class="cm">/* H1-&gt;Right is already NULL </span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="cm">                    and H1-&gt;Npl is already 0 */</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="p">,</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">);</span><span class="w">     </span><span class="cm">/* Step 1 &amp; 2 */</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="n">SwapChildren</span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* Step 3 */</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end else */</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">}</span>
+</code></pre></div></li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li><strong>Step1</strong>首先比较两棵树根节点的大小，将根节点较大的树插入到另一棵树中。所有树的左子树都不管，只对右子树进行排序。  </li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Step1.1</label><label for="__tabbed_5_2">Step1.2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="" src="../img/94.png" width="300" />  </p>
+</div>
+<div class="tabbed-block">
+<p><img alt="" src="../img/95.png" width="300" /> </p>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>Step2</strong> 如果一棵树的左子树和右子树不满足左式堆的性质，则对它们进行一次交换。</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Step2.1</label><label for="__tabbed_6_2">Step2.2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>如图，在目前的结果中，节点 <span class="arithmatex">\(3\)</span> 和 <span class="arithmatex">\(7\)</span> 不满足要求，那么我们就需要将它们的孩子进行左右交换，当然先换 <span class="arithmatex">\(3\)</span> 还是先换 <span class="arithmatex">\(7\)</span> 并不影响最终的结果。 </p>
+<p><img alt="" src="../img/96.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>圆满完成！  </p>
+<p><img alt="" src="../img/97.png" /></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition tips">
+<p class="admonition-title">DeleteMin</p>
+<ul>
+<li><strong>Step1</strong>:Delete the root</li>
+<li><strong>Step2</strong>:Merge the two subtrees<br />
+<span class="arithmatex">\(T_p=O(logN)\)</span></li>
+</ul>
+</div>
+<h2 id="2">2.斜堆<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1定义与插入<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>同样地，我们来看一下创建斜堆的目标是什么。在左式堆中，我们需要自下而上地维护Npl的值，几乎每做一次Merge我都需要进行更新，就像AVL树我们需要更新BF值一样。在Chap01中，我们学习了Splay Tree作为AVL Tree的放松版本，而在本章中，斜堆则是一个比左式堆更一般的数据结构，尽管它丧失了左式堆严格的性质，但换来了便捷性。<br />
+同时，在斜堆中，我们实现这样一个目标：<strong>任何 <span class="arithmatex">\(M\)</span> 个连续操作最多需要 <span class="arithmatex">\(O(MlogN)\)</span> 时间。</strong> </p>
+<div class="admonition tips">
+<p class="admonition-title">斜堆的Merge</p>
+<p>插入后（前）始终交换左边和右边的子节点，但右边路径上所有节点中最大的节点没有交换其子节点。（到底是在插入前还是插入后进行交换，这并不影响最后的结果，看你如何理解，我们通过一个例子更加直观地感受一下）</p>
+<ul>
+<li>例子：注意到这里 <span class="arithmatex">\(H2\)</span> 的根节点值较大，因此我们需要将 <span class="arithmatex">\(H2\)</span> 插入到 <span class="arithmatex">\(H1\)</span> 中。按照之前左式堆的插入方式，我们将 <span class="arithmatex">\(H2\)</span> 插入到右边，同时进行排序，并把其左子树原封不动的带回来。但区别是，我们现在并不等待所有插入都结束再进行判断是否交换，<strong>我们每一次插入都需要进行交换</strong>！</li>
+</ul>
+<p><img alt="" src="../img/98.png" width="300" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:4"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><input id="__tabbed_7_4" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Step1</label><label for="__tabbed_7_2">Step2</label><label for="__tabbed_7_3">Step3</label><label for="__tabbed_7_4">Step4</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>既然每一次插入都需要交换，我们这里就以插入前交换为例，将 <span class="arithmatex">\(H1\)</span> 的左右子树交换。当然，这里因为节点 <span class="arithmatex">\(8\)</span> 比 <span class="arithmatex">\(H2\)</span> 的根节点 <span class="arithmatex">\(6\)</span> 要小，所以需要给节点 <span class="arithmatex">\(6\)</span> 让位。注意到，原本 <span class="arithmatex">\(6\)</span> 的左子树已经变成了右子树，我们这里已经提前为下一次插入做好了交换。  </p>
+<p><img alt="" src="../img/99.png" />
+<img alt="" src="../img/100.png" width="270" /></p>
+</div>
+<div class="tabbed-block">
+<p>接下来我们原本的节点 <span class="arithmatex">\(8\)</span> 依旧需要给节点 <span class="arithmatex">\(7\)</span> 让位。随后我们做了一次交换，将 <span class="arithmatex">\(7\)</span> 的左孩子放到了右孩子的位置，为下一步插入做准备。</p>
+<p><img alt="" src="../img/101.png" width="270" /></p>
+</div>
+<div class="tabbed-block">
+<p>接下来我们原本的节点 <span class="arithmatex">\(8\)</span> 插入到对应的位置上，同时再做一次交换！  </p>
+<p><img alt="" src="../img/102.png" width="270" /></p>
+</div>
+<div class="tabbed-block">
+<p>然后我们将由 <span class="arithmatex">\(7\)</span> 交换得来的（Step2）最开始属于 <span class="arithmatex">\(7\)</span> 的右孩子（后由交换变成了 <span class="arithmatex">\(7\)</span> 的左孩子，但因为比 <span class="arithmatex">\(8\)</span> 大，所以它还在排队）的 <span class="arithmatex">\(18\)</span> 放入到空的位置，然后就大功告成了！  </p>
+<p><img alt="" src="../img/103.png" width="270" /></p>
+</div>
+</div>
+</div>
+</div>
+<p>自然地，我们可以想到斜堆的插入就是把那个要插入的节点看成另外一个斜堆，然后两个斜堆做Merge即可。</p>
+<ul>
+<li>总结一下，斜堆的优点是不需要额外的空间来保持路径长度，并且不需要通过测试来确定何时交换子树。</li>
+</ul>
+<hr>
+</hr>
+<h3 id="22">2.2斜堆的摊还分析<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>还记得我们斜堆的目标吗？</p>
+<blockquote>
+<p><strong>任何 <span class="arithmatex">\(M\)</span> 个连续操作最多需要 <span class="arithmatex">\(O(MlogN)\)</span> 时间。</strong>   </p>
+</blockquote>
+<p>此处，我们先给出结论：<span class="arithmatex">\(T_{amortized}=O(logN)\)</span>
+我们下面将使用<strong>势能法</strong>进行分析，在势能法中，较难的是选择一个合适的势能函数。  </p>
+<div class="admonition abstract">
+<p class="admonition-title">势能函数</p>
+<p><span class="arithmatex">\(\Phi(D_i)=number \ of \ heavy \ nodes\)</span> </p>
+<ul>
+<li>heavy nodes:  如果 <span class="arithmatex">\(p\)</span> 的右子树的节点数至少是 <span class="arithmatex">\(p\)</span> 节点数的一半，则节点 <span class="arithmatex">\(p\)</span> 为heavy node。注意，节点数包括节点本身。简单来说，右子树节点数多于左子树的为heavy node，少于或等于左子树的为light node。</li>
+</ul>
+<p>根据heavy node的定义，我们有以下三个性质： </p>
+<ul>
+<li>1.如果一个节点是 heavy node，并且在其右子树发生了合并（包括翻转），那么它<strong>一定</strong>变为一个 light node；  </li>
+<li>2.如果一个节点是 light node，并且在其右子树发生了合并（包括翻转），那么它<strong>可能</strong>变为一个 heavy node；
+这里的<strong>可能</strong>将会使得下面的分析中出现不等式（式3）。  </li>
+<li>3.合并过程中，如果一个节点的 heavy/light 发生变化，那么它<strong>原先</strong>一定在堆的最右侧路径上；</li>
+</ul>
+</div>
+<p>下列式子中：<span class="arithmatex">\(l_i\)</span>为light节点数，<span class="arithmatex">\(h_i\)</span>为heavy节点数。由此可以得到最差的情况为左右的轻重节点全部交换。<span class="arithmatex">\(h\)</span> 为非右路径上的heavy node（不会发生改变）。
+$$
+H_i=l_i+h_i \Longrightarrow T_{worst}=l_1+h_1+l_2+h_2 
+$$</p>
+<div class="arithmatex">\[
+Before\  merge: \Phi_i=h_1+h_2+h
+\]</div>
+<div class="arithmatex">\[
+After\  merge: \Phi_{i+1}≤l_1+l_2+h
+\]</div>
+<div class="arithmatex">\[
+T_{amortized}=T_{worst}+\Phi_{i+1}-\Phi_{i}≤2（l_1+l_2）
+\]</div>
+<p>而我们知道 <span class="arithmatex">\(l=O(logN)\)</span> ，所以<span class="arithmatex">\(T_{amortized}=O(logN)\)</span></p>
+<hr>
+</hr>
 
 
 
@@ -1219,10 +1621,66 @@
 
 
 
+  
+  
 
 
 
 
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+  data-repo="sqc-cyh/MyWeb-discussion"
+  data-repo-id="R_kgDOLX74Ng"
+  data-category="General"
+  data-category-id="DIC_kwDOLX74Ns4Cdg_o"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
 
                 
               </article>
