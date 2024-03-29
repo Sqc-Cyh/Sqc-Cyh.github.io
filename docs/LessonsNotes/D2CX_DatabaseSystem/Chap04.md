@@ -174,3 +174,262 @@ CREATE TRIGGER overdraft-trigger after update on account
 
 ![](./img/52.png)
 
+### 3.1 GRANT
+GRANT command:  
+```SQL
+GRANT <privilege list> ON <table | view> 
+TO <user list> 
+```
+
+* <privilege list\>:操作  
+* <user list\>：  
+  user-ids  
+  public：允许所有有效用户授予权限  
+  A role:（稍后会详细介绍）
+
+>e.g:  
+允许被授予权限的用户将权限传递给其他用户。
+```SQL
+grant select on branch to U1 with grant option; 
+      gives U1 the select privileges on branch and 
+      allows U1 to grant this privilege to others. 
+
+```
+
+!!! abstract "Roles"
+    通过创建相应的“角色”，可以只指定一类用户具有通用权限的角色。
+    ```SQL
+    Create role teller; 
+    Create role manager; 
+    Grant select on branch to teller; 
+    Grant update (balance) on account to teller; 
+    Grant all privileges on account to manager; 
+        Grant teller to manager; 
+        Grant teller to alice, bob; 
+        Grant manager to avi; 
+    
+    ```
+
+### 3.2 Revoking Authorization 
+Revoke 语句用于撤销授权。  
+Revoke command:  
+```SQL
+REVOKE <privilege list> ON <table | view> 
+FROM <user list> [restrict | cascade] 
+```
+撤销用户的权限可能会导致其他用户也失去该权限，这称为撤销级联（**cascade**）。
+>e.g:  
+Revoke select on branch from U1, U3 cascade; 
+
+### 3.3 Audit
+审计跟踪是对数据库的所有更改（插入/删除/更新）的日志。  
+Audit command: 
+
+```SQL
+/*语句审计：*/
+AUDIT <st-opt> [BY <users>] [BY SESSION | ACCESS]
+[WHENEVER SUCCESSFUL | WHENEVER NOT SUCCESSFUL] 
+```
+
+* 当 BY <users\> 缺省，对所有用户审计。 
+* BY SESSION每次会话期间，相同类型的需审计的SQL语句仅记录一次。 
+* 常用的<st-opt\>：table, view, role, index, … 
+* 取消审计：NOAUDIT …(其余同audit语句)。 
+
+
+>e.g:  
+审计用户scott每次成功地执行有关table的语句 (create table, drop table, alter table)。   
+```SQL
+audit table by scott by access whenever successful
+```
+
+```SQL
+/*对象（实体）审计*/ 
+AUDIT <obj-opt> ON <obj> | DEFAULT [BY SESSION | BY ACCESS]  
+[WHENEVER SUCCESSFUL | WHENEVER NOT SUCCESSFUL] 
+```
+
+* 实体审计对所有的用户起作用。 
+* ON <obj\> 指出审计对象表、视图名。 
+* ON DEFAULT 对其后创建的所有对象起作用。 
+* 取消审计：NOAUDIT … 
+
+>e.g:  
+审计所有用户对student表的delete和update操作。   
+```SQL
+audit delete, update on student 
+```
+
+!!! question "怎么看审计结果？"
+
+    * 审计结果记录在数据字典表: sys.aud$中，也可从dba_audit_trail, dba_audit_statement, dba_audit_object中获得有关情况。 
+    * 上述数据字典表需在DBA用户（system）下才可见。 
+
+## 4.Embedded SQL 
+SQL功能不完备（计算，资源...），因此 SQL 标准定义了各种编程语言（如 Pascal、PL/I、Fortran、C 和 Cobol）的 SQL 嵌入。  
+嵌入 SQL 查询的语言称为宿主语言，主机语言中允许的 SQL 结构包括嵌入式 SQL。  
+`EXEC SQL` 语句用于识别对预处理器的嵌入式 SQL 请求：`EXEC SQL <嵌入式 SQL 语句> END_EXEC`注意：这因语言而异，例如，Java 嵌入使用 `# SQL { .... }`
+
+### 4.1 Query
+* 单行查询：  
+```SQL 
+EXEC SQL BEGIN DECLARE SECTION; 
+char V_an[20], bn[20]; 
+float  bal; 
+EXEC SQL END DECLARE SECTION; 
+……. 
+scanf(“%s”, V_an);   /*读入账号,然后据此在下面的语句获得bn, bal的值*/ 
+EXEC SQL SELECT branch_name, balance INTO :bn, :bal FROM 
+account WHERE account_number = :V_an; 
+END_EXEC
+printf(“%s, %s, %s”, V_an, bn, bal); 
+……. 
+```
+!!! warning "变量的使用"
+    :V_an, :bn, :bal是宿主变量，可在宿主语言程序中赋值，从而将值带入SQL。宿主变量在宿主语言中使用时不加:号。
+
+* 多行查询
+
+!!! example "一个例子🌰"  
+    在宿主语言中，查找某个帐户中超过可变金额美元的客户的姓名和城市。
+
+    * Step1:在 SQL 中指定查询并为其声明游标(CURSOR)
+    ```SQL
+    EXEC SQL 
+    DECLARE c CURSOR FOR 
+    SELECT customer_name, customer_city 
+    FROM depositor D, customer B, account A 
+    WHERE D.customer_name = B.customer_name 
+        and D.account_number = A.account_number 
+        and A.balance > :v_amount 
+    END_EXEC  
+    ```
+
+    * Step2:OPEN 语句使查询被计算
+    ```SQL
+    EXEC SQL OPEN c END_EXEC 
+    ```
+
+    * Step3:FETCH 语句将查询结果中的一个元组的值放在宿主语言变量上。  
+    ```SQL
+    EXEC SQL FETCH c INTO :cn, :ccity END_EXEC 
+    ```
+    重复调用以提取查询结果中的连续元组。
+
+    * Step4:CLOSE 语句使数据库系统删除保存查询结果的临时关系。  
+    ```SQL
+    EXEC SQL CLOSE c END_EXEC 
+    ```
+
+    上述细节因语言而异，例如，Java 嵌入定义了 Java 迭代器来单步执行结果元组。
+
+### 4.2 Updates
+* 单行修改:
+```SQL
+Exec SQL BEGIN DECLARE SECTION; 
+    char an[20]; 
+    float bal; 
+Exec SQL END DECLARE SECTION; 
+…… 
+scanf(“%s, %d”, an, &bal);   /* 读入账号及要增加的存款额*/
+EXEC SQL update account set balance = balance + :bal 
+    where account_number = :an; 
+…… 
+```
+
+* 多行修改：
+可以通过声明游标来更新元组。  
+```SQL
+Exec SQL BEGIN DECLARE SECTION;  
+    char an[20]; 
+    float bal; 
+Exec SQL END DECLARE SECTION; 
+EXEC SQL DECLARE csr CURSOR FOR 
+    SELECT * 
+    FROM account 
+    WHERE branch_name = ‘Perryridge’ 
+    FOR UPDATE OF balance; 
+…… 
+EXEC  SQL OPEN csr; 
+While (1) { 
+    EXEC SQL FETCH csr INTO :an, :bn, :bal; 
+        if (sqlca.sqlcode <> SUCCESS) BREAK; 
+          ……   /* 由宿主语句对an, bn, bal中的数据进行相关处理(如打印) */
+        EXEC SQL update account 
+        set balance = balance + 100 
+        where CURRENT OF csr; 
+    } 
+…… 
+EXEC SQL CLOSE csr; 
+…… 
+```
+
+## 5.Dynamic SQL
+允许程序在运行时构造和提交 SQL 查询。  
+```SQL
+char *sqlprog = “update account 
+                set balance = balance * 1.05 
+                where account_number = ?” 
+EXEC SQL PREPARE dynprog  FROM :sqlprog; 
+char v_account [10] = “A_101”; 
+……
+```
+动态 SQL 程序包含一个 ？，它是执行 SQL 程序时由 'using' 变量提供的值的占位符。
+
+## 6.ODBC and JDBC
+### 6.1 ODBC
+ODBC提供了一个公共的、与具体数据库无关的应用程序设计接口API 。它为开发者提供单一的编程接口，这样同一个应用程序就可以访问不同的数据库服务器。 
+![](./img/53.png)
+
+* ODBC编程基本流程:  
+
+![](./img/54.png)
+
+!!! example "一个例子🌰"
+```SQL
+int ODBCexample()   // 程序结构 
+{ 
+    RETCODE error; 
+    HENV env;   /* environment */ 
+    HDBC conn;   /* database connection */ 
+    SQLAllocEnv(&env); 
+    SQLAllocConnect(env, &conn);   /* 建立连接句柄 */ 
+    SQLConnect (conn, “MySQLServer”, SQL_NTS, “user”, SQL_NTS, “password”, SQL_NTS);  /* 建立用户user与数据源的连接，  SQL_NTS表示前 一参量以null结尾 */ 
+    { …. Main body of program … }   /* 细节在下方 */ 
+    SQLDisconnect(conn); 
+    SQLFreeConnect(conn); 
+    SQLFreeEnv(env); 
+}
+
+/*Main body of program*/ 
+ …… 
+{char branchname[80]; 
+float balance; 
+int lenOut1, lenOut2; 
+HSTMT stmt; 
+    SQLAllocStmt(conn, &stmt);   /* 为该连接建立数据区，将来存放查询结果 */ 
+char * sqlquery = “select branch_name, sum (balance) from account 
+                group by branch_name”;   /* 装配SQL语句 */ 
+error = SQLExecDirect(stmt, sqlquery, SQL_NTS); /* 执行sql语句,查询结果存放到数据区stmt ，同时sql语句执行状态的返回值送变量error*/ 
+```
+
+### 6.2 JDBC
+JDBC 是一个 Java API，用于与支持 SQL 的数据库系统进行通信。
+```SQL
+public static void JDBCexample(String dbid, String userid, String passwd) 
+{ 
+    try { 
+          Class.forName ("oracle.jdbc.driver.OracleDriver"); 
+          Connection conn = DriverManager.getConnection 
+                    ("jdbc:oracle:thin:@aura.bell_labs.com:2000:bankdb", userid, passwd); 
+          Statement stmt = conn.createStatement(); 
+                … Do Actual Work …. 
+          stmt.close(); 
+          conn.close(); 
+          } 
+     catch (SQLException sqle) { 
+          System.out.println("SQLException : " + sqle); 
+                        } 
+} 
+
+```
