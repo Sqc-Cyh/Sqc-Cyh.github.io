@@ -65,6 +65,8 @@ nav:
       - LessonsNotes/D2CX_AdvancedDataStructure/Chap06.md
       # - 第一章: lessons/高级数据结构与算法分析.md
       # - 第二章: lessons/高级数据结构与算法分析.md
+    - "⭐信息安全原理":
+      - LessonsNotes/D2CX_Xinanyuan/note.md
   - 科研相关:
     - 好玩2: home/home.md
   - "技能树":
