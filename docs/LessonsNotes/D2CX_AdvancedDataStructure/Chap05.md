@@ -1,6 +1,6 @@
 ---
 
-title: Chap 4 | “Binomial Queue”
+title: Chap 5 | “Binomial Queue”
 
 hide:
   #  - navigation # 显示右
@@ -10,7 +10,7 @@ hide:
 comments: true  #默认不开启评论
 
 ---
-<h1 id="欢迎">Chap 4 | “Binomial Queue”</h1>
+<h1 id="欢迎">Chap 5 | “Binomial Queue”</h1>
 !!! note "章节启示录"
     本章介绍了二项树和二项队列，或许还要自学一下斐波那契堆。对于二项队列而言，它可以弥补二叉堆的不足: $merge$ 操作的时间复杂度为 $O(N)$ 。二项队列的 $merge$ 操作的最坏时间复杂度为 $O(logN)$ 。
 
