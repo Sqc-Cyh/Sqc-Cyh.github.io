@@ -10,7 +10,9 @@ hide:
 comments: true  #默认不开启评论
 
 ---
-<h1 id="欢迎">Chap 5 | Entity-Relationship Model </h1>
+<h1 id="欢迎">Chap 5 | Entity-Relationship Model</h1>
+!!! note "章节启示录"
+    忘记写了。
 
 ## 1.E-R Diagram 
 
