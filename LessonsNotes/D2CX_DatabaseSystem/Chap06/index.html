@@ -10,13 +10,13 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap05/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap06/">
       
       
-        <link rel="prev" href="../Chap04/">
+        <link rel="prev" href="../Chap05/">
       
       
-        <link rel="next" href="../Chap06/">
+        <link rel="next" href="../../D2CX_AdvancedDataStructure/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap 5 | Entity-Relationship Model - 时清川的个人主页</title>
+        <title>Chap 6 | Relational Database Design - 时清川的个人主页</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1e-r-diagram" class="md-skip">
+        <a href="#1first-normal-form" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 5 | Entity-Relationship Model
+              Chap 6 | Relational Database Design
             
           </span>
         </div>
@@ -655,6 +655,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | Entity-Relationship Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -669,7 +690,7 @@
           
   
   <span class="md-ellipsis">
-    Chap 5 | Entity-Relationship Model
+    Chap 6 | Relational Database Design
   </span>
   
 
@@ -680,7 +701,7 @@
         
   
   <span class="md-ellipsis">
-    Chap 5 | Entity-Relationship Model
+    Chap 6 | Relational Database Design
   </span>
   
 
@@ -700,28 +721,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1e-r-diagram" class="md-nav__link">
+  <a href="#1first-normal-form" class="md-nav__link">
     <span class="md-ellipsis">
-      1.E-R Diagram
+      1.First Normal Form
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1.E-R Diagram">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2pitfalls-in-relational-database-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Pitfalls in Relational Database Design （关系数据库设计中的陷阱）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3functional-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Functional Dependencies （函数依赖）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Functional Dependencies （函数依赖）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
+  <a href="#31" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 定义
+      3.1 函数依赖的用途
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
+  <a href="#32-armstrongs-axioms" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 表示方法
+      3.2 Armstrong’s Axioms （登月定理——我瞎起的名字）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 属性闭包的用途
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 正则覆盖
     </span>
   </a>
   
@@ -733,69 +790,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2weak-entity-sets" class="md-nav__link">
+  <a href="#4decomposition" class="md-nav__link">
     <span class="md-ellipsis">
-      2.Weak Entity Sets
+      4.Decomposition
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3extended-e-r-features" class="md-nav__link">
+  <a href="#5boyce-codd-normal-formbc" class="md-nav__link">
     <span class="md-ellipsis">
-      3.Extended E-R Features
+      5.Boyce-Codd Normal Form（BC范式）
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3.Extended E-R Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-specialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 Specialization (特殊化、具体化)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-generalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Generalization (泛化、普遍化)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-aggregation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Aggregation（复合实体集）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 总结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4reduction-of-an-e-r-schema-to-tables-e-r" class="md-nav__link">
+  <a href="#6third-normal-form" class="md-nav__link">
     <span class="md-ellipsis">
-      4.Reduction of an E-R Schema to Tables（将 E-R 架构简化为表）
+      6.Third Normal Form
     </span>
   </a>
   
@@ -805,27 +820,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap06/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 6 | Relational Database Design
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1498,28 +1492,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1e-r-diagram" class="md-nav__link">
+  <a href="#1first-normal-form" class="md-nav__link">
     <span class="md-ellipsis">
-      1.E-R Diagram
+      1.First Normal Form
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1.E-R Diagram">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2pitfalls-in-relational-database-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Pitfalls in Relational Database Design （关系数据库设计中的陷阱）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3functional-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Functional Dependencies （函数依赖）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Functional Dependencies （函数依赖）">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
+  <a href="#31" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 定义
+      3.1 函数依赖的用途
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
+  <a href="#32-armstrongs-axioms" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2 表示方法
+      3.2 Armstrong’s Axioms （登月定理——我瞎起的名字）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 属性闭包的用途
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 正则覆盖
     </span>
   </a>
   
@@ -1531,69 +1561,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2weak-entity-sets" class="md-nav__link">
+  <a href="#4decomposition" class="md-nav__link">
     <span class="md-ellipsis">
-      2.Weak Entity Sets
+      4.Decomposition
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3extended-e-r-features" class="md-nav__link">
+  <a href="#5boyce-codd-normal-formbc" class="md-nav__link">
     <span class="md-ellipsis">
-      3.Extended E-R Features
+      5.Boyce-Codd Normal Form（BC范式）
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3.Extended E-R Features">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-specialization" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 Specialization (特殊化、具体化)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-generalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Generalization (泛化、普遍化)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-aggregation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Aggregation（复合实体集）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 总结
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4reduction-of-an-e-r-schema-to-tables-e-r" class="md-nav__link">
+  <a href="#6third-normal-form" class="md-nav__link">
     <span class="md-ellipsis">
-      4.Reduction of an E-R Schema to Tables（将 E-R 架构简化为表）
+      6.Third Normal Form
     </span>
   </a>
   
@@ -1618,173 +1606,244 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1186 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2189 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
-<h1 id="欢迎">Chap 5 | Entity-Relationship Model</h1>
+<h1 id="欢迎">Chap 6 | Relational Database Design</h1>
 <div class="admonition note">
 <p class="admonition-title">章节启示录</p>
-<p>忘记写了。</p>
+<p>本章节讲了一些 <del>奇奇怪怪</del> 的东西。关键应该是函数的依赖关系及其保持，还有闭包的概念，后续是两个范式。上课有点没听懂，希望整理的时候可以搞懂吧。</p>
 </div>
-<h2 id="1e-r-diagram">1.E-R Diagram<a class="headerlink" href="#1e-r-diagram" title="Permanent link">&para;</a></h2>
-<h3 id="11">1.1 定义<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../img/55.png" /></p>
+<h2 id="1first-normal-form">1.First Normal Form<a class="headerlink" href="#1first-normal-form" title="Permanent link">&para;</a></h2>
 <ul>
-<li>矩形表示实体集。  </li>
-<li>菱形代表关系集。  </li>
-<li>线将属性链接到实体集，将实体集链接到关系集。  </li>
-<li>椭圆表示属性。  </li>
-<li>双椭圆表示多值属性。  </li>
-<li>虚线省略号表示派生属性。  </li>
-<li>下划线表示主键属性（稍后将研究）。  </li>
+<li>如果 R 的所有属性域都是原子的，那么关系模式 R 符合第一范式 （1NF）。<br />
+对于关系数据库，要求所有关系都位于 1NF 中。</li>
 </ul>
-<p><img alt="" src="../img/56.png" /></p>
-<p><img alt="" src="../img/57.png" /></p>
+<h2 id="2pitfalls-in-relational-database-design">2.Pitfalls in Relational Database Design （关系数据库设计中的陷阱）<a class="headerlink" href="#2pitfalls-in-relational-database-design" title="Permanent link">&para;</a></h2>
 <ul>
-<li>自环联系集：<br />
-Role:实体在关系中扮演的角色，例如，“manager”和“worker”称为角色;它们指定员工实体如何通过 Works-for 关系集进行交互。<br />
-<img alt="" src="../img/58.png" /></li>
-</ul>
-<h3 id="12">1.2 表示方法<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
-<ul>
-<li>我们通过在关系集和实体集之间绘制一条有向线 （<span class="arithmatex">\(\longrightarrow\)</span>）来表示“一”的，绘制一条无向线（——）来表示“多” 。</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">“一”对“一”</label><label for="__tabbed_1_2">“一”对“多”</label><label for="__tabbed_1_3">“多”对“一”</label><label for="__tabbed_1_4">“多”对“多”</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="" src="../img/59.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/60.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/61.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/62.png" /></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Total Participation （全参与） （用双线表示）：实体集中的每个实体都参与关系集中的至少一个关系。</li>
-</ul>
-<blockquote>
-<p>例如，借款人参与贷款是总的。每笔贷款都必须有一个通过借款人关联的客户。</p>
+<li>Redundancy (冗余)：  <blockquote>
+<p>分支机构名称、分支城市和资产的数据将针对分支机构提供的每笔贷款重复进行。  </p>
 </blockquote>
-<ul>
-<li>Partial participation （部分参与）：某些实体可能不参与关系集中的任何关系。</li>
+</li>
 </ul>
-<blockquote>
-<p>例如，客户对借款人的参与是部分的。</p>
+<p>问题：浪费空间，可能导致不一致。</p>
+<ul>
+<li>Updating anomaly (更新异常)：<blockquote>
+<p>修改资产值，需要更改许多元组。</p>
 </blockquote>
-<p>全参与和部分参与约束，反映了一个实体参与关联的数目下限：0次，还是至少1次。 </p>
+</li>
+</ul>
+<p>问题：使更新复杂化，引入不一致的可能性。</p>
+<ul>
+<li>Insert/delete anomalies (插入/删除异常)。
+如果有密钥：（分支名称、客户名称、贷款号码）<br />
+或者使用 Null 值：（如果没有键）
+要存储有关分支的信息，如果没有贷款存在，可以使用空值，但它们很难处理。</li>
+</ul>
+<p>前情提要完毕，下面将进入本章节的正题。我们先来看看我们的目标。</p>
+<div class="admonition abstract">
+<p class="admonition-title">目标</p>
+<ul>
+<li>确定特定关系 R 是否为“良好”形式。--- 无冗余    </li>
+<li>如果关系 R 不是“好”形式，请将其分解为一组关系 {R1， R2， ...， Rn}，使得
+每个关系都处于良好的状态。</li>
+<li>
+<p>这个分解被称为无损连接分解。</p>
+</li>
+<li>
+<p>我们的理论基于：
+<strong>Functional</strong> <strong>dependencies</strong> （函数依赖）
+<strong>Multivalue</strong> <strong>dependencies</strong> （多值依赖）</p>
+</li>
+</ul>
+</div>
+<h2 id="3functional-dependencies">3.Functional Dependencies （函数依赖）<a class="headerlink" href="#3functional-dependencies" title="Permanent link">&para;</a></h2>
+<ul>
+<li>定义：数据库中函数的依赖关系与数学中的函数很相近，我们可以进行类比：数学中 <span class="arithmatex">\(x\)</span> 能够决定 <span class="arithmatex">\(f(x)\)</span> 或者说 <span class="arithmatex">\(y\)</span> ，而在数据库中，我们有以下的说法：<br />
+<span class="arithmatex">\(y\)</span> 依赖于 <span class="arithmatex">\(x\)</span> , <span class="arithmatex">\(x\)</span> 决定 <span class="arithmatex">\(y\)</span></li>
+</ul>
 <blockquote>
 <p>e.g:<br />
-一个客户可以借多笔或0笔贷款，一笔贷款至少、至多属于一个客户。 
-<img alt="" src="../img/63.png" /></p>
+Consider r(A, B) with the following instance of r. <br />
+<img alt="" src="../img/84.png" /><br />
+在这里，因为若B属性值确定了，则A属性值也唯一确定了；因此B → A成立。</p>
 </blockquote>
-<div class="admonition abstract">
-<p class="admonition-title">替代表示法</p>
-<p>E.g., 一个客户可以借多笔或0笔贷款，一笔贷款至少、至多属于一个客户。 </p>
-<p><img alt="" src="../img/64.png" /></p>
+<p>##下面是几个前置定义。 </p>
+<ul>
+<li>平凡的函数依赖：<span class="arithmatex">\(α \rightarrow β ,if\;\; β\subsetα\)</span></li>
+<li>非平凡的函数依赖：<span class="arithmatex">\(α \rightarrow β ,if\;\; β\not\subsetα\)</span></li>
+<li>函数依赖的闭包：给定一组功能依赖关系 <span class="arithmatex">\(F\)</span>，则 F 在逻辑上隐含某些其他功能依赖关系。<span class="arithmatex">\(F\)</span> 逻辑上隐含的所有功能依赖关系的集合称为 <span class="arithmatex">\(F\)</span> 的闭包，用 <span class="arithmatex">\(F^+\)</span> 表示。<blockquote>
+<p>e.g:<br />
+<img alt="" src="../img/86.png" /></p>
+</blockquote>
+</li>
+<li>属性的闭包：给定一组属性 <span class="arithmatex">\(a\)</span>，在 <span class="arithmatex">\(F\)</span> 下由 <span class="arithmatex">\(a\)</span> 所直接和间接函数决定的属性的集合称为 <span class="arithmatex">\(a\)</span> 的闭包，用 <span class="arithmatex">\(a^+\)</span> 表示。</li>
+</ul>
+<h3 id="31">3.1 函数依赖的用途<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<ul>
+<li>1.测试关系，看看它们在一组给定的功能依赖关系 F 下是否合法。<blockquote>
+<p>如果关系 r 在函数依赖关系的集合 F 下是合法的，我们说 r 满足 F。
+<img alt="" src="../img/85.png" /><br />
+<span class="arithmatex">\(AB \rightarrow D\)</span> 意味着 <span class="arithmatex">\(\{A,B\} \rightarrow D\)</span></p>
+</blockquote>
+</li>
+<li>2.指定schema上的合法关系集的约束。<blockquote>
+<p>如果 R 上的所有法律关系 r 都满足函数依赖关系 F 的集合，则 F 在 R 上成立。</p>
+</blockquote>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">注意：</p>
+<ul>
+<li>容易判别一个r是否满足给定的F;</li>
+<li>不易判别F是否在R上成立。不能仅由某个r推断出F。
+R上的函数依赖F, 通常由定义R的语义决定。 </li>
+</ul>
+</div>
+<h3 id="32-armstrongs-axioms">3.2 Armstrong’s Axioms （登月定理——<del>我瞎起的名字</del>）<a class="headerlink" href="#32-armstrongs-axioms" title="Permanent link">&para;</a></h3>
+<p>因为Armstrong读起来真的很像阿姆斯特朗（bushi）</p>
+<ul>
+<li>reflexivity （自反律）：<span class="arithmatex">\(if\;\; β\subset α，then\;\;a \rightarrow β\)</span></li>
+<li>augmentation （增补律）: <span class="arithmatex">\(if\;\; α\rightarrow β,then\;\;γα\rightarrow γβ\)</span>,同时有 <span class="arithmatex">\(γα\rightarrow β\)</span></li>
+<li>transitivity （传递律）: <span class="arithmatex">\(if\;\;α\rightarrow β,and\;\;β\rightarrow γ,then\;\; α\rightarrow γ\)</span></li>
+</ul>
+<p>下面是登月定理的补充定理，我也把它们一起放在登月定理的部分中了。</p>
+<ul>
+<li>union （合并律）: <span class="arithmatex">\(if\;\; α\rightarrow β\;\;and\;\;α\rightarrow γ,then\;\;α\rightarrow βγ\)</span></li>
+<li>decomposition （分解律）: <span class="arithmatex">\(if\;\;α\rightarrow βγ,then\;\;α\rightarrow β\;\;and\;\;α\rightarrow γ\)</span> （其实我更喜欢称它为分配律）。</li>
+<li>pseudotransitivity （伪传递律）: <span class="arithmatex">\(if\;\;α\rightarrow β\;\;and\;\;γβ\rightarrow\delta,then\;\;αγ\rightarrow\delta\)</span></li>
+</ul>
+<blockquote>
+<p>分配律的证明如下：<br />
+<img alt="" src="../img/87.png" /></p>
+</blockquote>
+<div class="admonition question">
+<p class="admonition-title">一个问题：How to test whether a is a superkey? </p>
+<ul>
+<li>方法一：先找 <span class="arithmatex">\(F^+\)</span>，然后对 <span class="arithmatex">\(F^+\)</span> 中的所有 <span class="arithmatex">\(a \rightarrow β_i\)</span>，看 <span class="arithmatex">\(\{β_1， β_2， β_3， ...\} = R\)</span> 是否成立。但是计算 <span class="arithmatex">\(F^+\)</span> 并不容易。</li>
+<li>方法2：找到 <span class="arithmatex">\(a\)</span> 的闭包。</li>
+</ul>
+<p>由于方法一中需要寻找 <span class="arithmatex">\(F^+\)</span> ，且比较麻烦，于是引入了一个新的问题，如何找到 <span class="arithmatex">\(a\)</span> 的闭包 <span class="arithmatex">\(a^+\)</span> 。</p>
 </div>
 <div class="admonition question">
-<p class="admonition-title">Binary vs. Non-Binary Relationships</p>
-<p>使用二元关系可以更好地表示某些看似非二元的关系。</p>
+<p class="admonition-title">How to get <span class="arithmatex">\(a^+\)</span> ?</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Algorithm for computing a+, the closure of a under F 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    result := a; 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    while (changes to result) do 
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        for each β → α in F do 
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>            begin 
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                If β 属于 result then result := result 并 γ 
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            end; 
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        a+ := result 
+</code></pre></div>
+且看一个例子来理解一下:</p>
 <blockquote>
-<p>例如，将孩子与他/她的父亲和母亲联系起来的三元关系父母最好用父亲和母亲两种二元关系代替。
-<img alt="" src="../img/65.png" /></p>
-</blockquote>
-<div class="admonition success">
-<p class="admonition-title">converting</p>
-<p>通常，任何非二元关系都可以通过创建人工实体集来使用二元关系来表示。<br />
-将实体集 A、B 和 C 之间的非二元关系 R 替换为实体集 E 和三个新关系集。 </p>
-<ul>
-<li>为 E 创建特殊的标识属性。</li>
-<li>将 R 的任何属性添加到 E。</li>
-<li>对于 R 中的每个关系（ai、bi、ci），创建 RA、RB、RC。<br />
-<img alt="" src="../img/66.png" /><blockquote>
 <p>e.g:<br />
-<img alt="" src="../img/67.png" /></p>
+<img alt="" src="../img/88.png" /></p>
 </blockquote>
-</li>
-</ul>
 </div>
+<h3 id="33">3.3 属性闭包的用途<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Testing for a superkey（测试超码）：<span class="arithmatex">\(α \rightarrow R\;\;?\)</span><br />
+为了测试 <span class="arithmatex">\(α\)</span> 是否是超码，我们计算 <span class="arithmatex">\(a^+\)</span>，然后检查 <span class="arithmatex">\(a^+\)</span> 是否包含 R 的所有属性，即检查 <span class="arithmatex">\(R \subset a^+\)</span></p>
+</li>
+<li>
+<p>Testing functional dependencies（测试功能依赖关系）： <span class="arithmatex">\(α \rightarrow β\;\;?\)</span>
+要检查功能依赖关系 <span class="arithmatex">\(α \rightarrow β\)</span> 是否成立（或者换句话说，在 <span class="arithmatex">\(F^+\)</span> 中），仅检查 <span class="arithmatex">\(β \subset a^+\)</span> 。<br />
+这是一个简单而便宜的测试，非常有用。</p>
+</li>
+<li>
+<p>Computing the closure of F （计算 <span class="arithmatex">\(F\)</span> 的闭包）：<span class="arithmatex">\(F^+ = ?\)</span>
+对于每个 <span class="arithmatex">\(γ \subset R\)</span>，我们找到闭包 <span class="arithmatex">\(γ^+\)</span>，对于每个 <span class="arithmatex">\(S \subset γ+\)</span>，我们输出一个功能依赖关系 <span class="arithmatex">\(γ \rightarrow S\)</span>，所有 <span class="arithmatex">\(γ \rightarrow S\)</span> 形成 F+。</p>
+</li>
+</ul>
+<h3 id="34">3.4 正则覆盖<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>正则覆盖 <span class="arithmatex">\(F_c\)</span> 是函数依赖集 <span class="arithmatex">\(F\)</span> 的最小化。得到 <span class="arithmatex">\(F_c\)</span> 的关键步骤是消去现有函数依赖中的extraneous（无关的、多余的）属性，从而排除相应的函数依赖，使函数依赖集最小化。 </p>
+<ul>
+<li>要消去现有函数依赖 → 中的extraneous（无关的、多余的）属性，无非有2种情况：   </li>
+</ul>
+<p><img alt="" src="../img/89.png" /><br />
+<img alt="" src="../img/90.png" /></p>
+<ul>
+<li>对于情况(1), <span class="arithmatex">\(Aα^{\prime} \rightarrow β\)</span> : 如果 <span class="arithmatex">\(α^{\prime} \rightarrow β\)</span> 已经由原来的函数依赖集 <span class="arithmatex">\(F\)</span> 所蕴涵（即 <span class="arithmatex">\(F\)</span> 中已经包含了 <span class="arithmatex">\(α^{\prime} \rightarrow β\)</span>，或F可以推出<span class="arithmatex">\(α^{\prime} \rightarrow β\)</span> ），则根据Armstrong公理， <span class="arithmatex">\(α^{\prime} \rightarrow β\)</span> 可以推出 <span class="arithmatex">\(Aα^{\prime} \rightarrow β\)</span> ，因此 <span class="arithmatex">\(Aα^{\prime} \rightarrow β\)</span> 是多余的 (replace <span class="arithmatex">\(Aα^{\prime} \rightarrow β with α^{\prime} \rightarrow β\)</span> )，也即A是多余的属性。也就是说，如果F蕴涵F，则左属性A可删除，只要保留剩余部分就可以了。</li>
+<li>对于情况（2），<span class="arithmatex">\(α \rightarrow Aβ^{\prime}\)</span> ，等价于<span class="arithmatex">\({α \rightarrow β^{\prime}, α \rightarrow A}\)</span>，如果 <span class="arithmatex">\(α \rightarrow A\)</span> 可以由其余的函数依赖所蕴涵，则说明 <span class="arithmatex">\(α \rightarrow A\)</span> 多余，即 <span class="arithmatex">\(α \rightarrow Aβ^{\prime}\)</span> 中的 <span class="arithmatex">\(A\)</span> 多余，只要保留 <span class="arithmatex">\(α \rightarrow β^{\prime}\)</span> 就可以了。换句话说，如果我们把 <span class="arithmatex">\(F\)</span> 中去掉 <span class="arithmatex">\(α \rightarrow A\)</span> 之后余下的部分叫 <span class="arithmatex">\(F^{\prime}\)</span> , 即 <span class="arithmatex">\(F^{\prime} = ((F – \{α \rightarrow β\}) \cup \{α \rightarrow(β – A)\})\)</span>，则如果 <span class="arithmatex">\(F^{\prime}\)</span> 可以推出 <span class="arithmatex">\(α \rightarrow A\)</span> ，这说明 <span class="arithmatex">\(α \rightarrow A\)</span> 多余，只要保留 <span class="arithmatex">\(F^{\prime}\)</span> 就可以了。也就是说，如果 <span class="arithmatex">\(F^{\prime}\)</span> 蕴涵 <span class="arithmatex">\(F\)</span> ，则右属性 <span class="arithmatex">\(A\)</span> 可删除。</li>
+</ul>
+<blockquote>
+<p>e.g:<br />
+<img alt="" src="../img/91.png" /></p>
+</blockquote>
+<h2 id="4decomposition">4.Decomposition<a class="headerlink" href="#4decomposition" title="Permanent link">&para;</a></h2>
+<p>无损连接分解的条件： 分解后的二个子模式的共同属性必须是R1或R2的码（适用于一分为二的分解）。 </p>
+<ul>
+<li>分解时要注意的问题是依赖的保持。</li>
+</ul>
+<blockquote>
+<p>e.g:<br />
+<img alt="" src="../img/92.png" /></p>
+</blockquote>
+<ul>
+<li>分解结果的测试：
+<img alt="" src="../img/93.png" /></li>
+</ul>
+<h2 id="5boyce-codd-normal-formbc">5.Boyce-Codd Normal Form（BC范式）<a class="headerlink" href="#5boyce-codd-normal-formbc" title="Permanent link">&para;</a></h2>
+<ul>
+<li>定义: 若关系模式 <span class="arithmatex">\(R\)</span> 属于 BCNF 中，相对于功能依赖关系的集合 <span class="arithmatex">\(F\)</span>，如果对于 <span class="arithmatex">\(F^+\)</span> 中 <span class="arithmatex">\(α\rightarrow β\)</span> 形式的所有功能依赖关系，其中 <span class="arithmatex">\(a\subset R\)</span> and <span class="arithmatex">\(β\subset R\)</span>，至少满足以下条件之一：
+<img alt="" src="../img/94.png" /></li>
+</ul>
+<blockquote>
+<p>e.g:<br />
+<img alt="" src="../img/95.png" /></p>
+</blockquote>
+<div class="admonition abstract">
+<p class="admonition-title">性质</p>
+<p>任意一个只有两个属性值的关系一定满足BC范式。</p>
 </div>
-<h2 id="2weak-entity-sets">2.Weak Entity Sets<a class="headerlink" href="#2weak-entity-sets" title="Permanent link">&para;</a></h2>
-<p>没有主键的实体集称为弱实体集。  </p>
+<ul>
+<li>
+<p>测试BCNF: 检查非平凡依赖项 <span class="arithmatex">\(α\rightarrow β\)</span> 是否导致 BCNF 冲突。</p>
+<ul>
+<li>计算 <span class="arithmatex">\(a^+\)</span> ，验证 <span class="arithmatex">\(a^+\)</span> 是否包含 R 的所有属性，即 <span class="arithmatex">\(a\)</span> 是否为 R 的超键。</li>
+<li><strong>简化测试</strong>：要检查关系模式 <span class="arithmatex">\(R\)</span> 是否在 BCNF 中，只需检查给定集合 <span class="arithmatex">\(F\)</span> 中的依赖项是否违反 BCNF 就足够了，而不是检查 <span class="arithmatex">\(F^+\)</span> 中的所有依赖项。
+如果 <span class="arithmatex">\(F\)</span> 中的任何依赖项都不会导致 BCNF 的冲突，那么 <span class="arithmatex">\(F^+\)</span> 中的任何依赖项也不会导致 BCNF 的冲突。
+<img alt="" src="../img/96.png" /></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>但是，在 <span class="arithmatex">\(R\)</span> 分解中测试关系 <span class="arithmatex">\(R_i\)</span> 时，仅使用 <span class="arithmatex">\(F\)</span> 来测试 BCNF 可能是不正确的。因此，虽然我们可在 <span class="arithmatex">\(F\)</span> 下判别R是否违反BCNF, 但必须在 <span class="arithmatex">\(F^+\)</span> 下判别R的分解式是否违反BCNF. </p>
 <blockquote>
 <p>e.g:<br />
-还贷登记表 payment(pay-num, pay-date, pay-amount). 假设为了清楚起见，pay-num按对应的每项贷款分别编号(都从1, 2, 3 …开始), 这样，pay-num就不是码，并且该实体集没有码。故payment是弱实体集。 pay-num is discriminator or partial key (<strong>分辨符或部分码</strong>). 
-<img alt="" src="../img/68.png" /></p>
+<img alt="" src="../img/97.png" /><br />
+在这个例子中，由于A能推C，而D与其他无关，所以主键是AD，A不算超码。</p>
 </blockquote>
-<p>弱实体集的存在取决于标识实体集或所有者实体集（标识实体集或属主实体集）的存在。</p>
-<ul>
-<li>弱实体集的E-R图表示法</li>
-</ul>
-<p><img alt="" src="../img/69.png" /></p>
-<h2 id="3extended-e-r-features">3.Extended E-R Features<a class="headerlink" href="#3extended-e-r-features" title="Permanent link">&para;</a></h2>
-<h3 id="31-specialization">3.1 Specialization (特殊化、具体化)<a class="headerlink" href="#31-specialization" title="Permanent link">&para;</a></h3>
-<ul>
-<li>自上而下的设计流程;我们指定实体集中的子分组，这些子分组与集合中的其他实体不同。</li>
-<li>这些子分组将成为具有属性或参与不适用于较高级别实体集的关系的较低级别实体集。</li>
-<li>属性继承 – 较低级别的实体集继承与其链接的高级实体集的所有属性和关系参与。</li>
-</ul>
+</div>
+</li>
+<li>
+<p>BCNF的分解算法：    <br />
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>result := {R}; 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    done := false; 
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    compute F+; 
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    while (not done) do 
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        if (there is a schema Ri in result that is not in BCNF) 
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>            then begin 
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                let α → β be a nontrivial functional 
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                dependency that holds on Ri such 
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                that α → Ri is not in F+, and α 交 β = 空; 
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>                result := (result – Ri) 并 (α, β) 并 (Ri – β); 
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                    end
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            else done := true; 
+</code></pre></div>
+    简单来说，就是先在 <span class="arithmatex">\(F\)</span> 中找一组形如 <span class="arithmatex">\(α → β\)</span> 的关系，取 <span class="arithmatex">\(R_1=(α,β)\)</span>,然后用减法得到 <span class="arithmatex">\(R_2 = R - β\)</span>，接着考虑下一组形如 <span class="arithmatex">\(α → β\)</span> 的关系，取 <span class="arithmatex">\(R_3=(α,β)\)</span>，然后用减法得到 <span class="arithmatex">\(R_4 = R_2 - β\)</span>，以此类推，直到所有 <span class="arithmatex">\(R_i\)</span> 都满足BCNF。</p>
 <blockquote>
 <p>e.g:<br />
-<img alt="" src="../img/70.png" /></p>
+<img alt="" src="../img/98.png" /></p>
 </blockquote>
-<h3 id="32-generalization">3.2 Generalization (泛化、普遍化)<a class="headerlink" href="#32-generalization" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Completeness constraint （完全性约束） -- 指定较高级别实体集中的实体是否必须至少属于概化中的一个较低级别实体集。<br />
-    Total:实体必须属于较低级别的实体集之一。<br />
-    Partial:实体不一定属于较低级别的实体集之一。</li>
-</ul>
-<p><img alt="" src="../img/71.png" /></p>
-<h3 id="33-aggregation">3.3 Aggregation（复合实体集）<a class="headerlink" href="#33-aggregation" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../img/72.png" /></p>
-<p>“workss-on”和“manages”关系集表示重叠信息。<br />
-每个管理关系都对应于一个工作关系。
-但是，某些工作关系可能与任何管理关系不对应。
-因此，我们不能抛弃工作关系。</p>
-<p>通过聚合可以消除这种冗余。
-将关系视为一个抽象实体。允许关系之间的关系。将关系抽象为新实体。</p>
-<p>在不引入冗余的情况下，下图表示：
-员工在特定分支机构从事特定工作。
-员工、分支机构、工作组合可能具有关联的经理。</p>
-<p><img alt="" src="../img/73.png" /></p>
-<h3 id="35">3.5 总结<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../img/74.png" />
-<img alt="" src="../img/75.png" /></p>
-<ul>
-<li>Alternative E-R Notations </li>
-</ul>
-<p><img alt="" src="../img/76.png" />
-<img alt="" src="../img/77.png" />
-<img alt="" src="../img/78.png" /></p>
-<h2 id="4reduction-of-an-e-r-schema-to-tables-e-r">4.Reduction of an E-R Schema to Tables（将 E-R 架构简化为表）<a class="headerlink" href="#4reduction-of-an-e-r-schema-to-tables-e-r" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Composite attributes（组合属性）:<br />
-    例如，给定的实体集客户具有组合属性名称(名字和姓氏)。与实体集对应的表具有两个属性：
-    <img alt="" src="../img/79.png" /></p>
 </li>
 <li>
-<p>只存“树的叶子节点”<br />
-<img alt="" src="../img/80.png" /></p>
-</li>
-<li>
-<p>Multivalued attribute（多值属性）:<br />
-    例如，员工的多值属性：<br />
-    拆成两个表  <br />
-<img alt="" src="../img/81.png" /></p>
-</li>
-<li>
-<p>Weak Entity Sets（弱实体集）:<br />
-    弱实体集变成一个表，需要包含标识强实体集的主键。
-    <img alt="" src="../img/82.png" /><br />
-<img alt="" src="../img/83.png" /></p>
+<p>BCNF的缺陷： 并不总是能够获得保留依赖关系的 BCNF 分解。
+    <img alt="" src="../img/99.png" /></p>
 </li>
 </ul>
+<h2 id="6third-normal-form">6.Third Normal Form<a class="headerlink" href="#6third-normal-form" title="Permanent link">&para;</a></h2>
 
 
 
