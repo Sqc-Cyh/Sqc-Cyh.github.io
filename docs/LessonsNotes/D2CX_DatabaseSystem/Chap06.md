@@ -198,7 +198,64 @@ $AB \rightarrow D$ 意味着 $\{A,B\} \rightarrow D$
 * BCNF的缺陷： 并不总是能够获得保留依赖关系的 BCNF 分解。
     ![](./img/99.png)
 
-## 6.Third Normal Form 
+## 6.Third Normal Form（第三范式）
+第三范式的目的是BCNF做一些放松，即允许一定的冗余。
+
+* 定义：如果 $F^+$ 中的所有 $α\rightarrow β$ 至少满足以下条件之一，则关系模式 R 采用第三范式 （3NF）：
+    ![](./img/100.png)
+
+!!! abstract "讨论"
+    国内其他教材关于3NF的定义: 不存在非主属性对码的部分依赖和传递依赖. 该定义实际是说, 当α为非主属性时, α必须是码; 但当α为主属性时, 则α无限制. 国内外这二种定义本质上是一致的. 
+
+>e.g:  
+![](./img/101.png)
+
+* 冗余带来的问题：  
+    ![](./img/102.png)  
+    在 3NF 中但不在 BCNF 中的模式存在信息重复的问题（例如，关系 l1、k1），并且可能需要使用 null 值（例如，表示关系 l2、k2，其中 J 没有相应的值）。
+
+* 测试3NF:  
+    优化：只需要检查 $F$ 中的 $FD$，不需要检查 $F^+$ 中的所有 $FD$。  
+    使用属性闭包检查每个依赖项 $α\rightarrow β$，以查看 α 是否为超码。  
+    如果 α 不是超码，我们必须验证 β 中的每个属性是否都包含在 $R$ 的候选键中。  
+    此测试相当昂贵，因为它涉及查找所有候选密钥。  
+    3NF 的测试已被证明是 NP 困难的。  
+    有趣的是，分解为第三范式形式（稍后描述）可以在多项式时间内完成。
+* 3NF分解算法：
+    ```
+    Let Fc be a canonical cover for F; 
+    i := 0; 
+    for each functional dependency    in Fc do 
+        {if none of the schemas Rj, 1 ≤ j ≤ i contains α β 
+            then begin 
+                i := i  + 1; 
+                Ri := (α β) 
+            end} 
+    if none of the schemas Rj, 1 ≤ j  ≤ i contains a candidate key for R then 
+    begin 
+        i := i  + 1; 
+        Ri := any candidate key for R; 
+    end 
+    return (R1, R2, ..., Ri) 
+    ```
+    简单来说，就是将 $F_c$ 中的每个 $α\rightarrow β$ 分解为子模式 $Ri := (α, β)$ , 从而保证 dependency-preserving.并且保证至少在一个 $R_i$ 中存在 $R$ 的候选码, 从而保证 lossless-join。
+
+    >e.g:  
+    ![](./img/103.png)
+
+!!! question "BCNF vs. 3NF"
+    * 总是可以将关系分解为 3NF 中的关系，并且
+        * 分解是无损的。
+        * 将保留依赖项。
+
+    * 总是可以将关系分解为BCNF关系，并且
+        * 分解是无损的。
+        <font color='red'>
+        * 但是，可能无法保留依赖项。
+        </font>
+
+     
+    
 
 
         
