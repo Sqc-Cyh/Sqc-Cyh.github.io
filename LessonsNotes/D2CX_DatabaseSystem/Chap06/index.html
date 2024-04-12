@@ -810,7 +810,7 @@
         <li class="md-nav__item">
   <a href="#6third-normal-form" class="md-nav__link">
     <span class="md-ellipsis">
-      6.Third Normal Form
+      6.Third Normal Form（第三范式）
     </span>
   </a>
   
@@ -1581,7 +1581,7 @@
         <li class="md-nav__item">
   <a href="#6third-normal-form" class="md-nav__link">
     <span class="md-ellipsis">
-      6.Third Normal Form
+      6.Third Normal Form（第三范式）
     </span>
   </a>
   
@@ -1606,7 +1606,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2189 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2711 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 14 分钟</p>
 </div>
 <h1 id="欢迎">Chap 6 | Relational Database Design</h1>
 <div class="admonition note">
@@ -1843,7 +1843,80 @@ R上的函数依赖F, 通常由定义R的语义决定。 </li>
     <img alt="" src="../img/99.png" /></p>
 </li>
 </ul>
-<h2 id="6third-normal-form">6.Third Normal Form<a class="headerlink" href="#6third-normal-form" title="Permanent link">&para;</a></h2>
+<h2 id="6third-normal-form">6.Third Normal Form（第三范式）<a class="headerlink" href="#6third-normal-form" title="Permanent link">&para;</a></h2>
+<p>第三范式的目的是BCNF做一些放松，即允许一定的冗余。</p>
+<ul>
+<li>定义：如果 <span class="arithmatex">\(F^+\)</span> 中的所有 <span class="arithmatex">\(α\rightarrow β\)</span> 至少满足以下条件之一，则关系模式 R 采用第三范式 （3NF）：
+    <img alt="" src="../img/100.png" /></li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">讨论</p>
+<p>国内其他教材关于3NF的定义: 不存在非主属性对码的部分依赖和传递依赖. 该定义实际是说, 当α为非主属性时, α必须是码; 但当α为主属性时, 则α无限制. 国内外这二种定义本质上是一致的. </p>
+</div>
+<blockquote>
+<p>e.g:<br />
+<img alt="" src="../img/101.png" /></p>
+</blockquote>
+<ul>
+<li>
+<p>冗余带来的问题：<br />
+<img alt="" src="../img/102.png" /><br />
+    在 3NF 中但不在 BCNF 中的模式存在信息重复的问题（例如，关系 l1、k1），并且可能需要使用 null 值（例如，表示关系 l2、k2，其中 J 没有相应的值）。</p>
+</li>
+<li>
+<p>测试3NF:<br />
+    优化：只需要检查 <span class="arithmatex">\(F\)</span> 中的 <span class="arithmatex">\(FD\)</span>，不需要检查 <span class="arithmatex">\(F^+\)</span> 中的所有 <span class="arithmatex">\(FD\)</span>。<br />
+    使用属性闭包检查每个依赖项 <span class="arithmatex">\(α\rightarrow β\)</span>，以查看 α 是否为超码。<br />
+    如果 α 不是超码，我们必须验证 β 中的每个属性是否都包含在 <span class="arithmatex">\(R\)</span> 的候选键中。<br />
+    此测试相当昂贵，因为它涉及查找所有候选密钥。<br />
+    3NF 的测试已被证明是 NP 困难的。<br />
+    有趣的是，分解为第三范式形式（稍后描述）可以在多项式时间内完成。</p>
+</li>
+<li>
+<p>3NF分解算法：
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Let Fc be a canonical cover for F; 
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>i := 0; 
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>for each functional dependency    in Fc do 
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    {if none of the schemas Rj, 1 ≤ j ≤ i contains α β 
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        then begin 
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>            i := i  + 1; 
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            Ri := (α β) 
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        end} 
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>if none of the schemas Rj, 1 ≤ j  ≤ i contains a candidate key for R then 
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>begin 
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    i := i  + 1; 
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    Ri := any candidate key for R; 
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>end 
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>return (R1, R2, ..., Ri) 
+</code></pre></div>
+    简单来说，就是将 <span class="arithmatex">\(F_c\)</span> 中的每个 <span class="arithmatex">\(α\rightarrow β\)</span> 分解为子模式 <span class="arithmatex">\(Ri := (α, β)\)</span> , 从而保证 dependency-preserving.并且保证至少在一个 <span class="arithmatex">\(R_i\)</span> 中存在 <span class="arithmatex">\(R\)</span> 的候选码, 从而保证 lossless-join。</p>
+<blockquote>
+<p>e.g:<br />
+<img alt="" src="../img/103.png" /></p>
+</blockquote>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">BCNF vs. 3NF</p>
+<ul>
+<li>
+<p>总是可以将关系分解为 3NF 中的关系，并且</p>
+<ul>
+<li>分解是无损的。</li>
+<li>将保留依赖项。</li>
+</ul>
+</li>
+<li>
+<p>总是可以将关系分解为BCNF关系，并且</p>
+<ul>
+<li>分解是无损的。
+<font color='red'></li>
+<li>但是，可能无法保留依赖项。
+</font></li>
+</ul>
+</li>
+</ul>
+</div>
 
 
 
