@@ -151,7 +151,7 @@ $AB \rightarrow D$ 意味着 $\{A,B\} \rightarrow D$
 ![](./img/92.png)
 
 
-* 分解结果的测试：
+* 分解结果的测试：  
 ![](./img/93.png)
 
 ## 5.Boyce-Codd Normal Form（BC范式）
@@ -190,7 +190,13 @@ $AB \rightarrow D$ 意味着 $\{A,B\} \rightarrow D$
                         end
                 else done := true; 
     ```
-    简单来说，就是先在 $F$ 中找一组形如 $α → β$ 的关系，取 $R_1=(α,β)$,然后用减法得到 $R_2 = R - β$，接着考虑下一组形如 $α → β$ 的关系，取 $R_3=(α,β)$，然后用减法得到 $R_4 = R_2 - β$，以此类推，直到所有 $R_i$ 都满足BCNF。
+    简单来说，就是先在 $F$ 中找一组形如 $α → β$ 且不满足BCNF的关系，取 $R_1=(α,β)$,然后用减法得到 $R_2 = R - β$（若 $R_2$ 仍不满足，则继续分解），并用 $R_1,R_2$ 替代原来的关系，接着考虑下一组不满足形如 $α → β$ 的关系，取 $R_3=(α,β)$，然后用减法得到 $R_4 = R_2 - β$，以此类推，直到所有 $R_i$ 都满足BCNF。
+     
+    !!! success "分解步骤" 
+        ①令ρ=（R）；  
+        ②如果ρ中所有模式都是BCNF，若是转④,否则继续③；  
+        ③若其中一个关系模式S不是BCNF,则S中必能找到一个函数依赖X->A，X不包含S的候选码，且A不属于X,设S1=XA,S2=S-A,用分解{S1,S2}代替S,转②；  
+        ④停止分解，输出ρ；  
 
     >e.g:  
     ![](./img/98.png)
@@ -254,7 +260,25 @@ $AB \rightarrow D$ 意味着 $\{A,B\} \rightarrow D$
         * 但是，可能无法保留依赖项。
         </font>
 
-     
+!!! example "一些例子🌰"
+    === "Example1:正则覆盖"
+        ![](./img/104.png)
+    === "Example2:BCNF"
+        ![](./img/105.png)
+    === "Example3:BCNF and 3NF"
+        ![](./img/106.png)
+    === "Example4:BCNF and 3NF"
+        ![](./img/107.png)
+
+## 7.Fourth Normal Form （第四范式）
+第四范式其实就是多值依赖的第二范式。  
+
+* 定义: 若关系模式 $R$ 属于 4NF 中，相对于功能依赖关系的集合 $F$，如果对于 $F^+$ 中 $α\rightarrow\rightarrow β$ 形式的所有功能依赖关系，其中 $a\subset R$ and $β\subset R$，至少满足以下条件之一：  
+    ![](./img/108.png)
+
+* If a relation is in 4NF, it is in BCNF. 
+
+其余内容与第二范式类似，在此不做过多赘述。
     
 
 
