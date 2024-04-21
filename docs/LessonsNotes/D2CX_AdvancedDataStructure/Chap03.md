@@ -105,4 +105,9 @@ comments: true  #默认不开启评论
 
     >所以这道题是错的。
     When evaluating the performance of data retrieval, it is important to measure the relevancy of the answer set. <font color="red">F</font>
+
+    * Word stemming is to eliminate the commonly used words from the original documents.<font color="red">F</font>
+
+    * Thresholding
     
+    ![](./img/145.png)

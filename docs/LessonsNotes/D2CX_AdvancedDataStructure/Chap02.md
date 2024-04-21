@@ -362,7 +362,9 @@ comments: true  #默认不开启评论
         两红顺就染再转  
     * 删除：  
         我是红就直接删  
-        红色兄弟向我转  
+
+        兄弟红先换颜色
+        然后向我转过来  
         
         黑色兄弟看侄子  
         侄子全黑看爸爸  
@@ -372,4 +374,8 @@ comments: true  #默认不开启评论
 
         左侄是红向下换，换完颜色向右转  
         右侄是红向上换，换完颜色向左转  
+
+    * In a Red-Black tree, the path from the root to the farthest leaf is no more than twice as long as the path from the root to the nearest leaf.    
+    <font color="red">T</font>, far=R+B, near=B, R+B<= 2B => R<= B. 红节点个数小于黑节点个数，正确。
+
 
