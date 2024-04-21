@@ -58,3 +58,8 @@ max-min形式，因为DFS是先搜左孩子，所以剪枝只会剪右孩子。�
 min-max形式，因为DFS是先搜左孩子，所以剪枝只会剪右孩子。若右孩子的父亲比叔叔大（68≥44），那么它的父亲不会被选中，然后黑色区域被剪枝。
 
 ![](./img/122.png)
+
+!!! tip "复习时的一些补充"
+    * It is guaranteed that an exhaustive search can always find the solution in finite time. <font color="red">F</font>（考虑无解的情况）
+      
+    ![](./img/144.png)

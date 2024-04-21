@@ -91,3 +91,18 @@ comments: true  #默认不开启评论
 
 >例如：在机场安检查询旅客有无携带违禁物品时，召回率显然要比准确率更加重要，因为我们需要尽可能多的知道携带违禁物品的人，而并不在乎我们寻找的人中违禁者的比例。
 <hr></hr>
+
+!!! tip "复习时的一些补充"
+    有一个很大的坑（~~文字游戏英文版~~）
+
+    ![](./img/133.png)
+
+    * <font color="red">Data</font> Retrieval Performance Evaluation :是确定正确性后的评估标准。  
+        1.Response time  
+        2.Index space  
+    * <font color="red">Information</font> Retrieval Performance Evaluation：  
+        How relevant is the answer set?也就是利用上文提到的两个评估标准（准确率和召回率）。
+
+    >所以这道题是错的。
+    When evaluating the performance of data retrieval, it is important to measure the relevancy of the answer set. <font color="red">F</font>
+    

@@ -24,7 +24,7 @@ comments: true  #默认不开启评论
     * 2.我们可以将两个堆的元素全都取出然后重新建堆，这样的时间复杂度与建堆的时间复杂度一样，为 $O(M+N)$。但这样会带来一些额外的空间开销，面对大数据时或许不是一个较好的选择。
 
 ### 1.1定义
-* 1.null path length（Npl）：任何节点 $X$ 的空路径长度 Npl（$X$） 是从 $X$ 到没有两个孩子的节点的最短路径的长度。  
+* 1.null path length（Npl）：任何节点 $X$ 的空路径长度 Npl（$X$） 是从 $X$ 到没有两个孩子的节点的最短路径的长度。定义 Npl(NULL) = -1。  
 **note**：$Npl(X) = min \{Npl(C)+1 \  for \ all \  C \ as \ children \ of \  X\}$。
 * 2.左式堆：对于堆中的每个节点 X，左子节点的 null 路径长度至少与右子节点的 null 路径长度一样大。即对任何一个节点，它的左孩子的Npl值都要大于等于右孩子的Npl的值。
 !!! example "两个例子🌰"
@@ -40,7 +40,7 @@ comments: true  #默认不开启评论
             ![](./img/86.png)
 
 !!! success "一个结论📜"
-    **在右路径上有 r 个节点的左式堆必须至少有 2r – 1 个节点。**  
+    **在右路径上有 r 个节点的左式堆必须至少有 $2^r – 1$ 个节点。**  
 <hr></hr>
 
 ### 1.2插入
@@ -186,3 +186,6 @@ $$
 
 而我们知道 $l=O(logN)$ ，所以$T_{amortized}=O(logN)$
 <hr></hr>
+
+!!! tip "复习时的一些补充"
+    1.The right path of a skew heap can be **arbitrarily** long.

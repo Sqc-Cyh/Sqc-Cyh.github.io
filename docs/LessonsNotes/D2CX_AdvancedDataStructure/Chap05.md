@@ -151,3 +151,9 @@ $$\large \sum_{i=0}^NC_i=2N-\Phi_N≤2N=O(N)$$
 所以我们可以发现：
 
 $$\large T_{worst}=O(logN),but \;\; T_{amortized}=2$$
+
+!!! tip "复习时的一些补充"
+    * Inserting a number into a binomial heap with 15 nodes costs less time than inserting a number into a binomial heap with 19 nodes.    
+    插入看节点总数的最低位开始出现0的位置，出现越早时间越短。  
+    15：1111，19：10011，19更早出现0，因此是19更快。  
+    * 插入的最坏情况是 $O(logN)$ ，但这只存在于需要一直进位的时候。而连续插入 $N$ 个数据时，不可能每插入一个就进位，因此连续插入 $N$ 个数是 $O(N)$ 。

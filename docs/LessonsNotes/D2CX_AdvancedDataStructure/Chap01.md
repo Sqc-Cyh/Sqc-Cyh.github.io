@@ -261,4 +261,8 @@ $$
 ---
 
 
+!!! tip "复习时的一些补充"
+    1.In general, a good potential function should always assume its <font color="red">minimum</font> at the start of the sequence.
+    2.HW 中的 Splay tree 要好好画一下。
+
     
