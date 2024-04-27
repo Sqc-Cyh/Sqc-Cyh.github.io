@@ -393,7 +393,8 @@ comments: true  #默认不开启评论
         * Step1:选择两个素数 p 和 q（至少 100 位），将 p 和 q相乘：$n = p * q$ 
         * Step2:找出两个数字 e 和 d，使得:
         e和(p-1)(q-1)互质，而且1 < e & d < (p-1)(q-1)  
-        $\large e*d \equiv 1 \;(mod(p-1)(q-1))$<font color='red'>（应该是这步操作防范了中间人攻击）</font>
+        $\large e*d \equiv 1 \;(mod(p-1)(q-1))
+        <!-- $<font color='red'>（应该是这步操作防范了中间人攻击）</font> -->
         * Step3:（e，n） 作为公钥，d 作为私钥。
 
         >e.g:  
@@ -995,7 +996,7 @@ comments: true  #默认不开启评论
     * 三个核心:  
         1.AH:验证头  
         2.ESP:载荷安全性封装   
-        3.AS:安全关联 
+        3.SA:安全关联 
 
 * Authentication Headers(AH)
     为IP数据包提供数据完整性和认证服务,可选提供防重放。  
@@ -1004,7 +1005,7 @@ comments: true  #默认不开启评论
 
     * Next Header（8bit）：AH 之后的下一个标头类型。   
     * Payload Len（8 位）：AH 的长度（32 位减去 2）。    
-        对于 AH 数据长度 = 96 位（3 个字），加上 3 个字固定磁头。• ，有效载荷长度字段将为 4。
+        对于 AH 数据长度 = 96 位（3 个字），加上 3 个字固定磁头。有效载荷长度字段将为 4。
     * Reserved (16bit): 备份。  
     * Security Parameters Index (32bit):与这些 IP 数据包相关的 SA 索引。 
     * Sequence Number (32bit): 单调递增的计数器，以防止重放攻击。  
