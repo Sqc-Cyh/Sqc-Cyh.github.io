@@ -10,13 +10,13 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap07/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap09/">
       
       
-        <link rel="prev" href="../Chap06/">
+        <link rel="prev" href="../Chap08/">
       
       
-        <link rel="next" href="../Chap08/">
+        <link rel="next" href="../../D2CX_Xinanyuan/note/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap 7 | “Divide and Conquer” - 时清川的个人主页</title>
+        <title>Chap 9 | “Greedy Algorithms” - 时清川的个人主页</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#activity-selection-problem" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 7 | “Divide and Conquer”
+              Chap 9 | “Greedy Algorithms”
             
           </span>
         </div>
@@ -926,28 +926,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chap 7 | “Divide and Conquer”
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Chap07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -956,75 +938,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.分治法的例子：最近点对
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.三个计算方法:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.三个计算方法:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-substitution-method-guess-then-prove-by-induction" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Substitution method — guess, then prove by induction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-recursion-tree-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Recursion-tree method（递归树法）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-master-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Master method（主方法）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1055,10 +968,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Chap09/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 9 | “Greedy Algorithms”
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1067,6 +998,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#activity-selection-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      案例：Activity Selection Problem
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1516,53 +1474,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#activity-selection-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      1.分治法的例子：最近点对
+      案例：Activity Selection Problem
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.三个计算方法:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.三个计算方法:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-substitution-method-guess-then-prove-by-induction" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Substitution method — guess, then prove by induction
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-recursion-tree-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Recursion-tree method（递归树法）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-master-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Master method（主方法）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1585,174 +1501,48 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1114 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 8 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 201 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 1 分钟</p>
 </div>
-<h1 id="欢迎">Chap 7 | “Divide and Conquer”</h1>
+<h1 id="欢迎">Chap 9 | “Greedy Algorithms”</h1>
 <div class="admonition note">
 <p class="admonition-title">章节启示录</p>
-<p>本章节主要介绍了分治法，它的基本思想是将一个问题分解为若干个规模较小的相同问题，然后递归地解决这些子问题，最后将这些子问题的解合并得到原问题的解，一个比较经典的案例就是归并排序。本章节重点在于如何分析一个递归式的时间复杂度。</p>
-</div>
-<p>General recurrence: <span class="arithmatex">\(T(N)=aT(N/b)+f(N)\)</span></p>
-<h2 id="1">1.分治法的例子：最近点对<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>给定平面中的 <span class="arithmatex">\(N\)</span> 个点。找到最接近的一对点。</p>
-<div class="admonition success">
-<p class="admonition-title">方法</p>
-<p>1.将序列分为左右两部分，分别求解最大子序列和；<br />
-2.求解跨越中点的最大子序列和；<br />
-3.比较三者的大小，取最大值；  </p>
-</div>
-<p>我们将图中的平面用绿色的线分成两个部分，然后继续用以上的方法进行划分……  </p>
-<p><img alt="" src="../img/123.png" width="300" /></p>
-<p>其中最主要的问题是如何高效的解决方法中的第 <span class="arithmatex">\(2\)</span> 步,如果检查 <span class="arithmatex">\(N(N-1)/2\)</span> 个点对，那么额外的时间复杂度将是 <span class="arithmatex">\(T=O(N^2)\)</span></p>
-<div class="admonition abstract">
-<p class="admonition-title">减少搜索范围</p>
-<p>首先我们假设在第一步中求得的最短距离<span class="arithmatex">\(\large\delta\)</span>，然后如果第二步中的距离大于<span class="arithmatex">\(\large\delta\)</span>，那么我们则无需考虑。也就是说，我们可以划定一个界限，在界限之外的点距离一定大于<span class="arithmatex">\(\large\delta\)</span>，因此它们就不会被纳入考虑范围。</p>
-</div>
-<ul>
-<li>我们首先从 <span class="arithmatex">\(x\)</span> 方向上进行考虑。</li>
-</ul>
-<p><img alt="" src="../img/124.png" width="300" /></p>
-<p>如图所示，只有在两条绿线中的点才会被纳入考虑范围，即有可能更新答案。但这样依旧可能出现极端恶劣的情况，于是我需要从二维上去考虑这个问题。</p>
-<ul>
-<li>从 <span class="arithmatex">\(y\)</span> 方向上考虑。</li>
-</ul>
-<p><img alt="" src="../img/125.png" width="300" /></p>
-<p>如图所示，对在 <span class="arithmatex">\(x\)</span> 范围内的任意两个点，如果纵向距离大于 <span class="arithmatex">\(\large\delta\)</span> 那么就不考虑。<br />
-因此，对于选定点 <span class="arithmatex">\(\large p_{l_i}\)</span> ,其所有可能导致答案更新的点都被框定在一个 <span class="arithmatex">\(\large 2\delta × \delta\)</span> 的矩形中。 
-不难发现，在最理想最理想的情况下——闭区间、允许点重合的情况下，这个矩形最多也只能放八个点（两边各四个）：  </p>
-<p><img alt="" src="../img/126.png" />   </p>
-<p>因此我只需要遍历这几种情况，而遍历这些情况的时间复杂度为 <span class="arithmatex">\(O(N)\)</span> ，即 <span class="arithmatex">\(f(N)=O(N)\)</span> 。</p>
-<p>所以我们可以得到最近点对的分治法的递推公式：
-$$
-T(N)=2T(N/2)+O(N)=O(NlogN)
-$$
-伪代码：
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/* points are all in the strip */</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm">/* and sorted by y coordinates */</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Dist_y</span><span class="p">(</span><span class="w"> </span><span class="n">Pi</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Pj</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">δ</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">else</span><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="w"> </span><span class="n">Pi</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Pj</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">δ</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="n">δ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="w"> </span><span class="n">Pi</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">Pj</span><span class="w"> </span><span class="p">);</span>
-</code></pre></div></p>
-<ul>
-<li>以上是分治方法的一个具体例子，主要用来说明分治的大致思路。下面将进入本章节的重点内容，如何计算一个分治递归表达式的时间复杂度。</li>
-</ul>
-<h2 id="2">2.三个计算方法:<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<h3 id="21-substitution-method-guess-then-prove-by-induction">2.1 Substitution method — guess, then prove by induction<a class="headerlink" href="#21-substitution-method-guess-then-prove-by-induction" title="Permanent link">&para;</a></h3>
-<p>顾名思义，这个方法需要我们先行猜测答案是多少，然后代入验证（使用数学归纳法）。也就是中学阶段我们常说的题感（<del>连蒙带猜</del>）</p>
-<div class="admonition example">
-<p class="admonition-title">一个例子🌰</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">题目</label><label for="__tabbed_1_2">答案</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="arithmatex">\[\large T(N)=2 T(\lfloor N / 2 \rfloor) + N\]</div>
-</div>
-<div class="tabbed-block">
-<ul>
-<li><strong>Guess</strong>: <span class="arithmatex">\(T( N ) = O( N log N )\)</span>  </li>
-<li>
-<p><strong>Proof</strong>:对足够小的 <span class="arithmatex">\(m&lt;N\)</span> ,有：
-$$\large
-T(\lfloor N/2 \rfloor) ≤ c\lfloor N/2 \rfloor log \lfloor N/2 \rfloor
-$$</p>
-</li>
-<li>
-<p>代入到递归表达式中：<br />
-$$\large
-T(N)=2 T(\lfloor N / 2 \rfloor) + N ≤ 2c\lfloor N/2 \rfloor log \lfloor N/2 \rfloor+N≤
-$$
-$$\large
-cN(logN-log2)+N≤cNlogN,\;\;for \;\; c≥1
-$$</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
+<p>本章节主要介绍了贪心算法，忙忙忙！</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">证明到最后的表达式一定要严格相等</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="" src="../img/127.png" /></p>
-</div>
+<p class="admonition-title">需要注意的前提：</p>
 <ul>
-<li>代换法最大的缺陷就是我们找到的（猜测的）结果复杂度不一定准确，不一定足够紧凑，而且对于较为复杂的递归式，猜测也十分的困难。</li>
-</ul>
-<h3 id="22-recursion-tree-method">2.2 Recursion-tree method（递归树法）<a class="headerlink" href="#22-recursion-tree-method" title="Permanent link">&para;</a></h3>
-<p>递归树法其实也是猜测（bushi），利用树清晰的性质，将递归的过程可视化，更加便于我们进行猜测。（与代换法的原理基本一致，但优化了猜测的过程）
-对于一个递推式，我们将它不断展开以后，形式大概长成这个样子：(用了修佬的公式！)  </p>
-<p><img alt="" src="../img/128.png" /></p>
-<ul>
-<li>具体来说解释其含义，combine 部分就是在每一次“分治”的处理时间，如合并当前的子问题分治后的结果，体现在递推式的 <span class="arithmatex">\(f(N)\)</span> 部分；而 conquer 部分指的是当“分治”的“治”在“分”的末端的体现，即对于足够小的规模的问题，不再需要继续“分”的时候，对其处理的开销。</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">一个例子🌰</p>
-<div class="arithmatex">\[\large
-T(N)=3T(N/4)+\Theta(N^2)
-\]</div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step1</label><label for="__tabbed_2_2">Step2</label><label for="__tabbed_2_3">Step3</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>初始情况时，<span class="arithmatex">\(T(N)\)</span> 是根和叶子节点的总和，也就是说根其实是 <span class="arithmatex">\(f(N)\)</span> 部分，而不是 <span class="arithmatex">\(T(N)\)</span></p>
-<p><img alt="" src="../img/129.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/130.png" width="600" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/131.png" width="600" /></p>
-</div>
-</div>
-</div>
-<p><img alt="" src="../img/132.png" width="600" /></p>
-<ul>
-<li>在上图中， <span class="arithmatex">\(\large a=3,b=4,f(N)=\Theta(N^2)\)</span> ,也就是每次都分成了 <span class="arithmatex">\(3\)</span> 个子问题，一共分裂的次数（树的高度）是 <span class="arithmatex">\(\large log_4N\)</span> 。然后我们对所有的开销进行累加，最底层是一个常数，也就是公式中的 <span class="arithmatex">\(\large \Theta(N^{log_43})\)</span>,随后我们将其扩展到∞进行等比数列的计算。</li>
+<li>贪婪算法仅在局部最优值等于全局最优值时才有效。</li>
+<li>贪婪算法并不能保证最优解。 但是，它通常生成的解在值（启发式）上非常接近最优，因此当找到最优解需要太多时间时，直观上很有吸引力。</li>
 </ul>
 </div>
-<h3 id="23-master-method">2.3 Master method（主方法）<a class="headerlink" href="#23-master-method" title="Permanent link">&para;</a></h3>
-<p>主方法是我们需要重点掌握（记忆的），当然讨论的基础都是针对形如 <span class="arithmatex">\(\large T(N)=aT(N/b)+f(N)\)</span> 这样的递归式。</p>
-<div class="admonition abstract">
-<p class="admonition-title">形式1</p>
-<p>1.若 <span class="arithmatex">\(\large f(N)=O(N^{log_b\;a-\varepsilon}),for \;\;\varepsilon＞0\)</span> ，那么 <span class="arithmatex">\(\large T(N)=\Theta(N^{log_b\;a})\)</span><br />
-2.若 <span class="arithmatex">\(\large f(N)=\Theta(N^{log_b\;a}),for \;\;\varepsilon＞0\)</span> ，那么 <span class="arithmatex">\(\large T(N)=\Theta(N^{log_b\;a}logN)\)</span><br />
-3.若 <span class="arithmatex">\(\large f(N)=\Omega(N^{log_b\;a+\varepsilon}),for \;\;\varepsilon＞0\)</span> ，且 <span class="arithmatex">\(\large af(N/b)&lt;cf(N),for \;\; c&lt;1 \;\; and \;\; \forall N&gt;N_0\)</span> ，那么<span class="arithmatex">\(\large T(N)=\Theta(f(N))\)</span></p>
-</div>
+<h2 id="activity-selection-problem">案例：Activity Selection Problem<a class="headerlink" href="#activity-selection-problem" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/146.png" /></p>
+<p>简单来说，就是给定时间线上的若干区间 <span class="arithmatex">\([s_i,f_i)\)</span>，求出最多能不重叠地在这个时间线上放置多少个区间。</p>
+<div class="admonition tip">
+<p class="admonition-title">贪心算法的思路:</p>
 <ul>
-<li>主方法其实可以类比成“主元法”。我们考虑主要的变量，也就是去分析combine部分和conquer部分谁大谁小。当 <span class="arithmatex">\(f(N)\)</span> 足够小时，以conquer开销为主（case 1），当一样大时（case 2），当 $f(N) $足够大时，以combine开销为主（case 3）</li>
+<li>寻找最早开始的  </li>
 </ul>
-<p><del>证明这里就不写了</del>，看看修佬的吧！<a href="https://note.isshikih.top/cour_note/D2CX_AdvancedDataStructure/Lec07/#%E8%AF%81%E6%98%8E">证明方法</a></p>
-<div class="admonition abstract">
-<p class="admonition-title">形式2</p>
-<p>1.若 <span class="arithmatex">\(\large af(N/b)=\kappa f(N)\;\;for\;\;some\;\;\kappa&lt;1\)</span> ，那么 <span class="arithmatex">\(\large T(N)=\Theta(f(N))\)</span><br />
-2.若 <span class="arithmatex">\(\large af(N/b)=K f(N)\;\;for\;\;some\;\;K&gt;1\)</span> ，那么 <span class="arithmatex">\(\large T(N)=\Theta(N^{log_b\;a})\)</span><br />
-3.若 <span class="arithmatex">\(\large af(N/b)=f(N)\)</span> ，那么 <span class="arithmatex">\(\large T(N)=\Theta(f(N)log_b\;N)\)</span></p>
-<div class="admonition example">
-<p class="admonition-title">一个例子🌰</p>
+<p><img alt="" src="../img/147.png" /><br />
+<img alt="" src="../img/148.png" /></p>
 <ul>
-<li>已知：<span class="arithmatex">\(\large a=4,b=2,f(N)=NlogN\)</span>  </li>
+<li>寻找最短的  </li>
 </ul>
-<p><span class="arithmatex">\(\large af(N/b)=4(N/2)log(N/2)=2NlogN-2N\)</span></p>
-<p>此处由于最后多了一个小尾巴 <span class="arithmatex">\(2N\)</span>，因此用不了形式2的主定理。但它可以用形式1的主定理！但我们注意到</p>
-<p><span class="arithmatex">\(\large f(N)=NlogN=O(N^{logb_\;a-\varepsilon})=O(N^{2-\varepsilon})\)</span></p>
+<p><img alt="" src="../img/149.png" /><br />
+<img alt="" src="../img/150.png" /></p>
 <ul>
-<li>因此，由形式1中的case 1可得， <span class="arithmatex">\(\large T(N)=O(N^{log_b\;a})=O(N^2)\)</span></li>
+<li>寻找最少冲突的  </li>
 </ul>
+<p><img alt="" src="../img/151.png" /><br />
+<img alt="" src="../img/152.png" /></p>
+<ul>
+<li>寻找最晚结束的  </li>
+</ul>
+<p><img alt="" src="../img/153.png" /><br />
+<img alt="" src="../img/154.png" /></p>
 </div>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">形式3</p>
-<p>第三种形式讨论了一系列特殊形式，当递推关系满足:</p>
-<p><span class="arithmatex">\(\large T(N)=aT(N/b)+\Theta(N^klog^pN)\;\;Where \;\;a≥1,b&gt;1,p≥0\)</span></p>
-<p>它的时间复杂度为：</p>
-<div class="arithmatex">\[\large
-    T(N) =
-    \begin{cases}
-        O(N^{log_b\;a}) &amp; a&gt;b^k\\\\
-        O(N^klog^{p+1}N) &amp; a=b^k\\\\
-        O(N^klog^pN) &amp; a&lt;b^k\\\\
-    \end{cases}
-\]</div>
+<div class="admonition success">
+<p class="admonition-title">策略四的证明</p>
 </div>
 
 
