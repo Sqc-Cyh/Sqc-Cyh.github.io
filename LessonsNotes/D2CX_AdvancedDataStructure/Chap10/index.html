@@ -10,28 +10,28 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap10/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../Chap09/">
       
       
-        <link rel="next" href="Chap01/">
+        <link rel="next" href="../../D2CX_Xinanyuan/note/">
       
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
-        <title>数据库系统 - 时清川的个人主页</title>
+        <title>Chap 10 | “NP-Completeness” - 时清川的个人主页</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
@@ -62,7 +62,7 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +102,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+    <a href="../../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -117,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数据库系统
+              Chap 10 | “NP-Completeness”
             
           </span>
         </div>
@@ -233,7 +238,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -255,7 +260,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -275,7 +280,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../home/home.md" class="md-tabs__link">
+        <a href="../../../home/home.md" class="md-tabs__link">
           
   
     
@@ -295,7 +300,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../SkillTree/" class="md-tabs__link">
+        <a href="../../../SkillTree/" class="md-tabs__link">
           
   
     
@@ -315,7 +320,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Poems/" class="md-tabs__link">
+        <a href="../../../Poems/" class="md-tabs__link">
           
   
     
@@ -350,7 +355,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+    <a href="../../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -401,7 +406,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -468,7 +473,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -498,231 +503,6 @@
                 
   
   
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
-  
-  <span class="md-ellipsis">
-    ⭐数据库系统
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            ⭐数据库系统
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Chap01/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Chap02/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 2 | Relational Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Chap03/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 3 | SQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Chap04/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 4 | Advanced SQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Chap05/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 5 | Entity-Relationship Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Chap06/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 6 | Relational Database Design
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Chap07/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 7 | Storage and File Structure
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     
@@ -730,12 +510,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
         
       
         
@@ -762,12 +536,243 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../D2CX_AdvancedDataStructure/" class="md-nav__link ">
+            <a href="../../D2CX_DatabaseSystem/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐数据库系统
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐数据库系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | Relational Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | Advanced SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | Entity-Relationship Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 6 | Relational Database Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 7 | Storage and File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -784,7 +789,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             ⭐高级数据结构与算法分析
@@ -800,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap01/" class="md-nav__link">
+      <a href="../Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap02/" class="md-nav__link">
+      <a href="../Chap02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -842,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap03/" class="md-nav__link">
+      <a href="../Chap03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -863,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap04/" class="md-nav__link">
+      <a href="../Chap04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap05/" class="md-nav__link">
+      <a href="../Chap05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -905,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap06/" class="md-nav__link">
+      <a href="../Chap06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -926,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap07/" class="md-nav__link">
+      <a href="../Chap07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -947,7 +952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap08/" class="md-nav__link">
+      <a href="../Chap08/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -968,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap09/" class="md-nav__link">
+      <a href="../Chap09/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -986,10 +991,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../D2CX_AdvancedDataStructure/Chap10/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 10 | “NP-Completeness”
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -998,6 +1021,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.图灵机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2np" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.NP问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-halting-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Halting Problem（停机问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-hamiltonian-cycle-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Hamiltonian cycle problem（哈密顿回路问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-traveling-salesman-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Traveling Salesman Problem（旅行商问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-npccircuit-satcircuit-satisfiability-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 最早被证明的NPC问题——Circuit-SAT（circuit satisfiability problem）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-a-formal-language-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 A Formal-language Framework
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1060,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_Xinanyuan/note/" class="md-nav__link">
+      <a href="../../D2CX_Xinanyuan/note/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1138,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home/home.md" class="md-nav__link">
+      <a href="../../../home/home.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1191,7 +1310,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../SkillTree/" class="md-nav__link ">
+            <a href="../../../SkillTree/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1245,7 +1364,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../SkillTree/MakeYourOwnWeb/" class="md-nav__link ">
+            <a href="../../../SkillTree/MakeYourOwnWeb/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1302,7 +1421,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../SkillTree/MarkDown/" class="md-nav__link ">
+            <a href="../../../SkillTree/MarkDown/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1368,7 +1487,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Poems/" class="md-nav__link ">
+            <a href="../../../Poems/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1401,7 +1520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
+      <a href="../../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1440,6 +1559,92 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.图灵机
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2np" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.NP问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.案例
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.案例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-halting-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Halting Problem（停机问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-hamiltonian-cycle-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Hamiltonian cycle problem（哈密顿回路问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-traveling-salesman-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Traveling Salesman Problem（旅行商问题）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-npccircuit-satcircuit-satisfiability-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 最早被证明的NPC问题——Circuit-SAT（circuit satisfiability problem）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-a-formal-language-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 A Formal-language Framework
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1457,9 +1662,164 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2 个字 </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1848 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 5 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
-<h1 id="欢迎">欢迎！</h1>
+<h1 id="欢迎">Chap 10 | “NP-Completeness”</h1>
+<div class="admonition note">
+<p class="admonition-title">章节启示录</p>
+<p>本章节主要介绍了NP相关的问题，以一些基本概念为主。本章的结构基于作者自己的理解，与ppt上的顺序有所不同。</p>
+</div>
+<h2 id="1">1.图灵机<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Links</p>
+<p>Wikipedia:<a href="https://en.wikipedia.org/wiki/Turing_machine">https://en.wikipedia.org/wiki/Turing_machine</a><br />
+Wikipedia:<a href="https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine">https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine</a></p>
+</div>
+<blockquote>
+<p>图灵机由一个无限长的纸带和一个读写头组成。纸带被划分为一个个格子，每个格子上有一个符号，读写头可以在纸带上移动，读写头可以读取当前格子上的符号，也可以改变当前格子上的符号。图灵机的状态是一个有限集合，每个状态都有一个转移函数，转移函数的输入是当前状态和当前格子上的符号，输出是下一个状态、下一个格子上的符号和读写头的移动方向。  </p>
+</blockquote>
+<p><img alt="" src="../img/160.png" /></p>
+<ul>
+<li>流程概括：<br />
+    1.更改有限控制状态。<br />
+    2.擦除当前头部指向的单位中的符号，并在其中写入一个新符号。<br />
+    3.头部向左 （L） 或向右 （R） 移动一个单元，或停留在其当前位置 （S）。</li>
+<li>分类：<br />
+    1.确定型图灵机（Deterministic Turing Machine）：下一步要做什么可以根据当前状态确定。<br />
+    2.非确定型图灵机（Nondeterministic Turing Machine）：可以从有限集合中自由选择下一步，并且最终总是选择通向正确答案的方向的那条路。</li>
+</ul>
+<h2 id="2np">2.NP问题<a class="headerlink" href="#2np" title="Permanent link">&para;</a></h2>
+<p>根据问题的难度，由不同的定义划分，问题可以分为：
+不可计算问题(undecidable)、<span class="arithmatex">\(P\)</span> 问题(polynomial time)、<span class="arithmatex">\(NP\)</span> 问题(nondeterministic polynomial time)、<span class="arithmatex">\(NPC\)</span> 问题(NP complete)、<span class="arithmatex">\(NPH\)</span> 问题(NP hard)。</p>
+<div class="admonition abstract">
+<p class="admonition-title">P</p>
+<p>P 取自 polynomial time，指的是可以用确定型图灵机在多项式时间内解决的问题。  </p>
+<p>也就是我们通常意义下所说的，可以在多项式时间内解决的问题。</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">NP</p>
+<p>NP 即 nondeterministic polynomial time，指的是可以用非确定型图灵机在多项式时间内解决的问题。这个说法等价于可以用确定型图灵机在多项式时间内<strong>验证</strong>（判断答案是否正确）。</p>
+<p>也就是我们通常意义下所说的，可以在多项式时间内验证的问题。</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">NPC</p>
+<p>NPC 即 NP complete，NP 完全，是 NP 中最难的决定性问题（并不是全部问题中最难的问题！）。而我们称满足如下条件的问题为 NPC 问题：</p>
+<ol>
+<li>是一个 NP 问题；</li>
+<li>所有 NP 问题都可以多项式时间归约为该问题；</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">多项式时间归约</p>
+<p>如果我们能在多项式时间的复杂度内，将问题 A 转化为问题 B，则称问题 A 可以多项式时间归约(polynomial reduce)为 B，记为 <span class="arithmatex">\(\large A≤_pB\)</span> ，表示 A 不会比 B 难。</p>
+</div>
+<p>由 2 可以有结论，所有的 NPC 问题难度相同——一旦有一个 NPC 问题被解决，那么所有 NPC 问题，乃至所有 NP 问题都能被解决。</p>
+<p>若要证明一个问题是 NPC 问题，我们可以通过以下步骤：</p>
+<ol>
+<li>判定该问题是一个 NP 问题；</li>
+<li>判定一个已知的 NPC 问题可以多项式时间归约为该问题，或判定该问题是 NPH（在下面）问题；</li>
+</ol>
+<blockquote>
+<p>第一个被证明是 NPC 的问题是 Circuit-SAT 问题。</p>
+</blockquote>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">NPH</p>
+<p>NPH 即 NP hard，NP 困难，它不一定需要是 NP 问题。所有的NPC问题都可以在多项式时间内转化为他的话，我们就叫他NPH（hard）问题。</p>
+<ul>
+<li>NP-Hard问题是这样一种问题，它满足NPC问题定义的第二条但不一定要满足第一条（就是说，NP-Hard问题要比 NPC问题的范围广）。</li>
+<li>NP-Hard问题同样难以找到多项式的算法，但它不列入我们的研究范围，因为它不一定是NP问题。即使NPC问题发现了多项式级的算法，NP-Hard问题有可能仍然无法得到多项式级的算法。事实上，由于NP-Hard放宽了限定条件，它将有可能比所有的NPC问题的时间复杂度更高从而更难以解决。</li>
+</ul>
+</div>
+<p>由上面的定义我们可以得到：<span class="arithmatex">\(NPC = NP \cap NPH\)</span>。</p>
+<h2 id="3">3.案例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31-halting-problem">3.1 Halting Problem（停机问题）<a class="headerlink" href="#31-halting-problem" title="Permanent link">&para;</a></h3>
+<p>是否有可能让你的 C 编译器检测所有无限循环。换句话说，对于任意一个程序，我们无法设计一个算法来判断它是否会在有限时间内停机（即判断程序是否会死循环）。</p>
+<div class="admonition success">
+<p class="admonition-title">证明</p>
+<p>如果存在一个无限循环检查程序，那么它肯定可以用来检查自身。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Loop</span><span class="p">(</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm">/* 1 */</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">P</span><span class="p">(</span><span class="n">P</span><span class="p">)</span><span class="w"> </span><span class="n">loops</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="n">YES</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm">/* 2 */</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">infinite_loop</span><span class="p">();</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</code></pre></div>
+<img alt="" src="../img/161.png" /></p>
+</div>
+<h3 id="32-hamiltonian-cycle-problem">3.2 Hamiltonian cycle problem（哈密顿回路问题）<a class="headerlink" href="#32-hamiltonian-cycle-problem" title="Permanent link">&para;</a></h3>
+<p>给定一个图，判断是否存在一条路径，使得它经过图中的每个点恰好一次，且最后回到起点。</p>
+<div class="admonition tip">
+<p class="admonition-title">哈密顿回路问题</p>
+<p>哈密顿回路问题是一个NPC问题</p>
+</div>
+<h3 id="33-traveling-salesman-problem">3.3 Traveling Salesman Problem（旅行商问题）<a class="headerlink" href="#33-traveling-salesman-problem" title="Permanent link">&para;</a></h3>
+<p>旅行推销员问题：给定一个完整的图 G=（V， E），具有边成本和一个整数 K，是否存在访问所有顶点并具有总成本 ̂≤ K 的简单循环？</p>
+<div class="admonition tip">
+<p class="admonition-title">旅行商问题</p>
+<p>旅行商问题是一个NPC问题，可以利用<strong>哈密顿回路问题</strong>证明，下面给出证明。</p>
+</div>
+<ul>
+<li>
+<p>证明：</p>
+<ul>
+<li>
+<p>首先回顾证明 NPC 的步骤：   </p>
+<ol>
+<li>判定该问题是一个 NP 问题；   </li>
+<li>判定一个已知的 NPC 问题可以多项式时间归约为该问题，或者说判定该问题是 NPH 问题；</li>
+</ol>
+</li>
+<li>
+<p>代入到这个问题中，也就是我们需要证明：</p>
+<ol>
+<li>TSP 是一个 NP 问题；</li>
+<li>Hamilton Cycle Problem 可以多项式时间归约为 TSP；</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">证明 TSP is NP</p>
+<ul>
+<li>证明 TSP 是一个 NP 问题即证明 TSP 的解可以在多项式时间内被验证。而验证一个解是 TSP 问题的解，需要证明下面两个点：  <ol>
+<li>这条路径经过了所有节点恰好一次；  </li>
+<li>这条路径长度不超过 <span class="arithmatex">\(k\)</span> ;  </li>
+</ol>
+</li>
+</ul>
+<p>显然，这两个条件只需要 <span class="arithmatex">\(O(N)\)</span> 就能验证。<br />
+于是我们得到结论 <span class="arithmatex">\(TSP \in NP\)</span></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">证明 TSP is NPH</p>
+<ul>
+<li>要证明 TSP 是一个 NPH 问题，我们可以通过证明 Hamilton Cycle Problem(HCP) 可以多项式时间归约为 TSP。</li>
+<li>也就是证明 <span class="arithmatex">\(HCP ≤_p TCP\)</span> 。我们可以做以下这样形式的构造进行证明：  <ol>
+<li>连接 <span class="arithmatex">\(G\)</span> （哈密顿问题的图）中所有没连上的边，使 <span class="arithmatex">\(G\)</span> 成为一张无权完全图。  </li>
+<li>对于无权完全图中的每一条边 <span class="arithmatex">\(v_i^c\)</span> ，如果在 <span class="arithmatex">\(G\)</span> 中也有这条边，那么令它的边权为 <span class="arithmatex">\(0\)</span> ，否则它边权为 <span class="arithmatex">\(1\)</span> ，于是得到了 <span class="arithmatex">\(G^\prime\)</span> 。显而易见，这个 <span class="arithmatex">\(G^\prime\)</span> 属于TSP中的一种。  </li>
+</ol>
+</li>
+</ul>
+<p>因此，在 <span class="arithmatex">\(G\)</span> 上寻找哈密顿环，等价于 <span class="arithmatex">\(G^\prime\)</span> 上做 <span class="arithmatex">\(k=0\)</span> 的TSP。因此 <span class="arithmatex">\(HCP≤_pTSP\)</span>，即 <span class="arithmatex">\(TSP \in NPH\)</span>。</p>
+</div>
+<p>综上所述，<span class="arithmatex">\(TSP \in NP\)</span> 且 <span class="arithmatex">\(TSP \in NPH\)</span> ，所以 <span class="arithmatex">\(TSP \in NPC\)</span>。</p>
+<h3 id="34-npccircuit-satcircuit-satisfiability-problem">3.4 最早被证明的NPC问题——Circuit-SAT（circuit satisfiability problem）<a class="headerlink" href="#34-npccircuit-satcircuit-satisfiability-problem" title="Permanent link">&para;</a></h3>
+<p>Circuit-SAT 即为确定给定布尔电路是否具有使输出为真的输入分配的决策的问题。
+<img alt="" src="../img/162.png" /><br />
+上图中，左侧电路满足条件，右侧电路不满足条件。</p>
+<h3 id="34-a-formal-language-framework">3.4 A Formal-language Framework<a class="headerlink" href="#34-a-formal-language-framework" title="Permanent link">&para;</a></h3>
+<ul>
+<li>abstract problem（抽象问题） Q : 是一组问题实例 <span class="arithmatex">\(I\)</span> 和一组问题解 <span class="arithmatex">\(S\)</span> 上的二元关系。  <blockquote>
+<p>e.g:<br />
+<img alt="" src="../img/163.png" /></p>
+</blockquote>
+</li>
+<li>Encodings: 将 <span class="arithmatex">\(I\)</span> 映射到一个二进制字符串 <span class="arithmatex">\(\{0,1\}^*\)</span> </li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Formal-language Theory <font color = "red">(for decision problem)</font></p>
+<p><img alt="" src="../img/164.png" /></p>
+</div>
 
 
 
@@ -1591,20 +1951,20 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
