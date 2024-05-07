@@ -127,7 +127,7 @@ Circuit-SAT 即为确定给定布尔电路是否具有使输出为真的输入�
 ![](./img/162.png)  
 上图中，左侧电路满足条件，右侧电路不满足条件。
 
-### 3.4 A Formal-language Framework
+### 3.5 A Formal-language Framework
 
 * abstract problem（抽象问题） Q : 是一组问题实例 $I$ 和一组问题解 $S$ 上的二元关系。  
 >e.g:  
@@ -136,3 +136,32 @@ Circuit-SAT 即为确定给定布尔电路是否具有使输出为真的输入�
 
 !!! abstract "Formal-language Theory <font color = "red">(for decision problem)</font>"
     ![](./img/164.png)
+
+
+### 3.6 Clique problem（团问题） and Vertex cover problem
+* Clique problem（团问题）：给定一个无向图 $G = (V， E)$ 和一个整数 $K$ ，$G$ 是否包含（至少）$K$ 个顶点的完整子图（集团）？
+* Vertex cover problem：给定一个无向图 $G = (V， E)$ 和一个整数 $K$ ，$G$ 是否包含一个子集 $V'\subset  V$ ，使得 $|V'|$（最多）是 $K$ ，$G$ 中的每条边在 $V'$ 中都有一个顶点（顶点覆盖）？
+
+\## 问题：假设我们已经知道团问题是NPC的。 证明顶点覆盖问题也是 NPC 的。
+
+* 证明：
+    * 首先回顾证明 NPC 的步骤：   
+        1.  判定该问题是一个 NP 问题；   
+        2.  判定一个已知的 NPC 问题可以多项式时间归约为该问题，或者说判定该问题是 NPH 问题；
+
+    * 代入到这个问题中，也就是我们需要证明：
+        1. VCP 是一个 NP 问题；
+        2. CP 可以多项式时间归约为 VCP；
+!!! success "证明 VCP is NP"
+    * 证明 VCP 是一个 NP 问题即证明 TSP 的解可以在多项式时间内被验证。
+    给定任意 $x = <G， K>$ ，取 $V'\subset V$ 
+    验证算法：检查是否 $|V'|= K$ ;检查对于每个边 $(u， v) ∈ E$ ，$u$ 是否 $∈ V'$ 或 $v ∈ V'$ 。
+    显然，这个条件只需要 $O(E)$ 就能验证。  
+    于是我们得到结论 $VCP \in NP$
+!!! success "证明 VCP is NPH （$CLIQUE ≤_P VERTEX-COVER $）" 
+    
+    * 从理解上证明：因为团问题的目标得到一个大小至少为 K 的图，问题也可以等价于找这个图的补图（一个大小最大是 $|V|-K$ 的图）。也就是说，团问题的一个实例为一张无向图，其可以映射一张补图，为顶点覆盖的一个实例。
+    * 抽象成逻辑表达式：$G$  有一个规模为 $K$ 的团，当且仅当 $\overline{G}$ 的顶点覆盖大小为 $|V|-K$。
+    
+    ![](./img/165.png)
+<hr></hr>
