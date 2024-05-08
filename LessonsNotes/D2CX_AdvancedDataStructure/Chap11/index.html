@@ -10,13 +10,13 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap05/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap11/">
       
       
-        <link rel="prev" href="../Chap04/">
+        <link rel="prev" href="../Chap10/">
       
       
-        <link rel="next" href="../Chap06/">
+        <link rel="next" href="../../D2CX_Xinanyuan/note/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap 5 | “Binomial Queue” - 时清川的个人主页</title>
+        <title>Chap 11 | “Approximation” - 时清川的个人主页</title>
       
     
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 5 | “Binomial Queue”
+              Chap 11 | “Approximation”
             
           </span>
         </div>
@@ -888,28 +888,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chap 5 | “Binomial Queue”
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Chap05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -918,102 +900,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.定义
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.操作
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.操作">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-findmin" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 FindMin
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-merge" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Merge
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-insert" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Insert
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-deletemin" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 DeleteMin
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.实现
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.摊还分析
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1128,10 +1014,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Chap11/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 11 | “Approximation”
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1140,6 +1044,141 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.目标与标准
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.装箱问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.装箱问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-next-fitonline" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Next Fit（online）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-first-fitonline" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 First Fit（online）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-best-fitonline" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Best Fit（online）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-first-fit-decreasingoffline" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 First Fit Decreasing（offline）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3knapsack-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Knapsack Problem（背包问题）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Knapsack Problem（背包问题）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-fractional-version01" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Fractional Version（可以装0.1个物品，连续可分）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-0-1-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 0-1 Version
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 0-1 Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      贪心算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态规划算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1591,7 +1630,7 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1.定义
+      1.目标与标准
     </span>
   </a>
   
@@ -1600,44 +1639,44 @@
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2.操作
+      2.装箱问题
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.操作">
+    <nav class="md-nav" aria-label="2.装箱问题">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21-findmin" class="md-nav__link">
+  <a href="#21-next-fitonline" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 FindMin
+      2.1 Next Fit（online）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22-merge" class="md-nav__link">
+  <a href="#22-first-fitonline" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Merge
+      2.2 First Fit（online）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#23-insert" class="md-nav__link">
+  <a href="#23-best-fitonline" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 Insert
+      2.3 Best Fit（online）
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#24-deletemin" class="md-nav__link">
+  <a href="#24-first-fit-decreasingoffline" class="md-nav__link">
     <span class="md-ellipsis">
-      2.4 DeleteMin
+      2.4 First Fit Decreasing（offline）
     </span>
   </a>
   
@@ -1649,20 +1688,59 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3knapsack-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      3.实现
+      3.Knapsack Problem（背包问题）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Knapsack Problem（背包问题）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-fractional-version01" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Fractional Version（可以装0.1个物品，连续可分）
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#32-0-1-version" class="md-nav__link">
     <span class="md-ellipsis">
-      4.摊还分析
+      3.2 0-1 Version
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3.2 0-1 Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      贪心算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      动态规划算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1685,185 +1763,142 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1614 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 17 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 834 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 19 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
-<h1 id="欢迎">Chap 5 | “Binomial Queue”</h1>
+<h1 id="欢迎">Chap 11 | “Approximation”</h1>
 <div class="admonition note">
 <p class="admonition-title">章节启示录</p>
-<p>本章介绍了二项树和二项队列，或许还要自学一下斐波那契堆。对于二项队列而言，它可以弥补二叉堆的不足: <span class="arithmatex">\(merge\)</span> 操作的时间复杂度为 <span class="arithmatex">\(O(N)\)</span> 。二项队列的 <span class="arithmatex">\(merge\)</span> 操作的最坏时间复杂度为 <span class="arithmatex">\(O(logN)\)</span> 。</p>
+<p>本章节主要介绍了近似算法相关的问题。我们知道对于一些较难的问题，给出严谨的多项式时间（即在所有情况下都是多项式时间）是很困难的，因此我思考去寻找近似的算法对之进行替代。<del>启示录写的真的是越来越简略了</del></p>
 </div>
-<h2 id="1">1.定义<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>同样地，在这里我们也想先了解二项队列的作用和意义。<br />
-我们知道，二叉堆的 <span class="arithmatex">\(merge\)</span> 时间复杂度为 <span class="arithmatex">\(O(N)\)</span> ,但我们想把这个复杂度降下来，降到 <span class="arithmatex">\(O(logN)\)</span> ，于是有了二项队列。</p>
-<div class="admonition tips">
-<p class="admonition-title">思考</p>
-<p>二项队列的名字由来是什么呢？二项？什么地方会出现二项？二项式定理、二进制！不妨思考一下二项队列与二进制的联系，非常的巧妙与神奇。</p>
-</div>
+<h2 id="1">1.目标与标准<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>二项树：高度为 0 的二项式树是单节点树。高度为 <span class="arithmatex">\(k\)</span> 的二项式树 <span class="arithmatex">\(B_k\)</span> 是通过将二项式树 <span class="arithmatex">\(B_{k-1}\)</span> 附加到另一个二项式树 <span class="arithmatex">\(B_{k-1}\)</span> 的根而形成的。要注意的是：二项树同时是一个堆，它应该具备小根堆（大根堆）的性质。  </li>
-<li>性质：二项树的节点个数等于它的名称下标（如 <span class="arithmatex">\(B_3\)</span> 的子节点个数为 <span class="arithmatex">\(3\)</span> ）,且它的子树一定是一系列二项树（如 <span class="arithmatex">\(B_3\)</span> 的子树为 <span class="arithmatex">\(B_0,B_1,B_2\)</span> ）。</li>
+<li>What for?
+   对于某些问题，我们无法使用多项式时间解决。因此我们尝试寻找一种多项式算法，使得最后的结果在一个可接受的偏差范围内。</li>
+<li>
+<p>标准（Approximation Ratio）：近似比  </p>
+<p><span class="arithmatex">\(\large max(\frac{C}{C^*},\frac{C^*}{C}≤\rho(n))\)</span></p>
+<p>优化问题的近似方案是一种近似算法，它不仅将问题的实例作为输入，而且还将值 $ \varepsilon&gt; 0$ 作为输入，因此对于任何固定 <span class="arithmatex">\(\varepsilon\)</span> ，该方案是 <span class="arithmatex">\((1+ \varepsilon)\)</span> 近似算法。<br />
+如果对于任何固定的 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，该方案在其输入实例的大小 n 中按时间多项式运行。我们就称近似方案是a polynomial-time approximation scheme（PTAS）（多项式时间近似范式）</p>
+</li>
 </ul>
-<p><img alt="" src="../img/104.png" /></p>
+<div class="admonition 近似范式">
+<p class="admonition-title">近似范式</p>
+<p>近似范式(approximation scheme)指的是对于某个优化问题的一族相同模式的算法，它们满足对于确定的 <span class="arithmatex">\(\varepsilon &gt; 0\)</span>，算法的近似比为 <span class="arithmatex">\(1+\varepsilon\)</span>。</p>
 <ul>
-<li>二项队列：二项队列是二项树的集合。  </li>
-<li>性质：一个二项队列中，<strong>不会存在两个形式上一样的二项树</strong>（即不会出现两个形如 <span class="arithmatex">\(B_0\)</span> 这样的二项树），它们将会被合并成新的二项树，类似于二进制中的进位！  </li>
+<li>当 <span class="arithmatex">\(f(n,\varepsilon)\)</span> 关于 <span class="arithmatex">\(n\)</span> 是多项式时，<strong>我们称其为多项式时间近似范式(polynomial-time approximation scheme, PTAS)</strong>。</li>
+<li>当 <span class="arithmatex">\(f(n,\varepsilon)\)</span> 关于 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(1/\varepsilon\)</span> 都是多项式时，我们称其为<strong><font color="red">完全</font>多项式时间近似范式(fully polynomial-time approximation scheme, FPTAS)</strong>。</li>
 </ul>
-<p>还记得我们说的二项队列与二进制之间的联系吗？其实每一个二项队列都可以被特定地表示成一个二进制数，我们来看下面的例子。</p>
-<div class="admonition example">
-<p class="admonition-title">例子🌰</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Example1</label><label for="__tabbed_1_2">Example2</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="" src="../img/105.png" />  </p>
-<p>可以看到图中从左自右依次是：<span class="arithmatex">\(B_2,B_1,B_0\)</span><br />
-那么这个二项队列表示的数字就是：<span class="arithmatex">\(\large(111)_{2}=2^2+2^1+2^0=(7)_{10}\)</span></p>
+<p><img alt="" src="../img/166.png" /></p>
 </div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/106.png" /></p>
-<p>可以看到图中从左自右依次是：<span class="arithmatex">\(B_2,B_0\)</span>
-那么这个二项队列表示的数字就是：<span class="arithmatex">\(\large(101)_{2}=2^2+2^0=(5)_{10}\)</span></p>
-</div>
-</div>
-</div>
-<ul>
-<li>我们可以发现，这个数字恰好是节点的个数。</li>
-</ul>
-</div>
-<h2 id="2">2.操作<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<h3 id="21-findmin">2.1 FindMin<a class="headerlink" href="#21-findmin" title="Permanent link">&para;</a></h3>
-<p>因为二项队列实际上是堆的集合，所以根据堆的性质，最小值位于其中一个根中。对于任意 <span class="arithmatex">\(n\)</span> 个节点，它们最多可以划分成 <span class="arithmatex">\(\lceil logN \rceil\)</span> 个二项树，因此FindMin的时间复杂度为 <span class="arithmatex">\(T_p=O(logN)\)</span></p>
-<div class="admonition abstract">
-<p class="admonition-title">Note:</p>
-<p>我们可以记住最小值，并在更改时进行更新。 然后这个操作将只需要 <span class="arithmatex">\(O(1)\)</span>。</p>
-</div>
-<h3 id="22-merge">2.2 Merge<a class="headerlink" href="#22-merge" title="Permanent link">&para;</a></h3>
-<p>对于Merge操作我想直接借助一个例子来展示，请尤其注意Merge的操作其实和二进制的加法有异曲同工之妙。</p>
-<div class="admonition example">
-<p class="admonition-title">例子🌰</p>
-<p><img alt="" src="../img/107.png" width="450" />
-<img alt="" src="../img/108.png" width="200" /></p>
-<ul>
-<li>注意到 <span class="arithmatex">\(H_1\)</span> 代表的是 <span class="arithmatex">\((110)_2=(6)_{10}\)</span>,<span class="arithmatex">\(H_2\)</span> 代表的是 <span class="arithmatex">\((111)_2=(7)_{10}\)</span>。</li>
-</ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step1</label><label for="__tabbed_2_2">Step2</label><label for="__tabbed_2_3">Step3</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="" src="../img/109.png" />  </p>
-<p>先从 <span class="arithmatex">\(B_0\)</span> 开始，只有 <span class="arithmatex">\(H_2\)</span> 有 <span class="arithmatex">\(B_0\)</span> ，直接拿下来，相当于加法中最末位的 <span class="arithmatex">\(0+1=1\)</span>。</p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/110.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/111.png" /></p>
-</div>
-</div>
-</div>
-</div>
-<h3 id="23-insert">2.3 Insert<a class="headerlink" href="#23-insert" title="Permanent link">&para;</a></h3>
-<p>和左堆的插入一样，这里的插入也是Merge的一种特殊形式。
-如果最小的不存在的二项式树是 <span class="arithmatex">\(B_i\)</span> ,那么 <span class="arithmatex">\(T_p=Const*(i+1)\)</span>。<br />
-在初始空的二项式队列上执行 N 个插入将花费 O（N） 个最坏情况的时间。 因此，平均时间是恒定的。</p>
-<h3 id="24-deletemin">2.4 DeleteMin<a class="headerlink" href="#24-deletemin" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Step1:FindMin in <span class="arithmatex">\(B_k\)</span> 。</li>
-<li>Step2:Remove <span class="arithmatex">\(B_k\)</span> from <span class="arithmatex">\(H\)</span> ,形成 <span class="arithmatex">\(H^{\prime}\)</span> 。</li>
-<li>Step3:Remove root from <span class="arithmatex">\(B_k\)</span> ,形成 <span class="arithmatex">\(H^{\prime\prime}\)</span> 。</li>
-<li>Step4:Merge <span class="arithmatex">\((H^{\prime},H^{\prime\prime})\)</span></li>
-</ul>
+<h2 id="2">2.装箱问题<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>给定 <span class="arithmatex">\(N\)</span> 个大小为 <span class="arithmatex">\(S_1 ， S_2 ， ...， S_N\)</span> 的物品，使得 <span class="arithmatex">\(0 &lt; S_i ≤ 1\)</span> 对于所有的 <span class="arithmatex">\(1 ≤ i ≤ N\)</span> . 将这些物品包装在最少数量的箱子中，每个箱子的最大容量都是 <span class="arithmatex">\(1\)</span>。</p>
 <div class="admonition example">
 <p class="admonition-title">一个例子🌰</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Step 1</label><label for="__tabbed_3_2">Step 2</label><label for="__tabbed_3_3">Step 3</label><label for="__tabbed_3_4">Step 4</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><img alt="" src="../img/112.png" /></p>
+<p>给定 7 个item ，size 分别是 0.2 , 0.5 , 0.4 , 0.7 , 0.1 , 0.3 , 0.8 ,那么最少需要 3 个箱子。</p>
+<ul>
+<li>bin 1 : 0.2 + 0.8</li>
+<li>bin 2 : 0.7 + 0.3</li>
+<li>bin 3 : 0.4 + 0.1 + 0.5</li>
+</ul>
 </div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/113.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>装箱问题是一个 NPH 问题，但装箱问题的判定问题是一个 NPC 问题。<br />
+Decision problem: given K bins, can we pack N items? </p>
 </div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/114.png" /></p>
-</div>
-<div class="tabbed-block">
-<p><img alt="" src="../img/115.png" /></p>
-</div>
-</div>
-</div>
-</div>
-<h2 id="3">3.实现<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p>二项队列的实现我们可以参考将任意树转化为二叉树的步骤。<br />
-即：将每个节点的左孩子指向他的兄弟节点形成链表。
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">     </span><span class="n">Element</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">Position</span><span class="w">        </span><span class="n">LeftChild</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">Position</span><span class="w">        </span><span class="n">NextSibling</span><span class="p">;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span><span class="w"> </span><span class="p">;</span>
+<p>在介绍具体的方式前，我们先对其进行一个分类：在线算法（online algorithm）和离线算法（offline algorithm）</p>
+<ul>
+<li>在线算法：输入是一个一个知道的，也就是一开始只知道第一个，随着进程进入才知道后面的部分</li>
+<li>离线算法：输入是一下子全部知道的，也就是一开始就知道所有物品的size，可以进行更加合理的安排布置。</li>
+</ul>
+<h3 id="21-next-fitonline">2.1 Next Fit（online）<a class="headerlink" href="#21-next-fitonline" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">NextFit</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w">   </span><span class="n">read</span><span class="w"> </span><span class="n">item1</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">item2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">item2</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">packed</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">same</span><span class="w"> </span><span class="n">bin</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">item1</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="n">place</span><span class="w"> </span><span class="n">item2</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">bin</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="n">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item2</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">item1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item2</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end-while */</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">}</span>
 </code></pre></div>
-<img alt="" src="../img/116.png" />  </p>
-<ul>
-<li>
-<p>我们对子树的排序有两种选择：<br />
-1.升序排列子树（按子树节点的数量，即它对应的二进制数或者说它的下标）<br />
-2.降序排列子树（按子树节点的数量，即它对应的二进制数或者说它的下标）  </p>
-</li>
-<li>
-<p>先给出结论：我们按照降序排列。</p>
-</li>
-</ul>
-<p>接下来我们来分析一下为什么。其实主要考虑的因素就是升序/降序对操作的时间复杂度的影响。我们可以用Insert操作为例进行分析。 </p>
-<ul>
-<li>
-<p>如果我们按升序排列，那么当二项队列中出现两个同种二项树时，我们需要进行合并，合并时需要将其中一个二项树连接到另一个二项树上。因为我们选择使用NextSibling的方式，所以我们需要遍历到最后一个Sibling然后插入，这样的时间复杂度是 <span class="arithmatex">\(O(logN)\)</span> 。 </p>
-</li>
-<li>
-<p>如果我们按降序排列，我们选择Root较小的二项树作为被连接对象，那么只需要先将另一个二项树的根节点指向LeftChild,然后将被连接二叉树的根节点指向连接二叉树的根节点即可，这样的时间复杂度是 <span class="arithmatex">\(O(1)\)</span> 。</p>
-</li>
-</ul>
-<p>下面是简单的代码实现，可以明显看出这样的时间复杂度是 <span class="arithmatex">\(O(1)\)</span>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">BinTree</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">BinTree</span><span class="w"> </span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">BinTree</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{</span><span class="w">  </span><span class="cm">/* merge equal-sized T1 and T2 */</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">T1</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T2</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="cm">/* attach the larger one to the smaller one */</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">T2</span><span class="p">,</span><span class="w"> </span><span class="n">T1</span><span class="w"> </span><span class="p">);</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="cm">/* insert T2 to the front of the children list of T1 */</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="n">T2</span><span class="o">-&gt;</span><span class="n">NextSibling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T1</span><span class="o">-&gt;</span><span class="n">LeftChild</span><span class="p">;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="n">T1</span><span class="o">-&gt;</span><span class="n">LeftChild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T2</span><span class="p">;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">T1</span><span class="p">;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
-</code></pre></div>
-<img alt="" src="../img/117.png" /></p>
-<h2 id="4">4.摊还分析<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<ul>
-<li>聚合分析：   </li>
-</ul>
-<p><img alt="" src="../img/118.png" />  </p>
-<p>我们观察到每过 <span class="arithmatex">\(4\)</span> 个节点，会出现一次 <span class="arithmatex">\(link=1\)</span>;每过 <span class="arithmatex">\(8\)</span> 个节点，会出现一次 <span class="arithmatex">\(link=2\)</span> ……<br />
-因此不难得出总的 <span class="arithmatex">\(\large link\)</span> 数为 <span class="arithmatex">\(Total \;\; links=N(\frac{1}{4}+2×\frac{1}{8}+3×\frac{1}{16})=O(N)\)</span></p>
-<ul>
-<li>摊还分析：</li>
-</ul>
+NF 策略总是选择当前最后一个bin，若剩余量足够，则放入，否则就开一个新的。<br />
+NF 策略的箱子个数不会超过 <span class="arithmatex">\(2M-1\)</span>，其中 <span class="arithmatex">\(M\)</span> 表示准确解。</p>
 <div class="admonition success">
-<p class="admonition-title">势能函数</p>
-<p><span class="arithmatex">\(\large C_i+(\Phi_i-\Phi_{i-1})=2\)</span>   </p>
-<p><span class="arithmatex">\(C_i\)</span> 是第 <span class="arithmatex">\(i\)</span> 次插入的cost。<br />
-<span class="arithmatex">\(\Phi_i\)</span> 第 <span class="arithmatex">\(i\)</span> 次插入后的树的个数。（<span class="arithmatex">\(\Phi_0=0\)</span>）</p>
+<p class="admonition-title">证明</p>
+<p>证明当 NF 的结果为需要 <span class="arithmatex">\(2M\)</span> 或 <span class="arithmatex">\(2M+1\)</span> 个 bin 时，准确解为至少需要 <span class="arithmatex">\(M+1\)</span> 个bin。</p>
+<p><img alt="" src="../img/167.png" /></p>
 </div>
-<p>将势能函数累加得： </p>
-<div class="arithmatex">\[\large \sum_{i=0}^NC_i+\Phi_N-\Phi_0=2N\]</div>
-<div class="arithmatex">\[\large \sum_{i=0}^NC_i=2N-\Phi_N≤2N=O(N)\]</div>
-<p>所以我们可以发现：</p>
-<div class="arithmatex">\[\large T_{worst}=O(logN),but \;\; T_{amortized}=2\]</div>
+<h3 id="22-first-fitonline">2.2 First Fit（online）<a class="headerlink" href="#22-first-fitonline" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">FirstFit</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{</span><span class="w">   </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">scan</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">first</span><span class="w"> </span><span class="n">bin</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">large</span><span class="w"> </span><span class="n">enough</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">place</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">bin</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="n">create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">bin</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end-while */</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</code></pre></div>
+FF 策略总是选择第一个能放下当前item的箱子，如果所有箱子都装不下了，那么就新开一个箱子。<br />
+FF 策略总是使用不超过 <span class="arithmatex">\(\lfloor 1.7M \rfloor\)</span> 个 bin，并且存在一组能对边界取等的输入</p>
+<h3 id="23-best-fitonline">2.3 Best Fit（online）<a class="headerlink" href="#23-best-fitonline" title="Permanent link">&para;</a></h3>
+<p>BF 策略总是选择能够容纳当前 item 且剩余空间最小的 bin（即 tightest），若所有 bin 都无法容纳当前 item，则新开一个 bin。
+BF 策略也总是使用不超过 <span class="arithmatex">\(\lfloor 1.7M \rfloor\)</span> 个 bin，并且存在一组能对边界取等的输入。</p>
+<h3 id="24-first-fit-decreasingoffline">2.4 First Fit Decreasing（offline）<a class="headerlink" href="#24-first-fit-decreasingoffline" title="Permanent link">&para;</a></h3>
+<p>离线做法的优势在于它能够获得所有 item 的信息以求统筹规划。这里给出的近似做法是，将 item 按照 size 降序排序，而后使用 FF（或 BF，由于单调性，两者等价）。</p>
+<p><img alt="" src="../img/168.png" /></p>
+<p>FFD 策略总是使用不超过 <span class="arithmatex">\(\large \frac{11}{9}M+\frac{6}{9}\)</span>个 bin，并且存在一组能对边界取等的输入。</p>
+<h2 id="3knapsack-problem">3.Knapsack Problem（背包问题）<a class="headerlink" href="#3knapsack-problem" title="Permanent link">&para;</a></h2>
+<p>问题描述：要打包容量为 <span class="arithmatex">\(M\)</span> 的背包。 给定 <span class="arithmatex">\(N\)</span> 个项目。 每个项目 <span class="arithmatex">\(i\)</span> 都有一个权重 <span class="arithmatex">\(w_i\)</span> 和一个利润 <span class="arithmatex">\(p_i\)</span>。 如果 <span class="arithmatex">\(x_i\)</span> 是被打包的物料 <span class="arithmatex">\(i\)</span> 的百分比，则打包的利润将为 <span class="arithmatex">\(p_ix_i\)</span>  。</p>
+<h3 id="31-fractional-version01">3.1 Fractional Version（可以装0.1个物品，连续可分）<a class="headerlink" href="#31-fractional-version01" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(x_i ∈ [0,1]\)</span> ，我们可以很自然地想到用性价比（profit density）最优策略进行选择，即 <span class="arithmatex">\(p_i/w_i\)</span>。这样得到的答案是准确解。</p>
+<h3 id="32-0-1-version">3.2 0-1 Version<a class="headerlink" href="#32-0-1-version" title="Permanent link">&para;</a></h3>
+<p><span class="arithmatex">\(x_i∈{0,1}\)</span>，一个物品要么选要么不选。这是一个 NPH 问题，w我们可以近似算法来求较优解。</p>
 <div class="admonition tip">
-<p class="admonition-title">复习时的一些补充</p>
+<p class="admonition-title">拓展：背包判定问题与背包问题</p>
 <ul>
-<li>Inserting a number into a binomial heap with 15 nodes costs less time than inserting a number into a binomial heap with 19 nodes.  <br />
-插入看节点总数的最低位开始出现0的位置，出现越早时间越短。<br />
-15：1111，19：10011，19更早出现0，因此是19更快。  </li>
-<li>插入的最坏情况是 <span class="arithmatex">\(O(logN)\)</span> ，但这只存在于需要一直进位的时候。而连续插入 <span class="arithmatex">\(N\)</span> 个数据时，不可能每插入一个就进位，因此连续插入 <span class="arithmatex">\(N\)</span> 个数是 <span class="arithmatex">\(O(N)\)</span> 。</li>
+<li>先给出结论，背包判定问题是NPC问题，但背包问题是NPH问题。<a href="https://zhuanlan.zhihu.com/p/102362515#:~:text=%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E7%BB%99%E5%87%BA%E7%BB%93%E8%AE%BA%EF%BC%9A%200%2F1%E8%83%8C%E5%8C%85%E5%88%A4%E5%AE%9A%E9%97%AE%E9%A2%98%E6%98%AFNPC%E9%97%AE%E9%A2%98%EF%BC%9B%200%2F1%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98%E6%98%AFNPH%E9%97%AE%E9%A2%98%E4%BD%86%E4%B8%8D%E6%98%AFNPC%E9%97%AE%E9%A2%98%E3%80%82%20%EF%BC%88%E4%B8%8B%E6%96%87%E4%BC%9A%E7%BB%99%E5%87%BA%E5%85%B7%E4%BD%93%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B%EF%BC%89,%E5%AF%B9P%E9%97%AE%E9%A2%98%E3%80%81NP%E9%97%AE%E9%A2%98%E3%80%81NPC%E9%97%AE%E9%A2%98%E3%80%81NPH%E9%97%AE%E9%A2%98%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%E8%BF%98%E4%B8%8D%E5%A4%AA%E4%BA%86%E8%A7%A3%E7%9A%84%E5%90%8C%E5%AD%A6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%85%88%E8%8A%B1%E5%87%A0%E5%88%86%E9%92%9F%E7%9C%8B%E7%9C%8B%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%85%B3%E7%B3%BB%E5%9B%BE%EF%BC%8C%E7%84%B6%E5%90%8E%E5%86%8D%E7%9C%8B%E5%90%8E%E9%9D%A2%E7%9A%84%E5%85%B7%E4%BD%93%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B%20P%E9%97%AE%E9%A2%98%EF%BC%9A%E5%A6%82%E6%9E%9C%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E8%83%BD%E6%89%BE%E5%88%B0%E5%9C%A8%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%97%B6%E9%97%B4%E5%86%85%E8%A7%A3%E5%86%B3%E5%AE%83%E7%9A%84%E7%AE%97%E6%B3%95%EF%BC%8C%E9%82%A3%E4%B9%88%E8%AF%A5%E9%97%AE%E9%A2%98%E6%98%AFP%E9%97%AE%E9%A2%98%E3%80%82%20NP%E9%97%AE%E9%A2%98%EF%BC%9A%E5%A6%82%E6%9E%9C%E5%8F%AF%E4%BB%A5%E5%9C%A8%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%97%B6%E9%97%B4%E5%86%85%E9%AA%8C%E8%AF%81%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%A7%EF%BC%8C%E9%82%A3%E4%B9%88%E8%AF%A5%E9%97%AE%E9%A2%98%E6%98%AFNP%E9%97%AE%E9%A2%98%E3%80%82%20NPC%E9%97%AE%E9%A2%98%EF%BC%9A%E4%B8%80%E4%B8%AANPC%E9%97%AE%E9%A2%98%E9%9C%80%E8%A6%81%E5%90%8C%E6%97%B6%E6%BB%A1%E8%B6%B3%E4%B8%A4%E4%B8%AA%E6%9D%A1%E4%BB%B6%EF%BC%9A%EF%BC%881%EF%BC%89%E8%AF%A5%E9%97%AE%E9%A2%98%E6%98%AFNP%E9%97%AE%E9%A2%98%EF%BC%9B%EF%BC%882%EF%BC%89NP%E9%87%8C%E6%89%80%E6%9C%89%E9%97%AE%E9%A2%98%E5%8F%AF%E4%BB%A5%E5%9C%A8%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%97%B6%E9%97%B4%E5%86%85%E5%BD%92%E7%BA%A6%E5%88%B0%E8%AF%A5%E9%97%AE%E9%A2%98%E3%80%82">证明</a>  </li>
 </ul>
+<p><strong>0/1背包判定问题:</strong>
+给定一个有限集合 <span class="arithmatex">\(X\)</span> ，对每一个 <span class="arithmatex">\(x∈X\)</span> ，对应一个值 <span class="arithmatex">\(w(x)∈Z^+\)</span> ，和相应的值 <span class="arithmatex">\(p(x)∈Z^+\)</span> 。另外，还有一个容量约束 <span class="arithmatex">\(M∈Z^+\)</span> 和一个价值目标 <span class="arithmatex">\(K∈Z^+\)</span>。<br />
+问：是否存在 <span class="arithmatex">\(X\)</span> 的一个子集 <span class="arithmatex">\(X^\prime\)</span> ，使得 <span class="arithmatex">\(\large\sum_{x∈X^\prime} w(x)≤M\)</span> 而且 <span class="arithmatex">\(\large\sum_{x∈X^\prime} p(x)≥K\)</span></p>
+<p><img alt="" src="../img/169.png" /><br />
+<img alt="" src="../img/170.png" /></p>
 </div>
+<h4 id="_1">贪心算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>我们可以使用贪心算法，贪心策略可以是总是选可以放得下的、还没放入中的，利润最大的或<span class="arithmatex">\(p_i/w_i\)</span>最大的。这些做法的近似比都是 2。<br />
+<img alt="" src="../img/171.png" /></p>
+<h4 id="_2">动态规划算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p><span class="arithmatex">\(W_{i,p}\)</span> 为总利润正好是 <span class="arithmatex">\(p\)</span> 的最小权重集合。
+$$
+     W_{i,p} =
+    \begin{cases}
+        ∞  &amp;(i=0)\\
+        W_{i-1,p}  &amp;(p_i&gt;p)\\
+        min\{{W_{i-1},w_i+W_{i-1,p-p_i}\}} &amp;(otherwise)\\
+    \end{cases}
+$$</p>
+<p>$$\large
+i=1,…，n;p=1,…,n \;\;p_{max} \Rightarrow O(n^2\;p_{max})
+$$
+* 注意：input size包括 <span class="arithmatex">\(\large p_{max}\)</span> 的二进制编码长度 <span class="arithmatex">\(d\)</span>，所以 <span class="arithmatex">\(\large p_{max}=O(2^d)\)</span> 是指数级的复杂度。</p>
+<div class="admonition abstract">
+<p class="admonition-title">伪多项式时间算法</p>
+<ul>
+<li>多项式时间算法：根据输入的<strong>数量</strong></li>
+<li>伪多项式时间算法：根据输入中最大数的<strong>数量级</strong><ol>
+<li>当一个算法的最坏时间复杂度是依据输入的<strong>数量级</strong>的时候，我们就称算法的时间复杂偶是伪多项式时间。</li>
+<li>给一个wiki上的解释可能更好理解：若一个数值算法的时间复杂度可以表示为输入数值规模N的多项式，但其运行时间与输入数值规模N的二进制位数呈指数增长关系，则称其时间复杂度为伪多项式时间。这是由于，N的值是N的位数的幂，故该算法的时间复杂度实际上应视为输入数值N的位数的幂。  </li>
+</ol>
+</li>
+</ul>
+<p>背包问题实例的规模是它的参数所占的存储空间。那么动态规划中的 <span class="arithmatex">\(\large p_{max}\)</span> 所占用的空间便是 <span class="arithmatex">\(d\)</span> 位。因此动态规划算法也是一个伪多项式时间算法。
+<a href="https://www.zhihu.com/question/20686504">相关链接</a>  </p>
+</div>
+<p>因此，如果 <span class="arithmatex">\(\large p_{max}\)</span> 很大，可以考虑将他们除以一个较大的数（比如十万），然后向上取整，再进行运算。但是这个带来了精度的损失，我们用 <span class="arithmatex">\(\varepsilon\)</span> 来表示。也就如下图所示：  </p>
+<p><img alt="" src="../img/172.png" /></p>
 
 
 

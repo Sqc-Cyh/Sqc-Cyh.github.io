@@ -16,7 +16,7 @@
         <link rel="prev" href="../Chap09/">
       
       
-        <link rel="next" href="../../D2CX_Xinanyuan/note/">
+        <link rel="next" href="../Chap11/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -757,6 +757,8 @@
       
         
       
+        
+      
     
     
       
@@ -1100,9 +1102,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-a-formal-language-framework" class="md-nav__link">
+  <a href="#35-a-formal-language-framework" class="md-nav__link">
     <span class="md-ellipsis">
-      3.4 A Formal-language Framework
+      3.5 A Formal-language Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-clique-problem-and-vertex-cover-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Clique problem（团问题） and Vertex cover problem
     </span>
   </a>
   
@@ -1117,6 +1128,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 11 | “Approximation”
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1630,9 +1662,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#34-a-formal-language-framework" class="md-nav__link">
+  <a href="#35-a-formal-language-framework" class="md-nav__link">
     <span class="md-ellipsis">
-      3.4 A Formal-language Framework
+      3.5 A Formal-language Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-clique-problem-and-vertex-cover-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Clique problem（团问题） and Vertex cover problem
     </span>
   </a>
   
@@ -1662,7 +1703,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1848 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 5 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2301 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 5 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 12 分钟</p>
 </div>
 <h1 id="欢迎">Chap 10 | “NP-Completeness”</h1>
 <div class="admonition note">
@@ -1807,7 +1848,7 @@ Wikipedia:<a href="https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine
 <p>Circuit-SAT 即为确定给定布尔电路是否具有使输出为真的输入分配的决策的问题。
 <img alt="" src="../img/162.png" /><br />
 上图中，左侧电路满足条件，右侧电路不满足条件。</p>
-<h3 id="34-a-formal-language-framework">3.4 A Formal-language Framework<a class="headerlink" href="#34-a-formal-language-framework" title="Permanent link">&para;</a></h3>
+<h3 id="35-a-formal-language-framework">3.5 A Formal-language Framework<a class="headerlink" href="#35-a-formal-language-framework" title="Permanent link">&para;</a></h3>
 <ul>
 <li>abstract problem（抽象问题） Q : 是一组问题实例 <span class="arithmatex">\(I\)</span> 和一组问题解 <span class="arithmatex">\(S\)</span> 上的二元关系。  <blockquote>
 <p>e.g:<br />
@@ -1820,6 +1861,53 @@ Wikipedia:<a href="https://en.wikipedia.org/wiki/Nondeterministic_Turing_machine
 <p class="admonition-title">Formal-language Theory <font color = "red">(for decision problem)</font></p>
 <p><img alt="" src="../img/164.png" /></p>
 </div>
+<h3 id="36-clique-problem-and-vertex-cover-problem">3.6 Clique problem（团问题） and Vertex cover problem<a class="headerlink" href="#36-clique-problem-and-vertex-cover-problem" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Clique problem（团问题）：给定一个无向图 <span class="arithmatex">\(G = (V， E)\)</span> 和一个整数 <span class="arithmatex">\(K\)</span> ，<span class="arithmatex">\(G\)</span> 是否包含（至少）<span class="arithmatex">\(K\)</span> 个顶点的完整子图（集团）？</li>
+<li>Vertex cover problem：给定一个无向图 <span class="arithmatex">\(G = (V， E)\)</span> 和一个整数 <span class="arithmatex">\(K\)</span> ，<span class="arithmatex">\(G\)</span> 是否包含一个子集 <span class="arithmatex">\(V'\subset  V\)</span> ，使得 <span class="arithmatex">\(|V'|\)</span>（最多）是 <span class="arithmatex">\(K\)</span> ，<span class="arithmatex">\(G\)</span> 中的每条边在 <span class="arithmatex">\(V'\)</span> 中都有一个顶点（顶点覆盖）？</li>
+</ul>
+<p>## 问题：假设我们已经知道团问题是NPC的。 证明顶点覆盖问题也是 NPC 的。</p>
+<ul>
+<li>
+<p>证明：</p>
+<ul>
+<li>
+<p>首先回顾证明 NPC 的步骤：   </p>
+<ol>
+<li>判定该问题是一个 NP 问题；   </li>
+<li>判定一个已知的 NPC 问题可以多项式时间归约为该问题，或者说判定该问题是 NPH 问题；</li>
+</ol>
+</li>
+<li>
+<p>代入到这个问题中，也就是我们需要证明：</p>
+<ol>
+<li>VCP 是一个 NP 问题；</li>
+<li>CP 可以多项式时间归约为 VCP；</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">证明 VCP is NP</p>
+<ul>
+<li>证明 VCP 是一个 NP 问题即证明 TSP 的解可以在多项式时间内被验证。
+给定任意 <span class="arithmatex">\(x = &lt;G， K&gt;\)</span> ，取 <span class="arithmatex">\(V'\subset V\)</span> 
+验证算法：检查是否 <span class="arithmatex">\(|V'|= K\)</span> ;检查对于每个边 <span class="arithmatex">\((u， v) ∈ E\)</span> ，<span class="arithmatex">\(u\)</span> 是否 <span class="arithmatex">\(∈ V'\)</span> 或 <span class="arithmatex">\(v ∈ V'\)</span> 。
+显然，这个条件只需要 <span class="arithmatex">\(O(E)\)</span> 就能验证。<br />
+于是我们得到结论 <span class="arithmatex">\(VCP \in NP\)</span></li>
+</ul>
+</div>
+<div class="admonition success">
+<p class="admonition-title">证明 VCP is NPH （$CLIQUE ≤_P VERTEX-COVER $）</p>
+<ul>
+<li>从理解上证明：因为团问题的目标得到一个大小至少为 K 的图，问题也可以等价于找这个图的补图（一个大小最大是 <span class="arithmatex">\(|V|-K\)</span> 的图）。也就是说，团问题的一个实例为一张无向图，其可以映射一张补图，为顶点覆盖的一个实例。</li>
+<li>抽象成逻辑表达式：<span class="arithmatex">\(G\)</span>  有一个规模为 <span class="arithmatex">\(K\)</span> 的团，当且仅当 <span class="arithmatex">\(\overline{G}\)</span> 的顶点覆盖大小为 <span class="arithmatex">\(|V|-K\)</span>。</li>
+</ul>
+<p><img alt="" src="../img/165.png" /></p>
+</div>
+<hr>
+</hr>
 
 
 
