@@ -145,3 +145,100 @@ $$
 因此，如果 $\large p_{max}$ 很大，可以考虑将他们除以一个较大的数（比如十万），然后向上取整，再进行运算。但是这个带来了精度的损失，我们用 $\varepsilon$ 来表示。也就如下图所示：  
 
 ![](./img/172.png)
+
+## 4.The K-center Problem
+选择 $K$ 个中心 $C$ ，使得最大距离（最大半径）的值最小。
+即：  
+设 $C = \{c_1,c_2,…,c_k\}$ 为 $k$ 个 center， $S=\{s_1,s_2,…,s_n\}$ 为 $n$ 个site，我们定义site到center的距离的集合 $C$ 为:
+$$\large
+dist(s_i,C)=min_{c_i∈C}\\{{dsit(s_i,c_i)\\}}
+$$
+定义最大的最小覆盖半径为:
+$$\large
+r(C)=max_{s_i,S}\\{dist(s_i,C)\\}
+$$
+
+我们的目标是寻找一个集合 $C$ 使得 $r(C)$ 最小。（约束条件是集合 $C$ 的基数等于 $k$）
+
+### 4.1 简单的贪心策略
+!!! quesiton "一个简单的想法"
+    将第一个中心放在所有点的中心位置，然后不断添加中心，以使得每次尽可能减小覆盖半径。
+
+    1. 如果是第一个点，就选取所有点的中心；
+    2. 如果不是第一个点，就选取能一个最能让 $r(C)$ 下降的；
+   
+    这样的做法在某些情况是错误的，所以我们不再考虑这个方法。  
+
+    ![](./img/173.png)
+
+### 4.2 2r-Greedy
+正向思考这个问题有些难度，我们不妨反向来想，假设我们知道答案（或者说我们提前猜一个答案，给定一个约束的半径值 $r(C^*)≤r(C_x)$），也就是知道准确解 $r(C^*)$ ，那么我们就有 $r(C^*)≤r(C_x)$，在这里 $r$ 成为了一个约束条件！
+于是我们将按照 $K$ 和 $r$ 这两个约束条件去寻找点。  
+
+* 首先我们引入一个定理：
+!!! abstract "引理"
+    假设给定半径为 $r$ ，以 $c$ 为圆心的圆 $C$ 覆盖了 $S$ 中d的所有点。  
+    那么，对于固定的半径 $r^\prime$ ，要想取任意的 $s_i∈S$ 为圆心，形成对的圆 $C_i$ ，总是能覆盖 $S$ 中的所有点，则 $r^\prime≥2r$。   
+    >这个结论是比较显然的，大家可以想象一下有两个点分别在直径两端。
+
+* 伪代码：
+```c++
+Centers  Greedy-2r ( Sites S[ ], int n, int K, double r )
+{   Sites  S’[ ] = S[ ]; /* S’ is the set of the remaining sites */
+    Centers  C[ ] = 空集;
+    while ( S’[ ] != 空集 ) {
+        Select any s from S’ and add it to C;
+        Delete all s’ from S’ that are at dist(s’, s) ≤ 2r;
+    } /* end-while */
+    if ( |C| ≤ K ) return C;
+    else ERROR(No set of K centers with covering radius at most r);
+}
+```
+
+此时我们发现了一个问题， $r(C^*)$ 我们实际上是不知道的！那么我们接下来的做法就是去猜！也就是我们猜测一个较为合理的约束条件，去逼近真实值。提到逼近，很自然就会想到二分法了。
+
+我们令 $r_{max}$ 为距离最远的两个 site 的距离。
+
+1. Guess:$\large r = (0+r_{max})/2$
+2. Yes:K centers found with 2r  
+   No:r is too small
+
+准确解 $r$ 的范围在 $r_0<r≤r_1$  
+我们得到的解是 $r_1$ 
+
+![](./img/174.png)
+
+### 4.3 A smarter solution — be far away
+这个做法其实有点像上面那个做法的反向思路。上面是不断寻找符合要求的，而这个是一旦不符合要求就返回。  
+我们关注到，上面那个做法总是随机的选取新的 $c_i$，但是对于 center 的选取，我们其实可以总是选择距离已有的 center 最远的点，此外，当 $∣C∣>K$ 时，我们也没必要继续做了。
+!!! success "证明"
+    使用反证法证明。若结果 $r>r*$ ，则每步添加的 $s$ 距离都大于 $2r*$ 。根据前一个算法的结论， $S’$ 在 $K$ 步以内必然非空，推出 $K-center$ 无解满足 $r*$ 。
+* 伪代码：
+```c++
+Centers  Greedy-Kcenter ( Sites S[ ], int n, int K )
+{   Centers  C[ ] = 空集;
+    Select any s（其实很重要） from S and add it to C;
+    while ( |C| < K ) {
+        Select s from S with maximum dist(s, C);
+        Add s it to C;
+    } /* end-while */
+    return C;
+}
+```
+
+这里一开始对初始点的选取是任意的，但若对其做一些限定，相信结果会更加准确。
+
+## 5.总结
+我们需要从三个维度来考虑算法的设计是否优秀：
+
+1. 最优性(optimality)：即能求准确解；
+2. 高效性(efficiency)：即算法是否高效；
+3. 普遍性(all instances)：即算法是否普遍适用于所有的情况
+
+
+
+同时满足最优性和高效性，那么这个算法对特殊情况能高效求准确解；  
+同时满足最优性和普遍性，那么这个算法对所有情况都能求准确解；  
+同时满足高效性和普遍性，那么这个算法可能是个近似算法；
+
+* 即使 N=NP 成立，我们仍然无法保证三个愿望一次满足。这句话指的应该是对于 NPH 问题，我们依然无法保证三个性质同时成立。
