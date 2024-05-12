@@ -10,28 +10,28 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap08/">
       
       
-        <link rel="prev" href="../D2CX_DatabaseSystem/Chap08/">
+        <link rel="prev" href="../Chap07/">
       
       
-        <link rel="next" href="Chap01/">
+        <link rel="next" href="../../D2CX_AdvancedDataStructure/">
       
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
     
     
       
-        <title>ADS - 时清川的个人主页</title>
+        <title>Chap 8 | Indexing and Hashing - 时清川的个人主页</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
@@ -62,7 +62,7 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -87,6 +87,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1basic-concepts" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -97,7 +102,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+    <a href="../../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -117,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ADS
+              Chap 8 | Indexing and Hashing
             
           </span>
         </div>
@@ -233,7 +238,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -255,7 +260,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -275,7 +280,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../home/home.md" class="md-tabs__link">
+        <a href="../../../home/home.md" class="md-tabs__link">
           
   
     
@@ -295,7 +300,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../SkillTree/" class="md-tabs__link">
+        <a href="../../../SkillTree/" class="md-tabs__link">
           
   
     
@@ -315,7 +320,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Poems/" class="md-tabs__link">
+        <a href="../../../Poems/" class="md-tabs__link">
           
   
     
@@ -350,7 +355,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+    <a href="../../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -401,7 +406,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -468,7 +473,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -498,252 +503,6 @@
                 
   
   
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../D2CX_DatabaseSystem/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    ⭐数据库系统
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            ⭐数据库系统
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap01/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap02/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 2 | Relational Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap03/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 3 | SQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap04/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 4 | Advanced SQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap05/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 5 | Entity-Relationship Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap06/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 6 | Relational Database Design
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap07/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 7 | Storage and File Structure
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../D2CX_DatabaseSystem/Chap08/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 8 | Indexing and Hashing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -753,12 +512,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
         
       
         
@@ -787,12 +540,444 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐数据库系统
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐数据库系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | Relational Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | Advanced SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | Entity-Relationship Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 6 | Relational Database Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 7 | Storage and File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 8 | Indexing and Hashing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chap 8 | Indexing and Hashing
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1basic-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Basic Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2ordered-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Ordered Indices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Ordered Indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-dense-index-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Dense Index Files (稠密索引文件)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sparse-index-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Sparse Index Files(稀疏索引文件)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3b-tree-index-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.B+ Tree Index Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.B+ Tree Index Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-b-tree-node-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 B+-Tree Node Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-updates-on-b-trees-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Updates on B+ Trees: Insertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-updates-on-b-trees-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Updates on B+ Trees: Deletion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-b-treeheight-and-size-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 B+ Tree:height and size estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-b-tree-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 B+ Tree File Organization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4bulk-loading-and-bottom-up-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Bulk Loading and Bottom-Up Build
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5write-optimized-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Write-optimized Indices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.Write-optimized Indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-log-structured-merge-lsm-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Log Structured Merge (LSM) Tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-buffer-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Buffer Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../D2CX_AdvancedDataStructure/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -803,13 +988,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             ⭐高级数据结构与算法分析
@@ -825,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap01/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -846,7 +1031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap02/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -867,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap03/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -888,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap04/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -909,7 +1094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap05/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -930,7 +1115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap06/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -951,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap07/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -972,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap08/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap08/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -993,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap09/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap09/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1014,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap10/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1035,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Chap11/" class="md-nav__link">
+      <a href="../../D2CX_AdvancedDataStructure/Chap11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1106,7 +1291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../D2CX_Xinanyuan/note/" class="md-nav__link">
+      <a href="../../D2CX_Xinanyuan/note/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1184,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../home/home.md" class="md-nav__link">
+      <a href="../../../home/home.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1237,7 +1422,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../SkillTree/" class="md-nav__link ">
+            <a href="../../../SkillTree/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1291,7 +1476,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../SkillTree/MakeYourOwnWeb/" class="md-nav__link ">
+            <a href="../../../SkillTree/MakeYourOwnWeb/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1348,7 +1533,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../SkillTree/MarkDown/" class="md-nav__link ">
+            <a href="../../../SkillTree/MarkDown/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1414,7 +1599,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Poems/" class="md-nav__link ">
+            <a href="../../../Poems/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1447,7 +1632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
+      <a href="../../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1486,6 +1671,158 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1basic-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Basic Concepts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2ordered-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Ordered Indices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Ordered Indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-dense-index-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Dense Index Files (稠密索引文件)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sparse-index-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Sparse Index Files(稀疏索引文件)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3b-tree-index-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.B+ Tree Index Files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.B+ Tree Index Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-b-tree-node-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 B+-Tree Node Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-updates-on-b-trees-insertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Updates on B+ Trees: Insertion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-updates-on-b-trees-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Updates on B+ Trees: Deletion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-b-treeheight-and-size-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 B+ Tree:height and size estimation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-b-tree-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 B+ Tree File Organization
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4bulk-loading-and-bottom-up-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Bulk Loading and Bottom-Up Build
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5write-optimized-indices" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Write-optimized Indices
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.Write-optimized Indices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-log-structured-merge-lsm-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Log Structured Merge (LSM) Tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-buffer-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Buffer Tree
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1503,17 +1840,267 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 84 个字 </p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2487 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 12 分钟</p>
 </div>
-<h1 id="欢迎">欢迎！</h1>
+<h1 id="欢迎">Chap 8 | Indexing and Hashing </h1>
 <div class="admonition note">
-<p class="admonition-title">目录</p>
-<p>📜<a href="http://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap01/">Chap 1 | “AVL Trees, Splay Trees,and Amortized Analysis”</a> <br />
-📜<a href="http://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap02/">Chap 2 | “Red-Black Trees and B+ Trees”</a> <br />
-📜<a href="http://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap03/">Chap 3 | “Inverted File Index”</a> <br />
-📜<a href="http://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap04/">Chap 4 | “Leftist Heaps and Skew Heaps”</a></p>
+<p class="admonition-title">章节启示录</p>
+<p>本章节是还没上课就先开始写了，因为老师身体原因，不知道什么时候补课，但后面再补笔记可能有点赶了！</p>
 </div>
-<p>在ADS课程的学习前半段主要是一些数据结构，我想为了弄懂它们，我们第一步要做的是了解这个数据结构是为什么而生的。</p>
+<h2 id="1basic-concepts">1.Basic Concepts<a class="headerlink" href="#1basic-concepts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Index是用来干什么的？
+  Indexing mechanisms used to speed up access to desired data.索引用来加速查找。</p>
+</li>
+<li>
+<p>两种基本的索引种类：</p>
+<ol>
+<li><strong>Ordered indices(顺序索引)</strong>: 搜索键（索引条目）按排序顺序存储</li>
+<li><strong>Hash indices(散列索引)</strong>: 搜索键（索引条目）使用“哈希函数”均匀分布在“存储桶”之间。
+时间效率和空间效率的衡量索引技术最主要的指标，也是数据库系统组织和管理技术的关注的焦点之一</li>
+</ol>
+</li>
+</ul>
+<h2 id="2ordered-indices">2.Ordered Indices<a class="headerlink" href="#2ordered-indices" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>关于索引的一些基本概念：<br />
+    在有序索引中，索引条目按搜索键值排序存储，例如，库中的作者目录。<br />
+    顺序排序文件（Sequentially ordered file ）：文件（数据文件）中的记录按搜索键排序。（第14章）  </p>
+</li>
+<li>
+<p>Primary index（主索引）：其搜索键等于按顺序排序的数据文件的搜索键的索引，该文件在其上创建索引。(与对应的数据文件本身的排列顺序相同的索引称为主索引。)  </p>
+</li>
+</ul>
+<blockquote>
+<ol>
+<li>也称为聚类索引（聚集索引）<br />
+    非顺序文件没有主索引，但关系可以有主键。  </li>
+<li>Index-sequential file（索引顺序文件）：具有主索引的顺序排序文件。</li>
+</ol>
+</blockquote>
+<ul>
+<li>Secondary index（辅助索引）：其搜索键指定的顺序与文件的顺序不同的索引。 <blockquote>
+<p>也称为非聚类索引。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="21-dense-index-files">2.1 Dense Index Files (稠密索引文件)<a class="headerlink" href="#21-dense-index-files" title="Permanent link">&para;</a></h3>
+<p>Dense Index — 文件中每个搜索键值都会显示索引条目。  </p>
+<blockquote>
+<p>e.g:<br />
+index on ID attribute of instructor relation  </p>
+</blockquote>
+<p><img alt="" src="../img/122.png" /></p>
+<h3 id="22-sparse-index-files">2.2 Sparse Index Files(稀疏索引文件)<a class="headerlink" href="#22-sparse-index-files" title="Permanent link">&para;</a></h3>
+<p>Sparse Index：仅包含某些搜索键值的索引条目。（通常，一个数据块给出一个索引条目，一个块包含多个有序数据记录）</p>
+<blockquote>
+<p>仅当数据文件记录按搜索键顺序排序时才适用</p>
+</blockquote>
+<ul>
+<li>搜索方法:
+    To locate a record with search-key value K ,<ol>
+<li>Step1：查找搜索小于 <span class="arithmatex">\(K\)</span> 的键值最大的索引记录</li>
+<li>Step2：从索引入口指向的记录开始按顺序搜索文件</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="../img/123.png" /></p>
+<p>Sparse index只能用于顺序文件, 而dense index可以用于顺序和非顺序文件，如构成索引无序文件，且<font color="red">只能建立在primary index上</font></p>
+<h2 id="3b-tree-index-files">3.B+ Tree Index Files<a class="headerlink" href="#3b-tree-index-files" title="Permanent link">&para;</a></h2>
+<h3 id="31-b-tree-node-structure">3.1 B+-Tree Node Structure<a class="headerlink" href="#31-b-tree-node-structure" title="Permanent link">&para;</a></h3>
+<p>B+树索引是索引顺序文件的替代方法。</p>
+<ul>
+<li>索引顺序文件的缺点：
+    性能会随着文件的增长而下降，因为会创建许多溢出块。 
+    需要定期重组整个文件。</li>
+<li>B+树索引文件的优点： 
+    面对插入和删除，通过微小的局部更改自动重组自身。 
+    不需要重组整个文件来保持性能。</li>
+<li>B+树的缺点：
+    额外的插入和删除开销;空间开销。</li>
+</ul>
+<p><img alt="" src="../img/124.png" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">B+树的性质</p>
+<p>B+树是满足以下属性的根树：</p>
+<ol>
+<li>从根到叶的所有路径都具有相同的长度（平衡的树）  </li>
+<li>每个不是根或叶的节点都具有介于 <span class="arithmatex">\(\large\lceil n/2 \rceil\)</span> 和 <span class="arithmatex">\(n\)</span> 个子节点之间。  </li>
+<li>叶节点的值介于 <span class="arithmatex">\(\large \lceil (n–1)/2 \rceil\)</span> 和 <span class="arithmatex">\(n–1\)</span> 之间。  </li>
+<li>特殊情况：  <ol>
+<li>如果根不是叶子，它至少有 2 个孩子。  </li>
+<li>如果根是叶子（即树中没有其他节点），则它的值可以介于 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\((n–1)\)</span> 之间。</li>
+</ol>
+</li>
+</ol>
+</div>
+<p>如果有 K 个索引项，则树高度不会超过 <span class="arithmatex">\(\large\lceil log_{\lceil n/2 \rceil}(K/2) \rceil + 1\)</span></p>
+<h3 id="32-updates-on-b-trees-insertion">3.2 Updates on B+ Trees: Insertion<a class="headerlink" href="#32-updates-on-b-trees-insertion" title="Permanent link">&para;</a></h3>
+<p>Insertion 流程：</p>
+<ol>
+<li>查找会显示搜索键值的叶节点</li>
+<li>如果叶节点中已存在搜索键值<ol>
+<li>将记录添加到文件</li>
+<li>如有必要，请添加指向存储桶的指针。</li>
+</ol>
+</li>
+<li>如果搜索键值不存在，则<ol>
+<li>将记录添加到主文件（如有必要，请创建存储桶）</li>
+<li>如果叶节点中有空间，在叶节点中插入（键值、指针）对</li>
+<li>否则，Split节点。</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>Split的具体操作请看ads第二章的笔记捏。</p>
+</blockquote>
+<h3 id="33-updates-on-b-trees-deletion">3.3 Updates on B+ Trees: Deletion<a class="headerlink" href="#33-updates-on-b-trees-deletion" title="Permanent link">&para;</a></h3>
+<p>Deletion 流程：</p>
+<ol>
+<li>找到要删除的记录，并将其从主文件和存储桶（如果存在）中删除</li>
+<li>如果没有存储桶或存储桶变为空，请从叶节点中删除（搜索键值、指针）</li>
+<li>如果由于删除，节点的条目太少，并且节点和同级中的条目适合单个节点，<strong>则合并同级</strong>：<ol>
+<li>将两个节点中的所有搜索键值插入到单个节点（左侧的节点）中，然后删除另一个节点。</li>
+<li>使用上述过程以递归方式从其父节点中删除对 $(K_{i–1}， P_i)，其中 <span class="arithmatex">\(P_i\)</span> 是指向已删除节点的指针。</li>
+</ol>
+</li>
+<li>否则，如果由于删除而导致节点的条目太少，但节点中的条目和同级节点不适合单个节点，则重新分发指针：<ol>
+<li>在节点和同级节点之间重新分配指针，使两者的条目数都超过最小数。</li>
+<li>更新节点父节点中相应的搜索键值。</li>
+</ol>
+</li>
+<li>节点删除可能会向上级联，直到找到具有 <span class="arithmatex">\(\lceil n/2 \rceil\)</span> 或更多指针的节点。 </li>
+<li>如果根节点在删除后只有一个指针，则该指针将被删除，唯一的子节点将成为根节点。</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">如何理解</p>
+<p>流程看起来比较复杂呀，但其实还是比较好理解的。用通俗的语言来说，就是每次删除后，去判断能不能更加“简化”这颗B+树，尽可能地让它恢复到没插入这个删除的元素时的状态。<br />
+这其中就要涉及到“借”（类似于减法中的借位）的艺术了，请看 <del>VCR</del> ：  </p>
+<p><img alt="" src="../img/125.png" />  </p>
+<p>中间点如果不够，从另外一边借一个过来。但是不能直接借，需要把它顶上去。（Before and after deleting “Srinivasan”）</p>
+<p><img alt="" src="../img/126.png" />  </p>
+<p>Deletion of “Singh” and “Wu” from result of previous example.</p>
+<p><img alt="" src="../img/127.png" /></p>
+</div>
+<h3 id="34-b-treeheight-and-size-estimation">3.4 B+ Tree:height and size estimation<a class="headerlink" href="#34-b-treeheight-and-size-estimation" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/128.png" /> </p>
+<p>一个person的size是68。<br />
+每一个block可以放 <span class="arithmatex">\(\lceil 4096/68\rceil = 60\)</span> 个records。<br />
+一百万个person至少需要 <span class="arithmatex">\(\lceil 1000000/60\rceil = 16667\)</span> 个块来放。
+<img alt="" src="../img/129.png" />  </p>
+<h3 id="35-b-tree-file-organization">3.5 B+ Tree File Organization<a class="headerlink" href="#35-b-tree-file-organization" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/130.png" /></p>
+<ul>
+<li>Leaf nodes in a B+-tree file organization store records, instead of pointers. 叶子节点不再放索引项，放记录本身。</li>
+<li>Helps keep data records clustered even when there are insertions/deletions/updates. 即使在插入/删除/更新时，也有助于保持数据记录的集群。</li>
+<li>我们可以改变半满的要求以提高空间利用率。<blockquote>
+<p>为了提高空间利用率，请在Split和Merge期间让更多的同级节点参与重新分发,在重新分发中采用 2 个同级（以尽可能避免Split/Merge）这样就使得每个节点至少有 <span class="arithmatex">\(\lfloor 2n/3 \rfloor\)</span> 条目。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="4bulk-loading-and-bottom-up-build">4.Bulk Loading and Bottom-Up Build<a class="headerlink" href="#4bulk-loading-and-bottom-up-build" title="Permanent link">&para;</a></h2>
+<ul>
+<li>将一个条目一次插入到 B+ 树中需要 <span class="arithmatex">\(≥ 1\)</span> 个 IO
+    假设叶级别不适合内存
+    一次加载大量条目（<strong>批量加载</strong>）的效率可能非常低</li>
+<li>有效的替代方案 1：<ol>
+<li>首先对条目进行排序（使用第 12.4 节后面讨论的高效外部内存排序算法）</li>
+<li>按排序顺序插入<ul>
+<li>插入将转到现有页面（或导致拆分）</li>
+<li>大大提高了 IO 性能，但大多数叶节点半满</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>有效的替代方案 2：<strong>自下而上的 B+ 树结构</strong></p>
+<ol>
+<li>和以前一样，对条目进行排序</li>
+<li>然后逐层创建树，从叶级别开始</li>
+<li>
+<p>由大多数数据库系统作为大容量加载实用程序的一部分实现</p>
+</li>
+<li>
+<p>流程：</p>
+<ol>
+<li>首先对索引条目进行排序</li>
+<li>然后逐层创建 B+ tree，从叶级别开始</li>
+<li>然后，使用顺序 I/O 操作将 B+ 树写入磁盘</li>
+</ol>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">一个例子🌰</p>
+<p>假设 B+ 树的扇出 （n） 为 4，为以下 16 个条目构建一个 B+ 树：  </p>
+<p><img alt="" src="../img/131.png" />  </p>
+<ul>
+<li>Estimated cost:<font color = "red">1 seek + 9 block transfers</font> </li>
+</ul>
+<p>如果要排序的内容较大，无法放下内存，可以使用外部排序。<br />
+fanout 可以计算出来。<br />
+可以用 level-order 写到磁盘里，便于顺序访问所有索引，此时块是连续的。（便于顺序访问所有数据项）<br />
+这里的代价就是建好后，一次 seek 后全部写出去 (9 blocks)</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">一个例子🌰</p>
+<p><img alt="" src="../img/132.png" /></p>
+<ul>
+<li>Estimated cost:<font color = "red">2 seek + 19 block transfers</font>   </li>
+</ul>
+<p>把刚刚那棵 B+ 树叶子节点（即遍历所有数据）需要 1seek+6blocks. 随后和上面的数据合并后，写回磁盘时需要 1seek+13blocks.</p>
+</div>
+</li>
+</ul>
+<h2 id="5write-optimized-indices">5.Write-optimized Indices<a class="headerlink" href="#5write-optimized-indices" title="Permanent link">&para;</a></h2>
+<h3 id="51-log-structured-merge-lsm-tree">5.1 Log Structured Merge (LSM) Tree<a class="headerlink" href="#51-log-structured-merge-lsm-tree" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>现在只考虑插入/查询  </p>
+<ol>
+<li>首先插入到内存中树（ <span class="arithmatex">\(L_0\)</span> 树）的记录  </li>
+<li>当内存中树已满时，记录移动到磁盘（ <span class="arithmatex">\(L_1\)</span> 树）<br />
+    通过将现有的 <span class="arithmatex">\(L_1\)</span> 树与 <span class="arithmatex">\(L_0\)</span> 树中的记录合并，使用自下而上的构建构建的 B+ 树</li>
+<li>当 <span class="arithmatex">\(L_1\)</span> 树超过某个阈值时，合并到 <span class="arithmatex">\(L_2\)</span> 树中<br />
+    以此类推，获得更多级别
+    <span class="arithmatex">\(L_{i+1}\)</span> 树的尺寸阈值是 <span class="arithmatex">\(L_i\)</span> 树的尺寸阈值的 <span class="arithmatex">\(k\)</span> 倍</li>
+</ol>
+<p><img alt="" src="../img/133.png" width="400" /></p>
+</li>
+<li>
+<p>LSM 方法的优点:</p>
+<ol>
+<li>仅使用顺序 I/O 操作完成插入</li>
+<li>叶子饱满，避免空间浪费</li>
+<li>与普通 B+ 树相比，每条记录插入的 I/O 操作数减少（最多一些大小）</li>
+</ol>
+</li>
+<li>LSM方法的缺点:<ol>
+<li>查询必须搜索多个树</li>
+<li>每个关卡的全部内容被复制了多次</li>
+</ol>
+</li>
+<li>Stepped-merge index（步进合并索引）:<ol>
+<li>LSM 树的变体，每个级别都有多个树</li>
+<li>与 LSM 树相比，降低了写入成本</li>
+<li>但查询甚至更昂贵</li>
+</ol>
+</li>
+</ul>
+<h3 id="52-buffer-tree">5.2 Buffer Tree<a class="headerlink" href="#52-buffer-tree" title="Permanent link">&para;</a></h3>
+<p>它是 LSM 树的替代品
+* 关键思想：B+树的每个内部节点都有一个缓冲区来存储插入<br />
+    当缓冲区已满时，插入物被移动到较低的水平<br />
+    使用较大的缓冲区时，每次都会将许多记录移动到较低级别<br />
+    每条记录的 I/O 会相应减少<br />
+* 优点：
+    1. 减少查询开销
+    2. 可与任何树索引结构一起使用
+    3. 用于 PostgreSQL 通用搜索树 （GiST） 索引
+* 缺点：
+    1. 比 LSM 树更随机的 I/O</p>
+<p><img alt="" src="../img/134.png" /></p>
 
 
 
@@ -1645,20 +2232,20 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
       
-        <script src="../../javascripts/extra.js"></script>
+        <script src="../../../javascripts/extra.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
