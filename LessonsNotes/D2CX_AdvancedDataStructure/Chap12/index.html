@@ -10,13 +10,13 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap07/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_AdvancedDataStructure/Chap12/">
       
       
-        <link rel="prev" href="../Chap06/">
+        <link rel="prev" href="../Chap11/">
       
       
-        <link rel="next" href="../Chap08/">
+        <link rel="next" href="../../D2CX_Xinanyuan/note/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap 7 | Storage and File Structure - 时清川的个人主页</title>
+        <title>Chap 12 | “Local Search” - 时清川的个人主页</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1overview-of-physical-storage-media" class="md-skip">
+        <a href="#1framework-of-local-search" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 7 | Storage and File Structure
+              Chap 12 | “Local Search”
             
           </span>
         </div>
@@ -503,8 +503,6 @@
                 
   
   
-    
-  
   
   
     
@@ -512,470 +510,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    ⭐数据库系统
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            ⭐数据库系统
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap01/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap02/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 2 | Relational Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap03/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 3 | SQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap04/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 4 | Advanced SQL
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap05/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 5 | Entity-Relationship Model
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap06/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 6 | Relational Database Design
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chap 7 | Storage and File Structure
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Chap 7 | Storage and File Structure
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1overview-of-physical-storage-media" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.Overview of Physical Storage Media
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.Overview of Physical Storage Media">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#physical-storage-media" class="md-nav__link">
-    <span class="md-ellipsis">
-      Physical Storage Media
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#storage-hierarchy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage Hierarchy （存储结构）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2magnetic-disks" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.Magnetic Disks
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.Magnetic Disks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      磁盘概述
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-measures-of-disks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Measures of Disks（磁盘的性能度量）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optimization-of-disk-block-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Optimization of Disk-Block Access（磁盘块访问优化）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3storage-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.Storage Access
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.Storage Access">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#buffer-manager" class="md-nav__link">
-    <span class="md-ellipsis">
-      Buffer Manager
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4file-organization" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.File Organization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.File Organization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-fixed-length-records" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 Fixed-Length Records
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-variable-length-records" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 Variable-Length Records
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5organization-of-records-in-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.Organization of Records in Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.Organization of Records in Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51-heap-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1 Heap file
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-sequential-file-organization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 Sequential File Organization
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-multitable-clustering-file-organization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 Multitable Clustering File Organization
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Chap08/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chap 8 | Indexing and Hashing
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1004,12 +538,268 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../D2CX_AdvancedDataStructure/" class="md-nav__link ">
+            <a href="../../D2CX_DatabaseSystem/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐数据库系统
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐数据库系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | Relational Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | Advanced SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | Entity-Relationship Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 6 | Relational Database Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 7 | Storage and File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 8 | Indexing and Hashing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1026,7 +816,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             ⭐高级数据结构与算法分析
@@ -1042,7 +832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap01/" class="md-nav__link">
+      <a href="../Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1063,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap02/" class="md-nav__link">
+      <a href="../Chap02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1084,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap03/" class="md-nav__link">
+      <a href="../Chap03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1105,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap04/" class="md-nav__link">
+      <a href="../Chap04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1126,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap05/" class="md-nav__link">
+      <a href="../Chap05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1147,7 +937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap06/" class="md-nav__link">
+      <a href="../Chap06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1168,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap07/" class="md-nav__link">
+      <a href="../Chap07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1189,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap08/" class="md-nav__link">
+      <a href="../Chap08/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1210,7 +1000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap09/" class="md-nav__link">
+      <a href="../Chap09/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1231,7 +1021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap10/" class="md-nav__link">
+      <a href="../Chap10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1252,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap11/" class="md-nav__link">
+      <a href="../Chap11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,10 +1060,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap12/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 12 | “Local Search”
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1282,6 +1090,174 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1framework-of-local-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Framework of Local Search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.Framework of Local Search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neighbor-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Neighbor Relation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2example-the-vertex-cover-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.[Example] The Vertex Cover Problem.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3example-hopfield-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.[Example] Hopfield Neural Networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.[Example] Hopfield Neural Networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      来看一个更加具体一点的例子：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state-flipping-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      State-flipping Algorithm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题：它一定能终止吗？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      与 local search 的关联
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4example-the-maximum-cut-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.[Example] The Maximum Cut Problem.
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.[Example] The Maximum Cut Problem.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#local-search_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      与 local search 的关联
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      三个问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三个问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1how-good-is-this-local-optimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.How good is this local optimum?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2may-not-in-polynomial-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.May NOT in polynomial time?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3try-a-better-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Try a better local?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1731,28 +1707,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1overview-of-physical-storage-media" class="md-nav__link">
+  <a href="#1framework-of-local-search" class="md-nav__link">
     <span class="md-ellipsis">
-      1.Overview of Physical Storage Media
+      1.Framework of Local Search
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1.Overview of Physical Storage Media">
+    <nav class="md-nav" aria-label="1.Framework of Local Search">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#physical-storage-media" class="md-nav__link">
+  <a href="#neighbor-relation" class="md-nav__link">
     <span class="md-ellipsis">
-      Physical Storage Media
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#storage-hierarchy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Storage Hierarchy （存储结构）
+      Neighbor Relation
     </span>
   </a>
   
@@ -1764,37 +1731,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2magnetic-disks" class="md-nav__link">
+  <a href="#2example-the-vertex-cover-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      2.Magnetic Disks
+      2.[Example] The Vertex Cover Problem.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.Magnetic Disks">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3example-hopfield-neural-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.[Example] Hopfield Neural Networks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.[Example] Hopfield Neural Networks">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      磁盘概述
+      来看一个更加具体一点的例子：
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#performance-measures-of-disks" class="md-nav__link">
+  <a href="#state-flipping-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      Performance Measures of Disks（磁盘的性能度量）
+      State-flipping Algorithm
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#optimization-of-disk-block-access" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimization of Disk-Block Access（磁盘块访问优化）
+      问题：它一定能终止吗？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      与 local search 的关联
     </span>
   </a>
   
@@ -1806,19 +1791,56 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3storage-access" class="md-nav__link">
+  <a href="#4example-the-maximum-cut-problem" class="md-nav__link">
     <span class="md-ellipsis">
-      3.Storage Access
+      4.[Example] The Maximum Cut Problem.
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3.Storage Access">
+    <nav class="md-nav" aria-label="4.[Example] The Maximum Cut Problem.">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#buffer-manager" class="md-nav__link">
+  <a href="#local-search_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Buffer Manager
+      与 local search 的关联
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      三个问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三个问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1how-good-is-this-local-optimum" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.How good is this local optimum?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2may-not-in-polynomial-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.May NOT in polynomial time?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3try-a-better-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Try a better local?
     </span>
   </a>
   
@@ -1826,76 +1848,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4file-organization" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.File Organization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.File Organization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-fixed-length-records" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 Fixed-Length Records
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#42-variable-length-records" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.2 Variable-Length Records
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5organization-of-records-in-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.Organization of Records in Files
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5.Organization of Records in Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#51-heap-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1 Heap file
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-sequential-file-organization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 Sequential File Organization
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#52-multitable-clustering-file-organization" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 Multitable Clustering File Organization
-    </span>
-  </a>
   
 </li>
         
@@ -1923,369 +1875,273 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 3342 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 17 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2001 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg></span> 49 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 11 分钟</p>
 </div>
-<h1 id="欢迎">Chap 7 | Storage and File Structure </h1>
+<h1 id="欢迎">Chap 12 | “Local Search”</h1>
 <div class="admonition note">
 <p class="admonition-title">章节启示录</p>
-<p>本章节是夏学期的第一节课，开始了MiniSQl的部分，但我还不太清楚后半部分的整体架构是怎么样的，所以就先梳理一下概念和基本的定义。</p>
+<p>摆烂了。……</p>
 </div>
-<h2 id="1overview-of-physical-storage-media">1.Overview of Physical Storage Media<a class="headerlink" href="#1overview-of-physical-storage-media" title="Permanent link">&para;</a></h2>
-<ul>
-<li>物理存储介质的分类：<ol>
-<li>访问数据的速度</li>
-<li>每单位数据的成本</li>
-<li>可靠性（易失性与非易失性）</li>
-</ol>
-</li>
-</ul>
-<h3 id="physical-storage-media">Physical Storage Media<a class="headerlink" href="#physical-storage-media" title="Permanent link">&para;</a></h3>
+<h2 id="1framework-of-local-search">1.Framework of Local Search<a class="headerlink" href="#1framework-of-local-search" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Cache:最快、最昂贵的存储形式，易失性，由计算机系统硬件管理。</p>
+<p>Local:<br />
+    在可行集中定义 <span class="arithmatex">\(\large neighborhoods\)</span><br />
+<span class="arithmatex">\(\large local \;\;optimum\)</span> （局部最优）是 <span class="arithmatex">\(neighborhoods\)</span> 的最佳解决方案</p>
 </li>
 <li>
-<p>Main memory:较快速访问（10 至 100 ns）。  </p>
+<p>Search:<br />
+    从可行的解决方案开始，然后在附近寻找更好的解决方案<br />
+    如果无法改进，则实现局部最优  </p>
+</li>
+</ul>
+<h3 id="neighbor-relation">Neighbor Relation<a class="headerlink" href="#neighbor-relation" title="Permanent link">&para;</a></h3>
 <ul>
-<li>通常太小（或太昂贵）而无法存储整个数据库 <br />
-    目前广泛使用的容量高达几千兆字节 （1GB = 109B）<br />
-    容量增加，每字节成本稳步快速下降（大约每 2 到 3 年下降 2 倍）  </li>
-<li>易失性：如果发生电源故障或系统崩溃，主内存的内容通常会丢失。</li>
+<li>S ~ S' : S' is a neighboring solution of S – S' can be obtained by a small modification of S.(通过微小改动得到)</li>
+<li>N(S): neighborhood of S – the set { S': S ~ S' }.</li>
 </ul>
-</li>
-<li>
-<p>Flash memory（快闪存储器）: 读取速度与主存储器（&lt; 100ns）大致相同，但是写入速度很慢（~ 10μs），擦除速度较慢。</p>
-<ul>
-<li>每单位存储的成本与主内存大致相似</li>
-<li>断电时数据仍可存活</li>
-<li>数据只能在某个位置写入一次，但可以擦除并再次写入位置</li>
-</ul>
-</li>
-<li>
-<p>Magnetic-disk: 用于长期存储数据的主要介质，通常存储整个数据库。访问速度比主内存慢得多（稍后会详细介绍）。</p>
-<ul>
-<li>数据必须从磁盘移动到主内存才能访问，并写回存储</li>
-<li>直接访问：可以按任何顺序读取磁盘上的数据，这与磁带不同</li>
-</ul>
-<blockquote>
-<p>截至 2009 年，容量范围约为 1.5 TB<br />
-比主存储器/闪存大得多的容量和更低的每字节成本<br />
-随着技术的进步，不断快速增长（每 2 年增长 2 至 3 倍）</p>
-</blockquote>
-<ul>
-<li>在电源故障和系统崩溃中幸存下来
-磁盘故障会破坏数据，但非常罕见</li>
-</ul>
-</li>
-<li>
-<p>Optical storage（光盘）: 非易失性，使用激光从旋转盘中以光学方式读取数据。读取和写入速度比磁盘慢。</p>
-</li>
-<li>
-<p>Tape storage（磁带）: 非易失性，主要用于备份（从磁盘故障中恢复）和存档数据。  </p>
-<ul>
-<li>顺序访问：比磁盘慢得多</li>
-<li>非常高的容量（提供 40 到 300 GB 磁带）</li>
-<li>磁带可以从驱动器中移除 <span class="arithmatex">\(\rightarrow\)</span> 存储成本比磁盘便宜得多，但驱动器价格昂贵</li>
-</ul>
-<blockquote>
-<p>磁带自动存储塔可用于存储大量数据 
-数百 TB（TB，1 TB = 1012 字节）甚至一 PB（PB，1 PB = 1015 字节）</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="storage-hierarchy">Storage Hierarchy （存储结构）<a class="headerlink" href="#storage-hierarchy" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../img/109.png" /></p>
-<h2 id="2magnetic-disks">2.Magnetic Disks<a class="headerlink" href="#2magnetic-disks" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../img/110.png" /></p>
-<h3 id="_1">磁盘概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">结构</p>
-<ul>
-<li>Read-write head（读写头）：位置非常靠近盘片表面（几乎接触它）
-读取或写入磁性编码信息。</li>
-<li>Surface of platter divided into circular tracks（圆形轨道）： 在典型硬盘上，每个盘片超过 50K – 100K 轨道。</li>
-<li>Each track is divided into sectors（扇区）：扇区是可以读取或写入的最小数据单位。<blockquote>
-<p>扇区大小通常为 512 字节
-每个轨道的典型扇区：500 到 1000（在内轨道上）到 1000 到 2000（在外部轨道上）</p>
-</blockquote>
-</li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">读取</p>
-<ul>
-<li>读取/写入扇区：<br />
-圆盘臂摆动以将头部定位在正确的轨道上。<br />
-盘片不断旋转;当扇区在 head 下传递时，数据被读取/写入。</li>
-<li>坏扇区的重映射：将该扇区从逻辑上映射到预留的物理扇区，并且重映射被记录在磁盘或其他非易失性存储器中。 </li>
-</ul>
-</div>
-<h3 id="performance-measures-of-disks">Performance Measures of Disks（磁盘的性能度量）<a class="headerlink" href="#performance-measures-of-disks" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Access time（访问时间）：
-    从发出读写请求到数据传输开始所需的时间 = Seek time（寻道时间） + Rotational latency（旋转等待时间）</p>
-<blockquote>
-<ol>
-<li>寻道时间:需要将手臂重新定位在正确的轨道上。<br />
-e.g:典型磁盘上 4 到 10 毫秒。</li>
-<li>旋转等待时间:访问扇区需要显示在标题下方。<br />
-平均延迟是最坏情况下延迟的 1/2。<br />
-e.g:典型磁盘上为 4 到 11 毫秒（5400 到 15000 r.p.m.）。</li>
-</ol>
-</blockquote>
-</li>
-<li>
-<p>Mean time to failure (MTTF, 平均故障时间): 磁盘应连续运行且没有任何故障的平均时间。<br />
-通常为 3 至 5 年。
-新磁盘发生故障的概率非常低，新磁盘的“理论 MTTF”为 500,000 到 1,200,000 小时。</p>
-<blockquote>
-<p>例如，新磁盘的 MTTF 为 1,200,000 小时，这意味着给定 1000 个相对较新的磁盘，平均每 1200 小时就会有一个磁盘发生故障
-MTTF 随着磁盘老化而降低</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="optimization-of-disk-block-access">Optimization of Disk-Block Access（磁盘块访问优化）<a class="headerlink" href="#optimization-of-disk-block-access" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>Block（块）：来自单个轨道的连续扇区序列 <br />
-    数据在磁盘和主存储器之间以块的形式传输。
-    大小范围从 512 字节到几千字节。</p>
-<blockquote>
-<p>大 OR 小？<br />
-较小的块：造成更多的磁盘传输
-较大的块：由于部分填充块而浪费更多空间</p>
-</blockquote>
-<p>如今，典型的块大小范围为 4 到 16 KB。</p>
-</li>
-<li>
-<p>Disk-arm-scheduling algorithms（磁盘臂调度算法）：对轨道的挂起访问进行排序，以便将磁盘臂移动降至最低。<br />
-Elevator algorithm （电梯算法）：向一个方向移动磁盘臂（从外轨道到内轨道，反之亦然），在该方向上处理下一个请求，直到该方向上不再有请求，然后反转方向并重复。</p>
-</li>
-<li>
-<p>File organization（文件组织）：通过组织块以对应数据的访问方式来优化块访问时间（内容连续地存在一起，减少Access time）。     </p>
-<blockquote>
-<p>例如，将相关信息存储在相同或附近的气缸上。  </p>
-</blockquote>
-<p>随着时间的流逝，文件可能会变得碎片化  </p>
-<blockquote>
-<p>例如，如果数据入到文件中/从中删除  </p>
-</blockquote>
-<p>或者磁盘上的可用块是分散的，而新创建的文件的块分散在磁盘上。<br />
-对碎片文件的顺序访问导致磁盘臂移动增加。<br />
-某些系统具有对文件系统进行碎片整理的实用程序，以加快文件访问速度。  </p>
-</li>
-<li>
-<p>Nonvolatile write buffers (非易失性写缓冲区)：通过立即将块写入非易失性 RAM 缓冲区来加快磁盘写入速度。</p>
-<ul>
-<li>非易失性 RAM：备用电池 RAM 或闪存。即使断电，数据也是安全的，当断电时会写入磁盘（存在备用电池，足够支撑文件写入磁盘）。</li>
-</ul>
-</li>
-<li>
-<p>Log disk（日志磁盘）: 专用于写入块更新顺序日志的磁盘
-与非易失性RAM完全相同。写入日志磁盘的速度非常快，因为不需要寻道。无需特殊硬件 （NV-RAM）</p>
-<ul>
-<li>文件系统通常会对磁盘的写入重新排序以提高性能。</li>
-<li>日志文件系统以安全顺序将数据写入 NV-RAM 或日志磁盘</li>
-<li>不记录日志的重新排序：文件系统数据损坏的风险</li>
-</ul>
-</li>
-</ul>
-<h2 id="3storage-access">3.Storage Access<a class="headerlink" href="#3storage-access" title="Permanent link">&para;</a></h2>
-<ul>
-<li>数据库文件在逻辑上被划分为固定长度的存储单元，称为块。块是数据库系统中存储分配和数据传输的单位。</li>
-<li>Buffer（缓冲区）：可用于存储磁盘块副本的主内存部分。</li>
-<li>Buffer manager（缓冲区管理器）：负责在主内存中分配缓冲区空间的子系统。</li>
-</ul>
-<div class="admonition question">
-<p class="admonition-title">目标与问题？</p>
-<ul>
-<li>数据库系统力求最大程度地减少磁盘和内存之间的块传输次数。 <br />
-要减少磁盘访问次数：在主存（缓存区）中保留尽可能多的块。
-但缓冲区的大小是有限的。如何处理？</li>
-</ul>
-</div>
-<h3 id="buffer-manager">Buffer Manager<a class="headerlink" href="#buffer-manager" title="Permanent link">&para;</a></h3>
-<p>当应用程序需要磁盘块时，它们会调用缓冲区管理器。   </p>
-<ul>
-<li>如果块已经在缓冲区中，则请求程序会在主存储器中为块提供地址。   </li>
-<li>
-<p>如果块不在缓冲区中  <br />
-    缓冲区管理器在缓冲区中为块分配空间，替换（丢弃）一些旧页面;如果没有可用空间，则为新块腾出空间。（在buffer中为新页分配空间）  <br />
-    抛出的块只有在最近一次写入磁盘/从磁盘获取后被修改时，才会写回磁盘。（被覆盖的旧块若已被修改过，则写回磁盘）
-    在缓冲区中分配空间后，缓冲区管理器会将块从磁盘读取到缓冲区，并将主内存中块的地址传递给请求者。（从磁盘读入新块放buffer）</p>
-</li>
-<li>
-<p>缓冲区更换策略：LRU、MRU（将在下面介绍）</p>
-</li>
-<li>
-<p>Pinned block （被钉住的块）： 不允许写回磁盘的内存块。(如当前块正在被使用时)</p>
-</li>
-<li>
-<p>Toss-immediate strategy（立即抛掷策略）：一旦处理完块的最后一个元组，就释放该块占用的空间。(用后立即丢弃)</p>
-</li>
-<li>
-<p>Forced output of blocks（块的强制输出）：  <br />
-    块的请求者必须取消固定它，并指示页面是否已被修改：使用Dirty来指示。</p>
-</li>
-<li>
-<p>Page in pool may be requested many times （被多个事务使用）： 
-    使用引脚数，当且仅当 <span class="arithmatex">\(\large pin_{count} = 0\)</span> 时，页面成为替换的候选者。</p>
-</li>
-</ul>
-<div class="admonition abstract">
-<p class="admonition-title">Buffer-Replacement Policies（替换策略）</p>
-<ul>
-<li>LRU strategy (Least Recently Used, 最近最少使用策略): 替换最近最不常使用的块。<br />
-但是，对于某些涉及重复扫描数据的访问模式，LRU 可能是一个糟糕的策略。</li>
-</ul>
-<blockquote>
-<p>e.g:<br />
-<img alt="" src="../img/111.png" />
-<img alt="" src="../img/112.png" /></p>
-</blockquote>
-<ul>
-<li>MRU strategy (Most recently used, 最近最常用策略): 替换最近最常使用的块。 <br />
-系统必须固定当前正在处理的块。 处理完该块的最后一个元组后，该块将被取消固定，并成为最近使用的块。</li>
-</ul>
-</div>
-<h2 id="4file-organization">4.File Organization<a class="headerlink" href="#4file-organization" title="Permanent link">&para;</a></h2>
-<p>两种记录的方式： <br />
-1.Fixed-length records（固定长度记录）。<br />
-2.Variable-length records（可变长度记录）。  </p>
-<h3 id="41-fixed-length-records">4.1 Fixed-Length Records<a class="headerlink" href="#41-fixed-length-records" title="Permanent link">&para;</a></h3>
-<ul>
-<li>优点：方法简单：
-存储从字节 <span class="arithmatex">\(n*(i – 1)\)</span> 开始存储记录 <span class="arithmatex">\(i\)</span> ，其中 <span class="arithmatex">\(n\)</span> 是每条记录的大小。<br />
-记录访问很简单，但记录可能会跨块。<ul>
-<li>修改：不允许记录跨越块边界</li>
-</ul>
-</li>
-</ul>
-<div class="admonition question">
-<p class="admonition-title">删除的方式</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">方式1：</label><label for="__tabbed_1_2">方式2：</label><label for="__tabbed_1_3">方式3：</label></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Gradient_descent</span><span class="p">()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="w">   </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="err"></span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="n">S</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Search</span><span class="p">(</span><span class="w"> </span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* find the best S’ in N(S) */</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="err">’</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinCost</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurrentCost</span><span class="p">;</span><span class="w">    </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="k">else</span><span class="w">  </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="2example-the-vertex-cover-problem">2.[Example] The Vertex Cover Problem.<a class="headerlink" href="#2example-the-vertex-cover-problem" title="Permanent link">&para;</a></h2>
+<p>顶点覆盖问题：给定一个无向图 <span class="arithmatex">\(G=(V,E)\)</span> ，找到一个最小的顶点集 <span class="arithmatex">\(S \subseteq V\)</span> ，使得每条边 <span class="arithmatex">\((u,v)\)</span> 都至少有一个端点在 <span class="arithmatex">\(S\)</span> 中（即 <span class="arithmatex">\(u \in S \cup v\in S\)</span>）   </p>
+<p>这个问题的可行解为 <span class="arithmatex">\(S=V\)</span> ，即完全覆盖，其目标函数为 <span class="arithmatex">\(cost(S)=S\)</span> 。即，我们尝试使用local search来降低 <span class="arithmatex">\(|S|\)</span> 。</p>
+<div class="admonition example">
+<p class="admonition-title">几个例子🌰</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Case 0:</label><label for="__tabbed_1_2">Case 1:</label><label for="__tabbed_1_3">Case 2:</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>move records <span class="arithmatex">\(i + 1, ……, n\;\; to\;\; i, …… , n – 1\)</span></p>
+<p>没有边，只有一堆点，显然空集就是最后的答案。</p>
+<p><img alt="" src="../img/176.png" /></p>
+<p>我们根据local search逐步删除每一个点，直到：  </p>
+<p><img alt="" src="../img/177.png" /></p>
+<p>可以看到这个过程的曲线是这样的：也就是没有阻碍，<strong>梯度下降</strong>  </p>
+<p><img alt="" src="../img/178.png" /></p>
 </div>
 <div class="tabbed-block">
-<p>move record <span class="arithmatex">\(n \;\;to\;\; i\)</span></p>
+<p>Case 1中，显然只要留第一个点就可以了，但如果我们从中间的点开始删除（或者说只要中间的点不是最后一个被删除时）就会出现剩下的任何一个点都不能删除的情况：  </p>
+<p><img alt="" src="../img/179.png" /></p>
+<p><img alt="" src="../img/180.png" /></p>
+<p><img alt="" src="../img/181.png" /></p>
+<p>于是它的下降曲线是这样的：需要避开中间的点，否则就会停滞在第一个波谷中。  </p>
+<p><img alt="" src="../img/182.png" /></p>
 </div>
 <div class="tabbed-block">
-<p>do not move records, but <strong>link</strong> all free records on a <font color="red">free list</font> 
-<img alt="" src="../img/113.png" /></p>
+<p>Case 2中,若是不选择奇数位置的点，而选择偶数位置的点依次删除，则无法实现最优解，它的下降曲线中的每个波谷就是偶数位置的点（因为只有都选择奇数位置的点才能实现最优解）。</p>
+<p><img alt="" src="../img/183.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">一个改进：The Metropolis Algorithm</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Metropolis</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="n">Define</span><span class="w"> </span><span class="n">constants</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="err">\</span><span class="n">in</span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">S</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Randomly</span><span class="w"> </span><span class="n">chosen</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="err">’</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinCost</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurrentCost</span><span class="p">;</span><span class="w">    </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">            </span><span class="n">With</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">probability</span><span class="w"> </span><span class="n">e</span><span class="o">^</span><span class="p">{</span><span class="o">-</span><span class="err">\</span><span class="n">Delta</span><span class="w"> </span><span class="n">cost</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">kT</span><span class="p">)},</span><span class="w"> </span><span class="n">let</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">            </span><span class="k">else</span><span class="w">  </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="p">}</span>
+</code></pre></div>
+这个算法其实很好理解，就是在每次“陷入波谷”时，我们都做一次随机的变化，使得结果有一定几率跳出波谷继续下降，而这个随机的算法是需要好好斟酌确定的。</p>
+<blockquote>
+<p>注：对于case 1，有一定概率可以跳出local optimum得到正确解。但是对case 0，有可能在加1和减1之间无限震荡……<br />
+注：当（温度）T很高时，上坡的概率几乎为1，容易引起底部震荡；当T接近0时，上坡概率几乎为0，接近原始的梯度下降法。</p>
+</blockquote>
+</div>
 <ul>
-<li>优点：更节省空间的表示。将空间复用为空闲记录的正常属性来存储指针（没有指针存储在使用中的记录中）。</li>
+<li>与这个算法类似思想的一个问题是：模拟退火问题。<br />
+    我在网上找到了一个有点意思的动图，可以看一下。<br />
+<a href="https://oi-wiki.org/misc/simulated-annealing/">链接：模拟退火</a></li>
 </ul>
-</div>
-</div>
-</div>
-</div>
-<h3 id="42-variable-length-records">4.2 Variable-Length Records<a class="headerlink" href="#42-variable-length-records" title="Permanent link">&para;</a></h3>
+<h2 id="3example-hopfield-neural-networks">3.[Example] Hopfield Neural Networks<a class="headerlink" href="#3example-hopfield-neural-networks" title="Permanent link">&para;</a></h2>
+<p>Graph <span class="arithmatex">\(G = (V, E)\)</span> with integer edge weights <span class="arithmatex">\(w\)</span> (positive or negative).</p>
 <ul>
-<li>
-<p>可变长度记录以多种方式出现在数据库系统中：  </p>
-<ol>
-<li>在文件中存储多种记录类型</li>
-<li>允许一个或多个字段（如字符串 （varchar））可变长度的记录类型</li>
-<li>允许重复字段的记录类型（在某些较旧的数据模型中使用）</li>
-</ol>
-</li>
-<li>
-<p>属性按顺序存储</p>
-</li>
-<li>由固定大小（偏移量、长度）表示的可变长度属性，实际数据存储在所有固定长度属性之后</li>
-<li>Null values represented by null-value bitmap </li>
+<li>如果 <span class="arithmatex">\(w_e&lt; 0\)</span>  ，其中 <span class="arithmatex">\(e = (u， v)\)</span>，那么 u 和 v 需要相同的状态;</li>
+<li>如果 <span class="arithmatex">\(w_e&gt; 0\)</span> ，那么 u 和 v 需要不同的状态。</li>
+<li>绝对值 <span class="arithmatex">\(|w_e|\)</span> 表示此要求的强度（消耗/权重）。</li>
+</ul>
+<p>输出：网络的配置 S ，即将状态 <span class="arithmatex">\(s_u\)</span> 分配给每个节点 <span class="arithmatex">\(u\)</span>。</p>
+<blockquote>
+<p>可能没有符合所有边所需要求的配置。</p>
+</blockquote>
+<h3 id="_1">来看一个更加具体一点的例子：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>定义1：在配置 <span class="arithmatex">\(S\)</span> 中，边$ e = (u， v)$ 如果$ w_es_us_v &lt; 0 (w_e &lt; 0 iff su = sv)$ 是 <span class="arithmatex">\(good\)</span> ;否则，是 <span class="arithmatex">\(bad\)</span> 。</li>
+<li>定义2: 在配置 <span class="arithmatex">\(S\)</span> 中，如果好边的权重 <font color = "red">≥</font> 坏边的权重，则称节点 <span class="arithmatex">\(u\)</span> is satisfied。
+$$\large
+\sum_{v:e=(u,v)\in E}w_es_us_v≤0
+$$</li>
+<li>定义3: 如果所有节点 is satisfied，则称配置 <span class="arithmatex">\(S\)</span> 是稳定的。</li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">一个例子🌰</p>
-<p>不定长的保存在后面，定长的 (offset, length) 保存在前面。</p>
-<p><img alt="" src="../img/114.png" /></p>
-<p>这里位置 12 放的 65000 是定长的 salary。<br />
-位置 20 放的 0000, 表示前面四个属性均是非空的放在前面也可以，只要在一个固定位置能找到即可）。<br />
-<span class="arithmatex">\(1\)</span> 表示空，<span class="arithmatex">\(0\)</span> 表示非空。<br />
-前提：每一个记录都是被放在一起的。（有按列存储的方式）</p>
+<p><img alt="" src="../img/184.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step 1</label><label for="__tabbed_2_2">Step 2</label><label for="__tabbed_2_3">Step 3</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>我们注意到，对 <span class="arithmatex">\(4\)</span> 这条边来说，它是一条坏边。因此我们把中间那个点染黑（理由或许可以理解为代价小一些）。</p>
+<p><img alt="" src="../img/185.png" /></p>
 </div>
+<div class="tabbed-block">
+<p>然后两条 <span class="arithmatex">\(-·\)</span> 的边变成了坏边，我们需要把对应的两个顶点染黑。</p>
+<p><img alt="" src="../img/186.png" /></p>
+</div>
+<div class="tabbed-block">
+<p>经过验证，满足上述说的定义2。</p>
+<p><img alt="" src="../img/187.png" /></p>
+</div>
+</div>
+</div>
+</div>
+<h3 id="state-flipping-algorithm">State-flipping Algorithm<a class="headerlink" href="#state-flipping-algorithm" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">ConfigType</span><span class="w"> </span><span class="nf">State_flipping</span><span class="p">()</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">arbitrary</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="n">IsStable</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetUnsatisfied</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">su</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">su</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="_2">问题：它一定能终止吗？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>先给出结论：一定可以！<br />
+* 结论1：状态翻转算法在进行最多 <span class="arithmatex">\(W = \sum_e|we|\)</span> 次迭代后一定会终止。</p>
+<div class="admonition success">
+<p class="admonition-title">证明</p>
+<p>先寻找一个度量函数：</p>
+<p><span class="arithmatex">\(\large \Phi (S) = \sum_{e\;is\;good}|w_e|\)</span></p>
 <ul>
-<li>Slotted Page Structure（分槽页）<br />
-<img alt="" src="../img/115.png" />  <ul>
-<li>Slotted page header 包含：  <ol>
-<li>number of record entries（记录条目数）</li>
-<li>end of free space in the block（一个指针指向 free space 末尾，用来分配内存）</li>
-<li>location and size of each record（每条记录的位置和大小）</li>
+<li>当 <span class="arithmatex">\(u\)</span> 经过切换后 (S becomes S’):  <ol>
+<li>all good edges incident to u become bad  </li>
+<li>all bad edges incident to u become good   </li>
+<li>all other edges remain the same  </li>
 </ol>
 </li>
-<li>记录可以在页面中四处移动，以保持它们连续，它们之间没有空白;必须更新标头中的条目。（页内无碎块: 删除时页内移动记录）  </li>
-<li>指针（Index）不应直接指向记录，而应指向 header---indirect pointer（间接指针）中记录的条目 </li>
 </ul>
-</li>
-</ul>
-<p><strong>固定长度表示</strong>：<br />
-    1. 预留空间
-    2. 指针</p>
+<p><span class="arithmatex">\(\large \Phi(S^{\prime})=\Phi(S)-\sum_{e:e=(u,v)\in E}|w_{e\;is\;bad}|+\sum_{e:e=(u,v)\in E}|w_{e\;is\;good}| ≥ \Phi(S)+1\)</span></p>
+<p>因为原来这个点是 unsatisfied 的，所以经过变换后好边一定变多了，又因为是整数，所以一定大于等于原来的度量函数加一。</p>
+<p>所以显然有， <span class="arithmatex">\(0 ≤ \Phi ≤ W\)</span> 。</p>
+</div>
+<h3 id="local-search">与 local search 的关联<a class="headerlink" href="#local-search" title="Permanent link">&para;</a></h3>
 <ul>
+<li>Problem:  To maximize <span class="arithmatex">\(\Phi\)</span>.</li>
+<li>Feasible solution set FS : configurations</li>
 <li>
-<p>预留空间：可以使用已知最大长度的固定长度记录;较短记录中未使用的空间，用 null 或记录结束符号填充。<br />
-<img alt="" src="../img/116.png" /></p>
+<p>S ~ S': S' can be obtained from S by flipping a single state</p>
 </li>
 <li>
-<p>指针方法:可变长度的记录由固定长度的记录列表表示，这些记录通过指针链接在一起。即使最大记录长度未知，也可以使用。<br />
-<img alt="" src="../img/117.png" /></p>
+<p>结论2：状态翻转算法中任何局部最大值以最大化 <span class="arithmatex">\(\Phi\)</span> 都是稳定的配置。</p>
 </li>
-<li>
-<p>指针结构的缺点：除了链中的第一条记录外，所有记录中都浪费了空格（用于分支名称）。  </p>
-</li>
-<li>
-<p>解决方案:允许在文件中使用两种块。  </p>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Is it a polynomial time algorithm?</p>
+<ul>
+<li>结论是它并不是。<span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(w\)</span> 一起是一个 open question。</li>
+<li>但 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(log w\)</span> 就是一个可以在多项式时间内解决的问题了。</li>
+</ul>
+</div>
+<h2 id="4example-the-maximum-cut-problem">4.[Example] The Maximum Cut Problem.<a class="headerlink" href="#4example-the-maximum-cut-problem" title="Permanent link">&para;</a></h2>
+<p>最大切割问题：给定一个具有正整数边权重的无向图 <span class="arithmatex">\(G = (V， E)\)</span>，我们找到一个节点分区 <span class="arithmatex">\((A， B)\)</span>，使穿过切割的边的总权重最大化。
+$$\large
+w(A,B):=\sum_{u\in A,v\in B}w_{uv}
+$$</p>
+<h3 id="local-search_1">与 local search 的关联<a class="headerlink" href="#local-search_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Problem:  To maximize <span class="arithmatex">\(w(A, B)\)</span> 。<span class="arithmatex">\(\Phi(S) = \sum_{e\;is\;good}|w_e|\)</span></li>
+<li>Feasible solution set FS : any partition (A, B) </li>
+<li>S ~ S': S' can be obtained from S by moving one node from A to B, or one from B to A.</li>
+</ul>
+<p>我们可以发现，其实这是 Hopfield Neural Networks 的一个特殊形式——所有的 <span class="arithmatex">\(w_e\)</span> 都是正数。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">ConfigType</span><span class="w"> </span><span class="nf">State_flipping</span><span class="p">()</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">arbitrary</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="n">IsStable</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetUnsatisfied</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="n">su</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">su</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="_3">三个问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="1how-good-is-this-local-optimum">1.How good is this local optimum?<a class="headerlink" href="#1how-good-is-this-local-optimum" title="Permanent link">&para;</a></h4>
+<p>结论1：设 <span class="arithmatex">\((A， B)\)</span> 为局部最优分区，设 <span class="arithmatex">\((A^*， B^*)\)</span> 为全局最优分区，那么有 <span class="arithmatex">\(w(A， B) ≥ \frac{1}{2}w(A^*， B^*)\)</span>。</p>
+<div class="admonition success">
+<p class="admonition-title">证明</p>
+<p>因为对于任意的 <span class="arithmatex">\(u\in A\)</span> ，<span class="arithmatex">\((A, B)\)</span> 是局部最优解，所以</p>
+<div class="arithmatex">\[\large
+\sum_{v\in A}w_{uv}≤\sum_{v\in B}w_{uv}
+\]</div>
+<p>这一步我们可以反过来想，如果不满足这个结论，那么至少有一个点需要从 <span class="arithmatex">\(A\)</span> 移到 <span class="arithmatex">\(B\)</span>,但这与条件“局部最优解”相矛盾了！</p>
+<p>接下来，我们把所有 <span class="arithmatex">\(u\in A\)</span>的权重相加：  </p>
+<div class="arithmatex">\[\large
+2\sum_{\{u,v\}\subseteq A}w_{uv}=\sum_{u\in A}\sum_{v\in A}w_{uv}≤\sum_{u\in A}\sum_{v\in B}w_{uv}=w(A,B)
+\]</div>
+<p>同样地，我们对 <span class="arithmatex">\(u\in B\)</span> 的部分做一样的分析可以得到：<br />
+$$\large 
+2\sum_{\{{u,v\}}\subseteq B}w_{uv}=w(A,B)
+$$ </p>
+<p>所以我们有以下的式子：（式子左边是全局最优解，一定小于等于右边，右边则是各自属于 <span class="arithmatex">\(A,B\)</span> 的权重以及跨越 <span class="arithmatex">\((A,B)\)</span> 的权重之和，也就是所有的权重）</p>
+<div class="arithmatex">\[\large
+w(A^*,B^*)≤\sum_{\{u,v\}\subseteq A}w_{uv}+\sum_{\{u,v\}\subseteq B}w_{uv}+w(A,B)≤2w(A,B)
+\]</div>
+</div>
+<h4 id="2may-not-in-polynomial-time">2.May NOT in polynomial time?<a class="headerlink" href="#2may-not-in-polynomial-time" title="Permanent link">&para;</a></h4>
+<p>当没有“足够大”的改进时停止算法。<br />
+Big-improvement-flip：只选择一个节点，该节点在翻转时至少会增加以下大小的切割值：（这个过程中有精度的损失，但是做了加速，提高了效率，本质上还是一个 trade-off 的过程）</p>
+<div class="arithmatex">\[
+\frac{2\varepsilon}{|V|}w(A,B)
+\]</div>
+<p>结论1：终止后，big-improvement-flip 算法返回一个cut <span class="arithmatex">\((A， B)\)</span>，使得：</p>
+<div class="arithmatex">\[
+(2 + \varepsilon) w(A， B) ≥ w(A^*， B^*)
+\]</div>
+<p>结论2：big-improvement-flip 算法在最多 <span class="arithmatex">\(O(n/ \varepsilon log W)\)</span> 翻转后终止。</p>
+<p>根据时间简单描述证明：</p>
 <ol>
-<li>Anchor block（锚块） – 包含链的第一条记录</li>
-<li>Overflow block（溢出块） – 包含椅子的第一条记录以外的记录。</li>
+<li>每次flip至少增加(1+epsilon/n)倍，其实是(1+2*epsilon/n)倍</li>
+<li>n/epsilon次flip之后，总增长至少是2倍。利用(1+1/x)^x &gt;= 2, 如果x&gt;=1</li>
+<li>总量不超过W，而cut翻倍的次数不能超过logW</li>
 </ol>
-<p><img alt="" src="../img/118.png" /></p>
-</li>
-</ul>
-<h2 id="5organization-of-records-in-files">5.Organization of Records in Files<a class="headerlink" href="#5organization-of-records-in-files" title="Permanent link">&para;</a></h2>
-<p>插入到哪个文件的哪个位置？</p>
+<h4 id="3try-a-better-local">3.Try a better local?<a class="headerlink" href="#3try-a-better-local" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p>Heap file（堆文件， 流水文件）：记录可以放置在文件中任何有空间的地方。        </p>
-</li>
-<li>
-<p>Sequential file（顺序文件）：根据每条记录的搜索键值，按顺序存储记录。     </p>
-</li>
-<li>
-<p>Hashing file（散列文件）：根据每条记录的某个属性计算的哈希函数;结果指定应将记录放置在文件的哪个块中。     </p>
-</li>
-<li>
-<p>Clustering file organization（聚集文件组织）：多个不同关系的记录可以存储在同一个文件中。<br />
-    动机：将不同关系的相关记录存储在同一块上，以最小化 I/O</p>
-</li>
+<li>解决方案的邻域应该足够丰富，以至于我们不容易陷入糟糕的局部最优状态;但</li>
+<li>解决方案的邻域不应太大，因为我们希望能够有效地搜索邻域集以查找可能的局部移动。</li>
 </ul>
-<h3 id="51-heap-file">5.1 Heap file<a class="headerlink" href="#51-heap-file" title="Permanent link">&para;</a></h3>
-<h3 id="52-sequential-file-organization">5.2 Sequential File Organization<a class="headerlink" href="#52-sequential-file-organization" title="Permanent link">&para;</a></h3>
-<p>适用于需要对整个文件进行顺序处理的应用程序。文件中的记录按搜索键排序。</p>
+<p><img alt="" src="../img/188.png" /></p>
 <ul>
-<li>Deletion：使用指针链  </li>
-<li>Insertion：找到要插入记录的位置  <ol>
-<li>如果有可用空间，请插入那里  </li>
-<li>如果没有可用空间，请将记录插入溢出块中  </li>
+<li>K-L启发式算法：（翻过了尽量不再翻）</li>
+</ul>
+<p><img alt="" src="../img/189.png" /></p>
+<ol>
+<li>第一步找一个最优的；  </li>
+<li>第二步做标记，从未标记的点中寻找；（即使被标记的当中有更好的，也翻未标记的！）</li>
 </ol>
-</li>
-</ul>
-<p>无论哪种情况，都必须更新指针链。  <br />
-需要定期对文件重新排序。 <br />
-<img alt="" src="../img/119.png" /></p>
-<h3 id="52-multitable-clustering-file-organization">5.2 Multitable Clustering File Organization<a class="headerlink" href="#52-multitable-clustering-file-organization" title="Permanent link">&para;</a></h3>
-<p>使用 <strong>多表聚类文件组织</strong> 将多个关系存储在一个文件中。</p>
-<div class="admonition example">
-<p class="admonition-title">一个例子🌰</p>
-<p>对于老师和部分经常一起访问的情况，我们可以把这两个信息放在一起。（如果两个表经常连接，这样比较高效）
-但这样对于<font color="red">单独查找某个信息</font>就不太方便。  <br />
-<img alt="" src="../img/120.png" /></p>
-<p>一个改进：可以提升查找某个信息的效率。 <br />
-<img alt="" src="../img/121.png" /></p>
-</div>
+<blockquote>
+<p>K-L的分析还是未解决的。</p>
+</blockquote>
 
 
 
