@@ -159,7 +159,8 @@ ConfigType State_flipping()
 ```
 
 ### 问题：它一定能终止吗？
-先给出结论：一定可以！  
+先给出结论：一定可以！
+
 * 结论1：状态翻转算法在进行最多 $W = \sum_e|we|$ 次迭代后一定会终止。
 
 !!! success "证明"
@@ -182,6 +183,7 @@ ConfigType State_flipping()
 * Problem:  To maximize $\Phi$.
 * Feasible solution set FS : configurations
 * S ~ S': S' can be obtained from S by flipping a single state
+
 
 * 结论2：状态翻转算法中任何局部最大值以最大化 $\Phi$ 都是稳定的配置。
 
