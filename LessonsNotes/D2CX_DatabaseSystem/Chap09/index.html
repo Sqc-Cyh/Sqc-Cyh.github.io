@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
@@ -1025,6 +1025,8 @@
       
         
       
+        
+      
     
     
       
@@ -1330,6 +1332,27 @@
   
   <span class="md-ellipsis">
     Chap 13 | “Randomized Algorithms”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 14 | “Parallel Algorithms”
   </span>
   
 
@@ -1981,7 +2004,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2715 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 14 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 2720 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 14 分钟</p>
 </div>
 <h1 id="欢迎">Chap 9 | Query Processing </h1>
 <div class="admonition note">
@@ -2203,7 +2226,7 @@ If br= 1000 blocks, M = 11, and one pass reduces the number of runs to 91, each 
 </ol>
 </li>
 <li>Total number of seeks:<br />
-<span class="arithmatex">\(2\lceil b_r/M \rceil + \lceil b_r / b_b \rceil(2\lceil log_{M-1}(b_r/M) \rceil - 1)\)</span></li>
+<span class="arithmatex">\(2\lceil b_r/M \rceil + \lceil b_r / b_b \rceil(2\lceil log_{\lfloor M/b_b \rfloor-1}(b_r/M) \rceil - 1)\)</span></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">关于<span class="arithmatex">\(b_b\)</span></p>
@@ -2213,7 +2236,7 @@ If br= 1000 blocks, M = 11, and one pass reduces the number of runs to 91, each 
     缓冲区 <span class="arithmatex">\(b_b\)</span> 如果大于一，也就是为每一个归并段分配多个缓冲区。这样我们定位一次之后可以读入多块进入缓冲区。<br />
     减少了 seek 次数，但这样轮次可能会增加。</li>
 <li>Total number of block transfers:<br />
-<span class="arithmatex">\(\large b_r(2\lceil log_{\lfloor M/b_b\rfloor -1}(b_r/M) \rceil + 1)\)</span>\</li>
+<span class="arithmatex">\(\large b_r(2\lceil log_{\lfloor M/b_b\rfloor -1}(b_r/M) \rceil + 1)\)</span></li>
 </ul>
 </div>
 <h2 id="5join-operation">5.Join Operation<a class="headerlink" href="#5join-operation" title="Permanent link">&para;</a></h2>
@@ -2276,7 +2299,7 @@ If br= 1000 blocks, M = 11, and one pass reduces the number of runs to 91, each 
 </ol>
 </li>
 <li>
-<p>Cost = <span class="arithmatex">\(b_r + b_s\)</span>  block transfers  + <span class="arithmatex">\(\lceil b_r / b_b\rceil + \lceil bs / bb \rceil\)</span> seeks (+ the cost of sorting if relations are unsorted).</p>
+<p>Cost = <span class="arithmatex">\(b_r + b_s\)</span>  block transfers  + <span class="arithmatex">\(\lceil b_r / b_b\rceil + \lceil b_s / b_b \rceil\)</span> seeks (+ the cost of sorting if relations are unsorted).</p>
 </li>
 </ul>
 <div class="admonition question">
@@ -2320,7 +2343,7 @@ Typically <span class="arithmatex">\(n\)</span> is chosen as <span class="arithm
 </ol>
 </li>
 <li>块大小为4KB，内存大小为12MB<ol>
-<li><span class="arithmatex">\(M = 2MB / 4KB = 0.5K\)</span></li>
+<li><span class="arithmatex">\(M = 12MB / 4KB = 3K\)</span></li>
 <li>当 <span class="arithmatex">\(M = N\)</span> 时不需要递归，<span class="arithmatex">\(N = 3K\)</span></li>
 <li>由 <span class="arithmatex">\(N = \lceil b_s/M \rceil *f\)</span> 得，<span class="arithmatex">\(b_s≈3K*3K=9M\)</span></li>
 <li><span class="arithmatex">\(b_s*block size = 9M * 4KB = 36GB\)</span> </li>
