@@ -197,7 +197,7 @@ seeks：
     2. 每个合并传递需要 2 个 $\lceil b_r / b_b \rceil$ 个 seek  
     >除了最后一个不需要写入
 * Total number of seeks:  
-    $2\lceil b_r/M \rceil + \lceil b_r / b_b \rceil(2\lceil log_{M-1}(b_r/M) \rceil - 1)$
+    $2\lceil b_r/M \rceil + \lceil b_r / b_b \rceil(2\lceil log_{\lfloor M/b_b \rfloor-1}(b_r/M) \rceil - 1)$
 
 !!! warning "关于$b_b$"
     在transfer的讨论中，我们默认缓冲区的大小是1，也就是 $b_b = 1$ ,但在seeks中，我们引入了 $b_b$ 作为缓冲区的大小。
@@ -206,7 +206,7 @@ seeks：
         缓冲区 $b_b$ 如果大于一，也就是为每一个归并段分配多个缓冲区。这样我们定位一次之后可以读入多块进入缓冲区。  
         减少了 seek 次数，但这样轮次可能会增加。
     * Total number of block transfers:  
-          $\large b_r(2\lceil log_{\lfloor M/b_b\rfloor -1}(b_r/M) \rceil + 1)$\
+          $\large b_r(2\lceil log_{\lfloor M/b_b\rfloor -1}(b_r/M) \rceil + 1)$
   
 ## 5.Join Operation
 
@@ -266,7 +266,7 @@ seeks：
     2. 主要区别在于对连接属性中重复值的处理——连接属性上具有相同值的每对都必须匹配(多个值的情况)
     3. 书中的详细算法
   
-* Cost = $b_r + b_s$  block transfers  + $\lceil b_r / b_b\rceil + \lceil bs / bb \rceil$ seeks (+ the cost of sorting if relations are unsorted).
+* Cost = $b_r + b_s$  block transfers  + $\lceil b_r / b_b\rceil + \lceil b_s / b_b \rceil$ seeks (+ the cost of sorting if relations are unsorted).
 
 !!! question "如果缓冲区内存大小为 M 页，为了最小化合并连接的成本，如何分别将 M 块分配给 r 和 s？"
     * Cost = $\large b_r+b_s$ block transfers + $\large \lceil b_r/x_r \rceil + \lceil b_s/x_s \rceil$ seeks ($x_r+x_s = M$)
@@ -297,7 +297,7 @@ Typically $n$ is chosen as $\lceil b_s / M \rceil * f$ (f叫做修正因子)
             3. 由 $N = \lceil b_s/M \rceil *f$ 得，$b_s≈0.5K*0.5K=0.25M$
             4. $b_s*block size = 0.25M * 4KB = 1GB$ 
         * 块大小为4KB，内存大小为12MB
-            1. $M = 2MB / 4KB = 0.5K$
+            1. $M = 12MB / 4KB = 3K$
             2. 当 $M = N$ 时不需要递归，$N = 3K$
             3. 由 $N = \lceil b_s/M \rceil *f$ 得，$b_s≈3K*3K=9M$
             4. $b_s*block size = 9M * 4KB = 36GB$ 
