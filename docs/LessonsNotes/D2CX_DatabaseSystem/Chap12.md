@@ -61,14 +61,15 @@ display(A+B)
 >事务可以按其提交的顺序序列化
 ### 1.2 2PL - Proof
 * 2PL - Proof by Contradiction 
-    如果有 Ti->Tj 的有向边，那 Ti 的 lockpoint 一定小于 Tj.
-    Ti->Tj 肯定有一个冲突的访问（对同一个数据）那 Tj 在获得锁的时候 Ti 已经放锁了(LP(Ti)< LP(Tj))，得证。 
+    引理：如果有 Ti->Tj 的有向边，那 Ti 的 lockpoint 一定小于 Tj。
+    因为 Ti->Tj 肯定有一个冲突的访问（对同一个数据）那 Tj 在获得锁的时候 Ti 已经放锁了(LP(Ti)< LP(Tj))。   
+    所以，如果不保证可序列化，那么会存在 Ti 到 Tj 的环，根据引理 LP(Ti)< LP(Tj) 且 LP(Tj)< LP(Ti) ，矛盾！  
 
     >LP,i.e,Lock Point，是一个时间
 
     ![](./img/174.png)
 
-* 2PL  - Proof by Induction  
+* 2PL  - Proof by Induction     
     只需证明: Lock point 最小的事务，可以无障碍地交换到调度最前。
     使用反证法：如果另一个事务 Tj 的操作 OPj 阻止了 Ti 的操作 OPi ,在Tj 和 Ti 之间有一次解锁，所以有一个Lock Point，与 Ti 的 Lock Point 最小矛盾。得证。
 
