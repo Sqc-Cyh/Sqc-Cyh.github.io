@@ -10,13 +10,13 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap11/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap13/">
       
       
-        <link rel="prev" href="../Chap10/">
+        <link rel="prev" href="../Chap12/">
       
       
-        <link rel="next" href="../Chap12/">
+        <link rel="next" href="../../D2CX_AdvancedDataStructure/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap 11 | Transactions - 时清川的个人主页</title>
+        <title>Chap 13 | Recovery System - 时清川的个人主页</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1transaction-concept" class="md-skip">
+        <a href="#1failure-classification" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 11 | Transactions
+              Chap 13 | Recovery System
             
           </span>
         </div>
@@ -795,28 +795,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chap 11 | Transactions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Chap11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,183 +807,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1transaction-concept" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.Transaction Concept
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1.Transaction Concept">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11-acid-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.1 ACID Properties
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2transaction-state" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.Transaction State
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3implementation-of-atomicity-and-durability" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.Implementation of Atomicity and Durability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4concurrent-executions" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.Concurrent Executions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.Concurrent Executions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-schedules" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.1 Schedules
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5serializability" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.Serializability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#51-conflict-serializability" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1 Conflict serializability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#52-view-serializability" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 View Serializability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6recoverability" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.Recoverability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6.Recoverability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#61-recoverable-schedules" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.1 Recoverable Schedules
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-cascading-rollbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.2 Cascading Rollbacks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63-cascadeless-schedules" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.3 Cascadeless Schedules
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7testing-for-serializability" class="md-nav__link">
-    <span class="md-ellipsis">
-      7.Testing for Serializability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7.Testing for Serializability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#levels-of-consistency-in-sql-92" class="md-nav__link">
-    <span class="md-ellipsis">
-      Levels of Consistency in SQL-92
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1032,10 +837,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Chap13/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 13 | Recovery System
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1044,6 +867,168 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1failure-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Failure Classification
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2storage-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Storage Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Storage Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-database-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Database Recovery
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3log-based-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Log-Based Recovery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Log-Based Recovery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-log-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Log Records
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-write-ahead-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Write-Ahead Logging (先写日志原则)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-transaction-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Transaction Commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-undo-and-redo-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Undo(撤销) and Redo（重做） Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Checkpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-log-record-buffering" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Log Record Buffering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-fuzzy-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Fuzzy Checkpointing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-recovery-with-early-lock-release-and-logical-undo-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Recovery with Early Lock Release and Logical Undo Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Recovery with Early Lock Release and Logical Undo Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-logical-undo-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Logical Undo Logging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1877,19 +1862,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1transaction-concept" class="md-nav__link">
+  <a href="#1failure-classification" class="md-nav__link">
     <span class="md-ellipsis">
-      1.Transaction Concept
+      1.Failure Classification
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1.Transaction Concept">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2storage-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Storage Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Storage Structure">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#11-acid-properties" class="md-nav__link">
+  <a href="#21" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1 ACID Properties
+      2.1 分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-database-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Database Recovery
     </span>
   </a>
   
@@ -1901,37 +1904,73 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2transaction-state" class="md-nav__link">
+  <a href="#3log-based-recovery" class="md-nav__link">
     <span class="md-ellipsis">
-      2.Transaction State
+      3.Log-Based Recovery
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3implementation-of-atomicity-and-durability" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.Implementation of Atomicity and Durability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4concurrent-executions" class="md-nav__link">
-    <span class="md-ellipsis">
-      4.Concurrent Executions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.Concurrent Executions">
+    <nav class="md-nav" aria-label="3.Log-Based Recovery">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#41-schedules" class="md-nav__link">
+  <a href="#31-log-records" class="md-nav__link">
     <span class="md-ellipsis">
-      4.1 Schedules
+      3.1 Log Records
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-write-ahead-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Write-Ahead Logging (先写日志原则)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-transaction-commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Transaction Commit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-undo-and-redo-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Undo(撤销) and Redo（重做） Operations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-checkpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Checkpoints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-log-record-buffering" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Log Record Buffering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-fuzzy-checkpointing" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Fuzzy Checkpointing
     </span>
   </a>
   
@@ -1943,88 +1982,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5serializability" class="md-nav__link">
+  <a href="#4-recovery-with-early-lock-release-and-logical-undo-operations" class="md-nav__link">
     <span class="md-ellipsis">
-      5.Serializability
+      4. Recovery with Early Lock Release and Logical Undo Operations
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#51-conflict-serializability" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.1 Conflict serializability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#52-view-serializability" class="md-nav__link">
-    <span class="md-ellipsis">
-      5.2 View Serializability
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6recoverability" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.Recoverability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6.Recoverability">
+    <nav class="md-nav" aria-label="4. Recovery with Early Lock Release and Logical Undo Operations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#61-recoverable-schedules" class="md-nav__link">
+  <a href="#41-logical-undo-logging" class="md-nav__link">
     <span class="md-ellipsis">
-      6.1 Recoverable Schedules
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#62-cascading-rollbacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.2 Cascading Rollbacks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#63-cascadeless-schedules" class="md-nav__link">
-    <span class="md-ellipsis">
-      6.3 Cascadeless Schedules
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7testing-for-serializability" class="md-nav__link">
-    <span class="md-ellipsis">
-      7.Testing for Serializability
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="7.Testing for Serializability">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#levels-of-consistency-in-sql-92" class="md-nav__link">
-    <span class="md-ellipsis">
-      Levels of Consistency in SQL-92
+      4.1 Logical Undo Logging
     </span>
   </a>
   
@@ -2054,215 +2024,171 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1837 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1676 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
-<h1 id="欢迎">Chap 11 | Transactions</h1>
+<h1 id="欢迎">Chap 13 | Recovery System</h1>
 <div class="admonition note">
 <p class="admonition-title">章节启示录</p>
 <p>摆烂了……  </p>
 </div>
-<h2 id="1transaction-concept">1.Transaction Concept<a class="headerlink" href="#1transaction-concept" title="Permanent link">&para;</a></h2>
-<p>事务是程序执行的单元，用于访问并可能更新各种数据项。<br />
-A transaction is a unit of program execution that accesses and  possibly updates various data items.</p>
-<h3 id="11-acid-properties">1.1 ACID Properties<a class="headerlink" href="#11-acid-properties" title="Permanent link">&para;</a></h3>
+<h2 id="1failure-classification">1.Failure Classification<a class="headerlink" href="#1failure-classification" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Atomicity（原子性）:事务的所有操作都正确反映在数据库中，或者没有。</li>
-<li>Consistency （一致性）:单独执行事务可保持数据库的一致性。</li>
-<li>Isolation（隔离性）:尽管多个事务可以同时执行，但每个事务必须不知道其他并发执行的事务。中间事务结果必须对其他并发执行的事务隐藏。 
-也就是说，对于每一对 Ti 和 Tj 事务，在 Ti 看来，要么是 Tj 在 Ti 开始之前完成执行，要么是 Tj 在 Ti 完成之后开始执行。</li>
-<li>Durability（持久性）:事务成功完成后，即使出现系统故障，它对数据库所做的更改也会保留。</li>
+<li>事务失败 Transaction failure：<ol>
+<li>逻辑错误：由于某些内部错误情况，事务无法完成</li>
+<li>系统错误：数据库系统必须由于错误情况（例如，死锁）而终止活动事务</li>
+</ol>
+</li>
+<li>系统崩溃 System crash：电源故障或其他硬件或软件故障导致系统崩溃。<ol>
+<li>故障停止假设：假定非易失性存储内容不会因系统崩溃而损坏</li>
+<li>数据库系统具有大量完整性检查，以防止磁盘数据损坏</li>
+</ol>
+</li>
+<li>磁盘故障 Disk failure：磁头崩溃或类似的磁盘故障会破坏全部或部分磁盘存储<ol>
+<li>假定破坏是可检测到的：磁盘驱动器使用校验和来检测故障</li>
+</ol>
+</li>
 </ul>
+<h2 id="2storage-structure">2.Storage Structure<a class="headerlink" href="#2storage-structure" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 分类<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>易失性储存：
+    无法在系统崩溃后存活</p>
 <blockquote>
+<p>示例：主内存、缓存内存</p>
+</blockquote>
+</li>
+<li>
+<p>非易失性存储：</p>
 <ol>
-<li>原子性和持久性是由数据库系统的灾备功能保证</li>
-<li>隔离性是由数据库的并发控制保证</li>
-<li>一致性是由用户和系统共同保证</li>
+<li>在系统崩溃中幸存下来</li>
 </ol>
+<blockquote>
+<p>示例：磁盘、磁带、闪存、非易失性（备用电池）RAM</p>
 </blockquote>
-<h2 id="2transaction-state">2.Transaction State<a class="headerlink" href="#2transaction-state" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Active – 初始状态;事务在执行时保持此状态。</li>
-<li>Partially committed  – 在执行最终语句之后。（此时要输出的结果数据可能还在内存缓冲中）</li>
-<li>Failed -- 在发现正常执行无法再继续之后。</li>
-<li>
-<p>Aborted – 在事务回滚并将数据库恢复到事务开始前的状态之后。 中止后的两个选项：</p>
 <ol>
-<li>
-<p>重新启动事务</p>
-<blockquote>
-<p>只有在没有内部逻辑错误的情况下才能完成</p>
-</blockquote>
-</li>
-<li>
-<p>终止事务</p>
-</li>
+<li>但可能仍然会失败，丢失数据</li>
 </ol>
 </li>
 <li>
-<p>Committed – 成功完成后。</p>
+<p>稳定储存：</p>
+<ol>
+<li>一种神话般的存储形式，可在所有故障中幸存下来</li>
+<li>通过在不同的非易失性介质上维护多个拷贝来近似</li>
+</ol>
 </li>
 </ul>
-<p><img alt="" src="../img/159.png" /></p>
-<h2 id="3implementation-of-atomicity-and-durability">3.Implementation of Atomicity and Durability<a class="headerlink" href="#3implementation-of-atomicity-and-durability" title="Permanent link">&para;</a></h2>
-<p>数据库系统的恢复管理组件实现了对原子性和持久性的支持。</p>
+<h3 id="22-database-recovery">2.2 Database Recovery<a class="headerlink" href="#22-database-recovery" title="Permanent link">&para;</a></h3>
+<p>恢复算法是在发生故障时确保数据库一致性以及事务原子性和持久性的技术。  </p>
 <ul>
-<li>影子数据库方案---一种简单但效率低下的方案：名为 db_pointer 的指针始终指向数据库的当前一致副本。
-    所有更新都是在新创建的数据库副本上进行的。<ol>
-<li>如果中止：只需删除新副本即可。</li>
-<li>如果提交：<ol>
-<li>将新副本的所有页面内存到磁盘（在unix中，flush命令）。    </li>
-<li>db_pointer更改为指向新副本---成为当前副本，同时删除旧副本。</li>
-</ol>
-</li>
+<li>恢复算法由两部分组成:<ol>
+<li>在正常事务处理期间为确保存在足够的信息以从故障中恢复而采取的操作</li>
+<li>在无法将数据库内容恢复到确保原子性、一致性和持久性的状态时执行的操作</li>
 </ol>
 </li>
 </ul>
-<h2 id="4concurrent-executions">4.Concurrent Executions<a class="headerlink" href="#4concurrent-executions" title="Permanent link">&para;</a></h2>
-<h3 id="41-schedules">4.1 Schedules<a class="headerlink" href="#41-schedules" title="Permanent link">&para;</a></h3>
+<p>我们假设严格的两相锁定可确保没有脏读。</p>
 <ul>
-<li>调度：指示并发事务指令执行的时间顺序的序列<ol>
-<li>一组事务的时间表必须包含事务的所有指令</li>
-<li>必须保留指令在每个事务中的显示顺序。</li>
-<li>
-<blockquote>
-<p>e.g:<br />
-<img alt="" src="../img/160.png" width="300" /></p>
-</blockquote>
-</li>
+<li>Idempotent（幂等性） ：如果多次执行恢复算法与执行一次结果相同，则称为幂等。</li>
+</ul>
+<h2 id="3log-based-recovery">3.Log-Based Recovery<a class="headerlink" href="#3log-based-recovery" title="Permanent link">&para;</a></h2>
+<h3 id="31-log-records">3.1 Log Records<a class="headerlink" href="#31-log-records" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/186.png" /></p>
+<h3 id="32-write-ahead-logging">3.2 Write-Ahead Logging (先写日志原则)<a class="headerlink" href="#32-write-ahead-logging" title="Permanent link">&para;</a></h3>
+<p>在将主内存中的数据输出到数据库之前，必须将与数据相关的日志记录输出到稳定存储中。</p>
+<h3 id="33-transaction-commit">3.3 Transaction Commit<a class="headerlink" href="#33-transaction-commit" title="Permanent link">&para;</a></h3>
+<ul>
+<li>当事务的提交日志记录输出到稳定存储时，称为已提交： <br />
+    日志已经记录 commit, 说明事务已经提交。（因为后续可以根据这个恢复状态了）<br />
+    但此时数据不一定已经写回到数据库里（不一定高效）</li>
+<li>事务的所有先前日志记录必须已输出   </li>
+<li>当事务提交时，事务执行的写入可能仍在缓冲区中，并且可能在以后输出:不一定在磁盘。如果立刻将 block 写回磁盘可能引起大量 I/O 操作。</li>
+</ul>
+<h3 id="34-undo-and-redo-operations">3.4 Undo(撤销) and Redo（重做） Operations<a class="headerlink" href="#34-undo-and-redo-operations" title="Permanent link">&para;</a></h3>
+<p>撤消日志记录<Ti、X、V1、V2>将旧值 V1 写入 X <br />
+重做日志记录<Ti、X、V1、V2>将新值 V2 写入 X   </p>
+<ul>
+<li>撤消和重做事务：<ol>
+<li>undo（Ti）：将 Ti 更新的所有数据项的值恢复到其旧值，从 Ti 的最后一个日志记录向后倒退
+每当数据项 X 恢复到其旧值 V 时，都会写出一条特殊的日志记录<Ti、X、V> – compensation log（补偿日志）<br />
+当事务撤消完成时，将写出日志记录<Ti abort>。</li>
+<li>redo（Ti）：从 Ti 的第一个日志记录开始，将 Ti 更新的所有数据项的值设置为新值，
+在这种情况下，不执行日志记录。</li>
 </ol>
 </li>
 </ul>
+<h3 id="35-checkpoints">3.5 Checkpoints<a class="headerlink" href="#35-checkpoints" title="Permanent link">&para;</a></h3>
+<p>重做/撤消日志中记录的所有事务可能非常缓慢  </p>
+<ul>
+<li>
+<p>Output all log records currently residing in main memory onto stable storage.<br />
+    日志不是生成就往内存写，而是有一个日志缓冲区。
+    确保把日志项写到日志中去了。</p>
+</li>
+<li>
+<p>Output all modified buffer blocks to the disk.
+把 buffer 里所有数据都刷写一遍。</p>
+</li>
+<li>
+<p>Write a log record <span class="arithmatex">\(\large &lt;checkpoint\;\;L&gt;\)</span> onto stable storage where L is a list of all transactions active at the time of checkpoint.<br />
+    写一个日志的标记（新的日志类型）. L 是当前正在工作的事务的表。（用来做 undo list 的初始化列表）</p>
+</li>
+<li>
+<p>All updates are stopped while doing checkpointing!!! 做 checkpoint 的时候其他活跃事务都要停下来。 </p>
+</li>
+</ul>
+<p>checkpoint 是确认之前的操作都已经反映到数据库里去了，这样重演的时候就可以直接从 checkpoint 开始。</p>
 <div class="admonition example">
-<p class="admonition-title">一种调度的例子：串行调度</p>
-<p><img alt="" src="../img/161.png" /></p>
-<ul>
-<li>Both schedule1 and schedule2 are serial（串行的）  </li>
-<li>N个并行事务有n!种可选择的串行调度 (如<t1,t2,t3,…>, <t2,t1,t3,…>,<t3,t1,t2,…>, …)</li>
-<li>串行的调度必能保持一致性， 但低效。</li>
-</ul>
+<p class="admonition-title">Example</p>
+<p><img alt="" src="../img/187.png" />  </p>
+<p>重演历史从最近的 checkpoint 重演. {T2 T4} 作为 undo list 的初始化值。</p>
 </div>
-<div class="admonition example">
-<p class="admonition-title">一种调度的例子：并行调度</p>
-<p><img alt="" src="../img/162.png" /></p>
+<p><img alt="" src="../img/189.png" /></p>
+<p>这张图比较形象地展示了把哪些事务放入 undo ，哪些事务放入 redo 。</p>
+<h3 id="36-log-record-buffering">3.6 Log Record Buffering<a class="headerlink" href="#36-log-record-buffering" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/188.png" width="500" /></p>
+<p>数据库维护数据块的内存缓冲区<br />
+当需要新块时，如果缓冲区已满，则需要从缓冲区中删除现有块<br />
+如果选择删除的块已更新，则必须将其输出到磁盘  </p>
 <ul>
-<li>In both Schedule 1, 2, and 3, the sum A + B is preserved.--- consistency </li>
-<li>But Schedule 4 does not preserve the value of the the sum A + B. --- not consistent.    --- a bad schedule!</li>
+<li>
+<p>恢复算法支持无强制策略（non-force policy）：即在事务提交时，更新的块不需要写入磁盘<br />
+    force policy（强制）：要求在提交时写入更新的块
+    更昂贵的提交    <br />
+    好的恢复算法：我事务 commit 了但不强制日志刷写出去。</p>
+</li>
+<li>
+<p>恢复算法支持窃取策略（steal strategy）：即包含未提交事务更新的块可以写入磁盘，甚至在事务提交之前</p>
+</li>
 </ul>
-</div>
-<h2 id="5serializability">5.Serializability<a class="headerlink" href="#5serializability" title="Permanent link">&para;</a></h2>
-<p>基本假设 – 每个事务都保留数据库一致性。
-因此，一组事务的串行执行可以保持数据库的一致性。<br />
-如果（可能是并发）计划等同于串行计划，则该计划是可序列化的。不同形式的调度等价性产生了以下概念：  </p>
-<ol>
-<li>Conflict serializability 冲突序列化  </li>
-<li>View serializability 视图序列化</li>
+<h3 id="37-fuzzy-checkpointing">3.7 Fuzzy Checkpointing<a class="headerlink" href="#37-fuzzy-checkpointing" title="Permanent link">&para;</a></h3>
+<p>为避免在检查点期间长时间中断正常处理，允许在检查点期间进行更新</p>
+<ul>
+<li>模糊检查点的完成方式如下：<ol>
+<li>暂时停止按事务进行的所有更新</li>
+<li>写入<checkpoint L>日志记录并强制日志到稳定存储</li>
+<li>标记已修改缓冲区块的列表 M</li>
+<li>现在允许事务继续其操作</li>
+<li>输出到磁盘列表 M 中所有修改的缓冲区块<ol>
+<li>块在输出时不应更新</li>
+<li>遵循 WAL：在输出块之前，必须输出与块相关的所有日志记录</li>
 </ol>
-<h2 id="51-conflict-serializability">5.1 Conflict serializability<a class="headerlink" href="#51-conflict-serializability" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../img/163.png" /></p>
-<p>如果可以通过一系列非冲突指令的交换将调度 <span class="arithmatex">\(S\)</span> 转换为调度 <span class="arithmatex">\(S^{\prime}\)</span>，则我们说 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(S^{\prime}\)</span> 是冲突等价的。<br />
-我们说，如果调度 <span class="arithmatex">\(S\)</span> 与串行调度冲突等价，则它是conflict serializable (可序列化的冲突)。</p>
-<ul>
-<li>
-<p>例子1：<br />
-<img alt="" src="../img/164.png" /></p>
-<p>Schedule 3 可以通过一系列不冲突指令的交换转换为Schedule 6，即 先 T1 后 T2 的串行调度。因此，Schedule 3 是可序列化的冲突(conflict serializable)。</p>
 </li>
-<li>
-<p>例子2：
-    <img alt="" src="../img/165.png" /></p>
-<p>We are unable to swap instructions in the above schedule to obtain either the serial schedule &lt; T3, T4 &gt;, or the serial schedule &lt; T4, T3 &gt;. <br />
-因为写的交换会引起冲突。</p>
-</li>
-</ul>
-<h2 id="52-view-serializability">5.2 View Serializability<a class="headerlink" href="#52-view-serializability" title="Permanent link">&para;</a></h2>
-<p>设 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(S^{\prime}\)</span> 是具有同一组事务的两个调度。如果满足以下三个条件，则 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(S^{\prime}\)</span> 是视图等效的，对于每个数据项 Q:</p>
-<ul>
-<li>
-<p>首读：如果在调度 <span class="arithmatex">\(S\)</span> 中，事务 <span class="arithmatex">\(T_i\)</span> 读取 <span class="arithmatex">\(Q\)</span> 的初始值，则在调度 <span class="arithmatex">\(S^{\prime}\)</span> 中，事务 <span class="arithmatex">\(T_i\)</span> 也必须读取 Q 的初始值。</p>
-</li>
-<li>
-<p>写读：如果在表 <span class="arithmatex">\(S\)</span> 事务 <span class="arithmatex">\(T_i\)</span> 中执行 read（<span class="arithmatex">\(Q\)</span>），并且该值是由事务 <span class="arithmatex">\(T_j\)</span>（如果有）生成的，则在表 <span class="arithmatex">\(S^{\prime}\)</span> 中，事务 <span class="arithmatex">\(T_i\)</span> 也必须读取由事务 <span class="arithmatex">\(T_j\)</span> 的相同 write（<span class="arithmatex">\(Q\)</span>） 操作产生的 <span class="arithmatex">\(Q\)</span> 值。</p>
-</li>
-<li>
-<p>末写：如果在调度 <span class="arithmatex">\(S\)</span> 中最后一步执行 write（<span class="arithmatex">\(Q\)</span>） 调度 <span class="arithmatex">\(S^{\prime}\)</span> 中最后一步也需要执行 write（<span class="arithmatex">\(Q\)</span>） 操作。</p>
-</li>
-</ul>
-<p>如果调度 <span class="arithmatex">\(S\)</span> 的视图等效于串行计划，则调度 <span class="arithmatex">\(S\)</span> 是 view serializable (视图可序列化)。</p>
-<ul>
-<li>
-<p>例子1：<br />
-<img alt="" src="../img/166.png" /></p>
-<p>is a schedule which is view-serializable but not conflict serializable</p>
-</li>
-<li>
-<p>例子2：<br />
-<img alt="" src="../img/167.png" /></p>
-<p>存在“写读”，改为串行后变成“读写”，所以不行。<br />
-is not conflict equivalent or view equivalent to it.<br />
-但它是可串行化的。</p>
-</li>
-</ul>
-<h2 id="6recoverability">6.Recoverability<a class="headerlink" href="#6recoverability" title="Permanent link">&para;</a></h2>
-<h3 id="61-recoverable-schedules">6.1 Recoverable Schedules<a class="headerlink" href="#61-recoverable-schedules" title="Permanent link">&para;</a></h3>
-<p>可恢复调度 — 如果事务 Tj 读取事务 Ti 之前写入的数据项，则 Ti 的提交操作出现在 Tj 的提交操作之前。</p>
-<blockquote>
-<p>e.g:<br />
-<img alt="" src="../img/168.png" />  <br />
-如果 T8 后续回滚, 但 T9 已经基于脏数据做了后续操作，而且已经提交了，不可恢复。</p>
-</blockquote>
-<h3 id="62-cascading-rollbacks">6.2 Cascading Rollbacks<a class="headerlink" href="#62-cascading-rollbacks" title="Permanent link">&para;</a></h3>
-<p>级联回滚 – 单个事务失败会导致一系列事务回滚。请考虑以下计划，其中尚未提交任何事务（因此计划是可恢复的）:  </p>
-<p><img alt="" src="../img/169.png" />  </p>
-<p>如果 T10 失败，则还必须回滚 T11 和 T12。
-可能导致大量工作的撤消,因此我们更希望用非级联的恢复，否则开销太大。</p>
-<h3 id="63-cascadeless-schedules">6.3 Cascadeless Schedules<a class="headerlink" href="#63-cascadeless-schedules" title="Permanent link">&para;</a></h3>
-<p>无级联调度 — 不会发生级联回滚;对于每对事务 Ti 和 Tj，若 Tj 读取 Ti 之前写入的数据项，Ti 的提交操作需要出现在 Tj 的读取操作之前。 <br />
-每个 Cascadeless Schedules 也是可恢复的。<br />
-最好将计划限制为 Cascadeless Schedules。</p>
-<h2 id="7testing-for-serializability">7.Testing for Serializability<a class="headerlink" href="#7testing-for-serializability" title="Permanent link">&para;</a></h2>
-<p>考虑一组事务 T1、T2、...、Tn 的一些调度 </p>
-<ul>
-<li>Precedence graph (优先级图) — 一个有向图，其中顶点是事务。  <ol>
-<li>如果两个事务发生冲突，我们从 Ti 到 Tj 画一条弧线，并且 Ti 访问了之前发生冲突的数据项。</li>
-<li>我们可以通过访问的项目来标记弧线。</li>
+<li>将指向检查点记录的指针存储在磁盘上的固定位置last_checkpoint</li>
 </ol>
 </li>
 </ul>
-<blockquote>
-<p>e.g: <br />
-<img alt="" src="../img/170.png" /></p>
-</blockquote>
+<p><img alt="" src="../img/190.png" /></p>
 <ul>
-<li>
-<p>当且仅当调度优先级图是非循环的时，调度才是conflict serializable （冲突可序列化的）。</p>
-</li>
-<li>
-<p>存在Cycle-detection（周期检测算法），其顺序为 <span class="arithmatex">\(n^2\)</span> 时间，其中 <span class="arithmatex">\(n\)</span> 是图中的顶点数。 </p>
-<blockquote>
-<p>（更好的算法采用 <span class="arithmatex">\(n + e\)</span> 的顺序，其中 <span class="arithmatex">\(e\)</span> 是边的数量。</p>
-</blockquote>
-</li>
-<li>
-<p>如果优先级图是非循环的，则可以通过图的拓扑排序来获得可序列化顺序。</p>
-</li>
+<li>使用模糊检查点恢复时，请从last_checkpoint指向的检查点记录开始扫描    </li>
+<li>last_checkpoint之前的日志记录的更新将反映在磁盘上的数据库中，无需重做(因为只有内容写到磁盘中后，才改变last_checkpoint指向的位置（之前日志已经写出去了，但last_checkpoint指针指向的位置还没有改变）)。   </li>
 </ul>
-<blockquote>
-<p>例如:<br />
-<img alt="" src="../img/171.png" /></p>
-</blockquote>
-<h3 id="levels-of-consistency-in-sql-92">Levels of Consistency in SQL-92<a class="headerlink" href="#levels-of-consistency-in-sql-92" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Serializable — 默认</li>
-<li>Repeatable read  — 仅读取要读取的已提交记录。<ol>
-<li>重复读取同一记录必须返回相同的值。</li>
-<li>但是，事务可能无法序列化 - 它可能会找到事务插入的某些记录，但找不到其他记录。</li>
-</ol>
-</li>
-<li>Read committed  — 只能读取已提交的记录。
-    连续读取记录可能会返回不同（但已提交）的值。</li>
-<li>Read uncommitted — 甚至可以读取未提交的记录。</li>
-<li>Warning：默认情况下，某些数据库系统不确保可序列化计划</li>
-</ul>
+<h2 id="4-recovery-with-early-lock-release-and-logical-undo-operations">4. Recovery with Early Lock Release and Logical Undo Operations<a class="headerlink" href="#4-recovery-with-early-lock-release-and-logical-undo-operations" title="Permanent link">&para;</a></h2>
+<h3 id="41-logical-undo-logging">4.1 Logical Undo Logging<a class="headerlink" href="#41-logical-undo-logging" title="Permanent link">&para;</a></h3>
+<p>如果早放锁，后续恢复为 old value 可能没有意义。比如存款 100, 转入 100. 那么我们恢复为 100(物理撤销) 就没有意义。这个时候应该采用逻辑撤销，即如果 a+=100, 恢复时就应该 a-=100.</p>
+<p><img alt="" src="../img/191.png" /></p>
+<p><img alt="" src="../img/192.png" /></p>
+<p>先从checkpoint redo 到 crash 处（恢复案发现场），但数据库不能用，还需要 undo 。undo list 是 {T1，T2}，按照日志顺序依次 undo 。</p>
 
 
 
