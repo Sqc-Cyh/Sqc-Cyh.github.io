@@ -150,11 +150,11 @@ comments: true  #默认不开启评论
 ### 3.4 Estimation of Number of Distinct Values
 #### Selections: $\large \sigma_\theta(r)$
 
-* 如果 $\theta$ 强制 $A$ 取指定值：$(A，\sigma_theta (r)) = 1$。
+* 如果 $\theta$ 强制 $A$ 取指定值：$(A，\sigma_{\theta} (r)) = 1$。
   
     >e.g. A = 3
 
-* 如果 $\theta$ 强制 $A$ 采用一组指定的值之一：$V(A，\sigma_\theta (r)) = $ 指定值的数量。
+* 如果 $\theta$ 强制 $A$ 采用一组指定的值之一：$V(A，\sigma_{\theta} (r)) = $ 指定值的数量。
     
     >e.g. $(A = 1 \vee A = 3 \vee A = 4 )$
 
@@ -185,6 +185,13 @@ comments: true  #默认不开启评论
 
 1. 搜索所有计划并以基于成本的方式选择最佳计划。
 2. 使用启发式方法来选择计划。
+
+!!! tip "复习时的一些补充"
+    * Performing the projection as early as possible reduces the size of the relation to be joined. 
+    * 如果 $R \cap S$ 是 $R$ 的键，则 $s$ 的元组最多会与 $r$ 中的一个元组连接。因此，$r \bowtie s$ 中的元组数不大于 $s$ 中的元组数。
+    * Equality condition on a key attribute: size estimate = 1 
+    
+
 
 
 

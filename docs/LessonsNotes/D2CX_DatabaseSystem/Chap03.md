@@ -21,7 +21,7 @@ comments: true  #默认不开启评论
     * $\large char(n)$:固定长度的字符串，具有用户指定的长度。
     * $\large varchar(n)$:可变长度字符串，用户指定的最大长度为 n。
     * $\large int$:整数（整数的有限子集，与计算机相关）。
-    * $\large smalint$:小整数（整数域类型的与计算机相关的子集）。
+    * $\large smallint$:小整数（整数域类型的与计算机相关的子集）。
     * $\large numeric(p,d)$:定点数，用户指定的精度为 p 位，小数点右侧为 d 位。
     * $\large real,double precison$：浮点数和双精度浮点数，具有与机器相关的精度。
     * $\large float(n)$:浮点数，用户指定的精度至少为 n 位。
@@ -455,6 +455,45 @@ COMMIT;
         ![](./img/50.png)  
         
         * 使用using的连接类似于natural连接，但仅以using列出的公共属性为连接条件。
+
+
+!!! tip "复习时的一些补充"
+    * The alter table command can also be used to drop attributes of a relation
+    * SQL names are case insensitive, i.e., you can use capital or small letters. 
+    * The select clause can contain arithmetic expressions involving the operations +, –, *, and /, as well as operating on constants or attributes of tuples
+    * ![](./img/196.png)
+    * ![](./img/197.png)
+    * ascending order is the default
+    * Attributes in select clause outside of aggregate functions must appear in group by list. 
+    * The execution order of SELECT:    
+        From → where → group (aggregate) → having → select → distinct → order by 
+    * Aggregate functions cannot be used in where clause directly. 
+    * The result of any arithmetic expression involving ‘null’ is null. 
+
+        >E.g., 5 + null returns null. 
+
+    * Any comparison with null returns "unknown" 
+    
+        >E.g., 5 < null or null <> null or null = null 
+    
+    * ![](./img/198.png)
+    * ![](./img/199.png)
+    * some 等价于 in ， 但是 <>some 不等价于 not in。
+    * Benefits of using views 
+        1. Security 
+        2. Easy to use, support logical independent 
+    * ![](./img/200.png)
+    * The derived table must have its own alias, e.g., TT above. (不管是否被引用，导出表(或称嵌套表)必须给出别名) 
+    * ![](./img/201.png)
+    * The “select from where” statement is fully evaluated before any of its results are inserted into the relation. 
+    * 查询操作时，VIEW与基表没有区别，但对VIEW的更新操作有严格限制，如只有行列视图，可更新数据。
+    
+    
+    
+    
+    
+    
+    
 
 
 

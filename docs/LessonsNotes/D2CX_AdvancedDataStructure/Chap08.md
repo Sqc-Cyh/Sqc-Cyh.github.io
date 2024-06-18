@@ -86,3 +86,7 @@ Given  $N$  words  $w_1 < w_2 < …… < w_N$ , and the probability of searching
   
 ![](./img/158.png)
 ![](./img/159.png)
+
+
+!!! tip "复习时的一些补充"
+    ![](./img/210.png)

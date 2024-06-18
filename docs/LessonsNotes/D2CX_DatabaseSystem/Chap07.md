@@ -286,6 +286,18 @@ Elevator algorithm （电梯算法）：向一个方向移动磁盘臂（从外�
     一个改进：可以提升查找某个信息的效率。   
     ![](./img/121.png)
 
+!!! tip "复习时的一些补充"
+    * Storage media can be classified by 
+        1. Speed with which data can be accessed
+        2. Cost per unit of data
+        3. Reliability 
+            
+            >Data loss on power failure or system crash
+            Physical failure of the storage device (RAID) 
+
+    * Buffer: Portion of main memory available to store copies of disk blocks. 
+    
+
 
 
 

@@ -179,8 +179,12 @@ A transaction is a unit of program execution that accesses and  possibly updates
 * Read uncommitted — 甚至可以读取未提交的记录。
 * Warning：默认情况下，某些数据库系统不确保可序列化计划
 
-
-
+!!! tip "复习时的一些补充"
+    * <font color = "red">当且仅当</font>调度优先级图是非循环的时，调度才是conflict serializable （冲突可序列化的）。
+    * During transaction execution the database may be inconsistent, but when the transaction is committed, the database must be consistent.
+    * N个并行事务有n!种可选择的串行调度 (如<t1,t2,t3,…>, <t2,t1,t3,…>,<t3,t1,t2,…>, …)
+    
+    
     
 
 

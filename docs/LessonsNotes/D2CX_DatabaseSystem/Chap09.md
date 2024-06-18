@@ -312,3 +312,5 @@ Seek Cost = $2(\lceil b_r/b_b \rceil + \lceil b_s/b_b \rceil) + 2n_h$ + seeks
 最好选择较小的关系作为构建关系。  
 Total cost = $2(br+bs)\lceil log_{M–1}(bs)–1 \rceil + b_r+b_s$ block transfers + $2(\lceil b_r/b_b \rceil + \lceil b_s/b_b \rceil) \lceil log_{M–1}(b_s)–1\rceil + 2 n_h$ seeks    
 如果整个构建输入可以保存在主内存中，则不需要分区成本估算降至<font color = "red"> $b_r+b_s$ </font>（最佳情况）。
+
+

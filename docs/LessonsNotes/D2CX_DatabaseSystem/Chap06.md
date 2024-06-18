@@ -279,6 +279,25 @@ $AB \rightarrow D$ 意味着 $\{A,B\} \rightarrow D$
 * If a relation is in 4NF, it is in BCNF. 
 
 其余内容与第二范式类似，在此不做过多赘述。
+
+
+!!! tip "复习时的一些补充"
+    * ![](./img/202.png)
+    * Decide whether a particular relation R is in “good” form. --- No redundant 
+    * Functional dependencies allow us to express constraints that cannot be expressed using keys. 
+    * 容易判别一个r是否满足给定的F;不易判别F是否在R上成立。不能仅由某个r推断出F。
+    * The maximum number of possible Functional Dependencies (FDs) is $2^n X 2^n$, for n attributes
+    * There are 3 kind uses of the attribute set closure algorithm: 
+        1. Testing for a superkey --- 
+        2. Testing functional dependencies --- 
+        3. Computing the closure of F --- (F+ = ?) 
+        
+    * 可在F下判别R是否违反BCNF, 但必须在F+下判别R的分解式是否违反BCNF. 
+    * If a relation is in 4NF, it is in BCNF. 
+    
+    
+    
+    
     
 
 

@@ -156,6 +156,17 @@ Role:实体在关系中扮演的角色，例如，“manager”和“worker”�
     ![](./img/82.png)  
     ![](./img/83.png)
 
+
+!!! tip "复习时的一些补充"
+    * E-R图属于 Conceptual database design 阶段。
+    * Relationships between more than two entity sets are rare. Most relationships are binary.
+    * Entity sets of a relationship need not be distinct, e.g., Recursive relationship set (自环联系集). 
+    * In general, any non-binary relationship can be represented using binary relationships by creating an artificial entity set. 
+    
+    
+    
+    
+
  
 
 

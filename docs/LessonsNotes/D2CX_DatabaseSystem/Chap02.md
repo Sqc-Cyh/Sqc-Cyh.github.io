@@ -197,7 +197,7 @@ $\large temp \gets \Pi_{R-S}(r)$
         当涉及到求“全部”之类的查询，常用**“除法”**。  
         $Step1$:找出全部课程号：$\Pi_{Cno}(Course)$  
         $Step2$:找出选修了全部课程的学生的学号：$\Pi_{Sno,Cno}(enrolled)\div \Pi_{Cno}(Course)$  
-        $Step3$:与student表自然连接（连接条件Sno）获得学号、姓名：$\Pi_{Sno,Cno}(enrolled)\div \Pi_{Cno}(Course) \bowtie Pi_{Sno,Sname}(student)$
+        $Step3$:与student表自然连接（连接条件Sno）获得学号、姓名：$\Pi_{Sno,Cno}(enrolled)\div \Pi_{Cno}(Course) \bowtie \Pi_{Sno,Sname}(student)$
 
 !!! tips "运算顺序"
     * project  $\Pi$
@@ -242,3 +242,23 @@ $\large ⟕ $ 和 $\large ⟖ $
 !!! info "Null Values"
     **关于NULL值的一些讨论。**  
     ![](./img/18.png)
+
+
+
+
+!!! tip "复习时的一些补充"
+    * Attribute values are (normally) required to be atomic, i.e., indivisible  (--- 1st NF, 关系理论第一范式) 
+        E.g., multivalued attribute values are not atomic. 
+        E.g., composite attribute values are not atomic. 
+    * ![](./img/195.png)
+    * 参照关系中外码的值必须在被参照关系中实际存在, 或为null。
+    * 投影中多值属性被删除
+    * If attributes of r(R) and s(S) are not disjoint, then renaming for attributes must be used. （同名属性值需要重命名）
+    * If a relational-algebra expression E has arity n, then $\rho x(A1, A2, …, An)(E) $ (对relation E及其attributes都重命名) 
+    * 聚合结果没有名称,可以使用重命名操作为其命名。为方便起见，我们允许在聚合操作中重命名。
+    * Result of select  predicate is treated as false if it evaluates to unknown
+    
+
+
+    
+    

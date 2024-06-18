@@ -433,3 +433,20 @@ public static void JDBCexample(String dbid, String userid, String passwd)
 } 
 
 ```
+
+
+!!! tip "复习时的一些补充"
+    * 参照关系中外码的值必须在被参照关系中实际存在，或为null. 
+    * A <font color="red">combination of relational-level security and view-level security</font> can be used to limit a user’s access to precisely  the data that user needs. 
+    * SQL does not support authorization at a tuple level. 
+    * 怎样看审计结果： 
+        1. 审计结果记录在数据字典表: sys.aud$中，也可从dba_audit_trail, dba_audit_statement, dba_audit_object中获得有关情况。 
+        2. 上述数据字典表需在DBA用户（system）下才可见。 
+    * :V_an, :bn, :bal是宿主变量，可在宿主语言程序中赋值，从而将值带入SQL。宿主变量在宿主语言中使用时不加:号。
+    * The dynamic SQL program contains a ?, which is a place holder (占位符) for a value that is provided by ‘using’ variable when the SQL program is executed. 
+    
+    
+    
+    
+    
+
