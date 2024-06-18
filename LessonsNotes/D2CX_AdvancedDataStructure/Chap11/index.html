@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -2274,7 +2274,7 @@ $$</p>
 我们关注到，上面那个做法总是随机的选取新的 <span class="arithmatex">\(c_i\)</span>，但是对于 center 的选取，我们其实可以总是选择距离已有的 center 最远的点，此外，当 <span class="arithmatex">\(∣C∣&gt;K\)</span> 时，我们也没必要继续做了。</p>
 <div class="admonition success">
 <p class="admonition-title">证明</p>
-<p>使用反证法证明。若结果 <span class="arithmatex">\(r&gt;r*\)</span> ，则每步添加的 <span class="arithmatex">\(s\)</span> 距离都大于 <span class="arithmatex">\(2r*\)</span> 。根据前一个算法的结论， <span class="arithmatex">\(S’\)</span> 在 <span class="arithmatex">\(K\)</span> 步以内必然非空，推出 <span class="arithmatex">\(K-center\)</span> 无解满足 <span class="arithmatex">\(r*\)</span> 。</p>
+<p>使用反证法证明。若结果 <span class="arithmatex">\(r&gt;2r*\)</span> ，则每步添加的 <span class="arithmatex">\(s\)</span> 距离都大于 <span class="arithmatex">\(2r*\)</span> 。根据前一个算法的结论， <span class="arithmatex">\(S’\)</span> 在 <span class="arithmatex">\(K\)</span> 步以内必然非空，推出 <span class="arithmatex">\(K-center\)</span> 无解满足 <span class="arithmatex">\(r*\)</span> 。</p>
 </div>
 <ul>
 <li>伪代码：
@@ -2301,7 +2301,7 @@ $$</p>
 同时满足最优性和普遍性，那么这个算法对所有情况都能求准确解；<br />
 同时满足高效性和普遍性，那么这个算法可能是个近似算法；</p>
 <ul>
-<li>即使 N=NP 成立，我们仍然无法保证三个愿望一次满足。这句话指的应该是对于 NPH 问题，我们依然无法保证三个性质同时成立。</li>
+<li>即使 P=NP 成立，我们仍然无法保证三个愿望一次满足。这句话指的应该是对于 NPH 问题，我们依然无法保证三个性质同时成立。</li>
 </ul>
 
 

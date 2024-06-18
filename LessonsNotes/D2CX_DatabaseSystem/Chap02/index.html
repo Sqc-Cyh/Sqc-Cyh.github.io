@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -1904,7 +1904,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1780 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5Z"/></svg></span> 约 1963 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3L12.5 13Z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <h1 id="欢迎">Chap 2 | Relational Model</h1>
 <div class="admonition note">
@@ -2137,7 +2137,7 @@
 当涉及到求“全部”之类的查询，常用<strong>“除法”</strong>。<br />
 <span class="arithmatex">\(Step1\)</span>:找出全部课程号：<span class="arithmatex">\(\Pi_{Cno}(Course)\)</span><br />
 <span class="arithmatex">\(Step2\)</span>:找出选修了全部课程的学生的学号：<span class="arithmatex">\(\Pi_{Sno,Cno}(enrolled)\div \Pi_{Cno}(Course)\)</span><br />
-<span class="arithmatex">\(Step3\)</span>:与student表自然连接（连接条件Sno）获得学号、姓名：<span class="arithmatex">\(\Pi_{Sno,Cno}(enrolled)\div \Pi_{Cno}(Course) \bowtie Pi_{Sno,Sname}(student)\)</span></li>
+<span class="arithmatex">\(Step3\)</span>:与student表自然连接（连接条件Sno）获得学号、姓名：<span class="arithmatex">\(\Pi_{Sno,Cno}(enrolled)\div \Pi_{Cno}(Course) \bowtie \Pi_{Sno,Sname}(student)\)</span></li>
 </ul>
 </div>
 </div>
@@ -2192,6 +2192,21 @@ $\large ⟕ $ 和 $\large ⟖ $</p>
 <p class="admonition-title">Null Values</p>
 <p><strong>关于NULL值的一些讨论。</strong><br />
 <img alt="" src="../img/18.png" /></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">复习时的一些补充</p>
+<ul>
+<li>Attribute values are (normally) required to be atomic, i.e., indivisible  (--- 1st NF, 关系理论第一范式) 
+    E.g., multivalued attribute values are not atomic. 
+    E.g., composite attribute values are not atomic. </li>
+<li><img alt="" src="../img/195.png" /></li>
+<li>参照关系中外码的值必须在被参照关系中实际存在, 或为null。</li>
+<li>投影中多值属性被删除</li>
+<li>If attributes of r(R) and s(S) are not disjoint, then renaming for attributes must be used. （同名属性值需要重命名）</li>
+<li>If a relational-algebra expression E has arity n, then $\rho x(A1, A2, …, An)(E) $ (对relation E及其attributes都重命名) </li>
+<li>聚合结果没有名称,可以使用重命名操作为其命名。为方便起见，我们允许在聚合操作中重命名。</li>
+<li>Result of select  predicate is treated as false if it evaluates to unknown</li>
+</ul>
 </div>
 
 
