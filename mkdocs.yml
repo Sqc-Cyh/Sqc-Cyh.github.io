@@ -87,6 +87,9 @@ nav:
     - "⭐深度学习":  
       - LessonsNotes/DXQ_DeepLearning/index.md
       - LessonsNotes/DXQ_DeepLearning/note.md
+    - "⭐操作系统":  
+      - LessonsNotes/D3QD_OperatingSystem/index.md
+      - LessonsNotes/D3QD_OperatingSystem/Chap01.md
   - 科研相关:
     - 好玩2: home/home.md
   - "技能树":
