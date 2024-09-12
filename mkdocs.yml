@@ -90,6 +90,12 @@ nav:
     - "⭐操作系统":  
       - LessonsNotes/D3QD_OperatingSystem/index.md
       - LessonsNotes/D3QD_OperatingSystem/Chap01.md
+    - "⭐计算机网络":  
+      - LessonsNotes/D3QD_ComputerNetwork/index.md
+      - LessonsNotes/D3QD_ComputerNetwork/Chap01.md
+    - "⭐物联网技术基础与应用开发":  
+      - LessonsNotes/D3QD_IoT/index.md
+      - LessonsNotes/D3QD_IoT/Chap01.md
   - 科研相关:
     - 好玩2: home/home.md
   - "技能树":
