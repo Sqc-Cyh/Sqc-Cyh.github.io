@@ -102,8 +102,6 @@ nav:
     - SkillTree/index.md
     - "⭐如何搭建一个个人网页":
       - SkillTree/MakeYourOwnWeb/index.md
-    - "⭐MarkDown语法教程":
-      - SkillTree/MarkDown/index.md
     - "⭐机器学习":
       - SkillTree/MachineLearning/index.md
       - SkillTree/MachineLearning/Chap01.md
