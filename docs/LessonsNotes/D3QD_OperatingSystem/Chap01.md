@@ -18,7 +18,7 @@ comments: true  #默认不开启评论
         <!-- Markdown **content**. -->
     <!-- === "Tab 2"
         More Markdown **content**. -->
-    本章节是OS的第一章。
+    本章节是OS的第一章。主要介绍了一些基本的概念，以及对操作系统的概述。
 
 ## 1.Overview
 * 什么是操作系统？    
@@ -146,9 +146,90 @@ I/O是从设备到控制器的本地缓冲区。(退货的货物放到快递柜)
 
 * Transition from User to Kernel Mode      
     ![](./img/11.png){width="500"}      
+    
+* Timer & Interrupt
     1. 计时器防止无限循环/进程占用资源   
     2. 在特定时间后设置中断    
     3. 操作系统递减计数器
     4. 当计数器为零时产生中断
     5. 在调度过程之前设置，以重新控制或终止超出分配时间的程序
 
+* Process Management   
+
+!!! tip "进程(process)与程序(program)"
+    进程(process)是正在执行的程序(program)。它是系统内的一个工作单元。程序是一个被动的实体(passive entity)，过程是一个主动的实体(active entity)。
+
+    >以话剧为例，程序像是剧本，进程像是演出。
+
+进程需要资源来完成它的任务   
+>CPU、内存、I/O、文件    
+初始化数据    
+
+进程终止需要回收任何可重用资源
+
+* 单线程进程:   
+    1. 有一个<font color = "red">程序计数器(program counter)</font>来指定下一个要执行的指令的位置      
+    2. 进程按顺序执行指令，每次执行一条，直到完成    
+* 多线程进程:    
+    1. 每个线程有一个程序计数器<font color = "red">(program counter per thread)</font>       
+    2. 通常系统有许多进程，一些用户，一些操作系统并发地运行在一个或多个cpu上    
+    3. 通过在进程/线程之间复用cpu来实现并发性(multiplexing the CPUs)多路复用        
+
+* Process Management Activities(进程管理)
+    1. 创建和删除用户进程和系统进程 Creating and deleting
+    2. 暂停和恢复进程 Suspending and resuming
+    3. 提供流程同步机制 synchronization
+    4. 提供流程通信机制 communication
+    5. 提供死锁处理机制 deadlock
+
+* Memory Management(内存管理)
+    1. 所有数据(data)在处理前后都必须在内存中
+    2. 所有指令(instruction)必须在内存中才能执行
+    3. 内存管理来决定什么是在内存中   
+
+        >优化CPU利用率和计算机对用户的响应
+
+    4. 内存管理活动
+        1. 跟踪内存的哪些部分当前正在被谁使用
+        2. 决定将哪些进程(或其中的一部分)和数据移入和移出内存
+        3. 根据需要分配和释放内存空间
+
+* Storage Management(存储管理)   
+    1. 操作系统提供统一的、逻辑的信息存储视图
+        抽象物理属性到逻辑存储单元-<font color = "red">文件 file</font>
+    2. 每种介质由设备(即磁盘驱动器、磁带驱动器)控制。   
+
+        >不同的属性包括访问速度、容量、数据传输速率、访问方法(顺序或随机)
+
+* Mass-Storage Management(海量存储管理)   
+
+    !!! tip "操作系统活动"
+        1. 空间管理
+        2. 存储分配
+        3. 磁盘调度
+
+* 文件系统管理
+    1. 文件通常组织到目录(directories)中
+    2. 对大多数系统进行访问控制(access control)，以确定谁可以访问什么
+    !!! tip "操作系统活动"
+        1. 创建和删除文件和目录
+        2. 操作文件和目录的原语
+        3. 将文件映射到辅助存储
+        4. 将文件备份到稳定(非易失性)存储介质上
+
+* I/O Subsystem    
+    操作系统的一个目的是向用户隐藏硬件设备的特性——易于使用和编程     
+    * I/O子系统负责:    
+        1. I/O的内存管理，包括<font color = "red">缓冲 buffering </font>(在传输数据时临时存储数据)、<font color = "red">缓存 caching</font>(将部分数据存储在更快的存储中以提高性能)、<font color = "red">假脱机 spooling </font>(一个作业的输出与其他作业的输入重叠)   
+        全称: simultaneous peripheral operations online        
+        2. 通用设备驱动程序接口   
+        3. 特定硬件设备的驱动程序
+
+## 4.OS Purposes
+1. Abstraction 抽象与封装，只暴露一些接口
+2. Multiplex 空间管理：内存，时间管理：进程
+3. Isolation 用户和内核
+4. Sharing 不同用户对于内存磁盘CPU都是共享的
+5. Security 特权指令的安全，权限等
+6. Performance 更高的性能
+7. Range of uses 更广泛的应用，面对不同场景（网络传输、编译……）跨平台使用
