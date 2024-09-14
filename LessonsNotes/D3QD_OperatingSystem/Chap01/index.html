@@ -1552,6 +1552,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-operating-system-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Operating-System Operations
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2228,6 +2237,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-operating-system-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Operating-System Operations
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2247,7 +2265,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1276 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1539 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
 </div>
 <h1 id="欢迎">Chap 1 | Introduction</h1>
 
@@ -2389,8 +2407,47 @@ cpu之间通过共享系统互连连接<br />
 <li>响应时间应小于1秒，以便让用户之间感受不到彼此的存在  </li>
 <li>每个用户至少有一个程序在内存中执行 =&gt; 进程  </li>
 <li>如果多个作业准备同时运行 =&gt; CPU调度  </li>
-<li>如果进程不适合内存，交换(swapping)将它们移进移出以运行  </li>
+<li>如果进程不适合内存，交换(swapping)将它们移进移出以运行   </li>
 <li>虚拟内存(Virtual memory)允许执行不完全在内存中的进程   </li>
+</ol>
+</li>
+</ul>
+<h2 id="3-operating-system-operations">3. Operating-System Operations<a class="headerlink" href="#3-operating-system-operations" title="Permanent link">&para;</a></h2>
+<ol>
+<li>硬件驱动的中断  </li>
+<li>
+<p>软件错误或请求产生异常或陷阱 </p>
+<blockquote>
+<p>除零，请求操作系统服务</p>
+</blockquote>
+</li>
+<li>
+<p>其他进程问题包括无限循环、进程之间相互修改或操作系统</p>
+</li>
+</ol>
+<p>因此，我们需要保护:   </p>
+<ul>
+<li>
+<p><strong>双模式(Dual-mode)</strong>操作:允许操作系统保护自身和其他系统组件   </p>
+<ol>
+<li>用户模式(User mode)和内核模式(kernel mode)</li>
+<li>硬件提供的模式位(Mode bit)<ol>
+<li>提供区分系统是在运行用户代码还是内核代码的能力</li>
+<li>特权指令:只能在内核模式下执行(only execute in kernel mode)</li>
+<li>系统调用(System calls)将模式更改为内核(change mode to kernel)，从调用返回将其重置为用户</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Transition from User to Kernel Mode    <br />
+<img alt="" src="../img/11.png" width="500" />      </p>
+<ol>
+<li>计时器防止无限循环/进程占用资源   </li>
+<li>在特定时间后设置中断    </li>
+<li>操作系统递减计数器</li>
+<li>当计数器为零时产生中断</li>
+<li>在调度过程之前设置，以重新控制或终止超出分配时间的程序</li>
 </ol>
 </li>
 </ul>
