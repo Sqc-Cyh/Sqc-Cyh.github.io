@@ -10,28 +10,28 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D2CX_DatabaseSystem/Chap10/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D3Q_IoT/">
       
       
-        <link rel="prev" href="../Chap09/">
+        <link rel="prev" href="../D3QD_ComputerNetwork/Chap01/">
       
       
-        <link rel="next" href="../Chap11/">
+        <link rel="next" href="Chap01/">
       
       
-      <link rel="icon" href="../../../images/favicon.png">
+      <link rel="icon" href="../../images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>Chap 10 | Query Optimization - 时清川的个人主页</title>
+        <title>Index - 时清川的个人主页</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
@@ -62,7 +62,7 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -87,11 +87,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#1introduction" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +97,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+    <a href="../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -122,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 10 | Query Optimization
+              Index
             
           </span>
         </div>
@@ -238,7 +233,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -260,7 +255,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -280,7 +275,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../home/home.md" class="md-tabs__link">
+        <a href="../../home/home.md" class="md-tabs__link">
           
   
     
@@ -300,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../SkillTree/" class="md-tabs__link">
+        <a href="../../SkillTree/" class="md-tabs__link">
           
   
     
@@ -320,7 +315,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Poems/" class="md-tabs__link">
+        <a href="../../Poems/" class="md-tabs__link">
           
   
     
@@ -340,7 +335,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Friends/" class="md-tabs__link">
+        <a href="../../Friends/" class="md-tabs__link">
           
   
     
@@ -375,7 +370,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+    <a href="../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -426,7 +421,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -503,7 +498,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -533,8 +528,6 @@
                 
   
   
-    
-  
   
   
     
@@ -576,16 +569,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../D2CX_DatabaseSystem/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -602,7 +595,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             ⭐数据库系统
@@ -618,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap01/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -639,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap02/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap03/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap04/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -702,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap05/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap06/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -744,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap07/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -765,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap08/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap08/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -786,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap09/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap09/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -804,28 +797,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chap 10 | Query Optimization
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../D2CX_DatabaseSystem/Chap10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -834,150 +809,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2transformation-of-relational-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.Transformation of Relational Expressions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.Transformation of Relational Expressions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-equivalence-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Equivalence Rules
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-enumeration-of-equivalent-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Enumeration of Equivalent Expressions(等效表达式的枚举)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3statistics-for-cost-estimation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.Statistics for Cost Estimation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.Statistics for Cost Estimation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-selection-size-estimation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 Selection Size Estimation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-estimation-of-the-size-of-joins" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Estimation of the Size of Joins
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-size-estimation-for-other-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Size Estimation for Other Operations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-estimation-of-number-of-distinct-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 Estimation of Number of Distinct Values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.4 Estimation of Number of Distinct Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#selections-large-sigma_thetar" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selections: \(\large \sigma_\theta(r)\)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#joins-large-r-bowtie-s" class="md-nav__link">
-    <span class="md-ellipsis">
-      Joins: \(\large r \bowtie s\)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-choice-of-evaluation-plans" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 Choice of Evaluation Plans
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -990,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap11/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap12/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap12/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1032,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Chap13/" class="md-nav__link">
+      <a href="../D2CX_DatabaseSystem/Chap13/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1110,7 +941,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../D2CX_AdvancedDataStructure/" class="md-nav__link ">
+            <a href="../D2CX_AdvancedDataStructure/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1143,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap01/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1164,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap02/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1185,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap03/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1206,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap04/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1227,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap05/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1248,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap06/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1269,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap07/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1290,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap08/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap08/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap09/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap09/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1332,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap10/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap10/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap11/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap11/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap12/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap12/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1395,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap13/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap13/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_AdvancedDataStructure/Chap14/" class="md-nav__link">
+      <a href="../D2CX_AdvancedDataStructure/Chap14/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1487,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D2CX_Xinanyuan/note/" class="md-nav__link">
+      <a href="../D2CX_Xinanyuan/note/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1539,7 +1370,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../DXQ_DeepLearning/" class="md-nav__link ">
+            <a href="../DXQ_DeepLearning/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1572,7 +1403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../DXQ_DeepLearning/note/" class="md-nav__link">
+      <a href="../DXQ_DeepLearning/note/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1626,7 +1457,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../D3QD_OperatingSystem/" class="md-nav__link ">
+            <a href="../D3QD_OperatingSystem/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1659,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D3QD_OperatingSystem/Chap01/" class="md-nav__link">
+      <a href="../D3QD_OperatingSystem/Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1680,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D3QD_OperatingSystem/Chap02/" class="md-nav__link">
+      <a href="../D3QD_OperatingSystem/Chap02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1732,7 +1563,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../D3QD_ComputerNetwork/" class="md-nav__link ">
+            <a href="../D3QD_ComputerNetwork/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1765,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D3QD_ComputerNetwork/Chap01/" class="md-nav__link">
+      <a href="../D3QD_ComputerNetwork/Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1791,6 +1622,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1808,16 +1641,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../D3Q_IoT/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -1828,13 +1661,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             ⭐物联网技术基础与应用开发
@@ -1850,7 +1683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D3Q_IoT/Chap01/" class="md-nav__link">
+      <a href="Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1902,7 +1735,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../D3Q_BlockchainAndDigitalCurrency/" class="md-nav__link ">
+            <a href="../D3Q_BlockchainAndDigitalCurrency/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1935,7 +1768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../D3Q_BlockchainAndDigitalCurrency/Chap01/" class="md-nav__link">
+      <a href="../D3Q_BlockchainAndDigitalCurrency/Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2013,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../home/home.md" class="md-nav__link">
+      <a href="../../home/home.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2066,7 +1899,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../SkillTree/" class="md-nav__link ">
+            <a href="../../SkillTree/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2120,7 +1953,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../SkillTree/MakeYourOwnWeb/" class="md-nav__link ">
+            <a href="../../SkillTree/MakeYourOwnWeb/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2181,7 +2014,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../SkillTree/MachineLearning/" class="md-nav__link ">
+            <a href="../../SkillTree/MachineLearning/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2214,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../SkillTree/MachineLearning/Chap01/" class="md-nav__link">
+      <a href="../../SkillTree/MachineLearning/Chap01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2235,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../SkillTree/MachineLearning/Chap02/" class="md-nav__link">
+      <a href="../../SkillTree/MachineLearning/Chap02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2294,7 +2127,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Poems/" class="md-nav__link ">
+            <a href="../../Poems/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2327,7 +2160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
+      <a href="../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2376,7 +2209,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Friends/" class="md-nav__link ">
+            <a href="../../Friends/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2422,140 +2255,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2transformation-of-relational-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.Transformation of Relational Expressions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.Transformation of Relational Expressions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-equivalence-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 Equivalence Rules
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-enumeration-of-equivalent-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Enumeration of Equivalent Expressions(等效表达式的枚举)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3statistics-for-cost-estimation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.Statistics for Cost Estimation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.Statistics for Cost Estimation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-selection-size-estimation" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.1 Selection Size Estimation
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-estimation-of-the-size-of-joins" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.2 Estimation of the Size of Joins
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33-size-estimation-for-other-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.3 Size Estimation for Other Operations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#34-estimation-of-number-of-distinct-values" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.4 Estimation of Number of Distinct Values
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3.4 Estimation of Number of Distinct Values">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#selections-large-sigma_thetar" class="md-nav__link">
-    <span class="md-ellipsis">
-      Selections: \(\large \sigma_\theta(r)\)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#joins-large-r-bowtie-s" class="md-nav__link">
-    <span class="md-ellipsis">
-      Joins: \(\large r \bowtie s\)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#35-choice-of-evaluation-plans" class="md-nav__link">
-    <span class="md-ellipsis">
-      3.5 Choice of Evaluation Plans
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2572,228 +2271,10 @@
   
 
 
+  <h1>Index</h1>
+
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1413 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 7 分钟</p>
-</div>
-<h1 id="欢迎">Chap 10 | Query Optimization </h1>
-<div class="admonition note">
-<p class="admonition-title">章节启示录</p>
-<p>摆烂了……<br />
-后面有一部分是打星号的，于是就没写笔记了，不知道会不会考。</p>
-</div>
-<h2 id="1introduction">1.Introduction<a class="headerlink" href="#1introduction" title="Permanent link">&para;</a></h2>
-<ul>
-<li>评估给定查询的替代方法<ol>
-<li>等效表达式</li>
-<li>每个操作的不同算法
-<img alt="" src="../img/148.png" /></li>
-</ol>
-</li>
-</ul>
-<h2 id="2transformation-of-relational-expressions">2.Transformation of Relational Expressions<a class="headerlink" href="#2transformation-of-relational-expressions" title="Permanent link">&para;</a></h2>
-<h3 id="21-equivalence-rules">2.1 Equivalence Rules<a class="headerlink" href="#21-equivalence-rules" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>selection</p>
-<p><img alt="" src="../img/149.png" /></p>
-<ol>
-<li>算子可拆分<br />
-    如果某些属性有索引，那么可以先拆分，在索引 select 之后再执行其他算子，否则不如不拆分。</li>
-<li>算子可交换<br />
-    先执行有索引的算子。</li>
-<li>投影的属性可以只保留最后一次的</li>
-<li>选择算子可以和合并结合</li>
-</ol>
-</li>
-<li>
-<p>join</p>
-<p><img alt="" src="../img/150.png" /></p>
-<ol>
-<li>算子可交换  </li>
-<li>自然连接可结合<br />
-    先连接中间结果小的</li>
-</ol>
-<p><img alt="" src="../img/151.png" /></p>
-<ol>
-<li>如果选择算子只和一个关系有关，那么我们可以先执行选择。（选择算子要早进行，推到叶子上）</li>
-</ol>
-</li>
-<li>
-<p>projection</p>
-<p><img alt="" src="../img/152.png" /></p>
-<ol>
-<li>先投影后连接</li>
-</ol>
-</li>
-<li>
-<p>set operation</p>
-<p><img alt="" src="../img/153.png" /></p>
-<ol>
-<li>几个交换律</li>
-<li>减法中第二个关系不用做选择（多减没关系）</li>
-</ol>
-<p><img alt="" src="../img/154.png" /></p>
-</li>
-</ul>
-<h3 id="22-enumeration-of-equivalent-expressions">2.2 Enumeration of Equivalent Expressions(等效表达式的枚举)<a class="headerlink" href="#22-enumeration-of-equivalent-expressions" title="Permanent link">&para;</a></h3>
-<p>查询优化器使用等效规则系统地生成与给定表达式等效的表达式。 <br />
-可以通过以下方法生成所有等效表达式： </p>
-<ul>
-<li>repeat（重复）  <ol>
-<li>对已经找到的每个等价表达式的每个子表达式应用等价规则    </li>
-<li>将新生成的表达式添加到等效表达式集中   </li>
-<li>直到上面没有生成新的等效表达式</li>
-</ol>
-</li>
-</ul>
-<p>上述方法在空间和时间上都非常昂贵。<br />
-另外两种方法：  </p>
-<ul>
-<li>基于转换规则的优化计划生成  </li>
-<li>仅包含选择、投影和联接的查询的特殊情况方法</li>
-</ul>
-<p>一些优化：</p>
-<ul>
-<li>
-<p>通过共享公共子表达式减少空间需求：<br />
-    当 E1 通过等价规则从 E2 生成时，两者通常只有顶层不同，下面的子树相同，可以使用指针共享。  </p>
-<blockquote>
-<p>例如，当应用连接交换性时<br />
-<img alt="" src="../img/155.png" /> </p>
-</blockquote>
-<p>同一子表达式可能会多次生成,检测重复的子表达式并共享一个副本。  </p>
-</li>
-<li>
-<p>通过不生成所有表达式来减少时间要求:<br />
-    动态规划：我们将只研究用于连接顺序优化的动态规划的特殊情况</p>
-</li>
-</ul>
-<h2 id="3statistics-for-cost-estimation">3.Statistics for Cost Estimation<a class="headerlink" href="#3statistics-for-cost-estimation" title="Permanent link">&para;</a></h2>
-<div class="admonition abstract">
-<p class="admonition-title">前置定义</p>
-<ul>
-<li><span class="arithmatex">\(n_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 中的元组数。  </li>
-<li><span class="arithmatex">\(b_r\)</span>：包含 <span class="arithmatex">\(r\)</span> 元组的块数。  </li>
-<li><span class="arithmatex">\(l_r\)</span>：<span class="arithmatex">\(r\)</span> 元组的大小。  </li>
-<li><span class="arithmatex">\(f_r\)</span>：<span class="arithmatex">\(r\)</span> 的 blocking factor — 即一个块中 <span class="arithmatex">\(R\)</span> 的元组数。  </li>
-<li>如果 <span class="arithmatex">\(r\)</span> 的元组在物理上一起存储在一个文件中，则：<span class="arithmatex">\(\Large b_r=\lceil \frac{n_r}{f_r} \rceil\)</span>   </li>
-<li><span class="arithmatex">\(V(A， r)\)</span>：属性 <span class="arithmatex">\(A\)</span> 出现在 <span class="arithmatex">\(r\)</span> 中的非重复值的数量; 与 <span class="arithmatex">\(\prod_A(r)\)</span> 的大小相同。  </li>
-<li><span class="arithmatex">\(SC(A， r)\)</span>：关系 <span class="arithmatex">\(r\)</span> 的属性 <span class="arithmatex">\(A\)</span> 的选择基数;满足 <span class="arithmatex">\(A\)</span> 相等性的平均记录数。  </li>
-</ul>
-</div>
-<h3 id="31-selection-size-estimation">3.1 Selection Size Estimation<a class="headerlink" href="#31-selection-size-estimation" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><span class="arithmatex">\(\sigma_A=v(r)\)</span>  </p>
-<ol>
-<li><span class="arithmatex">\(n_r / V(A， r)\)</span>：满足选择的记录数</li>
-<li>键属性的相等条件：size estimate  = 1</li>
-</ol>
-</li>
-<li>
-<p><span class="arithmatex">\(\sigma_{A≤V}(r)\)</span>（ <span class="arithmatex">\(\sigma_{A≥V}(r)\)</span> 的情况是对称的）<br />
-    设 c 表示满足条件的元组的估计数。<br />
-    如果 catalog 中有 <span class="arithmatex">\(min(A， r)\)</span> 和 <span class="arithmatex">\(max(A， r)\)</span> 可用</p>
-<ol>
-<li><span class="arithmatex">\(c = 0\)</span> 如果 <span class="arithmatex">\(v &lt; min(A， r)\)</span></li>
-<li><span class="arithmatex">\(\large c = n_r*\frac{v-min(A,r)}{max(A,r)-min(A,r)}\)</span> <br />
-如果直方图可用，可以细化高于估计值<br />
-在没有统计信息的情况下，假设 <span class="arithmatex">\(c\)</span> 为 <span class="arithmatex">\(n_r / 2\)</span>。</li>
-</ol>
-</li>
-<li>
-<p>Size Estimation of Complex Selections:</p>
-</li>
-</ul>
-<p><img alt="" src="../img/156.png" /></p>
-<h3 id="32-estimation-of-the-size-of-joins">3.2 Estimation of the Size of Joins<a class="headerlink" href="#32-estimation-of-the-size-of-joins" title="Permanent link">&para;</a></h3>
-<p>笛卡尔积 <span class="arithmatex">\(\large r × s\)</span> 包含 <span class="arithmatex">\(\large n_r * n_s\)</span>  个元组;每个元组占用 <span class="arithmatex">\(\large s_r + s_s\)</span> 字节。  </p>
-<ul>
-<li>如果 <span class="arithmatex">\(R \cap S = \varnothing\)</span>，则 <span class="arithmatex">\(\large r \bowtie s\)</span> 等价于 <span class="arithmatex">\(\large r × s\)</span> 相同。</li>
-<li>如果 <span class="arithmatex">\(R \cap S\)</span> 是 <span class="arithmatex">\(R\)</span> 的键，则 <span class="arithmatex">\(s\)</span> 的元组最多会与 <span class="arithmatex">\(r\)</span> 中的一个元组连接。 <br />
-    因此，<span class="arithmatex">\(r \bowtie s\)</span> 中的元组数不大于 <span class="arithmatex">\(s\)</span> 中的元组数。</li>
-<li>
-<p>如果 <span class="arithmatex">\(S\)</span> 中的 <span class="arithmatex">\(R \cap S\)</span> 是 <span class="arithmatex">\(S\)</span> 中引用 <span class="arithmatex">\(R\)</span> 的外键，则 <span class="arithmatex">\(\large r \bowtie s\)</span> 中的元组数与 <span class="arithmatex">\(\large s\)</span> 中的元组数完全相同。 <br />
-    引用 <span class="arithmatex">\(S\)</span> 的外键的情况是对称的。</p>
-<blockquote>
-<p>在学生执行的示例查询中(<span class="arithmatex">\(student  \bowtie takes\)</span>)，<span class="arithmatex">\(ID\)</span> in <span class="arithmatex">\(take\)</span> is a foreign key referencing <span class="arithmatex">\(student\)</span>。因此，结果正好有 <span class="arithmatex">\(n_{takes}\)</span> 元组，即 10000</p>
-</blockquote>
-</li>
-<li>
-<p>如果 <span class="arithmatex">\(R \cap S = \{A\}\)</span> 不是 <span class="arithmatex">\(R\)</span> 或 <span class="arithmatex">\(S\)</span> 的键。</p>
-<ol>
-<li>如果我们假设 <span class="arithmatex">\(R\)</span> 中的每个元组 <span class="arithmatex">\(t\)</span> 在 <span class="arithmatex">\(R\bowtie S\)</span> 中产生元组，则 <span class="arithmatex">\(R\bowtie S\)</span> 中的元组数估计为：
-    $$
-    \frac{n_r*n_s}{V(A,s)}
-    $$</li>
-<li>
-<p>如果反之亦然，则获得的估计值为：</p>
-<p>$$
-\frac{n_r*n_s}{V(A,r)}
-$$
-    这两个估计中较低的可能更准确。</p>
-</li>
-</ol>
-<blockquote>
-<p>e.g:<br />
-<img alt="" src="../img/157.png" width="550" /></p>
-</blockquote>
-</li>
-</ul>
-<h3 id="33-size-estimation-for-other-operations">3.3 Size Estimation for Other Operations<a class="headerlink" href="#33-size-estimation-for-other-operations" title="Permanent link">&para;</a></h3>
-<p><img alt="" src="../img/158.png" /></p>
-<h3 id="34-estimation-of-number-of-distinct-values">3.4 Estimation of Number of Distinct Values<a class="headerlink" href="#34-estimation-of-number-of-distinct-values" title="Permanent link">&para;</a></h3>
-<h4 id="selections-large-sigma_thetar">Selections: <span class="arithmatex">\(\large \sigma_\theta(r)\)</span><a class="headerlink" href="#selections-large-sigma_thetar" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p>如果 <span class="arithmatex">\(\theta\)</span> 强制 <span class="arithmatex">\(A\)</span> 取指定值：<span class="arithmatex">\((A，\sigma_{\theta} (r)) = 1\)</span>。</p>
-<blockquote>
-<p>e.g. A = 3</p>
-</blockquote>
-</li>
-<li>
-<p>如果 <span class="arithmatex">\(\theta\)</span> 强制 <span class="arithmatex">\(A\)</span> 采用一组指定的值之一：$V(A，\sigma_{\theta} (r)) = $ 指定值的数量。</p>
-<blockquote>
-<p>e.g. <span class="arithmatex">\((A = 1 \vee A = 3 \vee A = 4 )\)</span></p>
-</blockquote>
-</li>
-<li>
-<p>如果选择条件 <span class="arithmatex">\(\theta\)</span> 的形式为 <span class="arithmatex">\(A\;\;op\;\; r\)</span><br />
-    估计 <span class="arithmatex">\(\large V(A, \sigma_\theta (r)) = V(A,r) * s\)</span><br />
-    其中 s 是选择率。</p>
-</li>
-<li>
-<p>在所有其他情况下：使用 <span class="arithmatex">\(\large min(V(A，r)， n_{\sigma\theta (r)})\)</span> 作为估计</p>
-</li>
-</ul>
-<p>使用概率论可以得到更准确的估计，但这些基本可以正常工作。</p>
-<h4 id="joins-large-r-bowtie-s">Joins: <span class="arithmatex">\(\large r \bowtie s\)</span><a class="headerlink" href="#joins-large-r-bowtie-s" title="Permanent link">&para;</a></h4>
-<ul>
-<li>如果 <span class="arithmatex">\(A\)</span> 中的所有属性都来自 <span class="arithmatex">\(r\)</span>   <br />
-    估计 <span class="arithmatex">\(V(A, r\bowtie s) = min (V(A, r), n_{r \bowtie s})\)</span></li>
-<li>如果 <span class="arithmatex">\(A\)</span> 包含来自 <span class="arithmatex">\(r\)</span> 的属性 <span class="arithmatex">\(A1\)</span> 和来自 <span class="arithmatex">\(s\)</span> 的 <span class="arithmatex">\(A2\)</span>，则估计 
-    <span class="arithmatex">\(\large V(A, r\bowtie s) = min(V(A1, r)*V(A2 – A1, s),V(A1 – A2， r)*V(A2， s), n_{r\bowtie s})\)</span></li>
-</ul>
-<p>使用概率论可以得到更准确的估计，但这些基本可以正常工作。</p>
-<h3 id="35-choice-of-evaluation-plans">3.5 Choice of Evaluation Plans<a class="headerlink" href="#35-choice-of-evaluation-plans" title="Permanent link">&para;</a></h3>
-<p>在选择评估计划时，必须考虑评估技术的相互作用。为每个操作单独选择最便宜的算法可能不会产生最佳的整体算法。</p>
-<blockquote>
-<p>例如，<br />
-  1. 合并-联接可能比哈希联接成本更高，但可以提供排序输出，从而降低外部级聚合的成本。  <br />
-  2. 嵌套循环联接可能为流水线提供机会。</p>
-</blockquote>
-<p>实用的查询优化器包含以下两种广泛方法的元素：</p>
-<ol>
-<li>搜索所有计划并以基于成本的方式选择最佳计划。</li>
-<li>使用启发式方法来选择计划。</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">复习时的一些补充</p>
-<ul>
-<li>Performing the projection as early as possible reduces the size of the relation to be joined. </li>
-<li>如果 <span class="arithmatex">\(R \cap S\)</span> 是 <span class="arithmatex">\(R\)</span> 的键，则 <span class="arithmatex">\(s\)</span> 的元组最多会与 <span class="arithmatex">\(r\)</span> 中的一个元组连接。因此，<span class="arithmatex">\(r \bowtie s\)</span> 中的元组数不大于 <span class="arithmatex">\(s\)</span> 中的元组数。</li>
-<li>Equality condition on a key attribute: size estimate = 1 </li>
-</ul>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 0 个字 </p>
 </div>
 
 
@@ -2802,66 +2283,10 @@ $$
 
 
 
-  
-  
 
 
 
 
-
-
-  <h2 id="__comments">Comments</h2>
-  <!-- Insert generated snippet here -->
-  <script src="https://giscus.app/client.js"
-  data-repo="sqc-cyh/MyWeb-discussion"
-  data-repo-id="R_kgDOLX74Ng"
-  data-category="General"
-  data-category-id="DIC_kwDOLX74Ns4Cdg_o"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-theme="light"
-  data-lang="zh-CN"
-  crossorigin="anonymous"
-  async>
-</script>
-  <!-- Synchronize Giscus theme with palette -->
-  <script>
-    var giscus = document.querySelector("script[src*=giscus]")
-
-    // Set palette on initial load
-    var palette = __md_get("__palette")
-    if (palette && typeof palette.color === "object") {
-      var theme = palette.color.scheme === "slate"
-        ? "transparent_dark"
-        : "light"
-
-      // Instruct Giscus to set theme
-      giscus.setAttribute("data-theme", theme) 
-    }
-
-    // Register event handlers after documented loaded
-    document.addEventListener("DOMContentLoaded", function() {
-      var ref = document.querySelector("[data-md-component=palette]")
-      ref.addEventListener("change", function() {
-        var palette = __md_get("__palette")
-        if (palette && typeof palette.color === "object") {
-          var theme = palette.color.scheme === "slate"
-            ? "transparent_dark"
-            : "light"
-
-          // Instruct Giscus to change theme
-          var frame = document.querySelector(".giscus-frame")
-          frame.contentWindow.postMessage(
-            { giscus: { setConfig: { theme } } },
-            "https://giscus.app"
-          )
-        }
-      })
-    })
-  </script>
 
                 
               </article>
@@ -2926,20 +2351,20 @@ $$
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="../../../javascripts/extra.js"></script>
+        <script src="../../javascripts/extra.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../javascripts/katex.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
