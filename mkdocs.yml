@@ -94,10 +94,12 @@ nav:
     - "⭐计算机网络":  
       - LessonsNotes/D3QD_ComputerNetwork/index.md
       - LessonsNotes/D3QD_ComputerNetwork/Chap01.md
+      - LessonsNotes/D3QD_ComputerNetwork/Chap02.md
     - "⭐物联网技术基础与应用开发":  
       - LessonsNotes/D3Q_IoT/index.md
       - LessonsNotes/D3Q_IoT/Chap01.md
       - LessonsNotes/D3Q_IoT/Chap02.md
+      - LessonsNotes/D3Q_IoT/Chap03.md
     - "⭐区块链与数字货币":  
       - LessonsNotes/D3Q_BlockchainAndDigitalCurrency/index.md
       - LessonsNotes/D3Q_BlockchainAndDigitalCurrency/Chap01.md  
