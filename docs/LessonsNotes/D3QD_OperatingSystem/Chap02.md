@@ -98,14 +98,23 @@ comments: true  #默认不开启评论
 
 
 ## 3.Operating System Design and Implementation 
-* Important principle to separate (2.6.2)
-    1. Policy: What will be done? 策略（确定具体做什么事）
-    2. Mechanism: How to do it? 机制（定义做事方式）  
+
+Start by defining <font color = "red">goals and specifications</font>    
+
+Affected by choice of <font color = "red"> hardware, type of system</font>
+
+* Important principle to separate   
+    1. Policy: What will be done? 策略Policy（确定具体做什么事）
+    2. Mechanism: How to do it? 机制Mechanism（定义做事方式）  
 
     >Example: timer for CPU protection is a mechanism
 
 机制决定如何做一件事，政策决定做什么    
 策略与机制的分离是一个非常重要的原则，如果以后要更改策略决策，它可以提供最大的灵活性   
+
+
+
+
 
 
 ## 4.Operating System Structure
@@ -119,7 +128,9 @@ MS-DOS——用最少的空间提供最多的功能
 ### 4.2 UNIX
 ![](./img/17.png){width="350"}
 
-### 4.3 微内核
+### 4.3 微内核与宏内核
+
+#### 微内核
 将尽可能多的内容从内核移到“用户”空间   
 用户模块之间使用消息传递进行通信 
 
@@ -132,3 +143,58 @@ MS-DOS——用最少的空间提供最多的功能
     1. 用户空间到内核空间通信的性能开销
 
 ![](./img/18.png){width="400"}
+
+#### 宏内核
+* 优势:
+    1. 效率很高
+* 劣势：
+    1. 安全性低
+    2. 因为大量功能互相耦合导致维护困难
+
+
+### 4.4 Hybrid Structure - Darwin(A hybrid structure!混合结构)
+
+![](./img/20.png){width="500"}
+
+* MacOS / iOS Structure:以Darwin为基础，applications层很灵活，可以调用多个层     
+![](./img/19.png){width="300"}
+
+### 4.5 操作系统的设计思路
+
+* Layered Approach(逻辑)分层：      
+    1. 底层(第0层)是硬件;最高层(第N层)是用户界面。   
+    2. 通过模块化、层的选择使得每个层只使用较低层的功能(操作)和服务(不能跨层使用)       
+    ![](./img/21.png){width="200"}
+
+* Modules(模块化)：对宏内核很重要    
+    1. 每个核心组件都是独立的
+    2. 每个系统都通过已知接口与其他系统通信
+    3. 模块相互调用而不是消息传递
+
+    * 类太阳系模块方法（~~我自己取的名字~~）Solaris Modular Approach：
+        ![](./img/22.png){width="300"}    
+        为操作系统提供了扩展的能力，方便运维。
+
+* Other Structures：
+    1. Exokernel外核：     
+        1. 高度简化kernel，只负责资源分配，提供了低级的硬件操作，必须通过定制library供应用使用。不涉及状态的转化。         
+        2. 高性能，但定制化library难度大，兼容性差。      
+        （学术界中很成功，但无法形成产业。强调性能，但维护成本很高）     
+        ![](./img/23.png){width="300"}   
+    2. Unikernel: statically linked with the OS code needed.
+        Good for cloud service, APP boots in tens of ms.    
+        启动速度很快，性能很高。
+
+
+## 5. 虚拟机
+虚拟机采用分层方法得出其逻辑结论。它将硬件和操作系统内核视为硬件    
+
+虚拟机提供与底层裸硬件相同的接口     
+
+操作系统创建了多个进程的假象，每个进程在自己的处理器上使用自己的(虚拟)内存执行
+
+人话：虚拟机其实就是一个虚拟化的平台
+
+![](./img/24.png){width="400"}
+    
+    
