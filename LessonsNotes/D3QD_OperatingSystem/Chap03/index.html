@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1585,9 +1585,57 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 进程的概念
+      1.进程的概念
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2process-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Process Scheduling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Process Scheduling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Scheduler调度器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3operations-on-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Operations on Processes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Operations on Processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 进程创建
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1619,6 +1667,8 @@
       
         
           
+        
+      
         
       
         
@@ -1699,6 +1749,27 @@
   
   <span class="md-ellipsis">
     Chap 2 | 物理层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_ComputerNetwork/Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | 数据链路层
   </span>
   
 
@@ -2406,9 +2477,57 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 进程的概念
+      1.进程的概念
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2process-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Process Scheduling
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Process Scheduling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Scheduler调度器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3operations-on-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Operations on Processes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Operations on Processes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 进程创建
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2431,7 +2550,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 407 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1260 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
 </div>
 <h1 id="欢迎">Chap 3 | Processes</h1>
 
@@ -2443,7 +2562,7 @@
     More Markdown **content**. -->
 本章节是OS的第三章。</p>
 </div>
-<h2 id="1">1. 进程的概念<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1">1.进程的概念<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <p>Process—正在执行的程序;流程执行必须以顺序方式进行</p>
 <ul>
 <li>
@@ -2499,6 +2618,90 @@ tips：中间的部分称为hole，是一个“巨大的洞”，比图中展示
 <li>等待上跑道: Ready 状态</li>
 </ol>
 </div>
+</li>
+<li>
+<p>Process Control Block：Information associated with each process   </p>
+<ol>
+<li>Process state：进程的状态</li>
+<li>Program counter：标识该进程跑到了哪里，由于进程是动态的，每一被切换都需要保证下一次能无缝衔接之前的进度，所以需要存储每次的工作状态</li>
+<li>Contents of CPU registers：保存进程相关的寄存器信息</li>
+<li>CPU scheduling information：CPU 调度参考的信息，包括优先级、调度队列的指针、调度参数等</li>
+<li>Memory-management information：包括页表、段表等信息，具体与实现的内存系统有关</li>
+<li>Accounting information：一些关于进程的动态数据的统计和记录，比如总共已经跑了多久、时间限制、进程号等</li>
+<li>I/O status information：被分配给进程的 I/O 设备列表、打开的文件列表等</li>
+</ol>
+<p><img alt="" src="../img/28.png" width="150" /></p>
+</li>
+</ul>
+<p>先存储PCB0，再把CPU资源分配给其他进程，把PCB1加载进来，I/O做完后，会给CPU发送一个中断，CPU会处理这个中断，会把PCB1的资源存储下来，再把PCB0（处在归零状态）的状态置成“ready”，再让他进入进程队列中，最后把PCB0 load 进来，继续执行。  <br />
+其中<font color = "blue">蓝色部分</font>是CPU实际使用的时间 <br />
+<img alt="" src="../img/27.png" width="400" /></p>
+<p>因此我们需要CPU的合理调度，不能让CPU换进来后很快换出，这样十分消耗资源。</p>
+<h2 id="2process-scheduling">2.Process Scheduling<a class="headerlink" href="#2process-scheduling" title="Permanent link">&para;</a></h2>
+<p>Job queue：系统中所有进程的集合    </p>
+<p>Ready queue：驻留在主存中的所有进程的集合，准备就绪并等待执行   </p>
+<p>Device queues：等待I/O设备的一组进程   </p>
+<p>进程在各个队列之间迁移,基本结构如下：一个进程不可以同时在两个queue中排队  <br />
+<img alt="" src="../img/29.png" width="400" /></p>
+<p>实际实现中，由于等待的 I/O 或事件不同，可能维护多个等待队列，于是实际过程中的情况可能如下：
+<img alt="" src="../img/30.png" /></p>
+<h3 id="21-scheduler">2.1 Scheduler调度器<a class="headerlink" href="#21-scheduler" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Long-term scheduler(or job scheduler)：选择应该将哪些进程放入内存(就绪队列)</li>
+<li>Short-term scheduler(or CPU scheduler)：选择下一个应该执行的进程并分配CPU</li>
+</ol>
+<p>非常频繁地调用Short-term scheduler(毫秒)(必须很快)，快到体感上两个程序同时执行（分时操作系统中涉及的目标）</p>
+<p>很少调用Long-term scheduler(秒、分钟)(可能很慢)</p>
+<p>Long-term scheduler控制 <a href="https://sh17c.top/LessonsNotes/D3QD_OperatingSystem/Chap01/#2">Multiprogramming</a> 的 degree</p>
+<ul>
+<li>
+<p>过程：    </p>
+<ol>
+<li>
+<p>I/O绑定进程：花在I/O上的时间较多;有很多短的CPU爆发</p>
+<blockquote>
+<p>下载</p>
+</blockquote>
+</li>
+<li>
+<p>cpu绑定进程：花在CPU上的时间较多;很少有长的CPU爆发</p>
+<blockquote>
+<p>打游戏，科学计算</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>
+<p>Medium Term Scheduling:比CPU要慢，做一个暂时性的托管，涉及到磁盘的调度操作，不能做频繁的操作 <br />
+<img alt="" src="../img/31.png" /></p>
+</li>
+<li>
+<p>Context Switch 上下文切换：</p>
+<ol>
+<li>当CPU切换到其他进程时，系统必须保存旧进程的状态，并为新进程加载保存的状态</li>
+<li>上下文切换时间是 overhead ;系统在切换时不做任何有用的工作——通常需要几毫秒</li>
+<li>时间取决于硬件。在SPARC体系结构中，提供了寄存器组。</li>
+</ol>
+</li>
+</ul>
+<h2 id="3operations-on-processes">3.Operations on Processes<a class="headerlink" href="#3operations-on-processes" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 进程创建<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>父进程创建子进程，子进程依次创建其他进程，形成进程树</p>
+<ul>
+<li>
+<p>资源共享:   </p>
+<ol>
+<li>父母和孩子共享所有资源</li>
+<li>子节点共享父节点资源的子集</li>
+<li>父节点和子节点不共享资源</li>
+</ol>
+</li>
+<li>
+<p>执行(两种方式):   </p>
+<ol>
+<li>父节点和子节点并发执行</li>
+<li>父进程等待子进程终止</li>
+</ol>
 </li>
 </ul>
 
@@ -2635,7 +2838,7 @@ tips：中间的部分称为hole，是一个“巨大的洞”，比图中展示
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d6f25eb3.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       
