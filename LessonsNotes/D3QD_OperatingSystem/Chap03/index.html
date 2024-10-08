@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.37">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -1634,8 +1634,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 进程中断
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4cooperating-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Cooperating Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5interprocess-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Interprocess Communication
+    </span>
+  </a>
   
 </li>
       
@@ -2526,8 +2553,35 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 进程中断
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4cooperating-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Cooperating Processes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5interprocess-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Interprocess Communication
+    </span>
+  </a>
   
 </li>
       
@@ -2550,7 +2604,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1260 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1996 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 16 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <h1 id="欢迎">Chap 3 | Processes</h1>
 
@@ -2704,6 +2758,165 @@ tips：中间的部分称为hole，是一个“巨大的洞”，比图中展示
 </ol>
 </li>
 </ul>
+<h3 id="32">3.2 进程中断<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>进程执行最后一条语句并请求操作系统删除它(退出)：   </p>
+<ol>
+<li>输出数据从子节点到父节点(通过等待)</li>
+<li>进程的资源被操作系统释放</li>
+</ol>
+</li>
+<li>
+<p>父进程可以终止子进程的执行(abort)</p>
+<ol>
+<li>子进程已超出分配的资源</li>
+<li>不再需要分配给孩子的任务</li>
+<li>如果parents退出 :  <ol>
+<li>有些操作系统不允许子进程在父进程终止时继续</li>
+<li>所有子节点终止-级联终止</li>
+<li>在其他一些操作系统中，子进程成为孤儿——其父进程成为“init”进程(PID=1)。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="4cooperating-processes">4.Cooperating Processes<a class="headerlink" href="#4cooperating-processes" title="Permanent link">&para;</a></h2>
+<p>Independent process 不能影响或被另一个进程的执行影响</p>
+<p>Coorperating process 可以影响或被另一个进程的执行所影响</p>
+<ul>
+<li>
+<p>Cooperating Processes的优势：</p>
+<ol>
+<li>信息共享</li>
+<li>计算加速(多cpu)</li>
+<li>模块化</li>
+<li>方便</li>
+</ol>
+</li>
+<li>
+<p>生产者消费者模型：生产者进程产生的信息被消费者进程消费</p>
+<ol>
+<li>Unbounded-buffer对缓冲区的大小没有实际限制。如果没有新产品，消费者必须等待。</li>
+<li>
+<p>bounded-buffer假设有一个固定的缓冲区大小。如果缓冲区已满，生产者必须等待。</p>
+</li>
+<li>
+<p>Insert()方法：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">Produce</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">in</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">BUFFER_SIZE</span><span class="w">   </span><span class="o">==</span><span class="w"> </span><span class="n">out</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">     </span><span class="cm">/* do nothing -- no free buffers */</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">buffer</span><span class="p">[</span><span class="n">in</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">BUFFER_SIZE</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Remove()方法：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">out</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="c1">//do nothing, nothing to consume</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="n">Remove</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">buffer</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="n">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="n">out</span><span class="p">];</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">BUFFER</span><span class="w"> </span><span class="n">SIZE</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="5interprocess-communication">5.Interprocess Communication<a class="headerlink" href="#5interprocess-communication" title="Permanent link">&para;</a></h2>
+<p>IPC有两种模型:消息传递和共享内存</p>
+<ul>
+<li>
+<p>消息传递:进程之间不借助共享变量进行通信</p>
+<ol>
+<li>
+<p>消息传递功能提供两种操作:</p>
+<ol>
+<li>发送(消息):消息大小固定或可变</li>
+<li>接收(消息)</li>
+</ol>
+</li>
+<li>
+<p>如果P和Q想要沟通，他们需要:</p>
+<ol>
+<li>在它们之间建立通信链接</li>
+<li>通过发送/接收交换消息</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>通信链路的实现:</p>
+<ol>
+<li>物理(例如，共享内存、硬件总线)</li>
+<li>逻辑的(例如，逻辑属性)</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="../img/32.png" width="400" /></p>
+<ul>
+<li>
+<p>直接通讯：</p>
+<ol>
+<li>进程之间必须显式命名:<ol>
+<li>send (P, message)——向进程P发送消息</li>
+<li>receive(Q, message)——从进程Q接收一条消息</li>
+</ol>
+</li>
+<li>通信链路的性质：<ol>
+<li>链接自动建立</li>
+<li>一个链接只与一对通信进程相关联</li>
+<li>每一对之间只存在一个链接</li>
+<li>这种连接可能是单向的，但通常是双向的</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>间接通讯：(快递柜的例子)</p>
+<ol>
+<li>
+<p>消息从邮箱(也称为端口)定向和接收。</p>
+<ol>
+<li>每个邮箱都有一个惟一的id</li>
+<li>进程只有在共享邮箱时才能通信</li>
+</ol>
+</li>
+<li>
+<p>通信链路的性质：</p>
+<ol>
+<li>仅当进程共享公共邮箱时才建立链接</li>
+<li>一个链接可能与许多进程相关联</li>
+<li>每一对进程可以共享几个通信链路</li>
+<li>链路可以是单向的也可以是双向的</li>
+</ol>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">间接通讯的问题</p>
+<ul>
+<li>
+<p>邮箱共享:  <br />
+    P1、P2和P3共享邮箱A       <br />
+    P1,发送;P2和P3接收        <br />
+    谁得到了信息?           </p>
+</li>
+<li>
+<p>解决方案:</p>
+<ol>
+<li>允许一个链接最多与两个进程关联</li>
+<li>一次只允许一个进程执行接收操作</li>
+<li>允许系统任意选择接收端。发送方被告知接收者是谁。</li>
+</ol>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 
 
 
@@ -2838,7 +3051,7 @@ tips：中间的部分称为hole，是一个“巨大的洞”，比图中展示
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       
