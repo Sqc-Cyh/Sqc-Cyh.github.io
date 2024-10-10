@@ -1,0 +1,3797 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="时清川">
+      
+      
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D3Q_IoT/Chap04/">
+      
+      
+        <link rel="prev" href="../Chap03/">
+      
+      
+        <link rel="next" href="../../D3Q_BlockchainAndDigitalCurrency/">
+      
+      
+      <link rel="icon" href="../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+    
+    
+      
+        <title>Chap 4 | 低功耗短距离通信协议 - 时清川的个人主页</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="index_light" data-md-color-primary="indigo" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="时清川的个人主页" class="md-header__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            时清川的个人主页
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chap 4 | 低功耗短距离通信协议
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="index_light" data-md-color-primary="indigo" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="index_night" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sqc-cyh" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sqc-cyh.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  家
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  课程笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../home/home.md" class="md-tabs__link">
+          
+  
+    
+  
+  科研相关
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../SkillTree/" class="md-tabs__link">
+          
+  
+    
+  
+  技能树
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Poems/" class="md-tabs__link">
+          
+  
+    
+  
+  诗
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Friends/" class="md-tabs__link">
+          
+  
+    
+  
+  友链
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="时清川的个人主页" class="md-nav__button md-logo" aria-label="时清川的个人主页" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    时清川的个人主页
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sqc-cyh" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sqc-cyh.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    家
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            家
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    课程笔记
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            课程笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../D2CX_DatabaseSystem/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐数据库系统
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐数据库系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | Relational Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | Advanced SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | Entity-Relationship Model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 6 | Relational Database Design
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 7 | Storage and File Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 8 | Indexing and Hashing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 9 | Query Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 10 | Query Optimization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 11 | Transactions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 12 | Concurrency Control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_DatabaseSystem/Chap13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 13 | Recovery System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../D2CX_AdvancedDataStructure/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐高级数据结构与算法分析
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐高级数据结构与算法分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1 | “AVL Trees, Splay Trees,and Amortized Analysis”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | “Red-Black Trees and B+ Trees”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | “Inverted File Index”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | “Leftist Heaps and Skew Heaps”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | “Binomial Queue”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 6 | “Backtracking”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 7 | “Divide and Conquer”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 8 | “Dynamic Programming”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 9 | “Greedy Algorithms”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 10 | “NP-Completeness”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 11 | “Approximation”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 12 | “Local Search”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 13 | “Randomized Algorithms”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_AdvancedDataStructure/Chap14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 14 | “Parallel Algorithms”
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ⭐信息安全原理
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐信息安全原理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D2CX_Xinanyuan/note/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../DXQ_DeepLearning/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐深度学习
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐深度学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DXQ_DeepLearning/note/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../D3QD_OperatingSystem/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐操作系统
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_OperatingSystem/Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1 | Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_OperatingSystem/Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | Operating-System Structures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_OperatingSystem/Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | Processes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_OperatingSystem/Chap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | Threads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../D3QD_ComputerNetwork/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐计算机网络
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐计算机网络
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_ComputerNetwork/Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1 | Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_ComputerNetwork/Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | 物理层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3QD_ComputerNetwork/Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | 数据链路层
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐物联网技术基础与应用开发
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐物联网技术基础与应用开发
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 1 | Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 2 | 物联网硬件平台
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 3 | 物联网操作系统
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 4 | 低功耗短距离通信协议
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chap 4 | 低功耗短距离通信协议
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.关键特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.关键特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 功耗
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 通信距离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 频带和数据率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3ieee802154" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.基于IEEE802.15.4的传感网协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.基于IEEE802.15.4的传感网协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ieee-802154" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 IEEE 802.15.4技术物理层
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 低功耗MAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 低功耗MAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macs-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      同步MAC：S-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maclpl-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      发送方发起异步MAC：LPL MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macri-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      接收方发起异步MAC：RI-MAC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 链路质量估计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-6lowpan" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 6LoWPAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-ctprpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 CTP&amp;RPL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 CTP&RPL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Thread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Matter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      组网模式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4ble" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.蓝牙低功耗协议（BLE）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.蓝牙低功耗协议（BLE）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 物理层协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 链路层协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-l2cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 L2CAP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-attgatt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 ATT属性检索协议和GATT通用属性框架
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-ble-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 BLE mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-5x" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 蓝牙 5.x规范
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../D3Q_BlockchainAndDigitalCurrency/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐区块链与数字货币
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐区块链与数字货币
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D3Q_BlockchainAndDigitalCurrency/note/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Note
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    科研相关
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            科研相关
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../home/home.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    好玩2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../SkillTree/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    技能树
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            技能树
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../SkillTree/MakeYourOwnWeb/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐如何搭建一个个人网页
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐如何搭建一个个人网页
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../SkillTree/MachineLearning/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ⭐机器学习
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            ⭐机器学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SkillTree/MachineLearning/Chap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 01 | 启示录
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../SkillTree/MachineLearning/Chap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 02 | 监督学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Poems/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    诗
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            诗
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Poems/%E9%A3%8E%E5%90%B9%E7%9A%84%E5%A4%9C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    风吹的夜
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Friends/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    友链
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            友链
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型协议
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.关键特性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.关键特性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 功耗
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 通信距离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 频带和数据率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3ieee802154" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.基于IEEE802.15.4的传感网协议
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.基于IEEE802.15.4的传感网协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ieee-802154" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 IEEE 802.15.4技术物理层
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 低功耗MAC
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 低功耗MAC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#macs-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      同步MAC：S-MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maclpl-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      发送方发起异步MAC：LPL MAC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macri-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      接收方发起异步MAC：RI-MAC
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 链路质量估计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-6lowpan" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 6LoWPAN
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-ctprpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 CTP&amp;RPL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 CTP&RPL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ctp" class="md-nav__link">
+    <span class="md-ellipsis">
+      CTP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpl" class="md-nav__link">
+    <span class="md-ellipsis">
+      RPL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-thread" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Thread
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Matter
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Matter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      组网模式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4ble" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.蓝牙低功耗协议（BLE）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.蓝牙低功耗协议（BLE）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 物理层协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 链路层协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-l2cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 L2CAP协议
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-attgatt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 ATT属性检索协议和GATT通用属性框架
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-ble-mesh" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.5 BLE mesh
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#46-5x" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 蓝牙 5.x规范
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2266 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
+</div>
+<h1 id="欢迎">Chap 4 | 低功耗短距离通信协议</h1>
+<div class="admonition note">
+<p class="admonition-title">章节启示录</p>
+<p><!-- === "Tab 1" -->
+    <!-- Markdown **content**. -->
+<!-- === "Tab 2"
+    More Markdown **content**. -->
+本章节是物联网基础的第四章。复习的时候应该会标注哪些是非重点。</p>
+</div>
+<h2 id="1">1.概述<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">典型协议<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ZigBee技术:具有低功耗、低速率、低成本、组网灵活等优点</li>
+<li>
+<p>传感网协议:由大量低功耗节点组成的无线自组织多跳网络，实时感知、处理和传输网络覆盖区域内监测对象的信息</p>
+<ol>
+<li>传感网协议是传感网应用的基础，自2002年以来大量研究围绕低功耗与组网技术展开</li>
+</ol>
+</li>
+<li>
+<p>BLE:  <br />
+    随着功能的逐步增加，在2017年7月18日，蓝牙 SIG 正式发布了蓝牙多跳的功能定义和多跳模型定义，并增加到了蓝牙5.0中。在家居物联网中，蓝牙多跳标准的确定使得多设备和多设备之间的通信成为可能</p>
+</li>
+<li>
+<p>RFID：射频识别, 无线电的信号是通过调成无线电频率的电磁场，把数据从附着在物品上的标签上传送出去，以自动辨识与追踪该物品。</p>
+</li>
+<li>
+<p>NFC:是一种短距高频的无线电技术，在13.56 MHz频率运行于20厘米距离内，由RFID演变而来。</p>
+</li>
+<li>
+<p>THREAD: <br />
+    THREAD网络中的节点可分为两种角色：路由节点（router）和端节点（end device）</p>
+</li>
+</ul>
+<h2 id="2">2.关键特性<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21">2.1 功耗<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<p>D(dBm)与P(mW)换算 D= 10lgP<br />
+<img alt="" src="../img/40.png" width="270" /></p>
+<p>嵌入式设备的功耗很大部分来源于通信功耗  </p>
+<blockquote>
+<p>例如，对于TelosB节点，CC2420能耗占其总能耗的81%</p>
+</blockquote>
+<ul>
+<li>
+<p>降低无线收发器占空比:</p>
+<ol>
+<li>无线收发器占空比=活跃时间/总运行时间</li>
+</ol>
+<blockquote>
+<p>示例：设备活跃时的能耗为10𝐦𝐦𝑾𝑾, 休眠时的能耗为10𝝁𝝁𝑾𝑾,若占空比为0.1%, 则平均功耗为19.99𝝁W</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="22">2.2 通信距离<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>常用的路径损耗模型：<br />
+<img alt="" src="../img/41.png" /></p>
+<p>n大概在2-3之间</p>
+</li>
+<li>
+<p>最远通信距离（节点接收信号强度等于接收器灵敏度）:
+    <img alt="" src="../img/42.png" /></p>
+</li>
+</ul>
+<blockquote>
+<p>例子:不考虑天线增益与随机误差，假设发射功率为0dBm，接收灵敏度-85 dBm, PL0为28.5dBm, 衰减指数3：最远通信距离为76.4m</p>
+</blockquote>
+<ul>
+<li>多跳网络：获得更大的通信距离</li>
+</ul>
+<h3 id="23">2.3 频带和数据率<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>授权频段与ISM频段</p>
+<ol>
+<li>授权频段:使用授权频段需要许可证, 例如AM,FM广播频段</li>
+<li>ISM频段(Industrial Scientific Medical Band),主要开放给工业，科学和医学机构使用，无需许可证或费用</li>
+</ol>
+</li>
+<li>
+<p>不同协议频带与数据率:  <br />
+<img alt="" src="../img/43.png" width="400" /></p>
+</li>
+<li>
+<p>实际数据率与最大数据率:</p>
+<ol>
+<li>
+<p>最大数据率:实际中通常不能最高数据率</p>
+<ol>
+<li>802.15.4 物理层最大数据率是250kbps</li>
+<li>BLE 最大数据率为2Mbps
+802.15.4 数据包发送前会主动退避一段时间<span class="arithmatex">\((initial_{backoff} ∈ [𝟎, 𝑪W_{init})\)</span> <span class="arithmatex">\(CW_{init} ≈ 10ms\)</span> ，实际数据率一般为最大数据率的1/3,</li>
+</ol>
+</li>
+<li>
+<p>实际传输效率为： 
+    <img alt="" src="../img/44.png" width="350" /></p>
+</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="../img/45.png" /></p>
+<h2 id="3ieee802154">3.基于IEEE802.15.4的传感网协议<a class="headerlink" href="#3ieee802154" title="Permanent link">&para;</a></h2>
+<p>传感网协议的典型使用场景: 自组织无线多跳网络</p>
+<blockquote>
+<p>传感网应用场景       <br />
+    1. Great Duck Island，生态环境监测<br />
+    2. Volcano monitoring，火山监测   <br />
+    3. 绿野千传，森林火灾监测   </p>
+</blockquote>
+<ul>
+<li>传感器协议架构：<br />
+<img alt="" src="../img/46.png" width="300" /></li>
+</ul>
+<h3 id="31-ieee-802154">3.1 IEEE 802.15.4技术物理层<a class="headerlink" href="#31-ieee-802154" title="Permanent link">&para;</a></h3>
+<p>物理层功能：从比特流到RF信号</p>
+<ul>
+<li>工作流程<ol>
+<li>DSSS扩频</li>
+<li>O-QPSK调制</li>
+<li>脉冲成形</li>
+<li>数模转换及信号发送</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="../img/47.png" width="300" /></p>
+<p>简单来说，I是cos，Q是sin。把一个数据拆成I路和Q路，间接地实现了调相，因为随着cos和sin的改变，合成的向量振幅不变，但相位改变。</p>
+<ul>
+<li>
+<p>DSSS 扩频：</p>
+<ol>
+<li>每4bit数据转化为32位码片(chips)</li>
+<li>Chip rate：2M chip/s， data rate: 250kb/s</li>
+</ol>
+<p>如果不改变，左侧的数据若是错了任意一个bit，则会转换成另一个正确合法的数据，这不是我们希望看到的。
+而改变之后，由于数据间的海明距离很大，因此不容易把一个数据错误变成另一个数据，提高了抗干扰能力。</p>
+<p><img alt="" src="../img/48.png" width="400" /></p>
+</li>
+<li>
+<p>O-QPSK调制:</p>
+<ol>
+<li>将32位码元序列调制到信号的I和Q相位上<ol>
+<li>每个相位的chip rate = C/2 = 1M chip/s</li>
+<li>每个码元的发送时间：1s/(1Mchip/s )= 1us</li>
+</ol>
+</li>
+<li>O表示offset，表示相位偏移，offset=0.5 us</li>
+</ol>
+<p><img alt="" src="../img/49.png" width="400" /></p>
+</li>
+<li>
+<p>帧结构</p>
+<ol>
+<li>物理层数据单元(PPDU)=物理层头部+MAC层数据单元(MPDU)</li>
+<li>物理层头部<ol>
+<li>SHR (4B) – 用于实现码元和位同步</li>
+<li>SFD (1B) –帧定界符，固定的特殊值，用于标志SHR的结束和实际数据报文的开始</li>
+<li>PSDU(0~127B): 实际数据报文，从MAC层传过来的数据单元</li>
+<li>PHR (1B) – PSDU的长度</li>
+</ol>
+</li>
+<li>MAC层数据单元(MPDU)<ol>
+<li>MHR: MAC头部</li>
+<li>Preamble Control (2B) – 帧控制字段</li>
+<li>Data Seq. No. (1B)-序列号字段</li>
+<li>Address Information (4~20B) –地址信息字段</li>
+<li>MSDU: MAC载荷, 长度可变</li>
+<li>MFR(2B) – PSDU的长度</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="32-mac">3.2 低功耗MAC<a class="headerlink" href="#32-mac" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>无线通信中造成能源浪费的原因</p>
+<ol>
+<li>空闲侦听：能源浪费的主要来源</li>
+<li>冲突：可能会造成接收方无法解码所涉及的任何数据包</li>
+<li>偷听：传感器节点接收不是发给自己的数据包</li>
+<li>控制开销：包头和其他类型的数据包开销</li>
+</ol>
+</li>
+<li>
+<p>无线传感器网络中，降低功耗：使节点实现低占空比</p>
+<ol>
+<li>通过让节点在活动状态和睡眠状态之间交替来实现的</li>
+</ol>
+</li>
+<li>问题：需要在发送节点和接收节点之间找到同处于活动状态的“汇合点”</li>
+<li>解决<ol>
+<li>基于同步机制的MAC<ol>
+<li>节点协同活动和睡眠状态以便对齐其活动时间</li>
+<li>会带来额外的同步开销</li>
+</ol>
+</li>
+<li>基于异步机制的MAC    <ol>
+<li>发送方发起MAC（Sender-initiated MAC）  <br />
+    基本技术：前导码采样</li>
+<li>接收方发起MAC（Receiver-initiated MAC）<br />
+    持续监听信道，等待接收方发送信标</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="macs-mac">同步MAC：S-MAC<a class="headerlink" href="#macs-mac" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/50.png" /></p>
+<h4 id="maclpl-mac">发送方发起异步MAC：LPL MAC<a class="headerlink" href="#maclpl-mac" title="Permanent link">&para;</a></h4>
+<p>Receiver 睡觉，醒来时查看并接收。 <br />
+CCA：简单地看一下有没有人在发包，不关注包的内容，功耗更低。
+<img alt="" src="../img/51.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">单播vs.广播</p>
+<ul>
+<li>单播(UNICAST)：ACK包可以缩短数据包列</li>
+<li>广播(BROADCAST)：发送的数据包列持续时间必须大于等于接收者的睡眠时间（Ttrain&gt;=Tsleep）</li>
+</ul>
+<blockquote>
+<p>在这个例子里，广播的开销是单播的两倍</p>
+</blockquote>
+</div>
+<ol>
+<li>比同步MAC更节能，无需所有节点一开始都醒着    </li>
+<li>然而发送方需要持续发送探测包直到接收方醒来，这个过程中将持续占用信道，影响了发送方通信范围内其他节点的通信</li>
+</ol>
+<div class="admonition question">
+<p class="admonition-title">思考题</p>
+<ul>
+<li>在 LPLMAC中,发送节点持续发送探测包来唤醒接收节点。已知,LPLMAC采用数据包作为探测包，接收节点在周期性醒来进行CCA，在每次CA期采样 400次，只有当采样得到的信号强度平均值超过-77dBm才醒来。假设每次CCA的时间长度是11ms，探测包长度是2ms，接收的信号强度-56dbm，环境声-100dbm。那么，为了使接收方正确收到包，探测包间隔最大为多少?</li>
+</ul>
+<p>CCA期间采样400次，平均值大于 -77dBm</p>
+<p>n * -56dBm +(400-n)<em>-100dBm&gt;-77dBm</em>400
+n&gt;210
+传输时间 = n/n_总 * 11ms = 210/400 * 11ms = 5.8ms</p>
+<p>在CCA期间有三个数据包，那么有两个间隔，时间最大为 
+11ms-5.8ms = 5.2ms
+所以探测包最大间隔为5.2ms/2=2.6ms</p>
+</div>
+<h4 id="macri-mac">接收方发起异步MAC：RI-MAC<a class="headerlink" href="#macri-mac" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>RI-MAC 工作机制</p>
+<ol>
+<li>发送者如果有数据需要发送，一直处于侦听状态，直到收到接收者的探测包才可以发送数据</li>
+<li>接收者周期性醒来，并发送探测包</li>
+</ol>
+<p>接收方醒来告诉发送方，你可以发了^^<br />
+<img alt="" src="../img/52.png" width="450" /></p>
+</li>
+<li>
+<p>数据冲突问题:</p>
+<ol>
+<li>冲突避免</li>
+<li>二进制指数退避</li>
+</ol>
+</li>
+</ul>
+<h3 id="33">3.3 链路质量估计<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>链路质量的评估指标</p>
+<ol>
+<li>物理层指标<ol>
+<li>接收信号强度RSSI</li>
+<li>信噪比SNR</li>
+<li>链路质量指示LQI</li>
+</ol>
+</li>
+<li>链路层指标<ol>
+<li>数据包接收率PRR</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>RSSI 与PRR之间的关系</p>
+<ol>
+<li>当RSSI&gt;-87dBm时, PRR&gt;85%, 链路质量好</li>
+<li>当RSSI&lt;-92dBm时, PRR&lt;50%, 链路质量差</li>
+<li>当RSSI低于-87dBm时，进入灰色区域，PRR非常不稳定，难以预测</li>
+<li>RSSI问题<ol>
+<li>灰色区域测不准</li>
+<li>和接收器灵敏度有关</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>SNR (Signal to Noise Ratio)</p>
+<ol>
+<li>信号功率与噪声功率的比率, 单位dB</li>
+<li>SNR=10log(S/N), S为信号功率，N为噪声功率</li>
+</ol>
+</li>
+<li>
+<p>LQI (Link Quality Indicator)</p>
+<ol>
+<li>计算方法<ol>
+<li>帧定界符（SFD）之后8个symbol的码元错误率(CER)</li>
+<li>LQI=(CORR-a)*b <br />
+    CORR为数据包SFD后8个symbol的平均correlation value，在0~255之间，a 和 b 为经验参数</li>
+</ol>
+</li>
+<li>LQI经验值：50(最差)~110(最好)</li>
+<li>在CTP中，认为LQI高于105的链路为高质量链路</li>
+</ol>
+</li>
+<li>
+<p>PRR (Packet Reception Ratio) </p>
+<ol>
+<li>数据包成功接收率 （不考虑重传）</li>
+<li>衡量链路质量的最终指标</li>
+<li>PRR估计方法：一段时间内，成功接收的包数与发送的总数的比率</li>
+</ol>
+</li>
+</ul>
+<h3 id="34-6lowpan">3.4 6LoWPAN<a class="headerlink" href="#34-6lowpan" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>两种主要技术</p>
+<ol>
+<li>分段重组</li>
+<li>头部压缩</li>
+</ol>
+</li>
+<li>
+<p>分段重组</p>
+<ol>
+<li>Size: 每一个分段的大小(bytes)，所有分段中都包含</li>
+<li>Tag: 属于同一个IPv6报文的，Tag相同</li>
+<li>Offset: 表示在原来IPv6报文中的位置，用于重组 
+    在第一个分段中省略，其它分段需要包含该字段</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="../img/53.png" width="450" /></p>
+<ul>
+<li>
+<p>IPv6头部（40B）压缩:<br />
+    IPv6数据报头部40B，UDP头部8B    </p>
+<ol>
+<li>源节点与目的节点的IPv6 地址（共32B）压缩非常关键</li>
+<li>基本思想：利用链路层地址与IPv6 地址之间的直接映射关系</li>
+</ol>
+<p><img alt="" src="../img/54.png" /></p>
+</li>
+</ul>
+<h3 id="35-ctprpl">3.5 CTP&amp;RPL<a class="headerlink" href="#35-ctprpl" title="Permanent link">&para;</a></h3>
+<h4 id="ctp">CTP<a class="headerlink" href="#ctp" title="Permanent link">&para;</a></h4>
+<ol>
+<li>多对一的路由模式</li>
+<li>基于距离向量路由协议, 选择距离最短的路径</li>
+<li>建立在CSMA MAC或LPL MAC，及链路质量估计器上</li>
+<li>
+<p>路由指标：ETX(expected number of transmissions)</p>
+<ol>
+<li>链路ETX：在一条链路上成功发送一个数据包所需的传输次数<ol>
+<li>ETXf = 1 / (df X dr) ≈ 1/df</li>
+<li>df: 数据包成功到达接收者的概率</li>
+<li>dr : 接收者回复的ACK包成功到达发送者的概率</li>
+</ol>
+</li>
+<li>路径ETX：在一条路径上成功发送一个数据包所需的传输次数</li>
+</ol>
+</li>
+<li>
+<p>CTP 路由帧(beacon)格式</p>
+<ol>
+<li>P: 路由信息请求标志位。置位, 则收到该包的节点将发送路由帧更新路由信息</li>
+<li>C: 拥塞标志位。置位，表示上一个CTP包丢失，发生拥塞</li>
+<li>Parent: beacon发送节点的parent</li>
+<li>ETX: 发送节点的path ETX</li>
+</ol>
+<p><img alt="" src="../img/55.png" /></p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">CTP路由回路问题</p>
+<ul>
+<li>发生原因：路由信息陈旧, 没有及时更新</li>
+<li>如何发现<ol>
+<li>数据包中的节点ETX应该逐跳减小</li>
+<li>当节点收到的数据包ETX比自己的ETX低时, 说明发生回路</li>
+</ol>
+</li>
+<li>两种解决机制<ol>
+<li>通过广播beacon包来解决不一致性</li>
+<li>当数据包ETX高于设定的阈值时，不再发送该数据包</li>
+</ol>
+</li>
+</ul>
+</div>
+<h4 id="rpl">RPL<a class="headerlink" href="#rpl" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/56.png" /></p>
+<h3 id="36-thread">3.6 Thread<a class="headerlink" href="#36-thread" title="Permanent link">&para;</a></h3>
+<p>THREAD 针对IEEE 802.15.4设备设计的IPv6网络协议栈    </p>
+<ol>
+<li>THREAD网络协议使用IEEE 802.15.4通信标准无线网络技术，支持低功耗和网络自组织等特性，能够为物联网设备提供可靠的、安全
+的、可扩展的通信连接。</li>
+<li>THREAD网络中的节点可分为两种角色：路由节点（router）和端
+节点（end device）</li>
+</ol>
+<h3 id="37-matter">3.7 Matter<a class="headerlink" href="#37-matter" title="Permanent link">&para;</a></h3>
+<p>Matter 一个统一的、基于ip的应用层连接协议     <br />
+Matter协议是一个高层协议(应用层协议)，工作在OSI七层模型的传输层以上，依
+赖IPv6协议。
+<img alt="" src="../img/57.png" /></p>
+<h4 id="_2">组网模式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>单一网络拓扑</li>
+<li>星形网络拓扑</li>
+</ul>
+<h2 id="4ble">4.蓝牙低功耗协议（BLE）<a class="headerlink" href="#4ble" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">BLE的协议栈</p>
+<ul>
+<li>低功耗物理层<ol>
+<li>40个跳频信道：37个数据传输信道，3个广播信道</li>
+</ol>
+</li>
+<li>低功耗链路层<ol>
+<li>周期性醒睡</li>
+</ol>
+</li>
+<li>L2CAP<ol>
+<li>数据包融合/分割</li>
+<li>控制数据包重传</li>
+</ol>
+</li>
+<li>GATT，ATT<ol>
+<li>服务交换的数据结构</li>
+</ol>
+</li>
+<li>SMP<ol>
+<li>密钥生成与分发
+<img alt="" src="../img/58.png" /></li>
+</ol>
+</li>
+</ul>
+</div>
+<h3 id="41">4.1 物理层协议<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<ul>
+<li>信道分配<ol>
+<li>从2.4GHz到2.480GHz，</li>
+<li>每个信道2MHz，总共40个信道（0~39）</li>
+<li>37,38,39为广播信道，其他为数据传输信道</li>
+</ol>
+</li>
+<li>
+<p>为了减少数据传输阶段的干扰，使用跳频技术</p>
+<ol>
+<li>基础信道的跳频<ol>
+<li>每一对master和slave以同一种伪随机序列的方式切换信道</li>
+<li>下一次跳频的信道由gMap、c和hop决定</li>
+</ol>
+</li>
+<li>自适应跳频<ol>
+<li>master和slave会维护一系列的信道质量数组ChM</li>
+<li>gMap根据ChM对每个信道的标记情况进行可用信道的更新</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>物理帧结构：  </p>
+<ol>
+<li>preamble: 0,1交替，首位bit和Access Address的首位bit相同
+    10101010 ，8位(1Mbps模式)</li>
+<li>Access Address (AA)<ol>
+<li>广播包：固定的值0x8E89BED6</li>
+<li>数据包：在建立连接过程中确定，每一对链路唯一的AA</li>
+</ol>
+</li>
+<li>PDU<ol>
+<li>广播包：最多37字节，最少6字节</li>
+<li>数据包：最多257字节，最少2字节</li>
+</ol>
+</li>
+</ol>
+<p><img alt="" src="../img/59.png" /></p>
+</li>
+</ul>
+<h3 id="42">4.2 链路层协议<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../img/60.png" width="450" /></p>
+<ul>
+<li>
+<p>BLE链路层状态机</p>
+<ol>
+<li>扫描状态:对广播信道37，38，39轮流扫描</li>
+<li>准备状态：可以向其他状态切换的中间状态</li>
+<li>广播状态：纯广播或者可以被连接</li>
+<li>初始化状态：监听指定的device信道，等待发送连接反馈</li>
+<li>连接状态：从广播状态或者初始化状态通过发送连接广播包CONNECT_REQ切换。</li>
+</ol>
+<p><img alt="" src="../img/61.png" /></p>
+</li>
+<li>
+<p>广播包帧结构<br />
+<img alt="" src="../img/62.png" width="350" /></p>
+</li>
+<li>
+<p>连接请求广播包结构(CONNECT_REQ)</p>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">连接建立过程</p>
+<ol>
+<li>Master发起连接请求</li>
+<li>等待1.25ms+winoffset时间间隔（BLE处理多个连接的schedule时间）</li>
+<li>Master发送数据包，slave成功反馈，则连接成功，且连接事件间隔确认</li>
+<li>连接失败<ol>
+<li>slave没有在winsize时间内收到master数据包，失败</li>
+<li>master没有在timeout时间内收到salve反馈，失败</li>
+</ol>
+</li>
+</ol>
+<p><img alt="" src="../img/63.png" /></p>
+</div>
+<ul>
+<li>
+<p>数据包帧结构<br />
+<img alt="" src="../img/64.png" width="200" /></p>
+</li>
+<li>
+<p>数据包传输:7.5ms 到 4s之间, 1.25ms的倍数</p>
+<ol>
+<li>Master发起每次通信事件，slave反馈<ol>
+<li>即使没有实际数据发送，也会周期性发送/反馈空数据包</li>
+<li>Slave可以设定latency，表示经过多少连接事件再反馈（节约能量）</li>
+<li>Slave在一个连接事件间隔中，可以连续发送多个数据包</li>
+</ol>
+</li>
+<li>通信完成，立刻进入休眠</li>
+</ol>
+</li>
+<li>
+<p>BLE的邻居发现:</p>
+<ol>
+<li>在BLE设备建立连接组成piconet星型网络之前，BLE设备需要首先扫描周围的设备以发现潜在的可连接设备</li>
+<li>设备A在扫描信道38的时候，发现了设备B，向设备B发送了扫描反馈数据包。其后，设备A和设备B即可进入连接建立过程</li>
+</ol>
+</li>
+</ul>
+<h3 id="43-l2cap">4.3 L2CAP协议<a class="headerlink" href="#43-l2cap" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>数据包的分割和重组</p>
+<ol>
+<li>L2CAP帧格式</li>
+<li>Length: 数据帧长度</li>
+<li>Channel ID: 用于唯一表示当前通信链路的标识</li>
+<li>L2CAP SDU length: 传输数据帧总长度（子数据帧重组后的长度）。 </li>
+<li>每个子数据帧<font color = "red">最大251字节</font>。
+<img alt="" src="../img/65.png" /></li>
+</ol>
+</li>
+<li>
+<p>差错控制和重传</p>
+</li>
+</ul>
+<h3 id="44-attgatt">4.4 ATT属性检索协议和GATT通用属性框架<a class="headerlink" href="#44-attgatt" title="Permanent link">&para;</a></h3>
+<p>ATT(Attribute Protocol)：提供对服务的检索功能   </p>
+<p>GATT(Generic Attribute Profile)：定义了服务存储的数据结构</p>
+<p><strong>每个特征的句柄是唯一确定的</strong>，用于区分不同的特征和服务</p>
+<h3 id="45-ble-mesh">4.5 BLE mesh<a class="headerlink" href="#45-ble-mesh" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>组网：四种链路类型</p>
+<ol>
+<li>ADV(Not Relayed)：非转发节点的广播包收发</li>
+<li>ADV(Low power)：用于低功耗节点与朋友节点之间收发数据包，</li>
+<li>ADV Bearer：两个节点之间可以基于mesh协议收发广播消息，并且可以作为中继转发；</li>
+<li>GATT Bearer：用于没有mesh能力的传统节点也能参与MESH网络</li>
+</ol>
+<p><img alt="" src="../img/66.png" /></p>
+</li>
+</ul>
+<h3 id="46-5x">4.6 蓝牙 5.x规范<a class="headerlink" href="#46-5x" title="Permanent link">&para;</a></h3>
+<p>针对BLE，蓝牙 5.0相比于4.2版本有三点重大更新</p>
+<ol>
+<li>2M PHY</li>
+<li>BLE远距离编码信道</li>
+<li>扩展广播</li>
+<li>室内定位辅助功能</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <!-- Insert generated snippet here -->
+  <script src="https://giscus.app/client.js"
+  data-repo="sqc-cyh/MyWeb-discussion"
+  data-repo-id="R_kgDOLX74Ng"
+  data-category="General"
+  data-category-id="DIC_kwDOLX74Ns4Cdg_o"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="light"
+  data-lang="zh-CN"
+  crossorigin="anonymous"
+  async>
+</script>
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    // Set palette on initial load
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate"
+        ? "transparent_dark"
+        : "light"
+
+      // Instruct Giscus to set theme
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    // Register event handlers after documented loaded
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate"
+            ? "transparent_dark"
+            : "light"
+
+          // Instruct Giscus to change theme
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sqc-cyh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<1076219827@qq.com>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../javascripts/extra.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
