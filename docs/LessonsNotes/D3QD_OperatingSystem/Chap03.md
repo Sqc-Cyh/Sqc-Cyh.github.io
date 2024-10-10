@@ -27,8 +27,8 @@ Process—正在执行的程序;流程执行必须以顺序方式进行
 * A process includes:
     1. text section (code)：存储代码
     2. data section (global vars)：存储全局变量、静态变量
-    3. stack (function parameters, local vars, return addresses)：被动态分配的内存
-    4. heap (dynamically allocated memory)：栈，存储一些临时的数据，如函数传参、返回值、局部变量等
+    3. stack (function parameters, local vars, return addresses)：栈，存储一些临时的数据，如函数传参、返回值、局部变量等    
+    4. heap (dynamically allocated memory)：被动态分配的内存
     5. program counter 
 
     ![](./img/25.png){width="150"}
