@@ -16,7 +16,7 @@
         <link rel="prev" href="../Chap03/">
       
       
-        <link rel="next" href="../../D3QD_ComputerNetwork/">
+        <link rel="next" href="../Chap05/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1multithreading-models" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -1453,6 +1453,8 @@
       
         
       
+        
+      
     
     
       
@@ -1606,6 +1608,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的实现方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1multithreading-models" class="md-nav__link">
     <span class="md-ellipsis">
       1.Multithreading Models
@@ -1669,6 +1680,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 5 | CPU Scheduling
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2524,6 +2556,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      线程的实现方式
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1multithreading-models" class="md-nav__link">
     <span class="md-ellipsis">
       1.Multithreading Models
@@ -2602,7 +2643,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1005 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 5 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1487 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
 <h1 id="欢迎">Chap 4 | Threads</h1>
 
@@ -2614,7 +2655,9 @@
     More Markdown **content**. -->
 本章节是OS的第四章。</p>
 </div>
-<p>在多线程进程中，需要寄存器和栈为每一个线程进维护。
+<p>引入进程的目的是更好地使多道程序并发执行，提高资源利用率和系统吞吐量；而引入线程的目的则是减小程序在并发执行时所付出的时空开销，提高操作系统的并发性能。    </p>
+<p>线程最直接的理解是“轻量级进程”，是一个基本的CPU执行单元，也是程序执行流的最小单元，由 <strong>线程ID、程序计数器、寄存器集合和堆栈</strong> 组成</p>
+<p>在多线程进程中，需要寄存器和栈为每一个线程进维护。    <br />
 <img alt="" src="../img/33.png" /></p>
 <ul>
 <li>Benefits：<ol>
@@ -2623,6 +2666,33 @@
 <li>经济：创建进程更昂贵（需要分配资源），而创建线程能节约资源。</li>
 <li>MP架构的利用：多线程提高了并发性。</li>
 </ol>
+</li>
+</ul>
+<h4 id="_1">线程的实现方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<p>线程的实现可以分为两类：用户级线程和内核级线程。</p>
+<ul>
+<li>
+<p>用户级线程：“从用户视角能看到的线程”，有关线程管理的所有工作都由应用程序在用户空间内完成，内核意识不到线程的存在。    </p>
+<ul>
+<li>优点:<ol>
+<li>线程切换不需要转换到内核空间，节省开销</li>
+<li>调度算法可以是某个进程专用的，各个进程可针对自身情况选择合适的调度算法</li>
+<li>与操作系统平台无关，对线程管理的代码属于用户程序的一部分</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>内核级线程：在内核的支持下运行，线程管理的所有工作在内核空间内实现。</p>
+<ul>
+<li>优点:<ol>
+<li>能发挥多CPU的优势</li>
+<li>如果进程中的一个线程被阻塞，内核可以调度该进程中的其他线程占用CPU，也可以运行其他进程中的线程</li>
+<li>内核支持线程具有很小的数据结构和堆栈，线程切换快、开销小</li>
+<li>内核本身也可采用多线程技术，可以提高系统的执行速度和效率</li>
+</ol>
+</li>
+</ul>
 </li>
 </ul>
 <div class="admonition tip">
@@ -2634,6 +2704,7 @@
 </ol>
 </div>
 <h2 id="1multithreading-models">1.Multithreading Models<a class="headerlink" href="#1multithreading-models" title="Permanent link">&para;</a></h2>
+<p>在同时支持用户级线程和内核级线程的系统中，由于用户级线程和内核级线程连接方式不同，形成了以下三种不同的多线程模型：</p>
 <h3 id="many-to-one">Many-to-One<a class="headerlink" href="#many-to-one" title="Permanent link">&para;</a></h3>
 <p>线程管理是有效的，但是如果进行系统调用会阻塞，内核一次只能调度一个线程<br />
 <img alt="" src="../img/34.png" width="270" /></p>
