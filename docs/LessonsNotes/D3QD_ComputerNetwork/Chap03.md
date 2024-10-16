@@ -116,7 +116,7 @@ comments: true  #默认不开启评论
 
 !!! tip "To detect d errors"
     need $d+1$ Hamming distance code    
-    任意两个合法码字的最小海明距离为 $d$    
+    任意两个合法码字的最小海明距离为 $d+1$    
     因此一个码字错 $d$ 位无法变成另一个合法码字
 
 !!! tip "To use Hamming distance to correct d errors"
@@ -145,7 +145,7 @@ comments: true  #默认不开启评论
     3. 将原始数据 $D$ 乘以 $2^n$ （相当于在 $D $后面添加  $n$ 个0），产生 $k+n$ 位二进制位模式，用 $G$ 对该位模式做模2除，得到余数 $R$（ $n$ 位，不足 $n$ 位前面用0补齐）即为CRC校验码
 
     ![](./img/55.png){width="500"}      
-    除法中的每两项做异或，相当于十进制中做减法        
+    除法中的每两项做异或，相当于十进制中做减法（得到的商没什么用）        
     ![](./img/56.png){width="500"}
 
 

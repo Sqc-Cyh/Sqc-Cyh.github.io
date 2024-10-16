@@ -590,3 +590,76 @@ byte[] nonce;
     * PoW共识时的出块时间平均为15秒     
         Hash函数会产生较多的碰撞，产生较多的区块链分叉
     * PoS共识出块时间固定为12秒（slot）
+
+
+### 以太坊的数据存储：Merkle Patricia Trie
+在执行插入、修改或者删除操作后能快速计算新的树根，而无需重新计算整颗树。
+
+![](./img/20.png){width="400"}
+
+自上往下构建，选取前缀相同的进行分类。  
+
+再自底向上构建 Merkle tree，因此每个节点至少有两个字段，本身的值以及 hash 的值。
+
+![](./img/21.png){width="400"}
+
+
+* MPT树更新：
+    1. 将根节点传入作为当前处理节点，传入目标节点的Key作为路径path
+    2. 传入新的Value值并更新
+
+    ![](./img/22.png){width="300"}
+
+
+### 以太坊的共识机制
+* PBFT共识算法
+    1. Quorum组成（3f+1个节点）
+        1. Client
+        2. Replica
+    2. 每个共识阶段称为一个view 
+        1. 一个primary(leader)
+        2. 其他replica都是backup(后备力量，如果leader似了，其他会替代)
+    3. 共识过程
+        1. Request: client发起共识请求
+        2. pre-prepare: primary验证请求、打包消息、发给其他节点
+        3. Prepare: 其他节点验证消息、投票
+        4. Commit：primary收到2f+1个节点赞成票后，完成共识，通知所有节点，反馈client
+
+    ![](./img/23.png){width="500"}
+
+
+* Pos 共识：
+    1. 验证者（validator）以ETH的形式将资本抵押给以太坊上的一个智能合约。抵押的ETH充当抵押品，如果验证者行为不诚实或懒惰，可被销毁。然后，验证者负责检查通过网络传播的新块是否有效，并偶尔创建和传播新块。
+    2. 要成为validator，用户必须将32 ETH存入存款合约并运行三个软件：<font color = "red">执行客户端，共识客户端和验证器</font>。在存入ETH时，用户加入一个激活队列。一个用户可以发起多个验证者，目前全球验证者数量超80万个。
+    3. 一旦激活，验证者就会从以太坊网络上的对等方接收新的区块。重新执行区块中交付的交易，并检查区块签名以确保区块有效。然后验证者在网络上发送支持该块的投票（称为证明 attestation）。
+
+* 以太坊信标链 Beacon Chain
+    1. 每12秒为一个时段slot
+    2. 每32个slot为一个纪元 epoch （6.4分钟）
+    3. 每个slot产生一个新区块，但有可能没有
+    4. 信标链的Genesis区块在slot 0
+    5. 每个时段slot有一组验证者组成委员会（每个validator在每个epoch只能属于一个委员会）
+    6. 其中一个验证者被随机选中成为区块的proposer，发出区块
+    7. 委员会的其他成员（从80万个成员里面随机抽一定数量）投票attestation，如2/3支持则该区块发布
+
+* 检查点 checkpoint：
+    * 检查点是epoch的第一个slot中的一个区块。 如果没有这样的区块，则检查点是前面最近的区块。 每个epoch始终有一个检查点区块。一个区块可以是多个纪元的检查点。
+    * 当验证者提交LMD GHOST 投票时, 他投票当前epoch的checkpoint, 称为 target.
+    * 这个投票称为Casper FFG 投票, 还需要包含前一个checkpoint, 称为source.
+    * 图中Epoch 1 的验证者投票的source checkpoint 是genesis 区块, target checkpoint 在Slot 64的区块. Epoch 3中, 验证者投票的source checkpoint是slot 64区块，target checkpoint是180区块
+
+    ![](./img/24.png)
+
+    * 一个epoch结束时，如果它的checkpoint获2/3验证者投票支持，其状态改为justified
+    * 一个justified的checkpoint如果其后续的checkpoint状态改为justified，则它的状态升级为finalized
+    * 一般情况下一个checkpoint经过2个epoch后（12.8分钟）变为finalized
+
+* Gasper共识:
+    1. Casper-FFG (Friendly Finality Gadget)：一种改进的PBFT算法
+    2. LMD-GHOST (Latest Message-Driven Greedy Heaviest Observed Sub-tree)：分叉选择算法
+
+    ![](./img/25.png){width="400"}
+
+
+
+
