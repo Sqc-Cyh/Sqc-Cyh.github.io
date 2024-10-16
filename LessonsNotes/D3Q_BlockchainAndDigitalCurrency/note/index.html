@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -2230,6 +2230,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#merkle-patricia-trie" class="md-nav__link">
+    <span class="md-ellipsis">
+      以太坊的数据存储：Merkle Patricia Trie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      以太坊的共识机制
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2955,6 +2973,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#merkle-patricia-trie" class="md-nav__link">
+    <span class="md-ellipsis">
+      以太坊的数据存储：Merkle Patricia Trie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      以太坊的共识机制
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2979,7 +3015,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 7934 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 47 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 40 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 8844 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 47 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 45 分钟</p>
 </div>
 <h1 id="欢迎">Note</h1>
 
@@ -3746,6 +3782,91 @@ MD、SHA算法都不可逆</li>
 <li>PoS共识出块时间固定为12秒（slot）</li>
 </ul>
 </div>
+<h3 id="merkle-patricia-trie">以太坊的数据存储：Merkle Patricia Trie<a class="headerlink" href="#merkle-patricia-trie" title="Permanent link">&para;</a></h3>
+<p>在执行插入、修改或者删除操作后能快速计算新的树根，而无需重新计算整颗树。</p>
+<p><img alt="" src="../img/20.png" width="400" /></p>
+<p>自上往下构建，选取前缀相同的进行分类。  </p>
+<p>再自底向上构建 Merkle tree，因此每个节点至少有两个字段，本身的值以及 hash 的值。</p>
+<p><img alt="" src="../img/21.png" width="400" /></p>
+<ul>
+<li>
+<p>MPT树更新：</p>
+<ol>
+<li>将根节点传入作为当前处理节点，传入目标节点的Key作为路径path</li>
+<li>传入新的Value值并更新</li>
+</ol>
+<p><img alt="" src="../img/22.png" width="300" /></p>
+</li>
+</ul>
+<h3 id="_5">以太坊的共识机制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>PBFT共识算法</p>
+<ol>
+<li>Quorum组成（3f+1个节点）<ol>
+<li>Client</li>
+<li>Replica</li>
+</ol>
+</li>
+<li>每个共识阶段称为一个view <ol>
+<li>一个primary(leader)</li>
+<li>其他replica都是backup(后备力量，如果leader似了，其他会替代)</li>
+</ol>
+</li>
+<li>共识过程<ol>
+<li>Request: client发起共识请求</li>
+<li>pre-prepare: primary验证请求、打包消息、发给其他节点</li>
+<li>Prepare: 其他节点验证消息、投票</li>
+<li>Commit：primary收到2f+1个节点赞成票后，完成共识，通知所有节点，反馈client</li>
+</ol>
+</li>
+</ol>
+<p><img alt="" src="../img/23.png" width="500" /></p>
+</li>
+<li>
+<p>Pos 共识：</p>
+<ol>
+<li>验证者（validator）以ETH的形式将资本抵押给以太坊上的一个智能合约。抵押的ETH充当抵押品，如果验证者行为不诚实或懒惰，可被销毁。然后，验证者负责检查通过网络传播的新块是否有效，并偶尔创建和传播新块。</li>
+<li>要成为validator，用户必须将32 ETH存入存款合约并运行三个软件：<font color = "red">执行客户端，共识客户端和验证器</font>。在存入ETH时，用户加入一个激活队列。一个用户可以发起多个验证者，目前全球验证者数量超80万个。</li>
+<li>一旦激活，验证者就会从以太坊网络上的对等方接收新的区块。重新执行区块中交付的交易，并检查区块签名以确保区块有效。然后验证者在网络上发送支持该块的投票（称为证明 attestation）。</li>
+</ol>
+</li>
+<li>
+<p>以太坊信标链 Beacon Chain</p>
+<ol>
+<li>每12秒为一个时段slot</li>
+<li>每32个slot为一个纪元 epoch （6.4分钟）</li>
+<li>每个slot产生一个新区块，但有可能没有</li>
+<li>信标链的Genesis区块在slot 0</li>
+<li>每个时段slot有一组验证者组成委员会（每个validator在每个epoch只能属于一个委员会）</li>
+<li>其中一个验证者被随机选中成为区块的proposer，发出区块</li>
+<li>委员会的其他成员（从80万个成员里面随机抽一定数量）投票attestation，如2/3支持则该区块发布</li>
+</ol>
+</li>
+<li>
+<p>检查点 checkpoint：</p>
+<ul>
+<li>检查点是epoch的第一个slot中的一个区块。 如果没有这样的区块，则检查点是前面最近的区块。 每个epoch始终有一个检查点区块。一个区块可以是多个纪元的检查点。</li>
+<li>当验证者提交LMD GHOST 投票时, 他投票当前epoch的checkpoint, 称为 target.</li>
+<li>这个投票称为Casper FFG 投票, 还需要包含前一个checkpoint, 称为source.</li>
+<li>图中Epoch 1 的验证者投票的source checkpoint 是genesis 区块, target checkpoint 在Slot 64的区块. Epoch 3中, 验证者投票的source checkpoint是slot 64区块，target checkpoint是180区块</li>
+</ul>
+<p><img alt="" src="../img/24.png" /></p>
+<ul>
+<li>一个epoch结束时，如果它的checkpoint获2/3验证者投票支持，其状态改为justified</li>
+<li>一个justified的checkpoint如果其后续的checkpoint状态改为justified，则它的状态升级为finalized</li>
+<li>一般情况下一个checkpoint经过2个epoch后（12.8分钟）变为finalized</li>
+</ul>
+</li>
+<li>
+<p>Gasper共识:</p>
+<ol>
+<li>Casper-FFG (Friendly Finality Gadget)：一种改进的PBFT算法</li>
+<li>LMD-GHOST (Latest Message-Driven Greedy Heaviest Observed Sub-tree)：分叉选择算法</li>
+</ol>
+<p><img alt="" src="../img/25.png" width="400" /></p>
+</li>
+</ul>
 
 
 
@@ -3880,7 +4001,7 @@ MD、SHA算法都不可逆</li>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       
