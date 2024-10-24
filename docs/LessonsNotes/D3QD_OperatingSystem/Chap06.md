@@ -69,3 +69,199 @@ while(true){
 * 临界区(Critical section)：指的是程序中一个访问共用资源的程序片段。每个进程中访问临界资源的那段代码称为临界区。
 
 ![](./img/46.png)
+
+!!! question "几个例子：是否为临界资源"
+    全局共享变量？是    
+    局部变量？ 不是 
+    只读数据？ 不是 
+    CPU？ 不是（不需要同步机制来保护）    
+
+
+* Solution to Critical-Section Problem：(需要满足以下三个条件)
+    1. Mutual Exclusion（互斥）：如果进程Pi在它的临界区执行，那么没有其他进程可以在它们的临界区执行。
+    2. Progress（空闲让进）：如果没有进程在其临界区执行，并且有一些进程希望进入其临界区，那么下一个进入临界区的进程的选择不能无限期推迟。
+    3. Bounded Waiting（有限等待）：在一个进程请求进入其临界区之后，在该请求被批准之前，允许其他进程进入其临界区的次数必须存在一个界限
+        1. 假设每个进程以非零速度执行
+        2. 没有关于N个进程的相对速度的假设
+
+## 2.软件方法
+
+### 2.1 单标志法   
+设置公共整型变量turn，指示允许进入临界区的进程编号turn = i，允许Pi进入临界区      
+进程退出临界区时交给另一个进程turn = j
+
+* Process Pi:
+```c++
+do{
+    while(turn != i);
+    critical section
+    turn=j; 
+    remainder section
+} while (1);
+```
+
+* Process Pj:
+```c++
+do{
+    while(turn != j);
+    critical section
+    turn=i; 
+    remainder section
+} while (1);
+```
+
+Mutual Exclusion? Yes  
+Progress? No  
+Bounded Waiting? Yes  
+
+可实现两个进程轮替进入临界区    
+必须轮替进入，不满足空闲让进
+
+### 2.2 双标志后检查法
+设置布尔型数组flag[2]，用来标记各进程进入临界区的意愿flag[i]=true表示进程Pi想进入   
+先表达自己进入临界区意愿    
+再轮询对方是否想进入，确定对方不想进入后再进入  
+访问结束退出后设置flag[i]=false，表示不想进入，允许对方进入
+
+boolean flag[2];  flag[0] = flag[1] = 0;    
+flag[i] = true  if Pi tries to enter CS 
+
+* Process Pi:
+```c++
+do{
+    flag[i]=true;//先表达自己的意愿
+    while( flag[j] );//再等待对方
+    critical section
+    flag[i]=false; 
+    remainder section
+} while (1);
+```
+
+* Process Pj:
+```c++
+do{
+    flag[j]=true;
+    while( flag[i] );
+    critical section
+    flag[j]=false; 
+    remainder section
+} while (1);
+```
+
+
+Mutual Exclusion? Yes   
+Progress? No   
+Bounded Waiting? Yes(j进入一次后就会轮到i)
+
+可能导致双方都不能进入      
+违反空闲让进
+
+### 2.3 双标志先检查法 
+设置布尔型数组flag[2]，用来标记各进程进入临界区的意愿flag[i]=true表示进程Pi想进入   
+进程进入临界区前先轮询对方是否想进入    
+确定对方不想进入后再进入    
+访问结束退出后设置flag[i]=false，表示不想进入，允许对方进入
+
+boolean flag[2];  flag[0] = flag[1] = 0;    
+flag[i] = true  if Pi tries to enter CS
+
+* Process Pi:
+```c++
+do{
+    while(flag[j]); 
+    flag[i]=TRUE; 
+    critical section; 
+    flag[i] = FALSE; 
+    remainder section;
+}while(1);
+```
+
+* Process Pj:
+```c++
+do{
+    while(flag[i]); 
+    flag[j]=TRUE; 
+    critical section; 
+    flag[j] = FALSE; 
+    remainder section;
+}while(1);
+```
+
+Mutual Exclusion? No (都是false时，就不满足了)
+Progress? Yes
+
+不用交替进入    
+违反互斥
+
+### 2.4 Peterson’s Solution
+结合单标志法和双标志后检查法，首先表达自身意愿(flag[]=true)之后设置自身要进入(turn=0/1)；   
+若双方互相确定对方都想进入时，turn只能等于一个值，因此会谦让对方进入    
+若一方不想进入，则其flag[i]=false，对方可直接进入   
+
+* Process Pi：
+```c++
+while (true) {
+    flag[i] = TRUE;
+    turn = j;
+    while ( flag[j] && turn == j);
+    CRITICAL SECTION
+    flag[i] = FALSE;
+    REMAINDER SECTION
+}
+```
+
+* Process Pj：
+```c++
+while (true) {
+    flag[j] = TRUE;
+    turn = i;
+    while ( flag[i] && turn == i);
+    CRITICAL SECTION
+    flag[j] = FALSE;
+    REMAINDER SECTION
+}
+```
+
+Mutual Exclusion? Yes   
+Progress? Yes   
+Bounded Waiting? Yes
+
+* Question:There are no guarantees that Peterson's solution works correctly on modern computer architectures,因为编译时会对代码执行的顺序进行优化，会把load代码放到store代码上面，相当于实际编译时会把 `while ( flag[i] && turn == i);` 放到上面，也就是先执行这一句，这样就会变成先检查法，从而不满足互斥。
+
+* 解决：使用内存栅栏 `asm(“mfence”);` ,放在while语句上方。
+
+### 2.5 Bakery Algorithm (面包房算法) Lamport
+
+* Dijkstra's concurrent programming problem:
+    1. 任何时间，最多只能有一个进程进入 critical section；
+    2. 每个进程最终都会进入 critical section；
+    3. 每个进程都能停在 noncritical section；
+    4. 不能对进程的速度做任何假设。
+
+* idea：
+    1. 在进入临界区之前，进程接收一个数字。最小数字的持有者进入临界区。
+    2. 如果进程Pi和Pj收到相同的数字，如果i < j，则优先服务Pi；否则Pj先上。
+    3. 编号方案总是按枚举的递增顺序生成数字；例如：1、2、3、3、3、3、4、5
+
+boolean choosing[n]: 表示进程是否在取号；初始false。    
+int number[n]: 记录每个进程取到的号码；初始0。  
+（a，b）＜（c，d）: (1) a＜c, or (2) a==c且b＜d 
+
+```c++
+do{
+    choosing[i] = true;
+    number[i] = max{number[0],number[1],...,number[n-1]}+1; //选号码
+    choosing[i] = false;
+    for(j = 0; j＜n; j++){
+        while (choosing[j]);
+        while ((number[j] != 0) && (number[j], j)＜(number[i], i));
+    };
+    CRITICAL SECTION
+    number[i] = 0;
+    REMAINDER SECTION
+} while(1);
+```
+
+Mutual Exclusion? Yes  
+Progress? Yes  
+Bounded Waiting? Yes
