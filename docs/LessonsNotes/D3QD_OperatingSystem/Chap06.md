@@ -265,3 +265,166 @@ do{
 Mutual Exclusion? Yes  
 Progress? Yes  
 Bounded Waiting? Yes
+
+## 3.硬件方法
+atmoic == non-interruptable
+
+### 2.1 Disable interrupts (关中断法，中断屏蔽法)
+* idea：
+    1. 进入临界区前直接屏蔽中断，保证临界区资源顺利使用    
+    2. 使用完毕，打开中断
+
+
+```c++
+while (true) {
+    Disable Interrupts; 
+    Critical section;
+    Enable Interrupts;
+    Remainder section;
+}
+```
+* 缺点：
+    1. 可能影响系统效率：滥用关中断会严重影响CPU执行效率，其锁住CPU可能导致原本一些短时间即可完成的需要等待开中断。
+    2. 不适用于多CPU系统 ：中断屏蔽法适用于单CPU系统，在多CPU系统中无法有效同步各个CPU的操作。
+    3. 安全性问题：滥用关中断权力可能导致严重后果，例如在关闭中断期间，一些重要的中断请求可能被错过，影响系统的稳定性和可靠性。
+
+### 2.2 TestAndSet Instruction
+
+```c++
+boolean TestAndSet (boolean *target){
+    boolean rv = *target;
+    *target = TRUE;
+    return rv;
+}
+```
+
+```c++
+while (true) {
+    while ( TestAndSet (&lock ));   // do nothing
+    //    critical section
+    lock = FALSE;
+    //    remainder section 
+}
+```
+
+Mutual Exclusion? Yes
+Progress? Yes
+Bounded Waiting? No
+### 2.3 Swap  Instruction
+
+```c++
+void Swap(boolean *a, boolean *b){
+    boolean temp = *a;
+    *a = *b;
+    *b = *temp;
+}
+```
+
+* idea:
+    1. 对每个临界资源，swap设置一个全局bool变量lock(初值为false)，每个进程设置局部变量key(初值为true)  
+    2. 进程调用swap()指令访问临界区，会交换key和lock的值，实现上锁，进入访问   
+    3. 退出时把lock重置为false
+
+```c++
+while (true) {
+    key = TRUE;
+    while (key ==TRUE)
+        Swap(&lock, &key) ;   
+    //    critical section
+    lock = FALSE;
+    //    remainder section 
+}
+```
+Mutual Exclusion? Yes
+Progress? Yes
+Bounded Waiting? No
+
+* The compare_and_swap (CAS)  Instruction 
+```c++
+int compare_and_swap(int *value, int expected, int new_value){ 
+    int temp = *value; 
+    if (*value == expected) 
+        *value = new_value; 
+    return temp; 
+} 
+```
+```c++
+while (true){
+    while (compare_and_swap(&lock, 0, 1) != 0) ;  // do nothing 
+    // critical section 
+    lock = 0;  
+    // remainder section 
+} 
+```
+Mutual Exclusion? Yes
+Progress? Yes
+Bounded Waiting? No
+
+* Bounded-waiting with compare-and-swap:
+```c++
+while (true) {         
+    waiting[i] = true;         
+    key = 1;         
+    while (waiting[i] && key == 1) 
+        key = compare_and_swap(&lock,0,1); 
+    waiting[i] = false; 
+    /* critical section */ 
+    j = (i + 1) % n; 
+    while ((j != i) && !waiting[j]) 
+        j = (j + 1) % n; 
+    if (j == i) 
+        lock = 0; 
+    else 
+        waiting[j] = false; 
+    /* remainder section */ 
+}
+```
+
+### 2.4 Mutex Locks
+```c++
+acquire() {
+    while (!available); 
+    /* busy wait */
+    available = false;
+}
+release() {
+    available = true;
+}
+```
+
+```c++
+while (true) { 
+    acquire lock
+    critical section 
+    release lock 
+    remainder section 
+}
+```
+
+### 硬件实现方法总结
+* 优点
+    1. 适用于任意数目的进程，在单处理器或多处理器上
+    2. 简单，容易验证其正确性
+    3. 可以支持进程内存在多个临界区，只需为每个临界区设立一个布尔变量
+* 缺点
+    1. 耗费CPU时间，不能实现“让权等待”
+    2. 可能不满足有限等待：从等待进程中随机选择一个进入临界区，有的进程可能一直选不上
+    3. 可能死锁
+
+## 4.信号量方法
+* Two indivisible operations modify S: 
+    1. wait() and signal()
+    2. originally called P() andV() 
+    3. Proberen(测试)，Verhogen(增加)
+
+```c++
+wait (S) {
+     while S <= 0; // no-op
+     S--;
+}
+```
+```c++
+signal (S) {
+    S++;
+}
+```
