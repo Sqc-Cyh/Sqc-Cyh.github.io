@@ -3167,7 +3167,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2266 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 27 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 11 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2519 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 27 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 13 分钟</p>
 </div>
 <h1 id="欢迎">Chap 4 | 低功耗短距离通信协议</h1>
 <div class="admonition note">
@@ -3321,7 +3321,7 @@
 <p><img alt="" src="../img/49.png" width="400" /></p>
 </li>
 <li>
-<p>帧结构</p>
+<p>帧结构（只需要知道各个名称的含义即可）</p>
 <ol>
 <li>物理层数据单元(PPDU)=物理层头部+MAC层数据单元(MPDU)</li>
 <li>物理层头部<ol>
@@ -3378,11 +3378,35 @@
 </li>
 </ul>
 <h4 id="macs-mac">同步MAC：S-MAC<a class="headerlink" href="#macs-mac" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../img/50.png" /></p>
+<p>因为需要同步，所以会有额外的开销  <br />
+<img alt="" src="../img/50.png" /></p>
+<ul>
+<li>冲突避免机制（用来解决竞争问题）<ol>
+<li>虚拟载波侦听（猜一下别人会听多久，不需要记住具体细节）</li>
+<li>物理载波侦听</li>
+<li>RTS/CTS机制（会产生额外开销）  <br />
+    RTS是清场信号，收到RTS之后别发消息，request to send   <br />
+    CTS也是清场，clear to send<ol>
+<li>隐藏/暴露终端问题</li>
+<li>减少空闲侦听</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
 <h4 id="maclpl-mac">发送方发起异步MAC：LPL MAC<a class="headerlink" href="#maclpl-mac" title="Permanent link">&para;</a></h4>
 <p>Receiver 睡觉，醒来时查看并接收。 <br />
 CCA：简单地看一下有没有人在发包，不关注包的内容，功耗更低。
-<img alt="" src="../img/51.png" /></p>
+CS发现则退避     <br />
+CCA发现则进入唤醒 <br />
+* 阈值设置(默认-77dBm)
+    1. 偏高
+        1. CS可能无法感知潜在的传输，引起冲突 <br />
+        2. CCA可能无法检测潜在的传输，错过接收
+    2. 偏小
+        1. CS：环境噪音也可能引起不必要的退避
+        2. CCA: 环境噪音也可能唤醒节点</p>
+<p><img alt="" src="../img/51.png" /></p>
 <div class="admonition tip">
 <p class="admonition-title">单播vs.广播</p>
 <ul>
@@ -3393,10 +3417,16 @@ CCA：简单地看一下有没有人在发包，不关注包的内容，功耗�
 <p>在这个例子里，广播的开销是单播的两倍</p>
 </blockquote>
 </div>
-<ol>
-<li>比同步MAC更节能，无需所有节点一开始都醒着    </li>
+<ul>
+<li>
+<p>自适应机制
+    接收方回复完ACK之后持续监听一段时间(delay after receive)来接收发送者接下来可能会连续发送的数据包</p>
+</li>
+<li>
+<p>比同步MAC更节能，无需所有节点一开始都醒着    </p>
+</li>
 <li>然而发送方需要持续发送探测包直到接收方醒来，这个过程中将持续占用信道，影响了发送方通信范围内其他节点的通信</li>
-</ol>
+</ul>
 <div class="admonition question">
 <p class="admonition-title">思考题</p>
 <ul>
