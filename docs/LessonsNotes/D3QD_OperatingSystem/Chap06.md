@@ -283,6 +283,7 @@ while (true) {
     Remainder section;
 }
 ```
+
 * 缺点：
     1. 可能影响系统效率：滥用关中断会严重影响CPU执行效率，其锁住CPU可能导致原本一些短时间即可完成的需要等待开中断。
     2. 不适用于多CPU系统 ：中断屏蔽法适用于单CPU系统，在多CPU系统中无法有效同步各个CPU的操作。
@@ -412,6 +413,12 @@ while (true) {
     3. 可能死锁
 
 ## 4.信号量方法
+信号量的含义：通常用信号量表示资源或临界区  
+S.value >0 表示有S.value个资源可用; 
+S.value=0 表示无资源可用或表示不允许进程再进人临界区；  
+S.value<0 则|S.value|表示在等待队列中进程的个数或表示等待进入临界区的进程个数。
+
+
 * Two indivisible operations modify S: 
     1. wait() and signal()
     2. originally called P() andV() 
@@ -428,3 +435,219 @@ signal (S) {
     S++;
 }
 ```
+
+* Counting semaphore （计数型）–integer value can range over an unrestricted domain
+* Binary semaphore （二进制型）–integer value can range only between 0 and 1; can be simpler to implement   
+    Also known as mutex locks
+* Can implement a counting semaphore S as a binary semaphore
+
+* Usage as General Synchronization Tool:   
+    1. Provides mutual exclusion    
+        ```c++
+        Semaphore S;    
+        wait (S);
+        Critical Section
+        signal (S);
+        Remainder Section
+        ```
+    2. P1 has a statement S1, P2 has S2.Statement S1 to be executed before S2 
+        1. P1:
+        ```c++
+        S1;
+        Signal(S);
+        ```
+        2. P2:  
+        ```c++
+        Wait(S);
+        S2;
+        ```
+!!! question "问题？"
+    * Four rooms, four identical 一样的 keys. 需要How many semaphore?   
+        1 is enough. 将信号量初始值设定为4，代表有4个共享资源可以使用
+    * Four rooms, each with a unique key (four different keys)How many semaphore?   
+        此时四个房间代表的共享资源可能不一样，需要 4 个信号量，每个信号量初始值设定为1，代表每个指定的房间是否被访问。
+        * What if using 1 semaphore?    
+            导致多个房间之间的访问冲突，无法保证互斥性。如果两个进程同时访问这个信号量，因为需要 key 与 room 的匹配，两个进程可能会同时check同一个房间，无法保证互斥性。
+
+### Semaphore Implementation with no Busy waiting
+
+* 每个信号量都有一个相关联的等待队列。每个信号量有两个数据项：
+    1. value (of type integer)
+    2. pointer to a linked-list of PCBs
+* 两种操作（作为基本系统调用提供）：    
+    1. block(sleep)：将调用该操作的进程放在适当的等待队列上。
+    2. wakeup：删除等待队列中的一个进程，并将其放入就绪队列。
+
+* wait：
+```c++
+wait (S){ 
+    value--;
+    if (value < 0) { // add this process to waiting queue
+        block();  
+    }
+}
+```
+
+* signal:
+```c++
+Signal (S){ 
+    value++;
+    if (value <= 0) { // remove a process P from the waiting queue
+        wakeup(P);  
+    }
+}
+```
+
+在这种实现中， S 的值可以取负值，当 S 取负时，它的值的绝对值代表排队进程的个数。
+
+```c++
+void V(struct semaphore *s){
+    acquire(&s->lock);
+    s->count += 1;
+    wakeup(s);
+    release(&s->lock)
+}
+
+void P(struct semaphore *s){
+    while(s->count == 0)
+        sleep(s);
+    acquire(&s->lock);
+    s->count -= 1;
+    release(&s->lock);
+}
+```
+
+可能会有 lost wake-up 的问题（未sleep的进程先执行了wakeup）
+
+防止wakeup丢失：
+```c++
+void V(struct semaphore *s){
+    acquire(&s->lock);
+    s->count += 1;
+    wakeup(s);
+    release(&s->lock)
+}
+
+void P(struct semaphore *s){
+    acquire(&s->lock);
+    while(s->count == 0)
+        sleep(s);
+    s->count -= 1;
+    release(&s->lock);
+}
+```
+但是这样会deadlock，一直sleep，因为sleep了但却一直没放锁
+
+修改函数，sleep （s, &s->lock）可以在调用进程被标记为休眠并等待wait queue s释放锁。
+```c++
+void V(struct semaphore *s){
+    acquire(&s->lock);
+    s->count += 1;
+    wakeup(s);
+    release(&s->lock)
+}
+
+void P(struct semaphore *s){
+    acquire(&s->lock);
+    while(s->count == 0)
+        sleep(s，&s->lock);
+    s->count -= 1;
+    release(&s->lock);
+}
+```
+
+* wait、signal操作必须成对出现，有一个wait操作就一定有一个signal操作。一般情况下:当为互斥操作时，它们同处于同一进程;当为同步操作时，则不在同一进程中出现。      
+* 如果两个wait操作相邻，那么它们的顺序至关重要，而两个相邻的signa操作的顺序无关紧要。一个同步wait操作与一个互斥wait操作在一起时，<font color = "red">同步wait操作在互斥wait操作前</font>（如果一个进程先请求互斥访问共享资源，然后等待另一个进程完成操作，这可能导致循环等待，从而引发死锁）。
+
+
+### Bounded-Buffer Problem（生产者-消费者问题）
+N buffers, each can hold one item  
+
+* 需要3个信号量：   
+    1. Semaphore **mutex** initialized to the value 1
+    2. Semaphore **full** initialized to the value 0, counting full items
+    3. Semaphore **empty** initialized to the value N, counting empty items.
+
+* The structure of the producer process：
+```c++
+while (true) {
+    //   produce an item
+    wait (empty);
+    wait (mutex);
+    //  add the item to the  buffer
+    signal (mutex);
+    signal (full);
+}
+```
+
+* The structure of the consumer process:
+```c++
+while (true){
+    wait (full);
+    wait (mutex);
+    //  remove an item from  buffer
+    signal (mutex);
+    signal (empty);
+    //  consume the removed item
+}
+```
+
+### Readers-Writers Problem
+* A data set is shared among a number of concurrent processes:（允许多个读者进行读，只允许一个写者写）
+    1. Readers – only read the data set; they do not perform any updates
+    2. Writers   – can both read and write.
+
+读者优先：当且仅当所有读者都读完后，才能写。    
+
+* Shared Data：
+    1. Data set
+    2. Semaphore **mutex** initialized to 1, to ensure mutual exclusion when readcount is updated
+    3. Semaphore **wrt** initialized to 1.
+    4. Integer readcount initialized to 0.
+
+* The structure of a writer process：
+```c++
+while (true){
+    wait (wrt) ;
+    //    writing is performed
+    signal (wrt) ;
+}
+```
+* The structure of a reader process:
+```c++
+while (true){
+    wait (mutex) ;
+    readcount ++ ;
+    if (readcount == 1)  wait (wrt) ; //不允许写者写了
+    signal (mutex)
+    // reading is performed
+    wait (mutex) ;readcount-- ;
+    if (readcount  == 0)  signal (wrt) ;//允许写者写
+    signal (mutex) ;
+}
+```
+
+### Dining-Philosophers Problem
+![](./img/47.png)   
+需要同时拿到左右两边的筷子才能吃饭
+* Shared data 
+    1. Bowl of rice (data set)
+    2. Semaphore **chopstick [5]** initialized to 1
+
+* The structure of Philosopher i:
+```c++
+while (true)  { 
+    wait ( chopstick[i] );//拿左边的
+    wait ( chopStick[ (i + 1) % 5] );//拿右边的
+    //  eat
+    signal ( chopstick[i] );//放左边的
+    signal ( chopstick[ (i + 1) % 5] );//放右边的
+    //  think
+}
+```
+* 问题：死锁
+* 解决方式：
+    1. 只允许4个同时吃饭；
+    2. 其中一位反序拿筷子；
+    3. AND信号量；
+    4. 奇数ID和偶数ID设置相反拿筷子顺序；
