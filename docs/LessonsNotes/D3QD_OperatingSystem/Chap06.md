@@ -21,73 +21,82 @@ comments: true  #默认不开启评论
     本章节是OS的第六章。
 
 ## 1.Background
-进程同步是指在多进程或多线程环境中，为了确保多个进程或线程能够按照一定的顺序或条件正确地访问共享资源而采取的各种协调机制。
 
-* 使用count来追踪整个buffer
-    1. 生产者生产后count++
-    2. 消费者消费后count--
-
-```c++
-while(true){
-    while(count == BUFFER_SIZE);
-    buffer[in] = nextProduced;
-    in = (in + 1) % BUFFER_SIZE;
-    count++;
-}
-```
-```c++
-while(true){
-    while(count == 0);
-    nextConsumed = buffer[out];
-    out = (out + 1) % BUFFER_SIZE;
-    count--;
-}
-```
-
-### Race Condition （竞态条件）:
-竞态条件是指一个内存位置被并发访问，并且至少有一次是写访问。
-
-* count++ could be implemented as
-    1. register1 = count     
-    2. register1 = register1 + 1     
-    3. count = register1
-
-* count-- could be implemented as
-    1. register2 = count     
-    2. register2 = register2 - 1     
-    3. count = register2
-
-如果在抢占式中打乱顺序就会出错    
-![](./img/45.png){width="500"}
-
-
-??? question "对于访问共享的内核数据(shared kernel data)，非抢占的内核是否受竞态条件(race conditions)的影响？"
-    多核情况下，两个进程同时运行时还是有可能出现竞态条件。
-
-* 临界资源：指的是在多线程或多进程环境中被多个线程或进程共享的资源。这些资源需要通过适当的同步机制来保护，以确保同一时刻只有一个线程或进程可以访问这些资源。        
-  
-* 临界区(Critical section)：指的是程序中一个访问共用资源的程序片段。每个进程中访问临界资源的那段代码称为临界区。
-
+### 一些定义
+* 临界资源：一次仅允许一个进程使用的资源。
+* 临界区：进程中访问临界资源的那段代码。
+* 进入区：为了进入临界区使用临界资源，在进入区要检查可否进入临界区，若能进入临界区，则应设置正在访问临界区的标志，以防止其他进程同时进入临界区。
+* 退出区：将正在访问临界区的标志清除。
+* 剩余区：代码的其余部分。  
 ![](./img/46.png)
 
 !!! question "几个例子：是否为临界资源"
     全局共享变量？是    
     局部变量？ 不是 
     只读数据？ 不是 
-    CPU？ 不是（不需要同步机制来保护）    
+    CPU？ 不是（不需要同步机制来保护）  
+
+* 同步（直接制约关系）：为完成某种任务而建立的两个或多个进程，这些进程因为需要协调它们的运行次序而等待、传递信息所产生的制约关系。
+* 互斥（间接制约关系）：当一个进程进入临界区使用临界资源时，另一个进程必须等待，当占用临界资源的进程退出临界区后，另一进程才允许访问此临界资源。
+
+!!! example "进程同步的例子"
+    进程同步是指在多进程或多线程环境中，为了确保多个进程或线程能够按照一定的顺序或条件正确地访问共享资源而采取的各种协调机制。
+
+    * 使用count来追踪整个buffer
+        1. 生产者生产后count++
+        2. 消费者消费后count--
+
+    ```c++
+    while(true){
+        while(count == BUFFER_SIZE);
+        buffer[in] = nextProduced;
+        in = (in + 1) % BUFFER_SIZE;
+        count++;
+    }
+    ```
+    ```c++
+    while(true){
+        while(count == 0);
+        nextConsumed = buffer[out];
+        out = (out + 1) % BUFFER_SIZE;
+        count--;
+    }
+    ```
+!!! example "进程互斥的例子 Race Condition （竞态条件）"
+    竞态条件是指一个内存位置被并发访问，并且至少有一次是写访问。
+
+    * count++ could be implemented as
+        1. register1 = count     
+        2. register1 = register1 + 1     
+        3. count = register1
+
+    * count-- could be implemented as
+        1. register2 = count     
+        2. register2 = register2 - 1     
+        3. count = register2
+
+    如果在抢占式中打乱顺序就会出错    
+    ![](./img/45.png){width="500"}
 
 
+    ??? question "对于访问共享的内核数据(shared kernel data)，非抢占的内核是否受竞态条件(race conditions)的影响？"
+        多核情况下，两个进程同时运行时还是有可能出现竞态条件。
+
+### 实现临界区互斥必须遵循的准则
 * Solution to Critical-Section Problem：(需要满足以下三个条件)
     1. Mutual Exclusion（互斥）：如果进程Pi在它的临界区执行，那么没有其他进程可以在它们的临界区执行。
     2. Progress（空闲让进）：如果没有进程在其临界区执行，并且有一些进程希望进入其临界区，那么下一个进入临界区的进程的选择不能无限期推迟。
     3. Bounded Waiting（有限等待）：在一个进程请求进入其临界区之后，在该请求被批准之前，允许其他进程进入其临界区的次数必须存在一个界限
-        1. 假设每个进程以非零速度执行
-        2. 没有关于N个进程的相对速度的假设
+    4. 让权等待（原则上应遵循，非必须）：当进程不能进入临界区时，应立即释放处理器，防止进程忙等待。
+
+
+**以下将介绍实现临界区互斥的几种基本方法**
 
 ## 2.软件方法
 
 ### 2.1 单标志法   
-设置公共整型变量turn，指示允许进入临界区的进程编号turn = i，允许Pi进入临界区      
+设置公共整型变量turn，指示允许进入临界区的进程编号  
+turn = i时，允许Pi进入临界区         
 进程退出临界区时交给另一个进程turn = j
 
 * Process Pi:
@@ -115,10 +124,11 @@ Progress? No
 Bounded Waiting? Yes  
 
 可实现两个进程轮替进入临界区    
-必须轮替进入，不满足空闲让进
+必须轮替进入，不满足空闲让进（若某个进程不再进入临界区，则另一个进程也将无法进入临界区）
 
 ### 2.2 双标志后检查法
-设置布尔型数组flag[2]，用来标记各进程进入临界区的意愿flag[i]=true表示进程Pi想进入   
+设置布尔型数组flag[2]，用来标记各进程进入临界区的意愿   
+flag[i]=true表示进程Pi想进入    
 先表达自己进入临界区意愿    
 再轮询对方是否想进入，确定对方不想进入后再进入  
 访问结束退出后设置flag[i]=false，表示不想进入，允许对方进入
@@ -224,7 +234,8 @@ while (true) {
 
 Mutual Exclusion? Yes   
 Progress? Yes   
-Bounded Waiting? Yes
+Bounded Waiting? Yes    
+但依然未遵循“让权等待”原则
 
 * Question:There are no guarantees that Peterson's solution works correctly on modern computer architectures,因为编译时会对代码执行的顺序进行优化，会把load代码放到store代码上面，相当于实际编译时会把 `while ( flag[i] && turn == i);` 放到上面，也就是先执行这一句，这样就会变成先检查法，从而不满足互斥。
 
@@ -290,6 +301,7 @@ while (true) {
     3. 安全性问题：滥用关中断权力可能导致严重后果，例如在关闭中断期间，一些重要的中断请求可能被错过，影响系统的稳定性和可靠性。
 
 ### 2.2 TestAndSet Instruction
+TestAndSet指令是原子操作，其功能是读出指定标志后将该标志设置为真。    
 
 ```c++
 boolean TestAndSet (boolean *target){
@@ -311,6 +323,9 @@ while (true) {
 Mutual Exclusion? Yes
 Progress? Yes
 Bounded Waiting? No
+
+相比于关中断方法，由于“锁”是共享的，这种方法适用于多处理器系统。但缺点是暂时无法进入临界区的进程会占用CPU循环执行TS指令，因此还是无法实现“让权等待”。
+
 ### 2.3 Swap  Instruction
 
 ```c++
@@ -329,7 +344,7 @@ void Swap(boolean *a, boolean *b){
 ```c++
 while (true) {
     key = TRUE;
-    while (key ==TRUE)
+    while (key == TRUE)
         Swap(&lock, &key) ;   
     //    critical section
     lock = FALSE;
@@ -651,3 +666,51 @@ while (true)  {
     2. 其中一位反序拿筷子；
     3. AND信号量；
     4. 奇数ID和偶数ID设置相反拿筷子顺序；
+
+## 5.Monitors方法
+Only one process may be active within the monitor at a time     
+Monitors是对共享数据结构实施操作的一组过程所组成的资源管理程序。
+```c++
+monitor monitor-name{
+    // shared variable declarations
+    procedure P1 (...) { .... }
+    ...
+    procedure Pn (...) {......}
+    Initialization code ( ....) { ... }
+    ...
+}
+```
+
+* Two operations on a condition variable:
+    1. x.wait ()：a process that invokes the operation is suspended.
+    2. x.signal ()：resumes one of processes (if any) that invoked x.wait ()
+
+    ![](./img/48.png){width="450"}
+
+* Solution to Dining Philosophers:
+```c++
+monitor DP{ 
+    enum { THINKING; HUNGRY, EATING} state [5] ;
+    condition self [5];  //philosopher i can delay herself when unable to get chopsticks
+    void pickup (int i) { 
+        state[i] = HUNGRY;
+        test(i);
+        if (state[i] != EATING) self [i].wait;
+    }
+    void putdown (int i) { 
+        state[i] = THINKING;// test left and right neighbors
+        test((i + 4) % 5);
+        test((i + 1) % 5);
+    }
+    void test (int i) { 
+        if ( (state[(i + 4) % 5] != EATING) &&(state[i] == HUNGRY) &&(state[(i + 1) % 5] != EATING) ) {
+            state[i] = EATING ;
+            self[i].signal () ;
+        }
+    }
+    initialization_code() { 
+        for (int i = 0; i < 5; i++)
+        state[i] = THINKING;
+    }
+}
+```
