@@ -16,11 +16,11 @@
         <link rel="prev" href="../Chap08/">
       
       
-        <link rel="next" href="../../D3QD_ComputerNetwork/">
+        <link rel="next" href="../Chap10/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
     
     
       
@@ -1463,6 +1463,8 @@
       
         
       
+        
+      
     
     
       
@@ -1780,10 +1782,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6-memory-mapped-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Memory-Mapped Files
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 10 | File-System Interface
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2813,6 +2845,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#6-memory-mapped-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Memory-Mapped Files
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2832,7 +2873,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 3638 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 11 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 18 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4077 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 14 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 20 分钟</p>
 </div>
 <h1 id="欢迎">Chap 9 | Virtual Memory</h1>
 
@@ -3144,6 +3185,69 @@
 <p class="admonition-title">注意</p>
 <p>这种安排并不完全准确，因为并不知道在5000个引用内的什么位置出现了引用。通过着呢及该历史位的数量和中断的频率（例如10位和每1000个引用中断一次），可以降低这一不确定性。然而会带来额外的成本。</p>
 </div>
+<h2 id="6-memory-mapped-files">6. Memory-Mapped Files<a class="headerlink" href="#6-memory-mapped-files" title="Permanent link">&para;</a></h2>
+<p>0000 1000 0001
+ 0010 0000 0001 
+  0010 0010 0101</p>
+<ul>
+<li>
+<p>Buddy System （伙伴 系统）      <br />
+<img alt="" src="../img/89.png" width="300" /></p>
+</li>
+<li>
+<p>Slab Allocator</p>
+<ul>
+<li>Slab is one or more physically contiguous pages：是一个预分配的内存池，包含多个相同大小的对象</li>
+<li>Cache consists of one or more slabs</li>
+<li>相关细节/流程如下：<ol>
+<li>当cache创建时，被标记为free的对象填充</li>
+<li>当存structures store时，标记为使用过的对象</li>
+<li>如果slab中充满了使用过的对象，则从空slab中分配下一个对象</li>
+<li>若无空slab，则分配新slab</li>
+</ol>
+</li>
+<li>优点：没有碎片，快速满足内存请求      </li>
+</ul>
+<p><img alt="" src="../img/90.png" width="300" /></p>
+</li>
+<li>
+<p>Other Issues – Prepaging (预调页)</p>
+<ul>
+<li>Assume s pages are prepaged and αof the pages is used：<ol>
+<li>假设预加载了s个页面，其中α（alpha）比例的页面被实际使用。</li>
+<li>需要比较节省的页面错误（sα）与预调页的成本（s(1-α)）。（s*(1-α) 表示预加载但未使用的页面数量。）</li>
+<li>如果α（实际使用的页面比例）接近零，那么预调页的效果就会很差，因为它会导致大量的I/O和内存资源被浪费在不必要的页面上。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>Other Issues – Page Size</p>
+<ol>
+<li>Fragmentation -&gt; small page size</li>
+<li>table size -&gt; large page size</li>
+<li>I/O times -&gt; large page size</li>
+<li>Locality -&gt; small page size, accurate locality</li>
+</ol>
+</li>
+<li>
+<p>Other Issues – TLB Reach （TLB范围）<br />
+    TLB Reach = (TLB Size) X (Page Size)</p>
+<ul>
+<li>最理想情况：the working set of each process is stored in the TLB</li>
+<li>Increase the Page Size：这可能会导致碎片的增加，因为并非所有应用程序都需要大的页面大小</li>
+<li>Provide Multiple Page Sizes（提供多种页面大小）：这使得需要更大页面大小的应用程序有机会在不增加碎片的情况下使用它们</li>
+</ul>
+</li>
+<li>
+<p>Other Issues – Program Structure
+    第一个程序按列访问，第二个程序按行进行访问：  <br />
+<img alt="" src="../img/91.png" width="400" /></p>
+</li>
+<li>
+<p>Other Issues – I/O interlock (I/O 锁定)</p>
+</li>
+</ul>
 
 
 
