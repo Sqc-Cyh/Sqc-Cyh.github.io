@@ -226,4 +226,45 @@ comments: true  #默认不开启评论
 !!! warning "注意"
     这种安排并不完全准确，因为并不知道在5000个引用内的什么位置出现了引用。通过着呢及该历史位的数量和中断的频率（例如10位和每1000个引用中断一次），可以降低这一不确定性。然而会带来额外的成本。
 
+## 6. Memory-Mapped Files
+  0000 1000 0001
+ 0010 0000 0001 
+  0010 0010 0101
 
+* Buddy System （伙伴 系统）        
+    ![](./img/89.png){width="300"}
+
+* Slab Allocator
+    * Slab is one or more physically contiguous pages：是一个预分配的内存池，包含多个相同大小的对象
+    * Cache consists of one or more slabs
+    * 相关细节/流程如下：
+        1. 当cache创建时，被标记为free的对象填充
+        2. 当存structures store时，标记为使用过的对象
+        3. 如果slab中充满了使用过的对象，则从空slab中分配下一个对象
+        4. 若无空slab，则分配新slab
+    * 优点：没有碎片，快速满足内存请求      
+
+    ![](./img/90.png){width="300"}
+
+* Other Issues – Prepaging (预调页)
+    * Assume s pages are prepaged and αof the pages is used：
+        1. 假设预加载了s个页面，其中α（alpha）比例的页面被实际使用。
+        2. 需要比较节省的页面错误（sα）与预调页的成本（s(1-α)）。（s*(1-α) 表示预加载但未使用的页面数量。）
+        3. 如果α（实际使用的页面比例）接近零，那么预调页的效果就会很差，因为它会导致大量的I/O和内存资源被浪费在不必要的页面上。
+
+* Other Issues – Page Size
+    1. Fragmentation -> small page size
+    2. table size -> large page size
+    3. I/O times -> large page size
+    4. Locality -> small page size, accurate locality
+
+* Other Issues – TLB Reach （TLB范围）  
+    TLB Reach = (TLB Size) X (Page Size)
+    * 最理想情况：the working set of each process is stored in the TLB
+    * Increase the Page Size：这可能会导致碎片的增加，因为并非所有应用程序都需要大的页面大小
+    * Provide Multiple Page Sizes（提供多种页面大小）：这使得需要更大页面大小的应用程序有机会在不增加碎片的情况下使用它们
+* Other Issues – Program Structure
+    第一个程序按列访问，第二个程序按行进行访问：    
+    ![](./img/91.png){width="400"}
+
+* Other Issues – I/O interlock (I/O 锁定)
