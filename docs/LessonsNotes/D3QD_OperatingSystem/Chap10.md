@@ -179,7 +179,7 @@ comments: true  #默认不开启评论
         1. Repeated search the same object
         2. File deletion problem (count <>0 even if unused)这种异常源自目录中可能存在自我引用。在这种情况下，通常需要使用Garbage collection方法
     * How do we guarantee no cycles?
-        1. Allow only links to file not subdirectories 只允许创建指向文件的link，不允许指向子目录
+        1. Allow only (soft) links to file not subdirectories 只允许创建指向文件的link，不允许指向子目录
         2. Garbage collection 垃圾回收的机制，确定何时最后引用已被删除并重新分配磁盘空间，也就是清理没有用的文件/目录，需要付出额外的扫描时间：
             * Garbage collection涉及遍历整个文件系统，并标记所有可访问的文件。然后，第二次遍历收集所有未标记的到空闲空间列表
         3. Every time a new link is added, use a cycle detection algorithm to determine whether it is OK 每次添加新链接时，循环检测是否存在循环。
@@ -195,11 +195,33 @@ comments: true  #默认不开启评论
         3. 硬链接不能跨文件系统；不能为目录创建硬链接，以防止循环的产生。
 
 ## 4.File-System Mounting
+文件系统必须 mount 后才能被访问     
+一个未 mount 的文件系统 is mounted 在一个 mount point 上        
+从挂载点进入后，会进入某个文件系统的根目录      
+
+![](./img/102.png)
+
+* 如果将图b中的项挂载到fred上，那么help将无法访问，而图b中的项都可以被访问
+
 
 ## 5.File Sharing
 
+* Multiple Users:
+    1. User IDs：identify users, allowing permissions and protections to be per-user
+    2. Group IDs：allow users to be in groups, permitting group access rights
+
+* Remote File Systems：Uses networking to allow file system access between systems
+
+
 ## 6.Protection
-    
+
+* Mode of access:  read, write, execute
+* Three classes of users
+    1. owner access：RWX
+    2. group access：RW
+    3. public access：X
+
+
     
     
         
