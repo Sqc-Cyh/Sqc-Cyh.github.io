@@ -185,4 +185,60 @@ comments: true  #默认不开启评论
 
 ## 4.Free-Space Management 
 
+* 使用Bit vector：放在超级块中
+    1. 1代表block[i]空闲
+    2. 0代表block[i]被占用
+
+    >
+
+    * 寻找第一个空闲块：        
+        (number of bits per word) * (number of 0-value words) + offset of first 1 bit
+        
+* Bit map requires extra space
+    * Example:      
+        block size = 2^12 bytes      
+        disk size = 2^30 bytes (1 gigabyte)      
+        n = 2^30/2^12 = 2^18 bits (or 32K bytes)       
+    * Easy to get contiguous files 
+
+* Linked list (free list) – see figure
+    1. Cannot get contiguous space easily
+    2. But basically can work (FAT)
+    3. No waste of space
+
+    ![](./img/121.png)
+
+* Grouping – a modification of the Linked List
+    1. Addresses of the n free blocks are stored in the first block. 
+    2. The first n-1 blocks are actually free. The last block contains addresses of another n free blocks
+
+* Counting 计数的方式比较适合连续的分配方式
+    * Address of the first free block and number n contiguous blocks 
+
+在管理空闲空间时，有两个值非常重要（需要保护）：指针to free list 和 Bit map（必须持久化到磁盘，确保在内存中的位图和磁盘中的位图定期同步）
+
+* bit map 同步方式如下：
+    1. Set bit[i] = 1 in disk
+    2. deallocate block[i]
+    3. Set bit[i] = 1 in memory
+    
+
 ## 5.Efficiency and Performance
+
+* Efficiency dependent on:
+    1. disk allocation and directory algorithms
+    2. types of data kept in file’s directory entry (for example “last write date” is recorded in directory) 
+    3. Generally, every data item has to be considered for its effect.
+    
+* Performance
+    1. disk cache – separate section of main memory for frequently used blocks
+    2. free-behind and read-ahead – techniques to optimize sequential access
+    3. improve PC performance by dedicating section of memory as virtual disk, or RAM disk
+
+* Page Cache：可以使用虚拟内存对memory-mapped访问，更加高效，同时减少I/O     
+
+* I/O Without a Unified Buffer Cache    
+    ![](./img/122.png)
+
+* Unified Buffer Cache 统一的buffer cache：使用同样的page cache 缓存 Unified Buffer Cache，避免了二次缓存       
+    ![](./img/123.png)
