@@ -16,11 +16,11 @@
         <link rel="prev" href="../Chap10/">
       
       
-        <link rel="next" href="../../D3QD_ComputerNetwork/">
+        <link rel="next" href="../Chap12/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -1467,6 +1467,8 @@
       
         
       
+        
+      
     
     
       
@@ -1830,6 +1832,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chap12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chap 12 | Mass-Storage Systems
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2924,7 +2947,7 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1717 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 20 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2082 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 23 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 10 分钟</p>
 </div>
 <h1 id="欢迎">Chap 11 | File System Implementation</h1>
 
@@ -3155,7 +3178,91 @@
 <h3 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><img alt="" src="../img/119.png" /></p>
 <h2 id="4free-space-management">4.Free-Space Management<a class="headerlink" href="#4free-space-management" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>使用Bit vector：放在超级块中</p>
+<ol>
+<li>1代表block[i]空闲</li>
+<li>0代表block[i]被占用</li>
+</ol>
+<blockquote></blockquote>
+<ul>
+<li>寻找第一个空闲块：      <br />
+    (number of bits per word) * (number of 0-value words) + offset of first 1 bit</li>
+</ul>
+</li>
+<li>
+<p>Bit map requires extra space</p>
+<ul>
+<li>Example:    <br />
+    block size = 2^12 bytes    <br />
+    disk size = 2^30 bytes (1 gigabyte)    <br />
+    n = 2<sup>30/2</sup>12 = 2^18 bits (or 32K bytes)       </li>
+<li>Easy to get contiguous files </li>
+</ul>
+</li>
+<li>
+<p>Linked list (free list) – see figure</p>
+<ol>
+<li>Cannot get contiguous space easily</li>
+<li>But basically can work (FAT)</li>
+<li>No waste of space</li>
+</ol>
+<p><img alt="" src="../img/121.png" /></p>
+</li>
+<li>
+<p>Grouping – a modification of the Linked List</p>
+<ol>
+<li>Addresses of the n free blocks are stored in the first block. </li>
+<li>The first n-1 blocks are actually free. The last block contains addresses of another n free blocks</li>
+</ol>
+</li>
+<li>
+<p>Counting 计数的方式比较适合连续的分配方式</p>
+<ul>
+<li>Address of the first free block and number n contiguous blocks </li>
+</ul>
+</li>
+</ul>
+<p>在管理空闲空间时，有两个值非常重要（需要保护）：指针to free list 和 Bit map（必须持久化到磁盘，确保在内存中的位图和磁盘中的位图定期同步）</p>
+<ul>
+<li>bit map 同步方式如下：<ol>
+<li>Set bit[i] = 1 in disk</li>
+<li>deallocate block[i]</li>
+<li>Set bit[i] = 1 in memory</li>
+</ol>
+</li>
+</ul>
 <h2 id="5efficiency-and-performance">5.Efficiency and Performance<a class="headerlink" href="#5efficiency-and-performance" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Efficiency dependent on:</p>
+<ol>
+<li>disk allocation and directory algorithms</li>
+<li>types of data kept in file’s directory entry (for example “last write date” is recorded in directory) </li>
+<li>Generally, every data item has to be considered for its effect.</li>
+</ol>
+</li>
+<li>
+<p>Performance</p>
+<ol>
+<li>disk cache – separate section of main memory for frequently used blocks</li>
+<li>free-behind and read-ahead – techniques to optimize sequential access</li>
+<li>improve PC performance by dedicating section of memory as virtual disk, or RAM disk</li>
+</ol>
+</li>
+<li>
+<p>Page Cache：可以使用虚拟内存对memory-mapped访问，更加高效，同时减少I/O     </p>
+</li>
+<li>
+<p>I/O Without a Unified Buffer Cache  <br />
+<img alt="" src="../img/122.png" /></p>
+</li>
+<li>
+<p>Unified Buffer Cache 统一的buffer cache：使用同样的page cache 缓存 Unified Buffer Cache，避免了二次缓存     <br />
+<img alt="" src="../img/123.png" /></p>
+</li>
+</ul>
 
 
 
@@ -3290,7 +3397,7 @@
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.indexes", "search.share", "content.code.annotate", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="../../../javascripts/extra.js"></script>
       
