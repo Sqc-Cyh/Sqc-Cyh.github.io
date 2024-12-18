@@ -40,11 +40,10 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 !!! note "" 
     <br><br>
     <div align="center" style="font-size:32px;font-weight:bold">
-        『What can I hold you with?』
+        『Haibara Ai』
     </div>
     <div align="center" style="font-size:15px">
-       我给你瘦落的街道，绝望的落日，荒郊的月亮。
-       我给你一个久久地望着孤月的人的悲哀。
+       もしも私がマリーのように、ギロチンの霧になっていたとしたら……彼女の愛犬ティスビーのように、私の後を追ってセーヌ川に身を投げているのでしょうか?
     </div>
     <br><br>
 ## 快速跳转
