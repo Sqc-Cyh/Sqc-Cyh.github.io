@@ -10,13 +10,13 @@
         <meta name="author" content="时清川">
       
       
-        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D3QD_OperatingSystem/Chap05/">
+        <link rel="canonical" href="https://sqc-cyh.github.io/LessonsNotes/D3QD_OperatingSystem/Chap13/">
       
       
-        <link rel="prev" href="../Chap04/">
+        <link rel="prev" href="../Chap12/">
       
       
-        <link rel="next" href="../Chap06/">
+        <link rel="next" href="../../D3QD_ComputerNetwork/">
       
       
       <link rel="icon" href="../../../images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Chap 5 | CPU Scheduling - 时清川的个人主页</title>
+        <title>Chap 13 | I/O Systems - 时清川的个人主页</title>
       
     
     
@@ -88,7 +88,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#1io-hardware" class="md-skip">
           Skip to content
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chap 5 | CPU Scheduling
+              Chap 13 | I/O Systems
             
           </span>
         </div>
@@ -1600,28 +1600,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chap 5 | CPU Scheduling
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Chap05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1630,120 +1612,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.基础概念
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2scheduling-criteria" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.Scheduling Criteria
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.Scheduling Criteria">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-first-come-first-served-fcfs-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 First-Come, First-Served (FCFS) Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-shortest-job-first-sjf-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.2 Shortest-Job-First (SJF) Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-priority-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Priority Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-highest-response-ratio-next-hrrn" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 Highest Response Ratio Next （HRRN）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-round-robin-rr" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5 Round Robin (RR) （时间片轮转调度算法）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-multi-level-queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6 多层队列（multi - level Queue）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27-multilevel-feedback-queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7 Multilevel Feedback Queue
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#28-real-time-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.8 Real-Time Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1900,10 +1768,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Chap13/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chap 13 | I/O Systems
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1912,6 +1798,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1io-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.I/O Hardware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2application-io-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Application I/O Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3kernel-io-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Kernel I/O Subsystem
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2928,98 +2859,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1io-hardware" class="md-nav__link">
     <span class="md-ellipsis">
-      1.基础概念
+      1.I/O Hardware
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2scheduling-criteria" class="md-nav__link">
+  <a href="#2application-io-interface" class="md-nav__link">
     <span class="md-ellipsis">
-      2.Scheduling Criteria
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.Scheduling Criteria">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-first-come-first-served-fcfs-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.1 First-Come, First-Served (FCFS) Scheduling
+      2.Application I/O Interface
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#22-shortest-job-first-sjf-scheduling" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#3kernel-io-subsystem" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 Shortest-Job-First (SJF) Scheduling
+      3.Kernel I/O Subsystem
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-priority-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.3 Priority Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-highest-response-ratio-next-hrrn" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 Highest Response Ratio Next （HRRN）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-round-robin-rr" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.5 Round Robin (RR) （时间片轮转调度算法）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-multi-level-queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6 多层队列（multi - level Queue）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27-multilevel-feedback-queue" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.7 Multilevel Feedback Queue
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#28-real-time-scheduling" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.8 Real-Time Scheduling
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3042,9 +2904,9 @@
 
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1835 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 6 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 871 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
-<h1 id="欢迎">Chap 5 | CPU Scheduling</h1>
+<h1 id="欢迎">Chap 13 | I/O Systems</h1>
 
 <div class="admonition note">
 <p class="admonition-title">章节启示录</p>
@@ -3052,199 +2914,190 @@
     <!-- Markdown **content**. -->
 <!-- === "Tab 2"
     More Markdown **content**. -->
-本章节是OS的第五章。</p>
+本章节是OS的第十三章。</p>
 </div>
-<h2 id="1">1.基础概念<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>为什么要进行CPU调度？通过 multiprogramming 获得的最大CPU利用率</p>
-<p>从内存中准备好的进程中进行选择执行，并将CPU分配给其中一个</p>
+<h2 id="1io-hardware">1.I/O Hardware<a class="headerlink" href="#1io-hardware" title="Permanent link">&para;</a></h2>
+<p>More than 200 harddisk manufacturers</p>
 <ul>
 <li>
-<p>CPU调度决策可能发生在进程:</p>
+<p>Common concepts</p>
 <ol>
-<li>从运行状态切换到等待状态</li>
-<li>从运行状态切换到就绪状态</li>
-<li>从等待切换到准备</li>
-<li>终止     </li>
+<li>Port </li>
+<li>Bus (daisy chain or shared direct access) 总线</li>
+<li>Controller (host adapter)</li>
 </ol>
-<p>1和4下的调度是非抢占式的（nonpreemptive）      <br />
-所有其他调度都是抢占式的（preemptive）</p>
 </li>
 <li>
-<p>Dispatcher模块将CPU的控制权交给进程，并由短期调度器选择:</p>
+<p>不同的访问方式：</p>
 <ol>
-<li>切换上下文</li>
-<li>切换到用户模式（不一定需要切换到用户态，可能仍在内核态运行）</li>
-<li>跳转到用户程序中的适当位置</li>
-<li>重新启动程序</li>
+<li>Special I/O instructions 芯片可以控制一些特定的设备（英特尔）</li>
+<li>Memory-mapped I/O 更为常见，把重要的地址、寄存器（保存一些控制信息和数据）与内存当中的逻辑地址映射起来。</li>
 </ol>
-<p>调度延迟：调度程序停止一个进程并启动另一个进程所需的时间</p>
 </li>
-</ul>
-<h2 id="2scheduling-criteria">2.Scheduling Criteria<a class="headerlink" href="#2scheduling-criteria" title="Permanent link">&para;</a></h2>
-<ul>
-<li>CPU利用率：使CPU尽可能的繁忙</li>
-<li>吞吐量：每单位时间内完成执行的进程数</li>
-<li>周转时间：执行一个特定过程的时间</li>
-<li>等待时间：进程在就绪队列（ready queue）中等待的时间</li>
-<li>响应时间：从请求被提交到产生第一个响应所花费的时间，而不是输出(对于分时环境)</li>
-</ul>
-<h3 id="21-first-come-first-served-fcfs-scheduling">2.1 First-Come, First-Served (FCFS) Scheduling<a class="headerlink" href="#21-first-come-first-served-fcfs-scheduling" title="Permanent link">&para;</a></h3>
-<p>先来先服务：  <br />
-<img alt="" src="../img/39.png" width="450" />       <br />
-对于上图来说，采用P2,P3,P1的方式更加合理，这样平均等待时间就缩短为：<span class="arithmatex">\((6+0+3)/3 = 3\)</span></p>
-<p>FCFS是非抢占式的算法</p>
-<p>Convey effect（护航效应）：如果短进程落后于长进程，平均等待时间就会变长，导致I/O设备或CPU存在较多空闲，因此它不能作为分时系统和实时系统的主要调度策略。</p>
-<p>因为I/O-bound processes wait for the CPU-bound one，所以<font color = "red">有利于长作业，不利于短作业；有利于CPU繁忙型，不利于I/O繁忙型。</font></p>
-<h3 id="22-shortest-job-first-sjf-scheduling">2.2 Shortest-Job-First (SJF) Scheduling<a class="headerlink" href="#22-shortest-job-first-sjf-scheduling" title="Permanent link">&para;</a></h3>
-<p>每个进程关联下一个CPU-burst的长度。使用这些长度去调度时间最短的进程。</p>
-<ul>
 <li>
-<p>两种方案：</p>
+<p>典型的总线结构：    <br />
+<img alt="" src="../img/138.png" width="400" /></p>
+</li>
+<li>
+<p>I/O Port Registers：</p>
 <ol>
-<li>非抢占:一旦CPU被分配给进程，它就不能被抢占，直到完成它的CPU突发</li>
-<li>抢占:如果一个新的进程到达CPU突发长度小于当前执行进程的剩余时间，抢占。这个方案被称为“Shortest-Remaining-Time-First”（SRTF）</li>
-</ol>
-</li>
-<li>
-<p>非抢占：<br />
-<img alt="" src="../img/40.png" width="450" /> </p>
-<ul>
-<li>调度次数：4次（注意P1进来的时候算1次调度，而P4结束时不算调度）  </li>
-</ul>
-<p>当burst time 相同时，用其他调度策略，比如这里使用了“FCFS”策略</p>
-</li>
-<li>
-<p>抢占：  <br />
-<img alt="" src="../img/41.png" width="450" />  </p>
-<ul>
-<li>调度次数：6次</li>
-</ul>
-</li>
-</ul>
-<p>由于没有办法预知下一次爆发的长度，因此只能估计长度
-考虑通过使用之前CPU突发的长度来实现预测估计，使用指数平均法：</p>
-<p><img alt="" src="../img/42.png" width="350" /></p>
-<p><font color = "red">不管什么情况，短作业优先是最优的（平均等待时间最短）</font></p>
-<details class="question">
-<summary>抢占式 VS. 非抢占式</summary>
-<p>不一定。在不同情况下都有可能更短</p>
-</details>
-<p><font color = "red">有利于短作业，不利于长作业。</font></p>
-<h3 id="23-priority-scheduling">2.3 Priority Scheduling<a class="headerlink" href="#23-priority-scheduling" title="Permanent link">&para;</a></h3>
-<p>每个进程都有一个优先级号（整数）</p>
-<ul>
-<li>CPU分配给优先级最高的进程（最小整数==最高优先级）<ol>
-<li>抢占式</li>
-<li>非抢占式</li>
+<li>Data-in: read by the host to get input</li>
+<li>Data-out: written by the host to send output</li>
+<li>Status: device status read by the host</li>
+<li>Control: written by the host to start a command or change the mode of a device</li>
 </ol>
 </li>
 </ul>
+<p>有很多种控制方式：</p>
+<ul>
+<li>
+<p>Polling：</p>
+<ol>
+<li>host反复读busy bit直到bit清除</li>
+<li>设置write bit 到comman 此村其，并write a byte到data-out寄存器</li>
+<li>设置command-ready bit</li>
+<li>发现command-ready是1</li>
+<li>通过data-out 寄存器获取byte并执行I/O</li>
+<li>检查错误，没错误就把busy bit重置</li>
+</ol>
+</li>
+<li>
+<p>Interrupt：
+    <img alt="" src="../img/140.png" /></p>
+</li>
+<li>
+<p>Direct Memory Access：可以让cpu以block的大小处理数据（但必须连续），只在DMA发生的前后才参与</p>
+<ol>
+<li>Used to avoid programmed I/O (可编程I/O) for large data movement</li>
+<li>Requires DMA controller</li>
+<li>Bypasses 旁路 CPU to transfer data directly between I/O device and memory </li>
+</ol>
+<p><img alt="" src="../img/139.png" /></p>
+</li>
+</ul>
+<h2 id="2application-io-interface">2.Application I/O Interface<a class="headerlink" href="#2application-io-interface" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>I/O系统调用将设备行为封装在泛型类中，设备驱动层隐藏了内核中I/O控制器之间的差异</p>
+</li>
+<li>
+<p>设备在许多方面都不同</p>
+<ol>
+<li>Character-stream or block 字符流或字符块</li>
+<li>Sequential or random-access 顺序访问或随机访问</li>
+<li>Sharable or dedicated 共享或专用</li>
+<li>Speed of operation 运行速度</li>
+<li>read-write, read only, or write only 读写、只读、只写（显示器，只能给他传数据）</li>
+</ol>
+</li>
+<li>
+<p>A Kernel I/O Structure：通过driver，隐藏了device间的特异性
+    <img alt="" src="../img/141.png" /></p>
+</li>
+<li>
+<p>Block and Character Devices：</p>
+<ul>
+<li>
+<p>块设备包括磁盘驱动器</p>
+<ol>
+<li>命令包括读、写、查找</li>
+<li>原始I/O或文件系统访问</li>
+<li>内存映射文件访问是可能的</li>
+</ol>
+</li>
+<li>
+<p>字符设备包括键盘、鼠标、串行端口</p>
+<ol>
+<li>命令包括get、put</li>
+<li>层叠在上面的库允许行编辑</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>Network Devices：比较高速的设备</p>
+<ol>
+<li>从块和字符变化足够有自己的接口</li>
+<li>Unix和Windows NT/9x/2000包括套接字接口<ol>
+<li>将网络协议与网络操作分离</li>
+<li>包括服务器的选择功能</li>
+</ol>
+</li>
+<li>方法多种多样（pipes、FIFOs、streans、queues、mailboxes）</li>
+</ol>
+</li>
+<li>
+<p>Blocking and Nonblocking I/O</p>
+<ul>
+<li>Blocking - process suspended until I/O completed<ol>
+<li>易于使用和理解</li>
+<li>不足以满足某些需求</li>
+</ol>
+</li>
+<li>Nonblocking - I/O call returns as much as available<ol>
+<li>用户界面，数据拷贝（缓冲I/O）</li>
+<li>通过多线程实现</li>
+<li>快速返回读取或写入的字节数</li>
+</ol>
+</li>
+<li>Asynchronous - process runs while I/O executes<ol>
+<li>难以使用</li>
+<li>I/O子系统在I/O完成时发出信号</li>
+</ol>
+</li>
+</ul>
+<p><img alt="" src="../img/142.png" /></p>
+</li>
+</ul>
+<h2 id="3kernel-io-subsystem">3.Kernel I/O Subsystem<a class="headerlink" href="#3kernel-io-subsystem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Scheduling调度</p>
+<ol>
+<li>
+<p>一些I/O请求通过每个设备队列排序</p>
 <blockquote>
-<p>SJF是一种优先级调度，其中优先级是预测的下一次CPU突发时间</p>
-</blockquote>
-<p>饥饿问题：低优先级进程可能永远不会执行</p>
-<p>解决方案：Aging（老人福利）,随着时间的推移,增加工艺的优先级</p>
-<h3 id="24-highest-response-ratio-next-hrrn">2.4 Highest Response Ratio Next （HRRN）<a class="headerlink" href="#24-highest-response-ratio-next-hrrn" title="Permanent link">&para;</a></h3>
-<p>高响应比优先。（非抢占式，否则每个时刻都需要计算）<br />
-这是对于SJF和FCFS的 compromise ，避免一部分进程一直获得较高的优先级。</p>
-<ul>
-<li>
-<p>响应比 = 1 + 等待时间/服务时间（CPU-burst）</p>
-</li>
-<li>
-<p>HRRN 算法的工作原理</p>
-<ol>
-<li>初始化：记录每个进程的到达时间和所需的服务时间。</li>
-<li>计算响应比：对于每个就绪队列中的进程，计算其响应比。</li>
-<li>选择最高响应比的进程：<ol>
-<li>选择具有最高响应比的进程执行。</li>
-<li>如果有多个进程具有相同的最高响应比，则可以按照其他规则（如先到先服务）来选择。</li>
-</ol>
-</li>
-<li>更新等待时间和响应比：<ol>
-<li>每次调度后，更新所有就绪队列中进程的等待时间。</li>
-<li>重新计算所有进程的响应比。</li>
-</ol>
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="25-round-robin-rr">2.5 Round Robin (RR) （时间片轮转调度算法）<a class="headerlink" href="#25-round-robin-rr" title="Permanent link">&para;</a></h3>
-<p>每个进程获得一个小的CPU时间单位（时间片），通常是10-100毫秒。在此时间过去之后，该进程被抢占并添加到就绪队列的末尾。</p>
-<p>如果进程的时间小于时间片的长度，执行完后直接到下一个进程，无需等待时间片耗尽。</p>
-<p><img alt="" src="../img/43.png" width="450" /></p>
-<p>一般来说，平均周转时间比SJF高，但response方面更好（交互性更好）</p>
-<blockquote>
-<p>CPU利用率和交互性可能无法同时得到满足</p>
-</blockquote>
-<p>如果就绪队列中有n个进程，时间量为q，则每个进程一次最多获得q个时间单位的块，占CPU时间的1/n。没有进程等待时间超过（n-1）q个时间单位</p>
-<ul>
-<li>
-<p>性能：</p>
-<ol>
-<li>q large -&gt; FCFS</li>
-<li>q small -&gt; 上下文切换开销太高</li>
-</ol>
-</li>
-<li>
-<p>应用：分时系统，多任务系统</p>
-</li>
-</ul>
-<h3 id="26-multi-level-queue">2.6 多层队列（multi - level Queue）<a class="headerlink" href="#26-multi-level-queue" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Ready队列划分为单独的队列：<ol>
-<li>前台（交互式）</li>
-<li>后台（批处理）；</li>
-</ol>
-</li>
-<li>每个队列都有自己的调度算法，例如:<ol>
-<li>foreground - RR</li>
-<li>background - FCFS</li>
-</ol>
-</li>
-<li>在队列之间必须进行调度:<ol>
-<li>固定优先级调度（即，先从前台服务，再从后台服务）。可能会饿死。</li>
-<li>时间片:每个队列获得一定数量的CPU时间，它可以在其进程之间调度；例如， 80% to foreground in RR，20% to background in FCFS </li>
-</ol>
-</li>
-</ul>
-<h3 id="27-multilevel-feedback-queue">2.7 Multilevel Feedback Queue<a class="headerlink" href="#27-multilevel-feedback-queue" title="Permanent link">&para;</a></h3>
-<ul>
-<li>设置多个就绪队列，优先级从第一级依次降低</li>
-<li>优先级高的队列，进程时间片越短</li>
-<li>每个队列都采用FCFS，若在该时间片完成，则撒离系统，未完成，转入下一级级队列</li>
-<li>按队列优先级调度，仅当上一级为空时，才运行下一级</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">一个例子🌰</p>
-<p><img alt="" src="../img/44.png" width="350" /></p>
-<ol>
-<li>一个新作业进入队列q0，该队列为fcfs服务。当获得CPU时，job收到8毫秒。如果它没有在8毫秒内完成，则将作业移动到队列Q1。</li>
-<li>在Q1的工作再次被送达FCFS，并收到额外的16毫秒。如果它仍然没有完成，它将被抢占并移动到队列Q2。</li>
-</ol>
-</div>
-<h3 id="28-real-time-scheduling">2.8 Real-Time Scheduling<a class="headerlink" href="#28-real-time-scheduling" title="Permanent link">&para;</a></h3>
-<p>硬实时系统:需要在保证的时间内完成关键任务</p>
-<p>软实时计算:要求关键进程优先于不那么重要的进程</p>
-<ul>
-<li>
-<p>Schedule:</p>
-<ol>
-<li>Earliest Deadline First (最早截止时间优先)   </li>
-<li>
-<p>Least Laxity First (最低松弛度优先)    <br />
-    A的松弛度 = A必须完成的时间 - A运行需要的时间 - 当前时间    </p>
-<blockquote>
-<p>例如: 有一个任务需要在 400ms 时必须完成，它需要运行 150ms，当前时刻为100ms, 其松弛程度为 400 - 150 - 100 = 150ms</p>
+<p>例如，磁盘调度</p>
 </blockquote>
 </li>
 <li>
-<p>Rate Monotonic Scheduling （速率单调调度）：基于任务的周期来分配优先级，周期越短的任务优先级越高（相当于拿周期的倒数当优先级）</p>
+<p>有些OS尝试公平</p>
 </li>
 </ol>
 </li>
+<li>
+<p>Buffering：在设备之间传输时将数据存储在内存中</p>
+<ol>
+<li>处理设备速度不匹配，例如从调制解调器接收数据到磁盘。<ul>
+<li>双缓冲技术</li>
 </ul>
-<p>​</p>
+</li>
+<li>处理设备传输大小不匹配，例如网络数据包</li>
+<li>维护“复制语义”（当write（）系统调用指定一个用于存储数据的缓冲区，并在系统调用后修改其内容时）</li>
+</ol>
+</li>
+<li>
+<p>Caching：保存数据副本的快速内存</p>
+<ol>
+<li>永远只是一个副本</li>
+<li>绩效关键</li>
+</ol>
+</li>
+<li>
+<p>Spooling假脱机：保持设备的输出</p>
+<ul>
+<li>如果设备一次只能处理一个请求
+    &gt;例如,印刷</li>
+</ul>
+</li>
+<li>
+<p>Device reservation设备保留：提供对设备的独占访问</p>
+<ol>
+<li>系统调用分配和回收</li>
+<li>注意死锁</li>
+</ol>
+</li>
+</ul>
 
 
 
